@@ -1,0 +1,50 @@
+SALES DASHBOARD
+
+colors:
+
+
+SECTIONS: 
+
+Option to see periods for all graphs / sections at once,
+if user sets an option to only one, it will go to custom
+
+main section: BIG
+
+- day, week, month, year, all time sales
+- delivered, not delivered, in cart, returned orders - with value in $$
+- switchable with a graph with time refrences 
+- selectable custom period
+- net vs gross profits
+- changable target sales - monthly & yearly
+- target progress percentage
+- percential growth
+
+second section: BIG
+
+- every order one by one
+- default: 10 per page, changeable with 15, 20, 30
+- order number, name, address, date, amount spent, item bought, order status, views
+- option to show/hide some information
+- periodical option
+
+third section: SMALL
+
+- amounts of unique products available
+- amounts of each product available
+- ratings for each product
+- use pictures of some objects
+
+fourth section: SMALL
+
+- registered users
+- daily visitors 
+- periodical option
+
+fifth section: SMALL
+
+- countries from where purchases were made
+- sorting option available - ascending, descending similar
+
+sixth section: SMALL
+- instagram, twitter, facebook followers
+- day, week, month, year, all time growth in followers
