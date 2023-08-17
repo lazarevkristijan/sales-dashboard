@@ -5,46 +5,52 @@ colors:
 
 SECTIONS: 
 
-Option to see periods for all graphs / sections at once,
+Option to set periods for all graphs / sections at once,
 if user sets an option to only one, it will go to custom
 
-main section: BIG
+Option for changable stats display to graph bar line pie etc
+FOR ALL statistics
 
-- day, week, month, year, all time sales
+time options:
+day, week, month, year, all time sales - custom selectable period
+
+main section: BI - SALE STATS
+
+- time options
 - delivered, not delivered, in cart, returned orders - with value in $$
 - switchable with a graph with time refrences 
-- selectable custom period
 - net vs gross profits
 - changable target sales - monthly & yearly
 - target progress percentage
 - percential growth
 
-second section: BIG
+second section: BIG - ORDERS
 
 - every order one by one
 - default: 10 per page, changeable with 15, 20, 30
 - order number, name, address, date, amount spent, item bought, order status, views
 - option to show/hide some information
-- periodical option
+- time options
 
-third section: SMALL
+third section: SMALL - ALL PRODUCTS
 
 - amounts of unique products available
 - amounts of each product available
 - ratings for each product
 - use pictures of some objects
+- sort by popularity/name
 
-fourth section: SMALL
+fourth section: SMALL - USERS
 
 - registered users
 - daily visitors 
 - periodical option
 
-fifth section: SMALL
+fifth section: SMALL - COUNTRIES
 
 - countries from where purchases were made
 - sorting option available - ascending, descending similar
 
-sixth section: SMALL
+sixth section: SMALL - SOCIAL STATS
 - instagram, twitter, facebook followers
 - day, week, month, year, all time growth in followers
