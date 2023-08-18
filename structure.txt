@@ -1,6 +1,10 @@
 SALES DASHBOARD
 
 colors:
+main (theme) - light: lightblue / dark: darkblue 
+buttons & stuff: light: darkblue / dark: lightblue
+graphs, charts etc middleblue
+pies or similar: XXXXXXX
 
 
 SECTIONS: 
@@ -14,7 +18,7 @@ FOR ALL statistics
 time options:
 day, week, month, year, all time sales - custom selectable period
 
-main section: BI - SALE STATS
+main section: BIG - SALE STATS
 
 - time options
 - delivered, not delivered, in cart, returned orders - with value in $$
