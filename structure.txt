@@ -38,6 +38,7 @@ second section: BIG - ORDERS
 
 third section: SMALL - ALL PRODUCTS
 
+- side scrollable with arrows
 - amounts of unique products available
 - amounts of each product available
 - ratings for each product
@@ -58,3 +59,16 @@ fifth section: SMALL - COUNTRIES
 sixth section: SMALL - SOCIAL STATS
 - instagram, twitter, facebook followers
 - day, week, month, year, all time growth in followers
+
+
+gear icon - onclick
+ - square menu popup below it
+ - username
+ - log out
+ - settings
+
+side panel on left
+- dark mode
+
+all panels to have same border radius
+FACEBOOK - github etc, use one single color and then another color for everything else, using some hr's to divide the content
