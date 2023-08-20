@@ -12,7 +12,11 @@ SECTIONS:
 Option to set periods for all graphs / sections at once,
 if user sets an option to only one, it will go to custom
 
-Option for changable stats display to graph bar line pie etc
+Option for stats display 
+1. Bar chart
+2. Line graph
+3. Pie chart
+
 FOR ALL statistics
 
 time options:
@@ -61,7 +65,7 @@ sixth section: SMALL - SOCIAL STATS
 - day, week, month, year, all time growth in followers
 
 
-gear icon - onclick
+profile icon - onclick
  - square menu popup below it
  - username
  - log out
@@ -69,6 +73,8 @@ gear icon - onclick
 
 side panel on left
 - dark mode
+- period selector
+- stats display changer
 
-all panels to have same border radius
-FACEBOOK - github etc, use one single color and then another color for everything else, using some hr's to divide the content
+notification panel
+- displaying notifications about canceled / delivered orders etc.
