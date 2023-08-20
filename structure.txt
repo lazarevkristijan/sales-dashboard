@@ -24,11 +24,8 @@ day, week, month, year, all time sales - custom selectable period
 
 main section: BIG - SALE STATS
 
-- time options
 - delivered, not delivered, in cart, returned orders - with value in $$
-- switchable with a graph with time refrences 
 - net vs gross profits
-- changable target sales - monthly & yearly
 - target progress percentage
 - percential growth
 
