@@ -4,34 +4,14 @@ colors:
 main (theme) - light: lightblue / dark: darkblue 
 buttons & stuff: light: darkblue / dark: lightblue
 graphs, charts etc middleblue
-pies or similar: XXXXXXX
+pies x
 
 
 SECTIONS: 
 
-Option to set periods for all graphs / sections at once,
-if user sets an option to only one, it will go to custom
-
-Option for stats display 
-1. Bar chart
-2. Line graph
-3. Pie chart
-
-FOR ALL statistics
-
-time options:
-day, week, month, year, all time sales - custom selectable period
-
-main section: BIG - SALE STATS
-
-- delivered, not delivered, in cart, returned orders - with value in $$
-- net vs gross profits
-- target progress percentage
-- percential growth
-
 second section: BIG - ORDERS
 
-- every order one by one
+- every order one by oneS
 - default: 10 per page, changeable with 15, 20, 30
 - order number, name, address, date, amount spent, item bought, order status, views
 - option to show/hide some information
