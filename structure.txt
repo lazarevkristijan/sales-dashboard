@@ -1,1 +1,30 @@
 COLORS
+
+Light mode
+        |
+        V
+
+Main background - #96F2FF
+
+Light blue - #CAF0F8
+Regular blue - #48CAE4
+Dark blue - #00B4D8
+
+Table row 1 - #FFFFFF
+Table row 2 - #EEEEEE
+
+Success - #96FF96
+Danger - #FF9696
+Natural - #F0FF96
+
+Main background - #96F2FF
+Section background - #CAF0F8
+Section content main color - #FFFFFF
+Buttons - #48CAE4
+Nav bar dropdown background - #48CAE4
+
+
+TEXT
+
+regular text - Montserrat 20px 
+Section one order qty numbers - 64px / weight: 200
