@@ -4,9 +4,9 @@ Light mode
 
 Main background - #96F2FF
 
-Light blue - #CAF0F8
-Regular blue - #48CAE4
-Dark blue - #00B4D8
+Blue 1 - #CAF0F8
+Blue 2 - #48CAE4
+Blue 3 - #00B4D8
 
 Table row 1 - #FFF
 Table row 2 - #EEE
@@ -16,10 +16,10 @@ Danger - #FF9696
 Natural - #F0FF96
 
 Main background - #96F2FF
-Section background - #CAF0F8
+Section background - blue 1
 Section content main color - #FFF
-Buttons - #48CAE4
-Nav bar dropdown background - #48CAE4
+Buttons - blue 2
+Nav bar dropdown background - Blue 2
 
 
 TEXT
@@ -34,9 +34,9 @@ Dark mode
         |
         V
 
-Light blue - #0077B6
-Regular blue - #00C0FF
-Dark blue - #00B4D8
+Blue 1 - #0077B6
+Blue 2 - #00C0FF
+Blue 3 - #00B4D8
 
 Table row 1 - #000
 Table row 2 - #444
@@ -46,10 +46,10 @@ Danger - #DB0000
 Natural - #BEAF00
 
 Main background - #03045E
-Section background - #0077B6
+Section background - blue 1
 Section content main color - #000
-Buttons - #00C0FF
-Nav bar dropdown background - #00C0FF
+Buttons - blue 2
+Nav bar dropdown background - blue 2
 
 
 TEXT
