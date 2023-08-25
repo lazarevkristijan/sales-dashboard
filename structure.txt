@@ -13,7 +13,7 @@ Table row 2 - #EEE
 
 Success - #96FF96
 Danger - #FF9696
-Natural - #F0FF96
+Neutral - #F0FF96
 
 Main background - #96F2FF
 Section background - blue 1
@@ -43,7 +43,7 @@ Table row 2 - #444
 
 Success - #009800
 Danger - #DB0000
-Natural - #BEAF00
+Neutral - #E3E300
 
 Main background - #03045E
 Section background - blue 1

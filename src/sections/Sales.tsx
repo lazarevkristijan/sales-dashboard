@@ -1,12 +1,7 @@
 import React from "react"
 
 const Sales = () => {
-  return (
-    <div>
-      Sales
-      <p className="text-red-700">asds</p>
-    </div>
-  )
+  return <div></div>
 }
 
 export default Sales

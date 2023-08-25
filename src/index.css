@@ -1,3 +1,94 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap");
+/* Universal styles */
+.mont {
+  font-family: "Montserrat", sans-serif;
+}
+
+.sctOneNumbers {
+  font-size: 64px;
+  font-weight: 200;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* Light mode styles */
+.light-blue1 {
+  background-color: #caf0f8;
+}
+
+.light-blue2 {
+  background-color: #48cae4;
+}
+
+.light-blue3 {
+  background-color: #00b4d8;
+}
+
+.light-table1 {
+  background-color: #fff;
+}
+
+.light-table2 {
+  background-color: #eee;
+}
+
+.light-success {
+  background-color: #96ff96;
+}
+
+.light-danger {
+  background-color: #ff9696;
+}
+
+.light-neutral {
+  background-color: #f0ff96;
+}
+
+.light-text {
+  color: #000;
+}
+
+/* Dark mode styles */
+
+.dark-blue1 {
+  background-color: #0077b6;
+}
+
+.dark-blue2 {
+  background-color: #00c0ff;
+}
+
+.dark-blue3 {
+  background-color: #00b4d8;
+}
+
+.dark-table1 {
+  background-color: #000;
+}
+
+.dark-table2 {
+  background-color: #444;
+}
+
+.dark-success {
+  background-color: #009800;
+}
+
+.dark-danger {
+  background-color: #db0000;
+}
+
+.dark-neutral {
+  background-color: #e3e300;
+}
+
+.dark-text {
+  color: #fff;
+}
