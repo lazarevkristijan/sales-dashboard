@@ -11,14 +11,16 @@ import {
 
 function App() {
   return (
-    <div className=" bg-[#96f2ff]">
-      <Top />
-      <Sales />
-      <Orders />
-      <Products />
-      <Users />
-      <Countries />
-      <Social />
+    <div className="bg-[#96f2ff]">
+      <div className="mx-[100px]">
+        <Top />
+        <Sales />
+        <Orders />
+        <Products />
+        <Users />
+        <Countries />
+        <Social />
+      </div>
     </div>
   )
 }
