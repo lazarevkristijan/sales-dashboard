@@ -6,12 +6,14 @@ import LineGraph from "./LineGraph"
 import Notification from "./Notification"
 import PieChart from "./PieChart"
 import Profile from "./Profile"
+import ProgressLine from "./ProgressLine"
 import ResultsPerPage from "./ResultsPerPage"
 import SidePanel from "./SidePanel"
 import StatsDisplay from "./StatsDisplay"
 import Target from "./Target"
 import ToggleElements from "./ToggleElements"
 import TotalInfo from "./TotalInfo"
+import Pillar from "./Pillar"
 
 export {
   BarChart,
@@ -28,4 +30,6 @@ export {
   Target,
   ToggleElements,
   TotalInfo,
+  ProgressLine,
+  Pillar,
 }

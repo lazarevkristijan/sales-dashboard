@@ -24,10 +24,13 @@
 }
 
 .light-blue2 {
-  background-color: #48cae4;
+  background-color: #96f2ff;
 }
 
 .light-blue3 {
+  background-color: #48cae4;
+}
+.light-blue4 {
   background-color: #00b4d8;
 }
 
@@ -58,15 +61,19 @@
 /* Dark mode styles */
 
 .dark-blue1 {
-  background-color: #0077b6;
-}
-
-.dark-blue2 {
   background-color: #00c0ff;
 }
 
-.dark-blue3 {
+.dark-blue2 {
   background-color: #00b4d8;
+}
+
+.dark-blue3 {
+  background-color: #0077b6;
+}
+
+.dark-blue4 {
+  background-color: #03045e;
 }
 
 .dark-table1 {
