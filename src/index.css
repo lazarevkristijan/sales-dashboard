@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,13 +9,26 @@
 }
 
 .sctOneNumbers {
-  font-size: 64px;
-  font-weight: 200;
+  font-size: 50px;
+  font-weight: 300;
 }
 
 .text {
   font-size: 20px;
-  font-weight: 300;
+}
+
+.rou {
+  border-radius: 10px;
+}
+
+.rou-t {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.rou-b {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 /* Light mode styles */

@@ -7,11 +7,11 @@ import {
   Users,
   Countries,
   Social,
-} from "./sections"
+} from "../sections"
 
 function App() {
   return (
-    <div className="bg-[#96f2ff]">
+    <div className="bg-[#96f2ff] text mont">
       <div className="pt-[30px] mx-auto">
         <Top />
         <Sales />

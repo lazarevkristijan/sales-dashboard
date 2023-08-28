@@ -14,6 +14,8 @@ import Target from "./Target"
 import ToggleElements from "./ToggleElements"
 import TotalInfo from "./TotalInfo"
 import Pillar from "./Pillar"
+import SalesInfoBox from "./SalesInfoBox"
+import SalesAdditionalBox from "./salesAdditionalBox"
 
 export {
   BarChart,
@@ -32,4 +34,6 @@ export {
   TotalInfo,
   ProgressLine,
   Pillar,
+  SalesInfoBox,
+  SalesAdditionalBox,
 }
