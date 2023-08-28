@@ -7,8 +7,8 @@ import {
 } from "../constants"
 const Sales = () => {
   return (
-    <div className="mx-[10px] bg-[#caf0f8] py-[30px] rou">
-      <div className="bg-[#fff] mx-[20px] py-[30px] rou mb-[30px] max-w-[1000px]">
+    <div className="mx-[10px] lg:mx-auto bg-[#caf0f8] py-[30px] rou mb-[50px] max-w-[1040px]">
+      <div className="bg-[#fff] mx-[20px] py-[30px] rou mb-[30px] max-w-[1000px] overflow-hidden">
         <p className="text-center">Delivered</p>
         <div className="relative">
           {progressLineNumbers.map((line, index) => (
