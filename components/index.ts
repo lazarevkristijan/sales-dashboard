@@ -15,7 +15,7 @@ import ToggleElements from "./ToggleElements"
 import TotalInfo from "./TotalInfo"
 import Pillar from "./Pillar"
 import SalesInfoBox from "./SalesInfoBox"
-import SalesAdditionalBox from "./salesAdditionalBox"
+import RectBtn from "./RectBtn"
 
 export {
   BarChart,
@@ -35,5 +35,5 @@ export {
   ProgressLine,
   Pillar,
   SalesInfoBox,
-  SalesAdditionalBox,
+  RectBtn,
 }

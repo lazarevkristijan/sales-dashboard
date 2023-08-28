@@ -20,19 +20,40 @@ export const progressLineNumbers = [
 
 export const pillarValues = [
   {
-    value: 30,
+    value: 70,
+    week: "w27",
   },
   {
-    value: 60,
+    value: 140,
+    week: "w28",
   },
   {
-    value: 90,
+    value: 210,
+    week: "w29",
   },
   {
-    value: 120,
+    value: 280,
+    week: "w30",
   },
   {
-    value: 150,
+    value: 350,
+    week: "w31",
+  },
+  {
+    value: 420,
+    week: "w32",
+  },
+  {
+    value: 490,
+    week: "w33",
+  },
+  {
+    value: 560,
+    week: "w34",
+  },
+  {
+    value: 630,
+    week: "w35",
   },
 ]
 
@@ -53,3 +74,6 @@ export const salesInfoBoxes = [
     bg: "#FF9696",
   },
 ]
+
+export const additionalSalesInfoStyles =
+  "bg-white w-[300px] flex flex-col mx-auto rou py-[20px] mb-[30px]"
