@@ -1,10 +1,46 @@
-const Pillar = ({ left, week }: { left: number; week: string }) => {
+import { HoveredSales } from "."
+import { useState } from "react"
+const Pillar = ({
+  left,
+  height,
+  week,
+}: {
+  left: number
+  height: number
+  week: string
+}) => {
+  const [pillarColor, setPillarColor] = useState("#CAF0F8")
+  const [additionalHoverInfo, setAdditionalHoverInfo] = useState("hidden")
+  const [hoverBorder, setHoverBorder] = useState("")
+  function handlePillarHover() {
+    setPillarColor("#48CAE4")
+    setAdditionalHoverInfo("block")
+    setHoverBorder("border-black border-[1px]")
+  }
+
+  function handlePillarLeave() {
+    setPillarColor("#CAF0F8")
+    setAdditionalHoverInfo("hidden")
+    setHoverBorder("")
+  }
+
   return (
     <div
-      className={`h-[132px] sm:h-[164px] md:h-[196px] lg:h-[196px] w-[40px] sm:w-[50px] bg-[#CAF0F8] absolute top-[8px] left-[50px] left-[${left}px]`}
-      style={{ left: left }}
+      className={`w-[40px] sm:w-[50px] absolute bottom-[7px] left-[50px] translate-x-[10px] ${hoverBorder}`}
+      style={{ left: left, height: height, backgroundColor: pillarColor }}
+      onMouseEnter={handlePillarHover}
+      onMouseLeave={handlePillarLeave}
     >
-      <span className="absolute top-[132px] sm:top-[164px] md:top-[196px] lg:top-[196px] sm:left-[5px]">
+      <HoveredSales
+        visibility={additionalHoverInfo}
+        week={week}
+        items={height}
+      />
+
+      <span
+        className="absolute sm:left-[5px]"
+        style={{ top: height }}
+      >
         {week}
       </span>
     </div>

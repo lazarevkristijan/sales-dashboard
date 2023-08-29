@@ -8,7 +8,7 @@ const SalesInfoBox = ({
   bg: string
 }) => {
   return (
-    <div className="bg-white w-[200px] mx-auto rou-t mb-[30px] rou-b">
+    <div className="bg-white w-[200px] mx-[20px] rou mb-[30px] rou">
       <div className="h-[30px] text-center rou-t">{heading}</div>
       <div
         className={`h-[200px] flex flex-col text-center rou-b`}

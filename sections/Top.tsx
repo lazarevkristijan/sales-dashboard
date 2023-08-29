@@ -1,4 +1,3 @@
-import React from "react"
 import { topIconStyles } from "./../constants/index"
 
 const Top = () => {

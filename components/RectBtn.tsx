@@ -1,5 +1,3 @@
-import React from "react"
-
 const RectBtn = ({ text, color }: { text: string; color: string }) => {
   return (
     <span
