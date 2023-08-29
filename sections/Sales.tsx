@@ -1,32 +1,20 @@
-import { ProgressLine, Pillar, SalesInfoBox, RectBtn } from "../components/"
-import {
-  progressLineNumbers,
-  pillarValues,
-  salesInfoBoxes,
-  additionalSalesInfoStyles,
-} from "../constants"
+import { useState } from "react"
+import { SalesInfoBox, RectBtn, TotalInfo, BarChart } from "../components/"
+import { salesInfoBoxes, additionalSalesInfoStyles } from "../constants"
 const Sales = () => {
+  const [handleInfoHover, setHandleInfoHover] = useState(false)
+
+  function infoHover() {
+    setHandleInfoHover(true)
+  }
+
+  function infoHoverLeave() {
+    setHandleInfoHover(false)
+  }
+
   return (
     <div className="mx-[10px] lg:mx-auto bg-[#caf0f8] pt-[30px] rou mb-[50px] max-w-[1040px]">
-      <div className="bg-[#fff] mx-[20px] py-[30px] rou mb-[30px] max-w-[1000px] overflow-x-scroll lg:overflow-hidden">
-        <p className="text-center">Delivered</p>
-        <div className="relative w-[1000px]">
-          {progressLineNumbers.map((line, index) => (
-            <ProgressLine
-              value={line.value}
-              key={index}
-            />
-          ))}
-          {pillarValues.map((pillar, index) => (
-            <Pillar
-              left={pillar.value}
-              week={pillar.week}
-              height={pillar.height}
-              key={index}
-            />
-          ))}
-        </div>
-      </div>
+      <BarChart />
       <div className="flex flex-wrap justify-center">
         {salesInfoBoxes.map((box, index) => (
           <SalesInfoBox
@@ -36,6 +24,7 @@ const Sales = () => {
             key={index}
           />
         ))}
+        b
       </div>
       <div className="flex flex-wrap justify-center items-center">
         <div className={`${additionalSalesInfoStyles}`}>
@@ -55,11 +44,6 @@ const Sales = () => {
           </div>
         </div>
         <div className={`${additionalSalesInfoStyles} relative`}>
-          <img
-            src="light-info.svg"
-            alt="info button"
-            className="w-[20px] absolute top-1 right-1"
-          />
           <div className="mx-[20px] flex items-center">
             <span>Target progress</span>
 
@@ -69,6 +53,14 @@ const Sales = () => {
             />
           </div>
           <div className="mx-[20px] flex items-center mt-[10px]">
+            <img
+              src="light-info.svg"
+              alt="info button"
+              className={`w-[20px] absolute top-1 right-1 `}
+              onMouseEnter={infoHover}
+              onMouseLeave={infoHoverLeave}
+            />
+            {handleInfoHover ? <TotalInfo /> : ""}
             <span>Total calculated</span>
             <RectBtn
               text="$73,500"

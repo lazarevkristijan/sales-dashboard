@@ -2,19 +2,19 @@ export const topIconStyles = "w-[35px] h-[35px]"
 
 export const progressLineNumbers = [
   {
+    value: 190,
+  },
+  {
     value: 150,
   },
   {
-    value: 120,
+    value: 110,
   },
   {
-    value: 90,
+    value: 80,
   },
   {
-    value: 60,
-  },
-  {
-    value: 30,
+    value: 40,
   },
 ]
 
