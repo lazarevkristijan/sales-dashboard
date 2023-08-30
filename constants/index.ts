@@ -1,20 +1,18 @@
-export const topIconStyles = "w-[35px] h-[35px]"
-
 export const progressLineNumbers = [
   {
-    value: 190,
+    value: 200,
   },
   {
     value: 150,
   },
   {
-    value: 110,
+    value: 100,
   },
   {
-    value: 80,
+    value: 50,
   },
   {
-    value: 40,
+    value: 0,
   },
 ]
 
@@ -83,6 +81,47 @@ export const salesInfoBoxes = [
     bg: "#FF9696",
   },
 ]
+
+export const pieColors = [
+  {
+    text: "Week 27",
+    color: "#FF0000",
+  },
+  {
+    text: "Week 28",
+    color: "#008000",
+  },
+  {
+    text: "Week 29",
+    color: "#FFFF00",
+  },
+  {
+    text: "Week 30",
+    color: "#800080",
+  },
+  {
+    text: "Week 31",
+    color: "#0000FF",
+  },
+  {
+    text: "Week 32",
+    color: "#90EE90",
+  },
+  {
+    text: "Week 33",
+    color: "#FFA500",
+  },
+  {
+    text: "Week 34",
+    color: "#808080",
+  },
+  {
+    text: "Week 35",
+    color: "#ADD8E6",
+  },
+]
+
+export const topIconStyles = "w-[35px] h-[35px]"
 
 export const additionalSalesInfoStyles =
   "bg-white w-[300px] flex flex-col mx-[20px] rou py-[20px] mb-[30px]"

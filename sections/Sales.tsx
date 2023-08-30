@@ -1,5 +1,12 @@
 import { useState } from "react"
-import { SalesInfoBox, RectBtn, TotalInfo, BarChart } from "../components/"
+import {
+  SalesInfoBox,
+  RectBtn,
+  TotalInfo,
+  BarChart,
+  PieChart,
+  LineGraph,
+} from "../components/"
 import { salesInfoBoxes, additionalSalesInfoStyles } from "../constants"
 const Sales = () => {
   const [handleInfoHover, setHandleInfoHover] = useState(false)
@@ -12,9 +19,30 @@ const Sales = () => {
     setHandleInfoHover(false)
   }
 
+  const [chart, setChart] = useState("bar")
+
+  function handleChartChange() {
+    if (chart === "bar") {
+      setChart("pie")
+    } else if (chart === "pie") {
+      setChart("line")
+    } else if (chart === "line") {
+      setChart("bar")
+    }
+  }
+
   return (
     <div className="mx-[10px] lg:mx-auto bg-[#caf0f8] pt-[30px] rou mb-[50px] max-w-[1040px]">
-      <BarChart />
+      <div onClick={handleChartChange}>
+        {chart === "bar" ? (
+          <BarChart />
+        ) : chart === "pie" ? (
+          <PieChart />
+        ) : (
+          <LineGraph />
+        )}
+      </div>
+
       <div className="flex flex-wrap justify-center">
         {salesInfoBoxes.map((box, index) => (
           <SalesInfoBox
@@ -24,7 +52,6 @@ const Sales = () => {
             key={index}
           />
         ))}
-        b
       </div>
       <div className="flex flex-wrap justify-center items-center">
         <div className={`${additionalSalesInfoStyles}`}>
