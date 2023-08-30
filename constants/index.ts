@@ -160,6 +160,110 @@ export const lineDotLocations = [
   },
 ]
 
+export const tableHeadings = [
+  {
+    text: "Order #",
+  },
+  {
+    text: "Name",
+  },
+  {
+    text: "Date",
+  },
+  {
+    text: "Amount",
+  },
+  {
+    text: "Item",
+  },
+  {
+    text: "Status",
+  },
+]
+
+export const tableData = [
+  {
+    orderNo: "37",
+    name: "John Doe",
+    date: "22/08/2023",
+    amount: "500",
+    item: "iPhone 11",
+    status: "Shipped",
+  },
+  {
+    orderNo: "36",
+    name: "Jane Smith",
+    date: "22/08/2023",
+    amount: "1000",
+    item: "iPhone 11",
+    status: "Shipped",
+  },
+  {
+    orderNo: "35",
+    name: "Michael Johnson",
+    date: "21/08/2023",
+    amount: "500",
+    item: "iPhone 11",
+    status: "Shipped",
+  },
+  {
+    orderNo: "34",
+    name: "Emily Williams",
+    date: "21/08/2023",
+    amount: "1000",
+    item: "iPhone 11",
+    status: "Shipped",
+  },
+  {
+    orderNo: "33",
+    name: "Daniel Brown",
+    date: "20/08/2023",
+    amount: "500",
+    item: "iPhone 11",
+    status: "Delivered",
+  },
+  {
+    orderNo: "32",
+    name: "Olivia Davis",
+    date: "20/08/2023",
+    amount: "1000",
+    item: "iPhone 11",
+    status: "Delivered",
+  },
+  {
+    orderNo: "31",
+    name: "William Miller",
+    date: "19/08/2023",
+    amount: "500",
+    item: "iPhone 11",
+    status: "Delivered",
+  },
+  {
+    orderNo: "30",
+    name: "Sophia Wilson",
+    date: "19/08/2023",
+    amount: "1000",
+    item: "iPhone 11",
+    status: "Delivered",
+  },
+  {
+    orderNo: "29",
+    name: "James Anderson",
+    date: "18/08/2023",
+    amount: "500",
+    item: "iPhone 11",
+    status: "Delivered",
+  },
+  {
+    orderNo: "28",
+    name: "Ava Martinez",
+    date: "18/08/2023",
+    amount: "1000",
+    item: "iPhone 11",
+    status: "Delivered",
+  },
+]
+
 export const topIconStyles = "w-[35px] h-[35px]"
 
 export const additionalSalesInfoStyles =

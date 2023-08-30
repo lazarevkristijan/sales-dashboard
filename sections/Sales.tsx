@@ -36,7 +36,7 @@ const Sales = () => {
   }
 
   return (
-    <div className="mx-[10px] lg:mx-auto bg-[#caf0f8] pt-[30px] rou mb-[50px] max-w-[1040px]">
+    <div className="mx-[10px] lg:mx-auto light-blue1 pt-[30px] rou mb-[50px] max-w-[1040px]">
       <div onClick={handleChartChange}>
         {chart === "bar" ? (
           <BarChart />
