@@ -7,9 +7,15 @@ import {
   PieChart,
   LineGraph,
 } from "../components/"
-import { salesInfoBoxes, additionalSalesInfoStyles } from "../constants"
+import {
+  salesInfoBoxes,
+  additionalSalesInfoStyles,
+  lineDotLocations,
+} from "../constants"
+
 const Sales = () => {
   const [handleInfoHover, setHandleInfoHover] = useState(false)
+  const [chart, setChart] = useState("bar")
 
   function infoHover() {
     setHandleInfoHover(true)
@@ -18,8 +24,6 @@ const Sales = () => {
   function infoHoverLeave() {
     setHandleInfoHover(false)
   }
-
-  const [chart, setChart] = useState("bar")
 
   function handleChartChange() {
     if (chart === "bar") {
@@ -39,7 +43,7 @@ const Sales = () => {
         ) : chart === "pie" ? (
           <PieChart />
         ) : (
-          <LineGraph />
+          <LineGraph dataPoints={lineDotLocations} />
         )}
       </div>
 

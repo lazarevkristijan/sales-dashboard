@@ -1,7 +1,5 @@
-import { ProgressLine } from "."
-import { progressLineNumbers } from "../constants"
-import { Pillar } from "."
-import { pillarValues } from "../constants"
+import { ProgressLine, Pillar } from "."
+import { progressLineNumbers, pillarValues } from "../constants"
 
 const BarChart = () => {
   return (

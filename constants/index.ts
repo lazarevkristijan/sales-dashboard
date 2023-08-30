@@ -121,6 +121,45 @@ export const pieColors = [
   },
 ]
 
+export const lineDotLocations = [
+  {
+    left: 95,
+    height: 143,
+  },
+  {
+    left: 190,
+    height: 110,
+  },
+  {
+    left: 285,
+    height: 190,
+  },
+  {
+    left: 380,
+    height: 157,
+  },
+  {
+    left: 475,
+    height: 137,
+  },
+  {
+    left: 570,
+    height: 120,
+  },
+  {
+    left: 665,
+    height: 150,
+  },
+  {
+    left: 760,
+    height: 170,
+  },
+  {
+    left: 855,
+    height: 140,
+  },
+]
+
 export const topIconStyles = "w-[35px] h-[35px]"
 
 export const additionalSalesInfoStyles =

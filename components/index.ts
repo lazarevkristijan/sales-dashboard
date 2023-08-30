@@ -18,6 +18,7 @@ import Pillar from "./Pillar"
 import SalesInfoBox from "./SalesInfoBox"
 import RectBtn from "./RectBtn"
 import HoveredSales from "./HoveredSales"
+import LineDot from "./LineDot"
 
 export {
   BarChart,
@@ -39,4 +40,5 @@ export {
   SalesInfoBox,
   RectBtn,
   HoveredSales,
+  LineDot,
 }
