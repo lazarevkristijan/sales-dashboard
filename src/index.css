@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,14 +65,17 @@ tr:nth-child(2n) {
 
 .light-success {
   background-color: #96ff96;
+  color: #96ff96;
 }
 
 .light-danger {
   background-color: #ff9696;
+  color: #ff9696;
 }
 
 .light-neutral {
   background-color: #f0ff96;
+  color: #f0ff96;
 }
 
 .light-text {
@@ -107,14 +110,17 @@ tr:nth-child(2n) {
 
 .dark-success {
   background-color: #009800;
+  color: #009800;
 }
 
 .dark-danger {
   background-color: #db0000;
+  color: #db0000;
 }
 
 .dark-neutral {
   background-color: #e3e300;
+  color: #e3e300;
 }
 
 .dark-text {
