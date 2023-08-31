@@ -19,6 +19,8 @@ import SalesInfoBox from "./SalesInfoBox"
 import RectBtn from "./RectBtn"
 import HoveredSales from "./HoveredSales"
 import LineDot from "./LineDot"
+import ActiveButton from "./ActiveButton"
+import DropDownButton from "./DropDownButton"
 
 export {
   BarChart,
@@ -41,4 +43,6 @@ export {
   RectBtn,
   HoveredSales,
   LineDot,
+  ActiveButton,
+  DropDownButton,
 }

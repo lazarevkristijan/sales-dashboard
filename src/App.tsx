@@ -12,7 +12,7 @@ import {
 function App() {
   return (
     <div className="bg-[#96f2ff] text mont">
-      <div className="pt-[30px] mx-auto">
+      <div className="pt-[30px]">
         <Top />
         <Sales />
         <Orders />

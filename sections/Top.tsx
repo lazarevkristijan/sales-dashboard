@@ -2,7 +2,7 @@ import { topIconStyles } from "./../constants/index"
 
 const Top = () => {
   return (
-    <div className="flex mb-[30px] mx-[10px]">
+    <div className="flex mb-[30px] mx-[10px] max-w-[1040px] lg:mx-auto">
       <img
         src="light-menu.svg"
         alt="menu icon"
