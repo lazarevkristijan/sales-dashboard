@@ -7,7 +7,7 @@ const Orders = () => {
       <div className="mx-[20px] mb-[25px] overflow-x-scroll rou">
         <table className="w-[1000px] text-center">
           <thead>
-            <tr>
+            <tr className="h-[50px]">
               {tableHeadings.map((heading, index) => (
                 <th
                   key={index}

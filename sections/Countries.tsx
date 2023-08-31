@@ -6,7 +6,7 @@ const Countries = () => {
       <div className="mx-[20px]">
         <table className="w-full text-center">
           <thead>
-            <tr>
+            <tr className="h-[50px]">
               {countryTableHeadings.map((heading, index) => (
                 <th
                   key={index}
@@ -19,13 +19,11 @@ const Countries = () => {
           </thead>
           <tbody>
             {countryTableData.map((place, index) => (
-              <tr>
-                <td
-                  key={index}
-                  className="border-r-[1px] border-black"
-                >
-                  {place.country}
-                </td>
+              <tr
+                key={index}
+                className="h-[50px]"
+              >
+                <td className="border-r-[1px] border-black">{place.country}</td>
                 <td>{place.purchases}</td>
               </tr>
             ))}

@@ -89,9 +89,10 @@ const Sales = () => {
               alt="info button"
               className={`w-[20px] absolute top-1 right-1 `}
               onMouseEnter={infoHover}
+              // onClick={infoHover}
               onMouseLeave={infoHoverLeave}
             />
-            {handleInfoHover ? <TotalInfo /> : ""}
+            {handleInfoHover && <TotalInfo />}
             <span>Total calculated</span>
             <RectBtn
               text="$73,500"

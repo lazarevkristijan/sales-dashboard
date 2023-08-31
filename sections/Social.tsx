@@ -1,9 +1,9 @@
 const Social = () => {
   return (
-    <div className="light-blue1 text-center py-[30px] mb-[50px] w-[500px] rou">
+    <div className="light-blue1 text-center pt-[30px] mb-[50px] w-[500px] rou">
       <p>Social stats</p>
       <div className="mx-[20px] flex justify-between">
-        <div className="bg-[#fff] rou w-1/3">
+        <div className="bg-[#fff] rou w-1/3 h-[220px]">
           <img
             src="instagram.svg"
             alt="instagram logo"
@@ -34,7 +34,7 @@ const Social = () => {
             %/month <br />
             Avg.
           </p>
-        </div>{" "}
+        </div>
       </div>
     </div>
   )
