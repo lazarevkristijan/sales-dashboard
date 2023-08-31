@@ -264,6 +264,34 @@ export const tableData = [
   },
 ]
 
+export const countryTableHeadings = [
+  {
+    text: "Country",
+  },
+  {
+    text: "Purchases",
+  },
+]
+
+export const countryTableData = [
+  {
+    country: "USA",
+    purchases: 430,
+  },
+  {
+    country: "Italy",
+    purchases: 103,
+  },
+  {
+    country: "Greece",
+    purchases: 77,
+  },
+  {
+    country: "USA",
+    purchases: 42,
+  },
+]
+
 export const topIconStyles = "w-[35px] h-[35px]"
 
 export const additionalSalesInfoStyles =

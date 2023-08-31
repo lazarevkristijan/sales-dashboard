@@ -5,7 +5,7 @@ const Orders = () => {
   return (
     <div className="mx-[10px] lg:mx-auto mb-[50px] py-[30px] rou light-blue1 max-w-[1040px] ">
       <div className="mx-[20px] mb-[25px] overflow-x-scroll rou">
-        <table className="w-[1000px]">
+        <table className="w-[1000px] text-center">
           <thead>
             <tr>
               {tableHeadings.map((heading, index) => (
@@ -18,7 +18,7 @@ const Orders = () => {
               ))}
             </tr>
           </thead>
-          <tbody className="text-center">
+          <tbody className="">
             {tableData.map((order, index) => (
               <tr
                 key={index}
