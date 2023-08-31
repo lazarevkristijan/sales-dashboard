@@ -16,10 +16,12 @@ function App() {
         <Top />
         <Sales />
         <Orders />
-        <Products />
-        <Users />
-        <Countries />
-        <Social />
+        <div className="flex flex-wrap mx-[10px] lg:mx-auto xs:justify-center justify-between">
+          <Products />
+          <Users />
+          <Countries />
+          <Social />
+        </div>
       </div>
     </div>
   )
