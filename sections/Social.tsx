@@ -1,5 +1,5 @@
 const Social = () => {
-  return <div>Social</div>
+  return <div className="w-[500px]">Social</div>
 }
 
 export default Social

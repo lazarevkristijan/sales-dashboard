@@ -16,7 +16,7 @@ function App() {
         <Top />
         <Sales />
         <Orders />
-        <div className="flex flex-wrap mx-[10px] lg:mx-auto xs:justify-center justify-between">
+        <div className="max-w-[1040px] flex flex-wrap mx-[10px] lg:mx-auto xs:justify-center lg:justify-between justify-between">
           <Products />
           <Users />
           <Countries />
