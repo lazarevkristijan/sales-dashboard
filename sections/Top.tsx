@@ -1,12 +1,23 @@
 import { useState } from "react"
 import { topIconStyles } from "./../constants/index"
-import { NotificationPanel } from "../components"
+import { NotificationPanel, Profile } from "../components"
 
 const Top = () => {
   const [notificationMenu, setNotificationMenu] = useState(false)
+  const [profileMenu, setProfileMenu] = useState(false)
 
   const handleBellClick = () => {
+    if (profileMenu) {
+      setProfileMenu(!profileMenu)
+    }
     setNotificationMenu(!notificationMenu)
+  }
+
+  const handleProfileClick = () => {
+    if (notificationMenu) {
+      setNotificationMenu(!notificationMenu)
+    }
+    setProfileMenu(!profileMenu)
   }
 
   return (
@@ -27,7 +38,9 @@ const Top = () => {
         src="profile.svg"
         alt="profile icon"
         className={`${topIconStyles} ml-[5px]`}
+        onClick={handleProfileClick}
       />
+      {profileMenu && <Profile />}
     </div>
   )
 }

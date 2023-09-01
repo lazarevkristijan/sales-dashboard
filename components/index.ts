@@ -22,6 +22,8 @@ import LineDot from "./LineDot"
 import ActiveButton from "./ActiveButton"
 import DropDownButton from "./DropDownButton"
 import Notification from "./Notification"
+import ProfileMenuButton from "./ProfileMenuButton"
+
 export {
   BarChart,
   CountrySort,
@@ -46,4 +48,5 @@ export {
   ActiveButton,
   DropDownButton,
   Notification,
+  ProfileMenuButton,
 }
