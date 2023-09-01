@@ -3,7 +3,7 @@ const Notification = ({ evaluation }: { evaluation: boolean }) => {
     <div
       className={`${
         evaluation ? "light-success" : "light-danger"
-      } rou flex justify-between mb-[20px] p-[20px]`}
+      } rou flex justify-between mb-[20px] p-[20px] smText`}
     >
       <div className="bg-[#fff] p-[10px] rou mr-[10px] w-1/3 my-auto">
         <img

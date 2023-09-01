@@ -2,13 +2,14 @@ import { ProfileMenuButton, RectBtn } from "."
 
 const Profile = () => {
   return (
-    <div className="profileText light-blue3 p-[20px] rou max-w-[350px] absolute z-[1] -right-[10px] top-[60px]">
+    <div className="smText light-blue3 p-[20px] rou max-w-[350px] absolute z-[1] right-0 top-[60px]">
       <div
         className="w-0 h-0 absolute -top-[20px] right-0"
         style={{
           borderLeft: "30px solid transparent",
           borderRight: "30px solid transparent",
           borderBottom: "30px solid #48CAE4",
+          rotate: "15deg",
         }}
       ></div>
       <div className="flex justify-between">

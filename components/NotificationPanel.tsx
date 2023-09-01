@@ -2,7 +2,7 @@ import { Notification } from "."
 
 const NotificationPanel = () => {
   return (
-    <div className="light-blue3 p-[20px] pb-0 rou max-w-[350px] absolute z-[1] right-[20px] top-[60px]">
+    <div className="light-blue3 p-[20px] pb-0 rou max-w-[300px] absolute z-[1] right-[20px] top-[60px]">
       <div
         className=" w-0 h-0 absolute -top-[20px] right-[7.5px]"
         style={{
