@@ -3,7 +3,7 @@ import CountrySort from "./CountrySort"
 import DarkMode from "./DarkMode"
 import DisplayPeriods from "./DisplayPeriods"
 import LineGraph from "./LineGraph"
-import Notification from "./Notification"
+import NotificationPanel from "./NotificationPanel"
 import PieChart from "./PieChart"
 import Profile from "./Profile"
 import ProgressLine from "./ProgressLine"
@@ -21,14 +21,14 @@ import HoveredSales from "./HoveredSales"
 import LineDot from "./LineDot"
 import ActiveButton from "./ActiveButton"
 import DropDownButton from "./DropDownButton"
-
+import Notification from "./Notification"
 export {
   BarChart,
   CountrySort,
   DarkMode,
   DisplayPeriods,
   LineGraph,
-  Notification,
+  NotificationPanel,
   PieChart,
   Profile,
   ResultsPerPage,
@@ -45,4 +45,5 @@ export {
   LineDot,
   ActiveButton,
   DropDownButton,
+  Notification,
 }

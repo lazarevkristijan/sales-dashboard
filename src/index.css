@@ -65,17 +65,14 @@ tr:nth-child(2n) {
 
 .light-success {
   background-color: #96ff96;
-  color: #96ff96;
 }
 
 .light-danger {
   background-color: #ff9696;
-  color: #ff9696;
 }
 
 .light-neutral {
   background-color: #f0ff96;
-  color: #f0ff96;
 }
 
 .light-text {
