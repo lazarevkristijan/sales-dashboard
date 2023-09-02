@@ -21,7 +21,10 @@ const Top = () => {
   }
 
   return (
-    <div className={`${sectionStyles} flex mb-[30px] relative`}>
+    <div
+      className={`${sectionStyles} py-0 flex relative`}
+      style={{ marginBottom: "30px" }}
+    >
       <TopIcon name="light-menu" />
       <TopIcon
         name="light-notification-bell"

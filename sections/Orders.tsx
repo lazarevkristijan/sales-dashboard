@@ -3,7 +3,7 @@ import { ActiveButton } from "../components"
 
 const Orders = () => {
   return (
-    <div className={`${sectionStyles} py-[30px] rou light-blue1`}>
+    <div className={`${sectionStyles} light-blue1`}>
       <div className="mx-[20px] mb-[25px] overflow-x-scroll rou">
         <table className="w-[1000px] text-center">
           <thead>
