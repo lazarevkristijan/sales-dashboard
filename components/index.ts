@@ -26,6 +26,7 @@ import ProfileMenuButton from "./ProfileMenuButton"
 import TopIcon from "./TopIcon"
 import SalesResultRect from "./SalesResultRect"
 import PieColorBox from "./PieColorBox"
+import Product from "./Product"
 
 export {
   BarChart,
@@ -55,4 +56,5 @@ export {
   TopIcon,
   SalesResultRect,
   PieColorBox,
+  Product,
 }

@@ -1,17 +1,7 @@
 // import { useState } from "react"
-import { smSectionStyles } from "../constants"
-
+import { smSectionStyles, products } from "../constants"
+import { Product } from "../components"
 const Products = () => {
-  // const [arrowBackground, setArrowBackground] = useState("")
-
-  // const handleArrowHover = () => {
-  //   setArrowBackground("#fff")
-  // }
-
-  // const handleArrowLeave = () => {
-  //   setArrowBackground("")
-  // }
-
   return (
     <div className={`${smSectionStyles} items-center`}>
       <div className="flex justify-between items-center">
@@ -22,26 +12,19 @@ const Products = () => {
           />
         </div>
         <div className="flex flex-col sm:flex-row">
-          <div className="bg-[#fff] h-[250px] mx-auto sm:mx-0 mb-[20px] sm:mb-0 w-[150px] text-center rou">
-            <img
-              src="phone.svg"
-              alt="phone"
-              className="h-[220px] mx-auto pt-[5px]"
+          {products.slice(0, 1).map((product, index) => (
+            <Product
+              key={index}
+              name={product.name}
+              price={product.price}
+              storage={product.storage}
+              ram={product.ram}
+              battery={product.battery}
+              available={product.available}
+              rating={product.rating}
+              productNo={product.productNo}
             />
-            <span>iPhone 11</span>
-          </div>
-          <div>
-            <div className="bg-[#fff] h-fit w-[200px] rou sm:ml-[30px] p-[10px]">
-              Price: $500 <br />
-              Storage: 128GB <br />
-              RAM: 4GB <br />
-              Battery: 3110mAh <br />
-            </div>
-            <div className="bg-[#fff] h-fit w-[200px] rou sm:ml-[30px] mb-[20px] sm:mb-0 p-[10px] mt-[10px]">
-              Available: 327 <br />
-              Rating: 4.7/5
-            </div>
-          </div>
+          ))}
         </div>
         <div className="mr-2 w-[30px]">
           <img
@@ -49,9 +32,6 @@ const Products = () => {
             alt="right arrow"
           />
         </div>
-      </div>
-      <div className="text-center sm:text-right">
-        <span className="sm:mr-[60px]">Product 1/4</span>
       </div>
     </div>
   )

@@ -1,11 +1,16 @@
-import { tableData, tableHeadings, sectionStyles } from "../constants"
+import {
+  tableData,
+  tableHeadings,
+  sectionStyles,
+  tableBorderStyle,
+} from "../constants"
 import { ActiveButton } from "../components"
 
 const Orders = () => {
   return (
     <div className={`${sectionStyles} light-blue1`}>
-      <div className="mx-[20px] mb-[25px] overflow-x-scroll rou">
-        <table className="w-[1000px] text-center">
+      <div className="mx-[20px] mb-[25px] overflow-x-scroll rou text-center">
+        <table className="w-[1000px]">
           <thead>
             <tr className="h-[50px]">
               {tableHeadings.map((heading, index) => (
@@ -18,32 +23,31 @@ const Orders = () => {
               ))}
             </tr>
           </thead>
-          <tbody className="">
+          <tbody>
             {tableData.map((order, index) => (
               <tr
                 key={index}
                 className="h-[50px]"
               >
-                <td className="border-r-[1px] border-black">
-                  #{order.orderNo}
-                </td>
-                <td className="border-r-[1px] border-black">{order.name}</td>
-                <td className="border-r-[1px] border-black">{order.date}</td>
-                <td className="border-r-[1px] border-black">{order.amount}</td>
-                <td className="border-r-[1px] border-black">{order.item}</td>
+                <td className={`${tableBorderStyle}`}>#{order.orderNo}</td>
+                <td className={`${tableBorderStyle}`}>{order.name}</td>
+                <td className={`${tableBorderStyle}`}>{order.date}</td>
+                <td className={`${tableBorderStyle}`}>{order.amount}</td>
+                <td className={`${tableBorderStyle}`}>{order.item}</td>
                 <td>{order.status}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <div className="mx-[20px] flex justify-between flex-col xs:flex-row ">
+      <div className="mx-[20px] flex justify-between flex-col xs:flex-row">
         <ActiveButton
           text="Table data"
           dropDown={true}
         />
 
         <span className="hidden sm:inline">1 2 3 4 5 ... 13</span>
+
         <ActiveButton
           text="Per page"
           dropDown={true}
