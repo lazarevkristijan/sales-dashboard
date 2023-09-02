@@ -28,6 +28,7 @@ import SalesResultRect from "./SalesResultRect"
 import PieColorBox from "./PieColorBox"
 import Product from "./Product"
 import ProductArrow from "./ProductArrow"
+import UsersRect from "./UsersRect"
 
 export {
   BarChart,
@@ -59,4 +60,5 @@ export {
   PieColorBox,
   Product,
   ProductArrow,
+  UsersRect,
 }

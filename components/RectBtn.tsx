@@ -1,7 +1,7 @@
-const RectBtn = ({ text, color }: { text: string; color: string }) => {
+const RectBtn = ({ text }: { text: string }) => {
   return (
     <span
-      className={`${color} py-1 px-2 rou ml-auto mr-0 min-w-[80px] text-center`}
+      className={`light-blue1 py-1 px-2 rou ml-auto mr-0 min-w-[80px] text-center`}
     >
       {text}
     </span>
