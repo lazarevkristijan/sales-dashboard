@@ -294,32 +294,32 @@ export const countryTableData = [
 
 export const products = [
   {
-    name: "iPhone 11",
+    name: "iPhone 12",
     price: 700,
     storage: 128,
     ram: 4,
     battery: 3110,
-    available: 327,
+    available: 128,
     rating: 4.6,
     productNo: 1,
   },
   {
-    name: "iPhone 11 Pro",
+    name: "iPhone 13",
     price: 1150,
     storage: 256,
     ram: 4,
     battery: 3046,
-    available: 327,
+    available: 160,
     rating: 4.7,
     productNo: 2,
   },
   {
-    name: "iPhone 11 Pro Max",
+    name: "iPhone 14",
     price: 1250,
     storage: 256,
     ram: 4,
     battery: 3969,
-    available: 327,
+    available: 93,
     rating: 4.9,
     productNo: 3,
   },
@@ -331,9 +331,9 @@ export const salesResultStyles =
   "bg-white w-[300px] flex flex-col mx-[20px] rou py-[20px]"
 
 export const sectionStyles =
-  "mx-[10px] py-[20px] lg:mx-auto mb-[50px] max-w-[1040px] rou"
+  "mx-[10px] py-[20px] lg:mx-auto mb-[30px] max-w-[1040px] rou"
 
-export const smSectionStyles = "light-blue1 py-[20px] rou mb-[50px] w-[500px]"
+export const smSectionStyles = "light-blue1 py-[20px] rou mb-[30px] w-[500px]"
 
 export const chartStyles =
   "bg-[#fff] mx-[20px] py-[30px] rou mb-[30px] max-w-[1000px] overflow-x-scroll lg:overflow-hidden"

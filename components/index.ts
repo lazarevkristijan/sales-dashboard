@@ -27,6 +27,7 @@ import TopIcon from "./TopIcon"
 import SalesResultRect from "./SalesResultRect"
 import PieColorBox from "./PieColorBox"
 import Product from "./Product"
+import ProductArrow from "./ProductArrow"
 
 export {
   BarChart,
@@ -57,4 +58,5 @@ export {
   SalesResultRect,
   PieColorBox,
   Product,
+  ProductArrow,
 }

@@ -1,37 +1,54 @@
 // import { useState } from "react"
 import { smSectionStyles, products } from "../constants"
-import { Product } from "../components"
+import { Product, ProductArrow } from "../components"
+import { useState } from "react"
 const Products = () => {
+  const [productNumber, setProductNumber] = useState(0)
+
+  const handleNextProduct = () => {
+    if (productNumber == 2) {
+      setProductNumber(0)
+    } else {
+      setProductNumber(productNumber + 1)
+    }
+  }
+
+  const handlePrevProduct = () => {
+    if (productNumber == 0) {
+      setProductNumber(2)
+    } else {
+      setProductNumber(productNumber - 1)
+    }
+  }
+
   return (
     <div className={`${smSectionStyles} items-center`}>
       <div className="flex justify-between items-center">
-        <div className="w-[30px] ml-2">
-          <img
-            src="light-arrow-left.svg"
-            alt="left arrow"
-          />
-        </div>
+        <ProductArrow
+          direction="left"
+          onClick={handlePrevProduct}
+        />
         <div className="flex flex-col sm:flex-row">
-          {products.slice(0, 1).map((product, index) => (
-            <Product
-              key={index}
-              name={product.name}
-              price={product.price}
-              storage={product.storage}
-              ram={product.ram}
-              battery={product.battery}
-              available={product.available}
-              rating={product.rating}
-              productNo={product.productNo}
-            />
-          ))}
+          {products
+            .slice(productNumber, productNumber + 1)
+            .map((product, index) => (
+              <Product
+                key={index}
+                name={product.name}
+                price={product.price}
+                storage={product.storage}
+                ram={product.ram}
+                battery={product.battery}
+                available={product.available}
+                rating={product.rating}
+                productNo={product.productNo}
+              />
+            ))}
         </div>
-        <div className="mr-2 w-[30px]">
-          <img
-            src="light-arrow-right.svg"
-            alt="right arrow"
-          />
-        </div>
+        <ProductArrow
+          direction="right"
+          onClick={handleNextProduct}
+        />
       </div>
     </div>
   )

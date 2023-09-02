@@ -33,7 +33,7 @@ const Sales = () => {
   }
 
   return (
-    <div className={`${sectionStyles} light-blue1`}>
+    <div className={`${sectionStyles} pt-[20px] pb-0 sm:py-[20px] light-blue1`}>
       <div onClick={handleChartChange}>
         {chart === "bar" ? (
           <BarChart />
@@ -55,7 +55,7 @@ const Sales = () => {
         ))}
       </div>
       <div className="flex flex-wrap justify-center items-center">
-        <div className={`${salesResultStyles} mb-[30px]`}>
+        <div className={`${salesResultStyles} mb-[20px]`}>
           <SalesResultRect
             title="Gross profits"
             rectText="$74,000"
@@ -66,7 +66,7 @@ const Sales = () => {
             rectText="$21,000"
           />
         </div>
-        <div className={`${salesResultStyles} relative`}>
+        <div className={`${salesResultStyles} mb-[20px] relative`}>
           <SalesResultRect
             title="Target progress"
             rectText="73%"
