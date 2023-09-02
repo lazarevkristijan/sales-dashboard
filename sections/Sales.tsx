@@ -63,14 +63,14 @@ const Sales = () => {
             <span>Gross profits</span>
             <RectBtn
               text="$74,000"
-              color="#CAF0F8"
+              color="light-blue1"
             />
           </div>
           <div className="mx-[20px] flex items-center mt-[10px]">
             <span>Net profits</span>
             <RectBtn
               text="$21,000"
-              color="#CAF0F8"
+              color="light-blue1"
             />
           </div>
         </div>
@@ -80,7 +80,7 @@ const Sales = () => {
 
             <RectBtn
               text="73%"
-              color="#CAF0F8"
+              color="light-blue1"
             />
           </div>
           <div className="mx-[20px] flex items-center mt-[10px]">
@@ -96,7 +96,7 @@ const Sales = () => {
             <span>Total calculated</span>
             <RectBtn
               text="$73,500"
-              color="#CAF0F8"
+              color="light-blue1"
             />
           </div>
         </div>

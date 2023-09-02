@@ -9,25 +9,25 @@ const Pillar = ({
   height: number
   week: string
 }) => {
-  const [pillarColor, setPillarColor] = useState("#CAF0F8")
+  const [pillarColor, setPillarColor] = useState("light-blue1")
   const [additionalHoverInfo, setAdditionalHoverInfo] = useState("hidden")
   const [hoverBorder, setHoverBorder] = useState("")
   function handlePillarHover() {
-    setPillarColor("#48CAE4")
+    setPillarColor("light-blue3")
     setAdditionalHoverInfo("block")
     setHoverBorder("border-black border-[1px]")
   }
 
   function handlePillarLeave() {
-    setPillarColor("#CAF0F8")
+    setPillarColor("light-blue1")
     setAdditionalHoverInfo("hidden")
     setHoverBorder("")
   }
 
   return (
     <div
-      className={`w-[50px] absolute bottom-[7px] ${hoverBorder}`}
-      style={{ left: left, height: height, backgroundColor: pillarColor }}
+      className={`w-[50px] absolute bottom-[7px] ${hoverBorder} ${pillarColor}`}
+      style={{ left: left, height: height }}
       onMouseEnter={handlePillarHover}
       onMouseLeave={handlePillarLeave}
     >

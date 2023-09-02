@@ -8,14 +8,14 @@ const Users = () => {
           <span className="block mb-[15px]">Registered users</span>
           <RectBtn
             text="2173"
-            color="#CAF0F8"
+            color="light-blue1"
           />
         </div>
         <div className="bg-[#fff] text-center py-[30px] rou">
           <span className="block mb-[15px]">Daily visits (Avg)</span>
           <RectBtn
             text="160"
-            color="#CAF0F8"
+            color="light-blue1"
           />
         </div>
       </div>

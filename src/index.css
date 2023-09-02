@@ -55,6 +55,7 @@ tr:nth-child(2n) {
 .light-blue3 {
   background-color: #48cae4;
 }
+
 .light-blue4 {
   background-color: #00b4d8;
 }
@@ -111,17 +112,14 @@ tr:nth-child(2n) {
 
 .dark-success {
   background-color: #009800;
-  color: #009800;
 }
 
 .dark-danger {
   background-color: #db0000;
-  color: #db0000;
 }
 
 .dark-neutral {
   background-color: #e3e300;
-  color: #e3e300;
 }
 
 .dark-text {

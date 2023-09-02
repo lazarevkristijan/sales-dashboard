@@ -9,7 +9,7 @@ const HoveredSales = ({
 }) => {
   return (
     <div
-      className={`${visibility} w-[100px] h-[100px] border-black border-[1px] bg-[#96F2FF] -translate-x-[100%] rou text-center`}
+      className={`${visibility} w-[100px] h-[100px] border-black border-[1px] light-blue2 -translate-x-[100%] rou text-center`}
     >
       Week {week.slice(1, 3)} <br />
       {items} Items <br />

@@ -11,7 +11,7 @@ import {
 
 function App() {
   return (
-    <div className="bg-[#96f2ff] text mont">
+    <div className="light-blue2 text mont">
       <div className="pt-[30px]">
         <Top />
         <Sales />
