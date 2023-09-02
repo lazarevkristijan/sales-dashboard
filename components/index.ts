@@ -17,7 +17,7 @@ import TotalInfo from "./TotalInfo"
 import Pillar from "./Pillar"
 import SalesInfoBox from "./SalesInfoBox"
 import RectBtn from "./RectBtn"
-import HoveredSales from "./HoveredSales"
+import PillarHoverBox from "./PillarHoverBox"
 import LineDot from "./LineDot"
 import ActiveButton from "./ActiveButton"
 import DropDownButton from "./DropDownButton"
@@ -29,6 +29,8 @@ import PieColorBox from "./PieColorBox"
 import Product from "./Product"
 import ProductArrow from "./ProductArrow"
 import UsersRect from "./UsersRect"
+import SocialStat from "./SocialStat"
+import SocialLabel from "./SocialLabel"
 
 export {
   BarChart,
@@ -49,7 +51,7 @@ export {
   Pillar,
   SalesInfoBox,
   RectBtn,
-  HoveredSales,
+  PillarHoverBox,
   LineDot,
   ActiveButton,
   DropDownButton,
@@ -61,4 +63,6 @@ export {
   Product,
   ProductArrow,
   UsersRect,
+  SocialStat,
+  SocialLabel,
 }

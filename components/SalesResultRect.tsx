@@ -12,10 +12,7 @@ const SalesResultRect = ({
   return (
     <div className={`mx-[20px] flex items-center ${extraStyles}`}>
       <span>{title}</span>
-      <RectBtn
-        text={rectText}
-        color="light-blue1"
-      />
+      <RectBtn text={rectText} />
     </div>
   )
 }

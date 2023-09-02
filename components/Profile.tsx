@@ -1,8 +1,9 @@
 import { ProfileMenuButton, RectBtn } from "."
+import { topDropDownStyles } from "../constants"
 
 const Profile = () => {
   return (
-    <div className="smText light-blue3 p-[20px] rou max-w-[350px] absolute z-[1] right-0 top-[60px]">
+    <div className={`${topDropDownStyles} smText max-w-[350px] right-0`}>
       <div
         className="w-0 h-0 absolute -top-[20px] right-0"
         style={{
@@ -24,23 +25,15 @@ const Profile = () => {
         <div className="min-w-fit ml-[40px] text-right">
           <RectBtn
             text="John Doe"
-            color="#fff"
+            color="bg-white"
           />
-          <div className="flex justify-between mt-[5px]">
-            <div className="w-1/2 my-auto">
-              <span>Profile</span>
-            </div>
-            <div>
-              <ProfileMenuButton src="light-user.svg" />
-            </div>
+          <div className="flex justify-between mt-[5px] items-center">
+            <span>Profile</span>
+            <ProfileMenuButton src="light-user.svg" />
           </div>
-          <div className="flex justify-between mt-[5px]">
-            <div className="w-1/2 my-auto mr-[10px]">
-              <span>Settings</span>
-            </div>
-            <div>
-              <ProfileMenuButton src="light-gear.svg" />
-            </div>
+          <div className="flex justify-between mt-[5px] items-center">
+            <span className="mr-[10px]">Settings</span>
+            <ProfileMenuButton src="light-gear.svg" />
           </div>
         </div>
       </div>

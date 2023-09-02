@@ -1,7 +1,6 @@
-import React from "react"
 import { pieColors } from "../constants"
 
-const PieColors = ({
+const PieColorBox = ({
   sliceFrom,
   sliceTo,
 }: {
@@ -38,4 +37,4 @@ const PieColors = ({
   )
 }
 
-export default PieColors
+export default PieColorBox

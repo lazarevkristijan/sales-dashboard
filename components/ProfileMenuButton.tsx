@@ -1,5 +1,3 @@
-import React from "react"
-
 const ProfileMenuButton = ({ src }: { src: string }) => {
   return (
     <div className="w-[40px] h-[40px] rou bg-[#fff]">

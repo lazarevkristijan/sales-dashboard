@@ -1,4 +1,4 @@
-const HoveredSales = ({
+const PillarHoverBox = ({
   visibility,
   week,
   items,
@@ -18,4 +18,4 @@ const HoveredSales = ({
   )
 }
 
-export default HoveredSales
+export default PillarHoverBox

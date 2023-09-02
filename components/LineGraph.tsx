@@ -36,9 +36,11 @@ const LineGraph = ({
           if (index === 0) return null
           const prevDot = dataPoints[index - 1]
           return (
-            <svg className="absolute inset-0 w-full h-full">
+            <svg
+              className="absolute inset-0 w-full h-full"
+              key={index}
+            >
               <line
-                key={index}
                 x1={prevDot.left}
                 y1={prevDot.height}
                 x2={dot.left}

@@ -1,4 +1,4 @@
-import { HoveredSales } from "."
+import { PillarHoverBox } from "."
 import { useState } from "react"
 const Pillar = ({
   left,
@@ -31,7 +31,7 @@ const Pillar = ({
       onMouseEnter={handlePillarHover}
       onMouseLeave={handlePillarLeave}
     >
-      <HoveredSales
+      <PillarHoverBox
         visibility={additionalHoverInfo}
         week={week}
         items={height}

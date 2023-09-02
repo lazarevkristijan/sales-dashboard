@@ -339,3 +339,6 @@ export const chartStyles =
   "bg-[#fff] mx-[20px] py-[30px] rou mb-[30px] max-w-[1000px] overflow-x-scroll lg:overflow-hidden"
 
 export const tableBorderStyle = "border-r-[1px] border-black"
+
+export const topDropDownStyles =
+  "light-blue3 p-[20px] rou absolute z-[1] top-[80px]"
