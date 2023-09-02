@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { topIconStyles } from "./../constants/index"
-import { NotificationPanel, Profile } from "../components"
+import { sectionStyles } from "../constants"
+import { NotificationPanel, Profile, TopIcon } from "../components"
 
 const Top = () => {
   const [notificationMenu, setNotificationMenu] = useState(false)
@@ -21,25 +21,19 @@ const Top = () => {
   }
 
   return (
-    <div className="flex mb-[30px] mx-[10px] max-w-[1040px] lg:mx-auto relative">
-      <img
-        src="light-menu.svg"
-        alt="menu icon"
-        className={`${topIconStyles}`}
-      />
-      <img
-        src="light-notification-bell.svg"
-        alt="notification icon"
-        className={`${topIconStyles} ml-auto mr-0`}
+    <div className={`${sectionStyles} flex mb-[30px] relative`}>
+      <TopIcon name="light-menu" />
+      <TopIcon
+        name="light-notification-bell"
+        extraStyles="ml-auto mr-0"
         onClick={handleBellClick}
       />
-      {notificationMenu && <NotificationPanel />}
-      <img
-        src="profile.svg"
-        alt="profile icon"
-        className={`${topIconStyles} ml-[5px]`}
+      <TopIcon
+        name="profile"
+        extraStyles="ml-[5px]"
         onClick={handleProfileClick}
       />
+      {notificationMenu && <NotificationPanel />}
       {profileMenu && <Profile />}
     </div>
   )

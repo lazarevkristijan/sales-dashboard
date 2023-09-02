@@ -1,18 +1,19 @@
-import { useState } from "react"
+// import { useState } from "react"
+import { smSectionStyles } from "../constants"
 
 const Products = () => {
-  const [arrowBackground, setArrowBackground] = useState("")
+  // const [arrowBackground, setArrowBackground] = useState("")
 
-  const handleArrowHover = () => {
-    setArrowBackground("#fff")
-  }
+  // const handleArrowHover = () => {
+  //   setArrowBackground("#fff")
+  // }
 
-  const handleArrowLeave = () => {
-    setArrowBackground("")
-  }
+  // const handleArrowLeave = () => {
+  //   setArrowBackground("")
+  // }
 
   return (
-    <div className="items-center light-blue1 py-[30px] rou mb-[50px] w-[500px]">
+    <div className={`${smSectionStyles} items-center`}>
       <div className="flex justify-between items-center">
         <div className="w-[30px] ml-2">
           <img

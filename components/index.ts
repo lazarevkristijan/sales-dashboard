@@ -23,6 +23,8 @@ import ActiveButton from "./ActiveButton"
 import DropDownButton from "./DropDownButton"
 import Notification from "./Notification"
 import ProfileMenuButton from "./ProfileMenuButton"
+import TopIcon from "./TopIcon"
+import SalesResultRect from "./SalesResultRect"
 
 export {
   BarChart,
@@ -49,4 +51,6 @@ export {
   DropDownButton,
   Notification,
   ProfileMenuButton,
+  TopIcon,
+  SalesResultRect,
 }

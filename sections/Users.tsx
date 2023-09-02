@@ -1,8 +1,8 @@
 import { RectBtn } from "../components"
-
+import { smSectionStyles } from "../constants"
 const Users = () => {
   return (
-    <div className="light-blue1 py-[20px]  rou mb-[50px] w-[500px]">
+    <div className={`${smSectionStyles}`}>
       <div className="mx-[20px]">
         <div className="bg-[#fff] text-center py-[30px] rou mb-[30px]">
           <span className="block mb-[15px]">Registered users</span>

@@ -294,5 +294,9 @@ export const countryTableData = [
 
 export const topIconStyles = "w-[35px] h-[35px]"
 
-export const additionalSalesInfoStyles =
+export const salesResultStyles =
   "bg-white w-[300px] flex flex-col mx-[20px] rou py-[20px] mb-[30px]"
+
+export const sectionStyles = "mx-[10px] lg:mx-auto mb-[50px] max-w-[1040px] rou"
+
+export const smSectionStyles = "light-blue1 py-[20px] rou mb-[50px] w-[500px]"

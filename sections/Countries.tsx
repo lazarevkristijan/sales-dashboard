@@ -1,8 +1,12 @@
-import { countryTableData, countryTableHeadings } from "../constants"
+import {
+  countryTableData,
+  countryTableHeadings,
+  smSectionStyles,
+} from "../constants"
 
 const Countries = () => {
   return (
-    <div className="light-blue1 py-[30px] mb-[50px] w-[500px] rou">
+    <div className={`${smSectionStyles}`}>
       <div className="mx-[20px]">
         <table className="w-full text-center">
           <thead>

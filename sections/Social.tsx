@@ -1,6 +1,8 @@
+import { smSectionStyles } from "../constants"
+
 const Social = () => {
   return (
-    <div className="light-blue1 text-center py-[30px] mb-[50px] w-[500px] rou">
+    <div className={`${smSectionStyles} text-center`}>
       <p>Social stats</p>
       <div className="mx-[20px] flex justify-between">
         <div className="bg-[#fff] rou w-1/3">

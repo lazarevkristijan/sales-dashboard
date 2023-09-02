@@ -1,28 +1,25 @@
 import { useState } from "react"
 import {
   SalesInfoBox,
-  RectBtn,
   TotalInfo,
   BarChart,
   PieChart,
   LineGraph,
+  SalesResultRect,
 } from "../components/"
 import {
   salesInfoBoxes,
-  additionalSalesInfoStyles,
   lineDotLocations,
+  salesResultStyles,
+  sectionStyles,
 } from "../constants"
 
 const Sales = () => {
-  const [handleInfoHover, setHandleInfoHover] = useState(false)
+  const [infoPopUp, setInfoPopUp] = useState(false)
   const [chart, setChart] = useState("bar")
 
-  function infoHover() {
-    setHandleInfoHover(true)
-  }
-
-  function infoHoverLeave() {
-    setHandleInfoHover(false)
+  function handleInfoHover(value: boolean) {
+    setInfoPopUp(value)
   }
 
   function handleChartChange() {
@@ -36,7 +33,7 @@ const Sales = () => {
   }
 
   return (
-    <div className="mx-[10px] lg:mx-auto light-blue1 pt-[30px] rou mb-[50px] max-w-[1040px]">
+    <div className={`${sectionStyles} light-blue1 pt-[30px]`}>
       <div onClick={handleChartChange}>
         {chart === "bar" ? (
           <BarChart />
@@ -58,47 +55,35 @@ const Sales = () => {
         ))}
       </div>
       <div className="flex flex-wrap justify-center items-center">
-        <div className={`${additionalSalesInfoStyles}`}>
-          <div className="mx-[20px] flex items-center">
-            <span>Gross profits</span>
-            <RectBtn
-              text="$74,000"
-              color="light-blue1"
-            />
-          </div>
-          <div className="mx-[20px] flex items-center mt-[10px]">
-            <span>Net profits</span>
-            <RectBtn
-              text="$21,000"
-              color="light-blue1"
-            />
-          </div>
+        <div className={`${salesResultStyles}`}>
+          <SalesResultRect
+            title="Gross profits"
+            rectText="$74,000"
+            extraStyles="mb-[10px]"
+          />
+          <SalesResultRect
+            title="Net profits"
+            rectText="$21,000"
+          />
         </div>
-        <div className={`${additionalSalesInfoStyles} relative`}>
-          <div className="mx-[20px] flex items-center">
-            <span>Target progress</span>
-
-            <RectBtn
-              text="73%"
-              color="light-blue1"
-            />
-          </div>
-          <div className="mx-[20px] flex items-center mt-[10px]">
-            <img
-              src="light-info.svg"
-              alt="info button"
-              className={`w-[20px] absolute top-1 right-1 `}
-              onMouseEnter={infoHover}
-              // onClick={infoHover}
-              onMouseLeave={infoHoverLeave}
-            />
-            {handleInfoHover && <TotalInfo />}
-            <span>Total calculated</span>
-            <RectBtn
-              text="$73,500"
-              color="light-blue1"
-            />
-          </div>
+        <div className={`${salesResultStyles} relative`}>
+          <SalesResultRect
+            title="Target progress"
+            rectText="73%"
+            extraStyles="mb-[10px]"
+          />
+          <SalesResultRect
+            title="Total calculated"
+            rectText="$73,500"
+          />
+          <img
+            src="light-info.svg"
+            alt="info button"
+            className={`w-[20px] absolute top-1 right-1 `}
+            onMouseEnter={() => handleInfoHover(true)}
+            onMouseLeave={() => handleInfoHover(false)}
+          />
+          {infoPopUp && <TotalInfo />}
         </div>
       </div>
     </div>
