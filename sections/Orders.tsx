@@ -4,14 +4,19 @@ import {
   sectionStyles,
   tableBorderStyle,
 } from "../constants"
-import { ActiveButton, ToggleTableData } from "../components"
+import { ActiveButton, ToggleTableData, ResultsPerPage } from "../components"
 import { useState } from "react"
 
 const Orders = () => {
   const [isTableMenuOpen, setIsTableMenuOpen] = useState(false)
+  const [isPerPageOpen, setIsPerPageOpen] = useState(false)
 
   const handleTableMenu = () => {
     setIsTableMenuOpen(!isTableMenuOpen)
+  }
+
+  const handlePerPageMenu = () => {
+    setIsPerPageOpen(!isPerPageOpen)
   }
 
   return (
@@ -61,7 +66,10 @@ const Orders = () => {
         <ActiveButton
           text="Per page"
           dropDown={true}
+          onClick={handlePerPageMenu}
         />
+
+        {isPerPageOpen && <ResultsPerPage />}
       </div>
       <div className="sm:hidden text-center">1 2 ... 13</div>
     </div>

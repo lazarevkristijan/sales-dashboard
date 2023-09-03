@@ -32,6 +32,7 @@ import UsersRect from "./UsersRect"
 import SocialStat from "./SocialStat"
 import SocialLabel from "./SocialLabel"
 import OrdersToggleButton from "./OrdersToggleButton"
+import PerPageOption from "./PerPageOption"
 
 export {
   BarChart,
@@ -67,4 +68,5 @@ export {
   SocialStat,
   SocialLabel,
   OrdersToggleButton,
+  PerPageOption,
 }
