@@ -12,10 +12,16 @@ const Orders = () => {
   const [isPerPageOpen, setIsPerPageOpen] = useState(false)
 
   const handleTableMenu = () => {
+    if (isPerPageOpen) {
+      setIsPerPageOpen(!isPerPageOpen)
+    }
     setIsTableMenuOpen(!isTableMenuOpen)
   }
 
   const handlePerPageMenu = () => {
+    if (isTableMenuOpen) {
+      setIsTableMenuOpen(!isTableMenuOpen)
+    }
     setIsPerPageOpen(!isPerPageOpen)
   }
 

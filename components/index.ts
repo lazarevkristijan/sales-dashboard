@@ -33,6 +33,7 @@ import SocialStat from "./SocialStat"
 import SocialLabel from "./SocialLabel"
 import OrdersToggleButton from "./OrdersToggleButton"
 import PerPageOption from "./PerPageOption"
+import PanelButton from "./PanelButton"
 
 export {
   BarChart,
@@ -69,4 +70,5 @@ export {
   SocialLabel,
   OrdersToggleButton,
   PerPageOption,
+  PanelButton,
 }

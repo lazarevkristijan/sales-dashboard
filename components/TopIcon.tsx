@@ -14,7 +14,7 @@ const TopIcon = ({
       <img
         src={`${name}.svg`}
         alt={`${name} icon`}
-        className={`${topIconStyles} ${extraStyles}`}
+        className={`${topIconStyles} hover:cursor-pointer ${extraStyles}`}
         onClick={onClick}
       />
     </>
