@@ -22,39 +22,28 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       <PanelButton
         title="Dark Mode"
         iconWidth="80"
-      />
+      >
+        <div className="rounded-full bg-[#000] w-[32.5px] h-[32.5px]"></div>
+      </PanelButton>
 
-      <div className="p-[10px] bg-[#fff] flex justify-between items-center rou mb-[10px]">
-        <span>Dark Mode</span>
-        <div className="light-blue1 w-[80px] h-[40px] rou flex items-center p-1">
-          <div className="rounded-full bg-[#000] w-[32.5px] h-[32.5px]"></div>
-        </div>
-      </div>
+      <PanelButton title="Display Time">
+        <img
+          src="light-drop-down-icon.svg"
+          alt="Drop down button"
+          className="p-1"
+        />
+      </PanelButton>
 
-      <div className="p-[10px] bg-[#fff] flex justify-between items-center rou mb-[10px]">
-        <span>Stats Display</span>
-        <div className="light-blue1 w-[40px] h-[40px] rou">
-          <img
-            src="light-drop-down-icon.svg"
-            alt="Drop down button"
-            className="w-full h-full"
-          />
-        </div>
-      </div>
+      <PanelButton title="Display Periods">
+        <span className="mx-auto">1w</span>
+      </PanelButton>
 
-      <div className="p-[10px] bg-[#fff] flex justify-between items-center rou mb-[10px]">
-        <span>Stats Display</span>
-        <div className="light-blue1 w-[40px] h-[40px] rou flex justify-center items-center">
-          1w
-        </div>
-      </div>
-
-      <div className="p-[10px] bg-[#fff] flex justify-between items-center rou mb-[10px]">
-        <span>Target</span>
-        <div className="light-blue1 w-[100px] h-[40px] rou flex justify-center items-center">
-          Change
-        </div>
-      </div>
+      <PanelButton
+        title="Target"
+        iconWidth="100"
+      >
+        <span className="mx-auto">Change</span>
+      </PanelButton>
     </div>
   )
 }

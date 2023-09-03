@@ -14,11 +14,11 @@ const Social = () => {
         <div className="relative">
           <SocialLabel
             label="Followers"
-            top={110}
+            top="110"
           />
           <SocialLabel
             label="Growth"
-            top={140}
+            top="140"
           />
         </div>
         <SocialStat
