@@ -1,7 +1,6 @@
 import { OrdersToggleButton } from "."
 import { tableDataOptions } from "../constants"
 const ToggleTableData = () => {
-  console.log(tableDataOptions.length / 2)
   return (
     <div className="w-[250px] sm:w-[300px] md:w-[400px] light-blue1 absolute top-[50px] border-black border-[1px] rou">
       <div className="m-[20px] bg-white rou py-[10px]">

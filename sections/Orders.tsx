@@ -5,8 +5,15 @@ import {
   tableBorderStyle,
 } from "../constants"
 import { ActiveButton, ToggleTableData } from "../components"
+import { useState } from "react"
 
 const Orders = () => {
+  const [isTableMenuOpen, setIsTableMenuOpen] = useState(false)
+
+  const handleTableMenu = () => {
+    setIsTableMenuOpen(!isTableMenuOpen)
+  }
+
   return (
     <div className={`${sectionStyles} light-blue1`}>
       <div className="mx-[20px] mb-[25px] overflow-x-scroll rou text-center">
@@ -44,9 +51,10 @@ const Orders = () => {
         <ActiveButton
           text="Table data"
           dropDown={true}
+          onClick={handleTableMenu}
         />
 
-        <ToggleTableData />
+        {isTableMenuOpen && <ToggleTableData />}
 
         <span className="hidden sm:inline">1 2 3 4 5 ... 13</span>
 
