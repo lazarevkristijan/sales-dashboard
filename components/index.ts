@@ -11,7 +11,7 @@ import ResultsPerPage from "./ResultsPerPage"
 import SidePanel from "./SidePanel"
 import StatsDisplay from "./StatsDisplay"
 import Target from "./Target"
-import ToggleElements from "./ToggleElements"
+import ToggleTableData from "./ToggleTableData"
 
 import TotalInfo from "./TotalInfo"
 import Pillar from "./Pillar"
@@ -31,6 +31,7 @@ import ProductArrow from "./ProductArrow"
 import UsersRect from "./UsersRect"
 import SocialStat from "./SocialStat"
 import SocialLabel from "./SocialLabel"
+import OrdersToggleButton from "./OrdersToggleButton"
 
 export {
   BarChart,
@@ -45,7 +46,7 @@ export {
   SidePanel,
   StatsDisplay,
   Target,
-  ToggleElements,
+  ToggleTableData,
   TotalInfo,
   ProgressLine,
   Pillar,
@@ -65,4 +66,5 @@ export {
   UsersRect,
   SocialStat,
   SocialLabel,
+  OrdersToggleButton,
 }

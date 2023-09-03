@@ -4,7 +4,7 @@ import {
   sectionStyles,
   tableBorderStyle,
 } from "../constants"
-import { ActiveButton } from "../components"
+import { ActiveButton, ToggleTableData } from "../components"
 
 const Orders = () => {
   return (
@@ -40,11 +40,13 @@ const Orders = () => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[20px] flex justify-between flex-col xs:flex-row">
+      <div className="mx-[20px] flex justify-between flex-col xs:flex-row relative">
         <ActiveButton
           text="Table data"
           dropDown={true}
         />
+
+        <ToggleTableData />
 
         <span className="hidden sm:inline">1 2 3 4 5 ... 13</span>
 

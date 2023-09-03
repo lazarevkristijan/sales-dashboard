@@ -325,6 +325,27 @@ export const products = [
   },
 ]
 
+export const tableDataOptions = [
+  {
+    name: "Order #",
+  },
+  {
+    name: "Name",
+  },
+  {
+    name: "Date",
+  },
+  {
+    name: "Amount",
+  },
+  {
+    name: "Item",
+  },
+  {
+    name: "Status",
+  },
+]
+
 export const topIconStyles = "w-[35px] h-[35px]"
 
 export const salesResultStyles =
