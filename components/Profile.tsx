@@ -20,18 +20,20 @@ const Profile = () => {
             alt="profile icon"
             className="w-[55px] h-[55px] mb-[65px]"
           />
-          <ProfileMenuButton src="light-logout.svg" />
+          <span className="hover:cursor-pointer">
+            <ProfileMenuButton src="light-logout.svg" />
+          </span>
         </div>
         <div className="min-w-fit ml-[40px] text-right">
           <RectBtn
             text="John Doe"
             color="bg-white"
           />
-          <div className="flex justify-between mt-[5px] items-center">
+          <div className="flex justify-between mt-[5px] items-center hover:cursor-pointer">
             <span>Profile</span>
             <ProfileMenuButton src="light-user.svg" />
           </div>
-          <div className="flex justify-between mt-[5px] items-center">
+          <div className="flex justify-between mt-[5px] items-center hover:cursor-pointer">
             <span className="mr-[10px]">Settings</span>
             <ProfileMenuButton src="light-gear.svg" />
           </div>

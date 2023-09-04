@@ -17,7 +17,7 @@ const PerPageOption = ({
     <div
       className={`${isHovered && "light-blue3"} ${
         active && "light-blue3"
-      } text-center py-[5px] rou`}
+      } text-center py-[5px] rou hover:cursor-pointer`}
       onMouseEnter={handleIsHovered}
       onMouseLeave={handleIsHovered}
     >

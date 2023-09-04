@@ -79,7 +79,7 @@ const Sales = () => {
           <img
             src="light-info.svg"
             alt="info button"
-            className={`w-[20px] absolute top-1 right-1 `}
+            className={`w-[20px] absolute top-1 right-1 hover:cursor-pointer `}
             onMouseEnter={() => handleInfoHover(true)}
             onMouseLeave={() => handleInfoHover(false)}
           />

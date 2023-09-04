@@ -26,7 +26,7 @@ const Pillar = ({
 
   return (
     <div
-      className={`w-[50px] absolute bottom-[7px] ${hoverBorder} ${pillarColor}`}
+      className={`w-[50px] absolute bottom-[7px] hover:cursor-pointer ${hoverBorder} ${pillarColor}`}
       style={{ left: left, height: height }}
       onMouseEnter={handlePillarHover}
       onMouseLeave={handlePillarLeave}
