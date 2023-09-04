@@ -415,6 +415,21 @@ export const targetMenuMonths = [
   },
 ]
 
+export const orderPageNumbers = [
+  {
+    page: 1,
+  },
+  {
+    page: 2,
+  },
+  {
+    page: 3,
+  },
+  {
+    page: 4,
+  },
+]
+
 export const topIconStyles = "w-[35px] h-[35px]"
 
 export const salesResultStyles =

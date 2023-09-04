@@ -3,8 +3,14 @@ import {
   tableHeadings,
   sectionStyles,
   tableBorderStyle,
+  orderPageNumbers,
 } from "../constants"
-import { ActiveButton, ToggleTableData, ResultsPerPage } from "../components"
+import {
+  ActiveButton,
+  ToggleTableData,
+  ResultsPerPage,
+  OrderPageNo,
+} from "../components"
 import { useState } from "react"
 
 const Orders = () => {
@@ -67,7 +73,14 @@ const Orders = () => {
 
         {isTableMenuOpen && <ToggleTableData />}
 
-        <span className="hidden sm:inline">1 2 3 4 5 ... 13</span>
+        <span className="hidden sm:inline my-auto">
+          {orderPageNumbers.map((number, index) => (
+            <OrderPageNo
+              key={index}
+              page={number.page}
+            />
+          ))}
+        </span>
 
         <ActiveButton
           text="Per page"
@@ -77,7 +90,14 @@ const Orders = () => {
 
         {isPerPageOpen && <ResultsPerPage />}
       </div>
-      <div className="sm:hidden text-center">1 2 ... 13</div>
+      <div className="sm:hidden text-center mt-[10px]">
+        {orderPageNumbers.map((number, index) => (
+          <OrderPageNo
+            key={index}
+            page={number.page}
+          />
+        ))}
+      </div>
     </div>
   )
 }

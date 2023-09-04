@@ -36,6 +36,7 @@ import PerPageOption from "./PerPageOption"
 import PanelButton from "./PanelButton"
 import DisplayPeriodsMenu from "./DisplayPeriodsMenu"
 import CustomPeriodMenu from "./CustomPeriodMenu"
+import OrderPageNo from "./OrderPageNo"
 
 export {
   BarChart,
@@ -75,4 +76,5 @@ export {
   PanelButton,
   DisplayPeriodsMenu,
   CustomPeriodMenu,
+  OrderPageNo,
 }
