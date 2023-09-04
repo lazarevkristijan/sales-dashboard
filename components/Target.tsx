@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { RectBtn } from "."
+import { targetMenuMonths } from "../constants"
 
 const Target = () => {
   const [isInput, setIsInput] = useState(false)
@@ -13,10 +14,10 @@ const Target = () => {
   }
 
   return (
-    <div className="absolute w-[300px] light-blue1 left-0 sm:left-[300px] top-[355px] sm:top-0 rou smText border-black border-[1px]">
+    <div className="absolute w-[350px] light-blue1 left-0 sm:left-[300px] top-[355px] sm:top-0 rou smText border-black border-[1px]">
       <div className="m-[20px] bg-[#fff] text-center">
         <p>Monthly target sales</p>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center mb-[30px]">
           {!isInput && (
             <RectBtn
               text={target}
@@ -40,15 +41,32 @@ const Target = () => {
               <img
                 src="tick.svg"
                 alt="tick"
-                className="p-1"
+                className="p-[5px]"
               />
             ) : (
               <img
                 src="edit.svg"
                 alt="edit"
-                className="p-1"
+                className="p-[5px]"
               />
             )}
+          </div>
+        </div>
+        <div className="flex flex-col mx-[10px]">
+          <RectBtn text="Previous months" />
+          <div className="flex flex-wrap justify-between pt-[10px]">
+            {targetMenuMonths.map((period, index) => (
+              <RectBtn
+                key={index}
+                text={`${period.month} ${period.sales}`}
+                color={`${
+                  period.sales >= Number(target)
+                    ? "light-success"
+                    : "light-danger"
+                }`}
+                extraStyles="mb-[10px]"
+              />
+            ))}
           </div>
         </div>
       </div>

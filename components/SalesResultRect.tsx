@@ -10,7 +10,9 @@ const SalesResultRect = ({
   extraStyles?: string
 }) => {
   return (
-    <div className={`mx-[20px] flex items-center ${extraStyles}`}>
+    <div
+      className={`mx-[20px] flex items-center justify-between ${extraStyles}`}
+    >
       <span>{title}</span>
       <RectBtn text={rectText} />
     </div>

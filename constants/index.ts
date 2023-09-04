@@ -388,6 +388,33 @@ export const displayChartsOptions = [
   },
 ]
 
+export const targetMenuMonths = [
+  {
+    month: "Aug",
+    sales: 111,
+  },
+  {
+    month: "Jul",
+    sales: 120,
+  },
+  {
+    month: "June",
+    sales: 70,
+  },
+  {
+    month: "May",
+    sales: 136,
+  },
+  {
+    month: "Apr",
+    sales: 83,
+  },
+  {
+    month: "Mar",
+    sales: 140,
+  },
+]
+
 export const topIconStyles = "w-[35px] h-[35px]"
 
 export const salesResultStyles =
