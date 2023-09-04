@@ -346,6 +346,33 @@ export const tableDataOptions = [
   },
 ]
 
+export const displayPeriodsOptions = [
+  {
+    title: "Day",
+    label: "24h",
+  },
+  {
+    title: "Week",
+    label: "1w",
+  },
+  {
+    title: "Month",
+    label: "1m",
+  },
+  {
+    title: "Year",
+    label: "1y",
+  },
+  {
+    title: "All Time",
+    label: "All",
+  },
+  {
+    title: "Custom",
+    label: "C",
+  },
+]
+
 export const topIconStyles = "w-[35px] h-[35px]"
 
 export const salesResultStyles =

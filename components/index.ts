@@ -1,7 +1,7 @@
 import BarChart from "./BarChart"
 import CountrySort from "./CountrySort"
 import DarkMode from "./DarkMode"
-import DisplayPeriods from "./DisplayPeriods"
+import ChartDisplayMenu from "./ChartDisplayMenu"
 import LineGraph from "./LineGraph"
 import NotificationPanel from "./NotificationPanel"
 import PieChart from "./PieChart"
@@ -34,12 +34,13 @@ import SocialLabel from "./SocialLabel"
 import OrdersToggleButton from "./OrdersToggleButton"
 import PerPageOption from "./PerPageOption"
 import PanelButton from "./PanelButton"
+import DisplayPeriodsMenu from "./DisplayPeriodsMenu"
 
 export {
   BarChart,
   CountrySort,
   DarkMode,
-  DisplayPeriods,
+  ChartDisplayMenu,
   LineGraph,
   NotificationPanel,
   PieChart,
@@ -71,4 +72,5 @@ export {
   OrdersToggleButton,
   PerPageOption,
   PanelButton,
+  DisplayPeriodsMenu,
 }
