@@ -4,15 +4,27 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState("")
 
   const handleChartMenu = () => {
-    setIsMenuOpen("chartDisplay")
+    if (isMenuOpen === "chartDisplay") {
+      setIsMenuOpen("")
+    } else {
+      setIsMenuOpen("chartDisplay")
+    }
   }
 
   const handlePeriodsMenu = () => {
-    setIsMenuOpen("displayPeriods")
+    if (isMenuOpen === "displayPeriods") {
+      setIsMenuOpen("")
+    } else {
+      setIsMenuOpen("displayPeriods")
+    }
   }
 
   const handleTargetMenu = () => {
-    setIsMenuOpen("target")
+    if (isMenuOpen === "target") {
+      setIsMenuOpen("")
+    } else {
+      setIsMenuOpen("target")
+    }
   }
 
   return (

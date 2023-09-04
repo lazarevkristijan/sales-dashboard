@@ -373,6 +373,21 @@ export const displayPeriodsOptions = [
   },
 ]
 
+export const displayChartsOptions = [
+  {
+    title: "Bar Chart",
+    icon: "light-bar-chart",
+  },
+  {
+    title: "Line Graph",
+    icon: "light-line-graph",
+  },
+  {
+    title: "Pie Chart",
+    icon: "light-pie-chart",
+  },
+]
+
 export const topIconStyles = "w-[35px] h-[35px]"
 
 export const salesResultStyles =
