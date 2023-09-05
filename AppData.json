@@ -1,0 +1,9 @@
+{
+  "user": {
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  "sales": {
+    "feb": 300
+  }
+}

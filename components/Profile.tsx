@@ -1,7 +1,11 @@
 import { ProfileMenuButton, RectBtn } from "."
 import { topDropDownStyles } from "../constants"
+import { UserDataContext } from "../src/App"
+import { useContext } from "react"
 
 const Profile = () => {
+  const userData = useContext(UserDataContext)
+
   return (
     <div className={`${topDropDownStyles} smText max-w-[350px] right-0`}>
       <div
@@ -26,7 +30,7 @@ const Profile = () => {
         </div>
         <div className="min-w-fit ml-[40px] text-right">
           <RectBtn
-            text="John Doe"
+            text={`${userData.firstName} ${userData.lastName}`}
             color="bg-white"
           />
           <div className="flex justify-between mt-[5px] items-center hover:cursor-pointer">
