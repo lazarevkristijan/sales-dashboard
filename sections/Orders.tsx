@@ -10,12 +10,16 @@ import {
   ToggleTableData,
   ResultsPerPage,
   OrderPageNo,
+  ContDarkMode,
 } from "../components"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { DarkMode } from "../components/ContDarkMode"
 
 const Orders = () => {
   const [isTableMenuOpen, setIsTableMenuOpen] = useState(false)
   const [isPerPageOpen, setIsPerPageOpen] = useState(false)
+
+  const isDarkMode = useContext(DarkMode)
 
   const handleTableMenu = () => {
     if (isPerPageOpen) {
@@ -32,7 +36,11 @@ const Orders = () => {
   }
 
   return (
-    <div className={`${sectionStyles} light-blue1`}>
+    <div
+      className={`${sectionStyles} ${
+        isDarkMode ? "dark-blue3" : "light-blue1"
+      }`}
+    >
       <div className="mx-[20px] mb-[25px] overflow-x-scroll rou text-center">
         <table className="w-[1000px]">
           <thead>

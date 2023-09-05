@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import {
   SalesInfoBox,
   TotalInfo,
@@ -13,10 +13,13 @@ import {
   salesResultStyles,
   sectionStyles,
 } from "../constants"
+import { DarkMode } from "../components/ContDarkMode"
 
 const Sales = () => {
   const [infoPopUp, setInfoPopUp] = useState(false)
   const [chart, setChart] = useState("bar")
+
+  const isDarkMode = useContext(DarkMode)
 
   function handleInfoHover(value: boolean) {
     setInfoPopUp(value)
@@ -33,7 +36,11 @@ const Sales = () => {
   }
 
   return (
-    <div className={`${sectionStyles} pt-[20px] pb-0 sm:py-[20px] light-blue1`}>
+    <div
+      className={`${sectionStyles} pt-[20px] pb-0 sm:py-[20px] ${
+        isDarkMode ? "dark-blue3" : "light-blue1"
+      }`}
+    >
       <div onClick={handleChartChange}>
         {chart === "bar" ? (
           <BarChart />

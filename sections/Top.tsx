@@ -1,11 +1,20 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { sectionStyles } from "../constants"
-import { NotificationPanel, Profile, TopIcon, SidePanel } from "../components"
+import {
+  NotificationPanel,
+  Profile,
+  TopIcon,
+  SidePanel,
+  ContDarkMode,
+} from "../components"
+import { DarkMode } from "../components/ContDarkMode"
 
 const Top = () => {
   const [notificationMenu, setNotificationMenu] = useState(false)
   const [profileMenu, setProfileMenu] = useState(false)
   const [sidePanelMenu, setSidePanelMenu] = useState(false)
+
+  const isDarkMode = useContext(DarkMode)
 
   const handleBellClick = () => {
     if (profileMenu || sidePanelMenu) {
@@ -34,11 +43,11 @@ const Top = () => {
   return (
     <div className={`${sectionStyles} py-0 flex relative`}>
       <TopIcon
-        name="light-menu"
+        name={`${isDarkMode ? "dark" : "light"}-menu`}
         onClick={handlePanelClick}
       />
       <TopIcon
-        name="light-notification-bell"
+        name={`${isDarkMode ? "dark" : "light"}-notification-bell`}
         extraStyles="ml-auto mr-0"
         onClick={handleBellClick}
       />

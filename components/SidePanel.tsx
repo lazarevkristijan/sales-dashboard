@@ -1,8 +1,12 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { PanelButton, DisplayPeriodsMenu, ChartDisplayMenu, Target } from "."
+
+import { DarkMode } from "./ContDarkMode"
+
 const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState("")
-  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  const isDarkMode = useContext(DarkMode)
 
   const handleChartMenu = () => {
     if (isMenuOpen === "chartDisplay") {
@@ -28,10 +32,6 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
     }
   }
 
-  const handleDarkMode = () => {
-    setIsDarkMode(!isDarkMode)
-  }
-
   return (
     <div className="light-blue3 p-[20px] pb-[10px] rou absolute z-[1] top-[80px] w-[300px]">
       <div
@@ -55,7 +55,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
           title="Dark Mode"
           iconWidth="80"
           color="light-blue1"
-          onClick={handleDarkMode}
+          // onClick={handleDarkMode}
         >
           <div className="rounded-full bg-[#fff] w-[32.5px] h-[32.5px] ml-auto mr-0"></div>
         </PanelButton>
@@ -64,7 +64,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
           title="Dark Mode"
           iconWidth="80"
           color="light-blue1"
-          onClick={handleDarkMode}
+          // onClick={handleDarkMode}
         >
           <div className="rounded-full bg-[#000] w-[32.5px] h-[32.5px]"></div>
         </PanelButton>

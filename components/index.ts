@@ -1,6 +1,5 @@
 import BarChart from "./BarChart"
 import CountrySort from "./CountrySort"
-import DarkMode from "./DarkMode"
 import ChartDisplayMenu from "./ChartDisplayMenu"
 import LineGraph from "./LineGraph"
 import NotificationPanel from "./NotificationPanel"
@@ -37,11 +36,11 @@ import PanelButton from "./PanelButton"
 import DisplayPeriodsMenu from "./DisplayPeriodsMenu"
 import CustomPeriodMenu from "./CustomPeriodMenu"
 import OrderPageNo from "./OrderPageNo"
+import ContDarkMode from "./ContDarkMode"
 
 export {
   BarChart,
   CountrySort,
-  DarkMode,
   ChartDisplayMenu,
   LineGraph,
   NotificationPanel,
@@ -77,4 +76,5 @@ export {
   DisplayPeriodsMenu,
   CustomPeriodMenu,
   OrderPageNo,
+  ContDarkMode,
 }
