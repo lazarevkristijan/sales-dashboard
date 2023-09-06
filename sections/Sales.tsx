@@ -56,13 +56,17 @@ const Sales = () => {
           <SalesInfoBox
             heading={box.heading}
             qty={box.qty}
-            bg={box.bg}
+            bg={isDarkMode ? box.bgDark : box.bgLight}
             key={index}
           />
         ))}
       </div>
       <div className="flex flex-wrap justify-center items-center">
-        <div className={`${salesResultStyles} mb-[20px]`}>
+        <div
+          className={`${salesResultStyles} ${
+            isDarkMode ? "bg-black text-white" : "bg-white text-black"
+          } mb-[20px]`}
+        >
           <SalesResultRect
             title="Gross profits"
             rectText="$74,000"
@@ -73,7 +77,11 @@ const Sales = () => {
             rectText="$21,000"
           />
         </div>
-        <div className={`${salesResultStyles} mb-[20px] relative`}>
+        <div
+          className={`${salesResultStyles} ${
+            isDarkMode ? "bg-black text-white" : "bg-white text-black"
+          } mb-[20px] relative`}
+        >
           <SalesResultRect
             title="Target progress"
             rectText="73%"

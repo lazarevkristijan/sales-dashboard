@@ -1,11 +1,19 @@
+import { useContext } from "react"
 import { ProgressLine, Pillar } from "."
 import { progressLineNumbers, pillarValues, chartStyles } from "../constants"
+import { DarkMode } from "./ContDarkMode"
 
 const BarChart = () => {
+  const isDarkMode = useContext(DarkMode)
+
   return (
-    <div className={`${chartStyles}`}>
+    <div className={`${chartStyles} ${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}`}>
       <p className="text-center">Delivered</p>
-      <div className="relative ml-[20px] w-[960px]">
+      <div
+        className={`${
+          isDarkMode ? "text-white" : "text-black"
+        } relative ml-[20px] w-[960px]`}
+      >
         {progressLineNumbers.map((line, index) => (
           <ProgressLine
             value={line.value}

@@ -1,9 +1,13 @@
 import { chartStyles } from "../constants"
 import { PieColorBox } from "."
+import { DarkMode } from "./ContDarkMode"
+import { useContext } from "react"
 
 const PieChart = () => {
+  const isDarkMode = useContext(DarkMode)
+
   return (
-    <div className={`${chartStyles}`}>
+    <div className={`${chartStyles} ${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}`}>
       <p className="text-center">Delivered</p>
       <div className="max-w-[1000px] mx-[20px] flex">
         <div className="w-1/2">

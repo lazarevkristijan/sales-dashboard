@@ -1,15 +1,23 @@
 import { pillarValues, progressLineNumbers, chartStyles } from "../constants"
 import { LineDot, Pillar, ProgressLine } from "."
+import { useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
 
 const LineGraph = ({
   dataPoints,
 }: {
   dataPoints: { left: number; height: number }[]
 }) => {
+  const isDarkMode = useContext(DarkMode)
+
   return (
-    <div className={`${chartStyles}`}>
+    <div className={`${chartStyles} ${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}`}>
       <p className="text-center">Delivered Line</p>
-      <div className="relative ml-[20px] w-[960px]">
+      <div
+        className={`${
+          isDarkMode ? "text-white" : "text-black"
+        } relative ml-[20px] w-[960px]`}
+      >
         {progressLineNumbers.map((line, index) => (
           <ProgressLine
             value={line.value}
@@ -37,7 +45,7 @@ const LineGraph = ({
           const prevDot = dataPoints[index - 1]
           return (
             <svg
-              className="absolute inset-0 w-full h-full"
+              className="absolute left-[25px] inset-0 w-full h-full"
               key={index}
             >
               <line
@@ -45,7 +53,7 @@ const LineGraph = ({
                 y1={prevDot.height}
                 x2={dot.left}
                 y2={dot.height}
-                stroke="#000"
+                stroke={`${isDarkMode ? "#fff" : "#000"}`}
                 strokeWidth={2}
               />
             </svg>

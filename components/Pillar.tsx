@@ -1,5 +1,7 @@
 import { PillarHoverBox } from "."
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
+
 const Pillar = ({
   left,
   height,
@@ -9,17 +11,21 @@ const Pillar = ({
   height: number
   week: string
 }) => {
-  const [pillarColor, setPillarColor] = useState("light-blue1")
+  const isDarkMode = useContext(DarkMode)
   const [additionalHoverInfo, setAdditionalHoverInfo] = useState("hidden")
   const [hoverBorder, setHoverBorder] = useState("")
+  const [pillarColor, setPillarColor] = useState(
+    `${isDarkMode ? "dark-blue3" : "light-blue1"}`
+  )
+
   function handlePillarHover() {
-    setPillarColor("light-blue3")
+    setPillarColor(`${isDarkMode ? "dark-blue1" : "light-blue3"}`)
     setAdditionalHoverInfo("block")
     setHoverBorder("border-black border-[1px]")
   }
 
   function handlePillarLeave() {
-    setPillarColor("light-blue1")
+    setPillarColor(`${isDarkMode ? "dark-blue3" : "light-blue1"}`)
     setAdditionalHoverInfo("hidden")
     setHoverBorder("")
   }

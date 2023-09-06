@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
+
 const PillarHoverBox = ({
   visibility,
   week,
@@ -7,9 +10,15 @@ const PillarHoverBox = ({
   week: string
   items: number
 }) => {
+  const isDarkMode = useContext(DarkMode)
+
   return (
     <div
-      className={`${visibility} w-[100px] h-[100px] border-black border-[1px] light-blue2 -translate-x-[100%] rou text-center`}
+      className={`${visibility} smText text-black w-[100px] p-1 ${
+        isDarkMode ? "border-white" : "border-black"
+      } border-[2px] ${
+        isDarkMode ? "dark-blue1" : "light-blue2"
+      } -translate-x-[100%] rou text-center`}
     >
       Week {week.slice(1, 3)} <br />
       {items} Items <br />

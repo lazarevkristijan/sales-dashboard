@@ -1,4 +1,6 @@
 import { pieColors } from "../constants"
+import { useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
 
 const PieColorBox = ({
   sliceFrom,
@@ -7,12 +9,16 @@ const PieColorBox = ({
   sliceFrom: number
   sliceTo: number
 }) => {
+  const isDarkMode = useContext(DarkMode)
+
   return (
     <>
       {pieColors.slice(sliceFrom, sliceTo).map((sliceInfo, index) => (
         <div
           key={index}
-          className="w-[120px] flex justify-between items-center"
+          className={`${
+            isDarkMode ? "text-white" : "text-black"
+          } w-[120px] flex justify-between items-center `}
         >
           {sliceFrom === 0 ? (
             <>

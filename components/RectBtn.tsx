@@ -1,6 +1,9 @@
+import { useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
+
 const RectBtn = ({
   text,
-  color = "light-blue1",
+  color,
   onClick,
   extraStyles,
 }: {
@@ -9,9 +12,13 @@ const RectBtn = ({
   onClick?: React.MouseEventHandler
   extraStyles?: string
 }) => {
+  const isDarkMode = useContext(DarkMode)
+
   return (
     <span
-      className={`${color} py-1 px-2 rou min-w-[80px] text-center ${extraStyles}`}
+      className={`${
+        isDarkMode ? "dark-blue3" : "light-blue1"
+      } ${color} py-1 px-2 rou min-w-[80px] text-center ${extraStyles}`}
       onClick={onClick}
     >
       {text}

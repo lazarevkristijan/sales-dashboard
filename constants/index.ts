@@ -68,17 +68,20 @@ export const salesInfoBoxes = [
   {
     heading: "Not delivered",
     qty: 7,
-    bg: "#F0FF96",
+    bgLight: "#F0FF96",
+    bgDark: "#E3E300",
   },
   {
     heading: "In cart",
     qty: 170,
-    bg: "#F0FF96",
+    bgLight: "#F0FF96",
+    bgDark: "#E3E300",
   },
   {
     heading: "Returned",
     qty: 1,
-    bg: "#FF9696",
+    bgLight: "#FF9696",
+    bgDark: "#DB0000",
   },
 ]
 
@@ -433,7 +436,7 @@ export const orderPageNumbers = [
 export const topIconStyles = "w-[35px] h-[35px]"
 
 export const salesResultStyles =
-  "bg-white w-[300px] flex flex-col mx-[20px] rou py-[20px]"
+  "w-[300px] flex flex-col mx-[20px] rou py-[20px]"
 
 export const sectionStyles =
   "mx-[10px] py-[20px] lg:mx-auto mb-[30px] max-w-[1040px] rou"
@@ -441,7 +444,7 @@ export const sectionStyles =
 export const smSectionStyles = "light-blue1 py-[20px] rou mb-[30px] w-[500px]"
 
 export const chartStyles =
-  "bg-[#fff] mx-[20px] py-[30px] rou mb-[30px] max-w-[1000px] overflow-x-scroll lg:overflow-hidden"
+  " mx-[20px] py-[30px] rou mb-[30px] max-w-[1000px] overflow-x-scroll lg:overflow-hidden"
 
 export const tableBorderStyle = "border-r-[1px] border-black"
 
