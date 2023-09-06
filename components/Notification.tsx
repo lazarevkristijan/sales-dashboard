@@ -13,7 +13,11 @@ const Notification = ({ evaluation }: { evaluation: boolean }) => {
 
      rou flex justify-between mb-[20px] p-[20px] smText`}
     >
-      <div className="bg-black p-[10px] rou mr-[10px] w-1/3 my-auto">
+      <div
+        className={`${
+          isDarkMode ? "bg-black" : "bg-white"
+        } p-[10px] rou mr-[10px] w-1/3 my-auto`}
+      >
         <img
           src="phone.svg"
           alt="phone"

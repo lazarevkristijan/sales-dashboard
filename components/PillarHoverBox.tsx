@@ -15,10 +15,10 @@ const PillarHoverBox = ({
   return (
     <div
       className={`${visibility} smText text-black w-[100px] p-1 ${
-        isDarkMode ? "border-white" : "border-black"
-      } border-[2px] ${
-        isDarkMode ? "dark-blue1" : "light-blue2"
-      } -translate-x-[100%] rou text-center`}
+        isDarkMode
+          ? "dark-blue1 border-white border-[3px]"
+          : "light-blue2 border-black"
+      } border-[3px] -translate-x-[100%] rou text-center`}
     >
       Week {week.slice(1, 3)} <br />
       {items} Items <br />

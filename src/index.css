@@ -45,6 +45,10 @@
   border-bottom-right-radius: 10px;
 }
 
+img::selection {
+  background: transparent;
+}
+
 /* Light mode styles */
 .light-blue1 {
   background-color: #caf0f8;

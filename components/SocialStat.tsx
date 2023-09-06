@@ -23,7 +23,7 @@ const SocialStat = ({
         className="w-[60px] py-[20px] mx-auto"
       />
       <hr
-        className={`border-[1px]${
+        className={`border-[1px] ${
           isDarkMode ? "border-white" : "border-black"
         } mb-[10px]`}
       />

@@ -17,7 +17,7 @@ const ActiveButton = ({
     <span
       className={`${
         isDarkMode ? "dark-blue1" : "light-blue3"
-      } py-1 px-2 w-fit rou min-w-[80px] text-center flex mx-auto mb-[20px] xs:mb-0 xs:mx-0 items-center hover:cursor-pointer`}
+      } py-1 px-2 w-fit rou min-w-[80px] text-center flex mx-auto mb-[20px] xs:mb-0 xs:mx-0 items-center hover:cursor-pointer selection:bg-transparent`}
       onClick={onClick}
     >
       {text}
