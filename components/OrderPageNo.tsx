@@ -15,15 +15,9 @@ const OrderPageNo = ({ page }: { page: number }) => {
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       className={`
-      ${isDarkMode && isHovered && "dark-blue1"}
-      ${isDarkMode && !isHovered && "bg-[#000]"}
-      
-      ${!isDarkMode && isHovered && "light-blue3"}
-      ${!isDarkMode && !isHovered && "bg-[#fff]"}
-      
-       ${
-         isDarkMode ? "text-white" : "text-black"
-       }  w-[30px] mx-1 rou hover:cursor-pointer`}
+s       ${
+        isDarkMode ? "text-white" : "text-black"
+      }  w-[30px] mx-1 rou hover:cursor-pointer`}
     >
       {page}
     </div>

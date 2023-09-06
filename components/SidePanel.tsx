@@ -92,7 +92,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
         color={isDarkMode ? "dark-blue3" : "light-blue1"}
         onClick={handlePeriodsMenu}
       >
-        <span className="mx-auto">1w</span>
+        <span className="mx-auto">1m</span>
       </PanelButton>
       {isMenuOpen === "displayPeriods" && <DisplayPeriodsMenu />}
 

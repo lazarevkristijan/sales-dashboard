@@ -18,7 +18,9 @@ const ChartDisplayMenu = () => {
             title={option.title}
           >
             <img
-              src={`${option.icon}.svg`}
+              src={`${
+                isDarkMode ? `${option.iconDark}` : `${option.iconLight}`
+              }.svg`}
               alt={`${option.title} icon`}
             />
           </PanelButton>

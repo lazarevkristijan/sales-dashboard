@@ -19,10 +19,10 @@ const Countries = () => {
       <p className={`${isDarkMode ? "text-white" : "text-black"} text-center`}>
         Countries
       </p>
-      <div className="mx-[20px] rou">
-        <table className="w-full text-center rou">
-          <thead className="rou">
-            <tr className="h-[45px] rou">
+      <div className="mx-[20px] ">
+        <table className="w-full text-center">
+          <thead>
+            <tr className="h-[45px] ">
               {countryTableHeadings.map((heading, index) => (
                 <th
                   key={index}
@@ -37,7 +37,7 @@ const Countries = () => {
               ))}
             </tr>
           </thead>
-          <tbody className="rou">
+          <tbody>
             {countryTableData.map((place, index) => (
               <tr
                 key={index}

@@ -379,15 +379,18 @@ export const displayPeriodsOptions = [
 export const displayChartsOptions = [
   {
     title: "Bar Chart",
-    icon: "light-bar-chart",
+    iconLight: "light-bar-chart",
+    iconDark: "dark-bar-chart",
   },
   {
     title: "Line Graph",
-    icon: "light-line-graph",
+    iconLight: "light-line-graph",
+    iconDark: "dark-line-graph",
   },
   {
     title: "Pie Chart",
-    icon: "light-pie-chart",
+    iconLight: "light-pie-chart",
+    iconDark: "dark-pie-chart",
   },
 ]
 
