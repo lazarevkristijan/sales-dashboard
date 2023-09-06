@@ -2,7 +2,6 @@ import {
   tableData,
   tableHeadings,
   sectionStyles,
-  tableBorderStyle,
   orderPageNumbers,
 } from "../constants"
 import {
@@ -10,7 +9,7 @@ import {
   ToggleTableData,
   ResultsPerPage,
   OrderPageNo,
-  ContDarkMode,
+  TableDataBlock,
 } from "../components"
 import { useState, useContext } from "react"
 import { DarkMode } from "../components/ContDarkMode"
@@ -41,14 +40,18 @@ const Orders = () => {
         isDarkMode ? "dark-blue3" : "light-blue1"
       }`}
     >
-      <div className="mx-[20px] mb-[25px] overflow-x-scroll rou text-center">
+      <div className="mx-[20px] mb-[25px] overflow-x-scroll lg:overflow-hidden rou text-center">
         <table className="w-[1000px]">
           <thead>
             <tr className="h-[50px]">
               {tableHeadings.map((heading, index) => (
                 <th
                   key={index}
-                  className="light-blue2 font-normal"
+                  className={`${
+                    isDarkMode
+                      ? "dark-blue4 text-white"
+                      : "light-blue2 text-black"
+                  } font-normal`}
                 >
                   {heading.text}
                 </th>
@@ -61,12 +64,12 @@ const Orders = () => {
                 key={index}
                 className="h-[50px]"
               >
-                <td className={`${tableBorderStyle}`}>#{order.orderNo}</td>
-                <td className={`${tableBorderStyle}`}>{order.name}</td>
-                <td className={`${tableBorderStyle}`}>{order.date}</td>
-                <td className={`${tableBorderStyle}`}>{order.amount}</td>
-                <td className={`${tableBorderStyle}`}>{order.item}</td>
-                <td>{order.status}</td>
+                <TableDataBlock index={index}>#{order.orderNo}</TableDataBlock>
+                <TableDataBlock index={index}>{order.name}</TableDataBlock>
+                <TableDataBlock index={index}>{order.date}</TableDataBlock>
+                <TableDataBlock index={index}>{order.amount}</TableDataBlock>
+                <TableDataBlock index={index}>{order.item}</TableDataBlock>
+                <TableDataBlock index={index}>{order.status}</TableDataBlock>
               </tr>
             ))}
           </tbody>
@@ -81,14 +84,14 @@ const Orders = () => {
 
         {isTableMenuOpen && <ToggleTableData />}
 
-        <span className="hidden sm:inline my-auto">
+        <div className="hidden my-auto sm:flex text-center">
           {orderPageNumbers.map((number, index) => (
             <OrderPageNo
               key={index}
               page={number.page}
             />
           ))}
-        </span>
+        </div>
 
         <ActiveButton
           text="Per page"
@@ -98,7 +101,7 @@ const Orders = () => {
 
         {isPerPageOpen && <ResultsPerPage />}
       </div>
-      <div className="sm:hidden text-center mt-[10px]">
+      <div className="sm:hidden text-center mt-[10px] flex justify-center">
         {orderPageNumbers.map((number, index) => (
           <OrderPageNo
             key={index}

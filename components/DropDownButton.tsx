@@ -1,8 +1,14 @@
+import { useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
+
 const DropDownButton = () => {
+  const isDarkMode = useContext(DarkMode)
   return (
-    <span className="bg-[#fff] ml-2 rou">
+    <span className={`${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}  ml-2 rou`}>
       <img
-        src="light-drop-down-icon.svg"
+        src={`${
+          isDarkMode ? "dark-drop-down-icon" : "light-drop-down-icon"
+        }.svg`}
         alt="Drop down icon"
         className="w-[30px] h-[30px] inline"
       />

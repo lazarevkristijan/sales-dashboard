@@ -37,6 +37,7 @@ import DisplayPeriodsMenu from "./DisplayPeriodsMenu"
 import CustomPeriodMenu from "./CustomPeriodMenu"
 import OrderPageNo from "./OrderPageNo"
 import ContDarkMode from "./ContDarkMode"
+import TableDataBlock from "./TableDataBlock"
 
 export {
   BarChart,
@@ -77,4 +78,5 @@ export {
   CustomPeriodMenu,
   OrderPageNo,
   ContDarkMode,
+  TableDataBlock,
 }

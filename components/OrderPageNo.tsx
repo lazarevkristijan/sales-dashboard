@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
 
 const OrderPageNo = ({ page }: { page: number }) => {
   const [isHovered, setIsHovered] = useState(false)
@@ -7,16 +8,25 @@ const OrderPageNo = ({ page }: { page: number }) => {
     setIsHovered(!isHovered)
   }
 
+  const isDarkMode = useContext(DarkMode)
+
   return (
-    <span
+    <div
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
-      className={`${
-        isHovered && "light-blue3"
-      } bg-[#fff] px-[10px] py-[6px] mx-1 rou hover:cursor-pointer`}
+      className={`
+      ${isDarkMode && isHovered && "dark-blue1"}
+      ${isDarkMode && !isHovered && "bg-[#000]"}
+      
+      ${!isDarkMode && isHovered && "light-blue3"}
+      ${!isDarkMode && !isHovered && "bg-[#fff]"}
+      
+       ${
+         isDarkMode ? "text-white" : "text-black"
+       }  w-[30px] mx-1 rou hover:cursor-pointer`}
     >
       {page}
-    </span>
+    </div>
   )
 }
 

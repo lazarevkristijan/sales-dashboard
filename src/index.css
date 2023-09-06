@@ -45,14 +45,6 @@
   border-bottom-right-radius: 10px;
 }
 
-tr:nth-child(2n - 1) {
-  background-color: #fff;
-}
-
-tr:nth-child(2n) {
-  background-color: #eee;
-}
-
 /* Light mode styles */
 .light-blue1 {
   background-color: #caf0f8;
