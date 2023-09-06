@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { DarkMode } from "../components/ContDarkMode"
+
 const ProductArrow = ({
   direction,
   onClick,
@@ -5,6 +8,7 @@ const ProductArrow = ({
   direction: string
   onClick: React.MouseEventHandler
 }) => {
+  const isDarkMode = useContext(DarkMode)
   return (
     <div
       className={`w-[30px] ${
@@ -13,7 +17,7 @@ const ProductArrow = ({
       onClick={onClick}
     >
       <img
-        src={`light-arrow-${direction}.svg`}
+        src={`${isDarkMode ? "dark" : "light"}-arrow-${direction}.svg`}
         alt={`${direction} arrow`}
       />
     </div>

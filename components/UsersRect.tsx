@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { DarkMode } from "../components/ContDarkMode"
+
 import { RectBtn } from "."
 
 const UsersRect = ({
@@ -9,8 +12,13 @@ const UsersRect = ({
   rectText: string
   extraStyles?: string
 }) => {
+  const isDarkMode = useContext(DarkMode)
   return (
-    <div className={`bg-[#fff] text-center py-[20px] rou ${extraStyles}`}>
+    <div
+      className={`${
+        isDarkMode ? "bg-black text-white" : "bg-white text-black"
+      } text-center py-[20px] rou ${extraStyles}`}
+    >
       <span className="block mb-[15px]">{title}</span>
       <RectBtn text={rectText} />
     </div>

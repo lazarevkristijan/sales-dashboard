@@ -1,12 +1,20 @@
+import { DarkMode } from "../components/ContDarkMode"
 import {
   countryTableData,
   countryTableHeadings,
   smSectionStyles,
 } from "../constants"
+import { useContext } from "react"
 
 const Countries = () => {
+  const isDarkMode = useContext(DarkMode)
+
   return (
-    <div className={`${smSectionStyles}`}>
+    <div
+      className={`${smSectionStyles} ${
+        isDarkMode ? "dark-blue3" : "light-blue1"
+      }`}
+    >
       <div className="mx-[20px]">
         <table className="w-full text-center">
           <thead>
