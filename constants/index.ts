@@ -448,5 +448,4 @@ export const chartStyles =
 
 export const tableBorderStyle = "border-r-[1px] border-black"
 
-export const topDropDownStyles =
-  "light-blue3 p-[20px] rou absolute z-[1] top-[80px]"
+export const topDropDownStyles = "p-[20px] rou absolute z-[1] top-[80px]"

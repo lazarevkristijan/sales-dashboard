@@ -1,9 +1,22 @@
+import { useContext } from "react"
+
 import { OrdersToggleButton } from "."
 import { tableDataOptions } from "../constants"
+import { DarkMode } from "./ContDarkMode"
 const ToggleTableData = () => {
+  const isDarkMode = useContext(DarkMode)
+
   return (
-    <div className="w-[250px] sm:w-[300px] md:w-[400px] light-blue1 absolute top-[50px] border-black border-[1px] rou">
-      <div className="m-[20px] bg-white rou py-[10px]">
+    <div
+      className={`w-[250px] sm:w-[300px] md:w-[400px] ${
+        isDarkMode ? "dark-blue3 text-white" : "light-blue1 text-black"
+      } absolute top-[50px] border-black border-[1px] rou`}
+    >
+      <div
+        className={`m-[20px] ${
+          isDarkMode ? "bg-black" : "bg-white"
+        } rou py-[10px]`}
+      >
         <p className="text-center">Show/hide elements</p>
         <div className="md:flex pt-[10px]">
           <div className="md:w-1/2">

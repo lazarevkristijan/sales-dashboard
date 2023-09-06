@@ -16,7 +16,11 @@ function App() {
 
   return (
     <DarkMode.Provider value={isDarkMode}>
-      <div className={`${isDarkMode ? "dark-blue4" : "light-blue2"} text mont`}>
+      <div
+        className={`${
+          isDarkMode ? "dark-blue4 text-white" : "light-blue2 text-black"
+        } text mont`}
+      >
         <div className="pt-[30px]">
           <Top />
           <Sales />
