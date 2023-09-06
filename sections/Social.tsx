@@ -12,7 +12,9 @@ const Social = () => {
         isDarkMode ? "dark-blue3" : "light-blue1"
       } text-center`}
     >
-      <p>Social stats</p>
+      <p className={`${isDarkMode ? "text-white" : "text-black"} text-center`}>
+        Social stats
+      </p>
       <div className="mx-[20px] flex justify-between">
         <SocialStat
           media="instagram"

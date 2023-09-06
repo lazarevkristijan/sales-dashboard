@@ -1,13 +1,18 @@
+import { useContext } from "react"
+
 import { PerPageOption } from "."
+import { DarkMode } from "./ContDarkMode"
 
 const ResultsPerPage = () => {
+  const isDarkMode = useContext(DarkMode)
   return (
-    <div className="light-blue1 w-[150px] absolute top-[50px] right-0 border-black border-[1px] rou">
-      <div className="m-[20px] bg-white rou">
-        <PerPageOption
-          active
-          number={10}
-        />
+    <div
+      className={`${
+        isDarkMode ? "dark-blue3 text-white" : "light-blue1 text-black"
+      } w-[150px] absolute top-[50px] right-0 border-black border-[1px] rou`}
+    >
+      <div className={`m-[20px] ${isDarkMode ? "bg-black" : "bg-white"} rou`}>
+        <PerPageOption number={10} />
         <PerPageOption number={15} />
         <PerPageOption number={20} />
         <PerPageOption number={25} />

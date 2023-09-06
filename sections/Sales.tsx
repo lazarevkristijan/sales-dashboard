@@ -92,7 +92,7 @@ const Sales = () => {
             rectText="$73,500"
           />
           <img
-            src="light-info.svg"
+            src={`${isDarkMode ? "dark" : "light"}-info.svg`}
             alt="info button"
             className={`w-[20px] absolute top-1 right-1 hover:cursor-pointer `}
             onMouseEnter={() => handleInfoHover(true)}

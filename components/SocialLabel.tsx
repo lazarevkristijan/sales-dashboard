@@ -1,5 +1,18 @@
+import { useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
+
 const SocialLabel = ({ label, top }: { label: string; top: string }) => {
-  return <p className={`absolute -translate-x-[50%] ${top}`}>{label}</p>
+  const isDarkMode = useContext(DarkMode)
+
+  return (
+    <p
+      className={`${
+        isDarkMode ? "text-white" : "text-black"
+      } absolute -translate-x-[50%] ${top}`}
+    >
+      {label}
+    </p>
+  )
 }
 
 export default SocialLabel
