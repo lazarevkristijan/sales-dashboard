@@ -441,7 +441,7 @@ export const salesResultStyles =
 export const sectionStyles =
   "mx-[10px] py-[20px] lg:mx-auto mb-[30px] max-w-[1040px] rou"
 
-export const smSectionStyles = "light-blue1 py-[20px] rou mb-[30px] w-[500px]"
+export const smSectionStyles = "py-[20px] rou mb-[30px] w-[500px]"
 
 export const chartStyles =
   " mx-[20px] py-[30px] rou mb-[30px] max-w-[1000px] overflow-x-scroll lg:overflow-hidden"

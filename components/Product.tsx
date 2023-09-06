@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
+
 const Product = ({
   name,
   price,
@@ -17,28 +20,46 @@ const Product = ({
   rating: number
   productNo: number
 }) => {
+  const isDarkMode = useContext(DarkMode)
+
   return (
     <div className="flex flex-col sm:flex-row">
-      <div className="bg-[#fff] mx-auto sm:mx-0 mb-[20px] sm:mb-0 w-[140px] text-center rou">
+      <div
+        className={`${
+          isDarkMode ? "bg-black" : "bg-white"
+        } mx-auto sm:mx-0 mb-[20px] sm:mb-0 w-[140px] text-center rou`}
+      >
         <img
           src="phone.svg"
           alt="phone"
           className="h-[220px] mx-auto pt-[5px]"
         />
-        <span>{name}</span>
+        <span className={`${isDarkMode ? "text-white" : "text-black"}`}>
+          {name}
+        </span>
       </div>
       <div>
-        <div className="bg-[#fff] h-fit w-[240px] rou sm:ml-[10px] p-[10px] smText">
+        <div
+          className={`${
+            isDarkMode ? "bg-black text-white" : "bg-white text-black"
+          } h-fit w-[240px] rou sm:ml-[10px] p-[10px] smText`}
+        >
           <p>Price: ${price} </p>
           <p>Storage: {storage}GB</p>
           <p> RAM: {ram}GB</p>
           <p> Battery: {battery}mAh</p>
         </div>
-        <div className="bg-[#fff] h-fit w-[240px] rou sm:ml-[10px] mb-[20px] sm:mb-0 p-[10px] mt-[10px]">
+        <div
+          className={`${
+            isDarkMode ? "bg-black text-white" : "bg-white text-black"
+          } h-fit w-[240px] rou sm:ml-[10px] mb-[20px] sm:mb-0 p-[10px] mt-[10px]`}
+        >
           <p> Available: {available}</p>
           <p> Rating: {rating}/5</p>
         </div>
-        <p className="text-right">Product {productNo}/3</p>
+        <p className={`${isDarkMode ? "text-white" : "text-black"} text-right`}>
+          Product {productNo}/3
+        </p>
       </div>
     </div>
   )

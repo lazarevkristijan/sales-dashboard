@@ -1,7 +1,8 @@
 // import { useState } from "react"
 import { smSectionStyles, products } from "../constants"
 import { Product, ProductArrow } from "../components"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { DarkMode } from "../components/ContDarkMode"
 const Products = () => {
   const [productNumber, setProductNumber] = useState(0)
 
@@ -21,8 +22,13 @@ const Products = () => {
     }
   }
 
+  const isDarkMode = useContext(DarkMode)
   return (
-    <div className={`${smSectionStyles} items-center`}>
+    <div
+      className={`${smSectionStyles} ${
+        isDarkMode ? "dark-blue3" : "light-blue1"
+      } items-center`}
+    >
       <div className="flex justify-between items-center">
         <ProductArrow
           direction="left"
