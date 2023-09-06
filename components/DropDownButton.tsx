@@ -6,9 +6,7 @@ const DropDownButton = () => {
   return (
     <span className={`${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}  ml-2 rou`}>
       <img
-        src={`${
-          isDarkMode ? "dark-drop-down-icon" : "light-drop-down-icon"
-        }.svg`}
+        src={`${isDarkMode ? "dark" : "light"}-drop-down-icon.svg`}
         alt="Drop down icon"
         className="w-[30px] h-[30px] inline"
       />

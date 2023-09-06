@@ -1,11 +1,19 @@
+import { useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
+
 const Notification = ({ evaluation }: { evaluation: boolean }) => {
+  const isDarkMode = useContext(DarkMode)
   return (
     <div
-      className={`${
-        evaluation ? "light-success" : "light-danger"
-      } rou flex justify-between mb-[20px] p-[20px] smText`}
+      className={`
+      ${isDarkMode && evaluation && "dark-success"}
+      ${isDarkMode && !evaluation && "dark-danger"}
+      ${!isDarkMode && evaluation && "light-success"}
+      ${!isDarkMode && !evaluation && "light-danger"}
+
+     rou flex justify-between mb-[20px] p-[20px] smText`}
     >
-      <div className="bg-[#fff] p-[10px] rou mr-[10px] w-1/3 my-auto">
+      <div className="bg-black p-[10px] rou mr-[10px] w-1/3 my-auto">
         <img
           src="phone.svg"
           alt="phone"

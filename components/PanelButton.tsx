@@ -1,10 +1,10 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { DarkMode } from "./ContDarkMode"
 
 const PanelButton = ({
   title,
   iconWidth = "40",
   children,
-  active,
   color = "light-blue3",
   onClick,
 }: {
@@ -21,18 +21,24 @@ const PanelButton = ({
     setIsHovered(!isHovered)
   }
 
+  const isDarkMode = useContext(DarkMode)
+
   return (
     <div
-      className={`${active && `${color}`} ${
-        isHovered && `${color}`
-      } p-[10px] bg-[#fff] flex justify-between items-center rou mb-[10px] hover:cursor-pointer`}
+      className={`
+      ${isDarkMode ? "bg-black" : "bg-white"}
+ ${
+   isHovered && `${color}`
+ } p-[10px] flex justify-between items-center rou mb-[10px] hover:cursor-pointer`}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       onClick={onClick}
     >
       <span>{title}</span>
       <div
-        className={`light-blue1 w-[${iconWidth}px] h-[40px] rou flex items-center p-1`}
+        className={`${
+          isDarkMode ? "dark-blue3" : "light-blue1"
+        } w-[${iconWidth}px] h-[40px] rou flex items-center p-1`}
       >
         {children}
       </div>

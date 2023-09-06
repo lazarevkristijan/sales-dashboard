@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { RectBtn } from "."
 import { targetMenuMonths } from "../constants"
+import { DarkMode } from "./ContDarkMode"
 
 const Target = () => {
   const [isInput, setIsInput] = useState(false)
@@ -13,9 +14,19 @@ const Target = () => {
     setTarget(e.target.value)
   }
 
+  const isDarkMode = useContext(DarkMode)
+
   return (
-    <div className="absolute w-[350px] light-blue1 left-0 sm:left-[300px] top-[355px] sm:top-0 rou smText border-black border-[1px]">
-      <div className="m-[20px] bg-[#fff] text-center">
+    <div
+      className={`absolute w-[350px] ${
+        isDarkMode ? "dark-blue3" : "light-blue1"
+      } left-0 sm:left-[300px] top-[355px] sm:top-0 rou smText border-black border-[1px]`}
+    >
+      <div
+        className={`m-[20px] ${
+          isDarkMode ? "bg-black" : "bg-white"
+        } text-center`}
+      >
         <p>Monthly target sales</p>
         <div className="flex justify-center items-center mb-[30px]">
           {!isInput && (
@@ -59,7 +70,25 @@ const Target = () => {
               <RectBtn
                 key={index}
                 text={`${period.month} ${period.sales}`}
-                color={`${
+                color={`
+                ${
+                  isDarkMode && period.sales >= Number(target)
+                    ? "dark-success"
+                    : `${
+                        isDarkMode && period.sales <= Number(target)
+                          ? "dark-danger"
+                          : `${
+                              !isDarkMode && period.sales >= Number(target)
+                                ? "light-success"
+                                : `${
+                                    !isDarkMode &&
+                                    period.sales <= Number(target) &&
+                                    "light-danger"
+                                  }`
+                            }`
+                      }`
+                }
+                ${
                   period.sales >= Number(target)
                     ? "light-success"
                     : "light-danger"

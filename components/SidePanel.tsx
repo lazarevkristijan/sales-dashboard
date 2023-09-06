@@ -33,13 +33,17 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
   }
 
   return (
-    <div className="light-blue3 p-[20px] pb-[10px] rou absolute z-[1] top-[80px] w-[300px]">
+    <div
+      className={`${
+        isDarkMode ? "dark-blue1" : "light-blue3"
+      } p-[20px] pb-[10px] rou absolute z-[1] top-[80px] w-[300px]`}
+    >
       <div
         className="w-0 h-0 absolute -top-[20px] left-0"
         style={{
           borderLeft: "30px solid transparent",
           borderRight: "30px solid transparent",
-          borderBottom: "30px solid #48CAE4",
+          borderBottom: `30px solid ${isDarkMode ? "#00C0FF" : "#48CAE4"}`,
           rotate: "-15deg",
         }}
       ></div>
@@ -54,7 +58,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
         <PanelButton
           title="Dark Mode"
           iconWidth="80"
-          color="light-blue1"
+          color="dark-blue3"
           // onClick={handleDarkMode}
         >
           <div className="rounded-full bg-[#fff] w-[32.5px] h-[32.5px] ml-auto mr-0"></div>
@@ -72,11 +76,11 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
 
       <PanelButton
         title="Chart Display"
-        color="light-blue1"
+        color={isDarkMode ? "dark-blue3" : "light-blue1"}
         onClick={handleChartMenu}
       >
         <img
-          src="light-drop-down-icon.svg"
+          src={`${isDarkMode ? "dark" : "light"}-drop-down-icon.svg`}
           alt="Drop down button"
           className="p-1"
         />
@@ -85,7 +89,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
 
       <PanelButton
         title="Display Periods"
-        color="light-blue1"
+        color={isDarkMode ? "dark-blue3" : "light-blue1"}
         onClick={handlePeriodsMenu}
       >
         <span className="mx-auto">1w</span>
@@ -95,7 +99,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       <PanelButton
         title="Target"
         iconWidth="100"
-        color="light-blue1"
+        color={isDarkMode ? "dark-blue3" : "light-blue1"}
         onClick={handleTargetMenu}
       >
         <span className="mx-auto">Change</span>
