@@ -5,19 +5,21 @@ import { DarkMode } from "./ContDarkMode"
 const TableDataBlock = ({
   index,
   children,
+  border = true,
 }: {
   index: number
   children: React.ReactNode
+  border?: boolean
 }) => {
   const isDarkMode = useContext(DarkMode)
 
   return (
     <td
-      className={`${tableBorderStyle} ${
+      className={`${tableBorderStyle} ${!border && "border-none"}  ${
         isDarkMode
           ? `${index % 2 === 0 ? "bg-[#000]" : "bg-[#444]"}`
           : `${index % 2 === 0 ? "bg-[#fff]" : "bg-[#eee]"}`
-      }  ${isDarkMode ? "text-white" : "text-black"}`}
+      }  ${isDarkMode ? "text-white" : "text-black"} ${index - index === 0}`}
     >
       {children}
     </td>

@@ -40,8 +40,8 @@ const Orders = () => {
         isDarkMode ? "dark-blue3" : "light-blue1"
       }`}
     >
-      <div className="mx-[20px] mb-[25px] overflow-x-scroll lg:overflow-hidden rou text-center">
-        <table className="w-[1000px]">
+      <div className="mx-[20px] mb-[25px] overflow-x-scroll lg:overflow-hidden rou">
+        <table className="w-[1000px] text-center">
           <thead>
             <tr className="h-[50px]">
               {tableHeadings.map((heading, index) => (
@@ -69,7 +69,12 @@ const Orders = () => {
                 <TableDataBlock index={index}>{order.date}</TableDataBlock>
                 <TableDataBlock index={index}>{order.amount}</TableDataBlock>
                 <TableDataBlock index={index}>{order.item}</TableDataBlock>
-                <TableDataBlock index={index}>{order.status}</TableDataBlock>
+                <TableDataBlock
+                  index={index}
+                  border={false}
+                >
+                  {order.status}
+                </TableDataBlock>
               </tr>
             ))}
           </tbody>
