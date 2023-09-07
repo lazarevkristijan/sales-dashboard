@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
 const ProfileMenuButton = ({ src }: { src: string }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div

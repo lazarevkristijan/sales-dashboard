@@ -21,7 +21,7 @@ const PanelButton = ({
     setIsHovered(!isHovered)
   }
 
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div

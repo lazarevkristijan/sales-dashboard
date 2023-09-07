@@ -8,7 +8,7 @@ const PerPageOption = ({ number }: { number: number }) => {
     setIsHovered(!isHovered)
   }
 
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   return (
     <div
       className={`

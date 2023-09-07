@@ -18,31 +18,22 @@ import {
   ReturnedSales,
   InCart,
   TargetSales,
+  ActiveChart,
 } from "../components/Contexts"
 
 const Sales = () => {
   const [infoPopUp, setInfoPopUp] = useState(false)
-  const [chart, setChart] = useState("bar")
 
   const deliveredSales = useContext(DeliveredSales)
   const returnedSales = useContext(ReturnedSales)
   const inCart = useContext(InCart)
   const targetSales = useContext(TargetSales)
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   const notDeliveredSales = String(Math.round(Number(deliveredSales) / 20))
+  const activeChart = useContext(ActiveChart)
 
   function handleInfoHover(value: boolean) {
     setInfoPopUp(value)
-  }
-
-  function handleChartChange() {
-    if (chart === "bar") {
-      setChart("pie")
-    } else if (chart === "pie") {
-      setChart("line")
-    } else if (chart === "line") {
-      setChart("bar")
-    }
   }
 
   return (
@@ -51,10 +42,10 @@ const Sales = () => {
         isDarkMode ? "dark-blue3" : "light-blue1"
       }`}
     >
-      <div onClick={handleChartChange}>
-        {chart === "bar" ? (
+      <div>
+        {activeChart === "bar" ? (
           <BarChart />
-        ) : chart === "pie" ? (
+        ) : activeChart === "pie" ? (
           <PieChart />
         ) : (
           <LineGraph dataPoints={lineDotLocations} />

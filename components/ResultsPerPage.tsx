@@ -4,7 +4,7 @@ import { PerPageOption } from "."
 import { DarkMode } from "./Contexts"
 
 const ResultsPerPage = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   return (
     <div
       className={`${

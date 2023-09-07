@@ -12,7 +12,7 @@ const UsersRect = ({
   rectText: string
   extraStyles?: string
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   return (
     <div
       className={`${

@@ -8,7 +8,7 @@ import {
 import { useContext } from "react"
 
 const Countries = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div

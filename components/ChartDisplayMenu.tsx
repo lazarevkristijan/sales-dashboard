@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
 const ChartDisplayMenu = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   return (
     <div
       className={`absolute ${
@@ -16,6 +16,7 @@ const ChartDisplayMenu = () => {
           <PanelButton
             key={index}
             title={option.title}
+            color={isDarkMode ? "dark-blue4" : "light-blue3"}
           >
             <img
               src={`${

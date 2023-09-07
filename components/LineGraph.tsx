@@ -8,7 +8,7 @@ const LineGraph = ({
 }: {
   dataPoints: { left: number; height: number }[]
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div className={`${chartStyles} ${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}`}>

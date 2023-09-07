@@ -10,7 +10,7 @@ const DisplayPeriodsMenu = () => {
     setIsCustomMenu(!isCustomMenu)
   }
 
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   return (
     <div
       className={`absolute ${
@@ -24,7 +24,7 @@ const DisplayPeriodsMenu = () => {
         >
           <PanelButton
             title={`${option.title}`}
-            color={`${isDarkMode ? "dark-blue1" : "light-blue3"}`}
+            color={`${isDarkMode ? "dark-blue4" : "light-blue3"}`}
           >
             <span className="mx-auto">{`${option.label}`}</span>
           </PanelButton>
@@ -39,7 +39,7 @@ const DisplayPeriodsMenu = () => {
           <PanelButton
             title={`${option.title}`}
             onClick={handleCustomMenu}
-            color={`${isDarkMode ? "dark-blue1" : "light-blue3"}`}
+            color={`${isDarkMode ? "dark-blue4" : "light-blue3"}`}
           >
             <span className="mx-auto">{`${option.label}`}</span>
           </PanelButton>

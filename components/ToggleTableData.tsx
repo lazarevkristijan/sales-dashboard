@@ -4,7 +4,7 @@ import { OrdersToggleButton } from "."
 import { tableDataOptions } from "../constants"
 import { DarkMode } from "./Contexts"
 const ToggleTableData = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div

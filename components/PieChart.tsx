@@ -4,7 +4,7 @@ import { DarkMode } from "./Contexts"
 import { useContext } from "react"
 
 const PieChart = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div className={`${chartStyles} ${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}`}>

@@ -11,7 +11,7 @@ const TableDataBlock = ({
   children: React.ReactNode
   border?: boolean
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <td

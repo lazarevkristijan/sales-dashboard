@@ -20,7 +20,7 @@ const Product = ({
   rating: number
   productNo: number
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div className="flex flex-col sm:flex-row">

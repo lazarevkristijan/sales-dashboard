@@ -11,7 +11,7 @@ const ActiveButton = ({
   dropDown?: boolean
   onClick?: React.MouseEventHandler
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <span

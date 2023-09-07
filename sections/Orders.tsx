@@ -18,7 +18,7 @@ const Orders = () => {
   const [isTableMenuOpen, setIsTableMenuOpen] = useState(false)
   const [isPerPageOpen, setIsPerPageOpen] = useState(false)
 
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   const handleTableMenu = () => {
     if (isPerPageOpen) {

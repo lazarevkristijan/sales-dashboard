@@ -9,7 +9,7 @@ const Target = () => {
     setIsInput(!isInput)
   }
 
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   const targetSales = useContext(TargetSales)
 
   return (

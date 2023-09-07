@@ -9,7 +9,7 @@ const PieColorBox = ({
   sliceFrom: number
   sliceTo: number
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <>

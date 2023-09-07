@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
 const TotalInfo = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div

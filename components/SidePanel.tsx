@@ -6,7 +6,7 @@ import { DarkMode } from "./Contexts"
 const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState("")
 
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode, toggleDarkMode } = useContext(DarkMode)
 
   const handleChartMenu = () => {
     if (isMenuOpen === "chartDisplay") {
@@ -58,8 +58,8 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
         <PanelButton
           title="Dark Mode"
           iconWidth="80"
-          color="dark-blue3"
-          // onClick={handleDarkMode}
+          color="dark-blue4"
+          onClick={toggleDarkMode}
         >
           <div className="rounded-full bg-[#fff] w-[32.5px] h-[32.5px] ml-auto mr-0"></div>
         </PanelButton>
@@ -68,7 +68,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
           title="Dark Mode"
           iconWidth="80"
           color="light-blue1"
-          // onClick={handleDarkMode}
+          onClick={toggleDarkMode}
         >
           <div className="rounded-full bg-[#000] w-[32.5px] h-[32.5px]"></div>
         </PanelButton>
@@ -76,7 +76,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
 
       <PanelButton
         title="Chart Display"
-        color={isDarkMode ? "dark-blue3" : "light-blue1"}
+        color={isDarkMode ? "dark-blue4" : "light-blue1"}
         onClick={handleChartMenu}
       >
         <img
@@ -89,7 +89,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
 
       <PanelButton
         title="Display Periods"
-        color={isDarkMode ? "dark-blue3" : "light-blue1"}
+        color={isDarkMode ? "dark-blue4" : "light-blue1"}
         onClick={handlePeriodsMenu}
       >
         <span className="mx-auto">1m</span>
@@ -99,7 +99,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       <PanelButton
         title="Target"
         iconWidth="100"
-        color={isDarkMode ? "dark-blue3" : "light-blue1"}
+        color={isDarkMode ? "dark-blue4" : "light-blue1"}
         onClick={handleTargetMenu}
       >
         <span className="mx-auto">Change</span>

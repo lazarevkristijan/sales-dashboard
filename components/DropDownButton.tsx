@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
 const DropDownButton = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   return (
     <span className={`${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}  ml-2 rou`}>
       <img

@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 const LineDot = ({ left, height }: { left: number; height: number }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   return (
     <div
       className={`w-[10px] h-[10px] absolute ${

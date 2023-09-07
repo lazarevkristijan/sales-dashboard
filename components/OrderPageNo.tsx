@@ -8,7 +8,7 @@ const OrderPageNo = ({ page }: { page: number }) => {
     setIsHovered(!isHovered)
   }
 
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div

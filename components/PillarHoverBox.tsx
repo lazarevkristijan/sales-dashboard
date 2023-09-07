@@ -10,7 +10,7 @@ const PillarHoverBox = ({
   week: string
   items: number
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div

@@ -10,7 +10,7 @@ const SalesInfoBox = ({
   qty: number
   bg: string
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div

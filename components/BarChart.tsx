@@ -4,7 +4,7 @@ import { progressLineNumbers, pillarValues, chartStyles } from "../constants"
 import { DarkMode } from "./Contexts"
 
 const BarChart = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div className={`${chartStyles} ${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}`}>

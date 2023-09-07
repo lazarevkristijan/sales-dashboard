@@ -8,7 +8,7 @@ const Top = () => {
   const [profileMenu, setProfileMenu] = useState(false)
   const [sidePanelMenu, setSidePanelMenu] = useState(false)
 
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   const handleBellClick = () => {
     if (profileMenu || sidePanelMenu) {

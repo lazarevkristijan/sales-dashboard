@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
 const ProgressLine = ({ value }: { value: number }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   return (
     <div className="flex h-[20px] mb-7">
       <div className="h-full w-[40px] text-right">{value}</div>

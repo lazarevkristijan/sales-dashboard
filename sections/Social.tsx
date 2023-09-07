@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { DarkMode } from "../components/Contexts"
 
 const Social = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div

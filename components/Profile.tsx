@@ -5,7 +5,7 @@ import { topDropDownStyles } from "../constants"
 import { DarkMode } from "./Contexts"
 
 const Profile = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div

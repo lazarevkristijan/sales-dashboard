@@ -8,7 +8,7 @@ const OrdersToggleButton = ({ name }: { name: string }) => {
     setIsOn(!isOn)
   }
 
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px]">

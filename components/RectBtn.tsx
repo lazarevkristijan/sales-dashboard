@@ -12,7 +12,7 @@ const RectBtn = ({
   onClick?: React.MouseEventHandler
   extraStyles?: string
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <span

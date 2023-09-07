@@ -8,7 +8,7 @@ const ProductArrow = ({
   direction: string
   onClick: React.MouseEventHandler
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   return (
     <div
       className={`w-[30px] ${

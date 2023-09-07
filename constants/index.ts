@@ -190,7 +190,7 @@ export const tableData = [
     name: "John Doe",
     date: "22/08/2023",
     amount: "500",
-    item: "iPhone 11",
+    item: "iPhone 13",
     status: "Shipped",
   },
   {
@@ -198,7 +198,7 @@ export const tableData = [
     name: "Jane Smith",
     date: "22/08/2023",
     amount: "1000",
-    item: "iPhone 11",
+    item: "iPhone 14",
     status: "Shipped",
   },
   {
@@ -206,7 +206,7 @@ export const tableData = [
     name: "Michael Johnson",
     date: "21/08/2023",
     amount: "500",
-    item: "iPhone 11",
+    item: "iPhone 14",
     status: "Shipped",
   },
   {
@@ -214,7 +214,7 @@ export const tableData = [
     name: "Emily Williams",
     date: "21/08/2023",
     amount: "1000",
-    item: "iPhone 11",
+    item: "iPhone 12",
     status: "Shipped",
   },
   {
@@ -222,7 +222,7 @@ export const tableData = [
     name: "Daniel Brown",
     date: "20/08/2023",
     amount: "500",
-    item: "iPhone 11",
+    item: "iPhone 12",
     status: "Delivered",
   },
   {
@@ -230,7 +230,7 @@ export const tableData = [
     name: "Olivia Davis",
     date: "20/08/2023",
     amount: "1000",
-    item: "iPhone 11",
+    item: "iPhone 13",
     status: "Delivered",
   },
   {
@@ -238,7 +238,7 @@ export const tableData = [
     name: "William Miller",
     date: "19/08/2023",
     amount: "500",
-    item: "iPhone 11",
+    item: "iPhone 14",
     status: "Delivered",
   },
   {
@@ -246,7 +246,7 @@ export const tableData = [
     name: "Sophia Wilson",
     date: "19/08/2023",
     amount: "1000",
-    item: "iPhone 11",
+    item: "iPhone 12",
     status: "Delivered",
   },
   {
@@ -254,7 +254,7 @@ export const tableData = [
     name: "James Anderson",
     date: "18/08/2023",
     amount: "500",
-    item: "iPhone 11",
+    item: "iPhone 12",
     status: "Delivered",
   },
   {
@@ -262,7 +262,7 @@ export const tableData = [
     name: "Ava Martinez",
     date: "18/08/2023",
     amount: "1000",
-    item: "iPhone 11",
+    item: "iPhone 13",
     status: "Delivered",
   },
 ]
@@ -307,7 +307,7 @@ export const products = [
     productNo: 1,
   },
   {
-    name: "iPhone 13",
+    name: "iPhone 12",
     price: 500,
     storage: 256,
     ram: 4,
@@ -317,7 +317,7 @@ export const products = [
     productNo: 2,
   },
   {
-    name: "iPhone 14",
+    name: "iPhone 12",
     price: 500,
     storage: 256,
     ram: 4,

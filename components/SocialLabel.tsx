@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
 const SocialLabel = ({ label, top }: { label: string; top: string }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <p

@@ -11,7 +11,7 @@ const Pillar = ({
   height: number
   week: string
 }) => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   const [additionalHoverInfo, setAdditionalHoverInfo] = useState("hidden")
   const [hoverBorder, setHoverBorder] = useState("")
   const [pillarColor, setPillarColor] = useState(

@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
 const NotificationPanel = () => {
-  const isDarkMode = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkMode)
   return (
     <div
       className={`${topDropDownStyles} ${
