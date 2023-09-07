@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { DropDownButton } from "."
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const ActiveButton = ({
   text,

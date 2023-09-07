@@ -2,7 +2,7 @@ import { useContext } from "react"
 
 import { ProfileMenuButton, RectBtn } from "."
 import { topDropDownStyles } from "../constants"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const Profile = () => {
   const isDarkMode = useContext(DarkMode)

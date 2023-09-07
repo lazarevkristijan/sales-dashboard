@@ -1,7 +1,7 @@
 import { useState, useContext } from "react"
 import { PanelButton, DisplayPeriodsMenu, ChartDisplayMenu, Target } from "."
 
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState("")

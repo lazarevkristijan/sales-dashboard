@@ -1,5 +1,5 @@
 import { TableDataBlock } from "../components"
-import { DarkMode } from "../components/ContDarkMode"
+import { DarkMode } from "../components/Contexts"
 import {
   countryTableData,
   countryTableHeadings,

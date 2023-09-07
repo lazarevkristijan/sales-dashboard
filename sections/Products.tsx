@@ -2,7 +2,7 @@
 import { smSectionStyles, products } from "../constants"
 import { Product, ProductArrow } from "../components"
 import { useState, useContext } from "react"
-import { DarkMode } from "../components/ContDarkMode"
+import { DarkMode } from "../components/Contexts"
 const Products = () => {
   const [productNumber, setProductNumber] = useState(0)
 

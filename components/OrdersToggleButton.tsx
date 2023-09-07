@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const OrdersToggleButton = ({ name }: { name: string }) => {
   const [isOn, setIsOn] = useState(true)

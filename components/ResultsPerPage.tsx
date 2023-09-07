@@ -1,7 +1,7 @@
 import { useContext } from "react"
 
 import { PerPageOption } from "."
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const ResultsPerPage = () => {
   const isDarkMode = useContext(DarkMode)

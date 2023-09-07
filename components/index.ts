@@ -36,8 +36,8 @@ import PanelButton from "./PanelButton"
 import DisplayPeriodsMenu from "./DisplayPeriodsMenu"
 import CustomPeriodMenu from "./CustomPeriodMenu"
 import OrderPageNo from "./OrderPageNo"
-import ContDarkMode from "./ContDarkMode"
 import TableDataBlock from "./TableDataBlock"
+import Contexts from "./Contexts"
 
 export {
   BarChart,
@@ -77,6 +77,6 @@ export {
   DisplayPeriodsMenu,
   CustomPeriodMenu,
   OrderPageNo,
-  ContDarkMode,
   TableDataBlock,
+  Contexts,
 }

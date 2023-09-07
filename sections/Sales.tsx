@@ -13,13 +13,18 @@ import {
   salesResultStyles,
   sectionStyles,
 } from "../constants"
-import { DarkMode } from "../components/ContDarkMode"
+import * as Contexts from "../components/Contexts"
 
 const Sales = () => {
   const [infoPopUp, setInfoPopUp] = useState(false)
   const [chart, setChart] = useState("bar")
 
-  const isDarkMode = useContext(DarkMode)
+  const deliveredSales = useContext(Contexts.DeliveredSales)
+  const notDeliveredSales = useContext(Contexts.NotDeliveredSales)
+  const returnedSales = useContext(Contexts.ReturnedSales)
+  const inCart = useContext(Contexts.InCart)
+  const targetSales = useContext(Contexts.TargetSales)
+  const isDarkMode = useContext(Contexts.DarkMode)
 
   function handleInfoHover(value: boolean) {
     setInfoPopUp(value)
@@ -52,6 +57,21 @@ const Sales = () => {
       </div>
 
       <div className="flex flex-wrap justify-center">
+        <SalesInfoBox
+          heading="Not delivered"
+          qty={Number(notDeliveredSales)}
+          bg={isDarkMode ? "bgDark" : "bgLight"}
+        />
+        <SalesInfoBox
+          heading="In Cart"
+          qty={Number(inCart)}
+          bg={isDarkMode ? "bgDark" : "bgLight"}
+        />
+        <SalesInfoBox
+          heading="Returned"
+          qty={Number(returnedSales)}
+          bg={isDarkMode ? "bgDark" : "bgLight"}
+        />
         {salesInfoBoxes.map((box, index) => (
           <SalesInfoBox
             heading={box.heading}
@@ -69,12 +89,19 @@ const Sales = () => {
         >
           <SalesResultRect
             title="Gross profits"
-            rectText="$74,000"
+            rectText={`$${(
+              Number(deliveredSales) +
+              Number(notDeliveredSales) * 500
+            ).toLocaleString("en-US")}`}
             extraStyles="mb-[10px]"
           />
+          w
           <SalesResultRect
             title="Net profits"
-            rectText="$21,000"
+            rectText={`$${(
+              ((Number(deliveredSales) + Number(notDeliveredSales)) * 500) /
+              3
+            ).toLocaleString("en-US")}`}
           />
         </div>
         <div
@@ -84,12 +111,20 @@ const Sales = () => {
         >
           <SalesResultRect
             title="Target progress"
-            rectText="73%"
+            rectText={`${
+              (Number(deliveredSales) + Number(notDeliveredSales)) /
+              Number(targetSales)
+            }%`}
             extraStyles="mb-[10px]"
           />
           <SalesResultRect
             title="Total calculated"
-            rectText="$73,500"
+            rectText={`$${
+              (Number(deliveredSales) +
+                Number(notDeliveredSales) -
+                Number(returnedSales)) *
+              500
+            }}`}
           />
           <img
             src={`${isDarkMode ? "dark" : "light"}-info.svg`}

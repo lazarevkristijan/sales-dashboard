@@ -1,6 +1,6 @@
 import { chartStyles } from "../constants"
 import { PieColorBox } from "."
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 import { useContext } from "react"
 
 const PieChart = () => {

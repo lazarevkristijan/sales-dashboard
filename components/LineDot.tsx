@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 const LineDot = ({ left, height }: { left: number; height: number }) => {
   const isDarkMode = useContext(DarkMode)
   return (

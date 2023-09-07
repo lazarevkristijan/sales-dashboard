@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const SocialLabel = ({ label, top }: { label: string; top: string }) => {
   const isDarkMode = useContext(DarkMode)

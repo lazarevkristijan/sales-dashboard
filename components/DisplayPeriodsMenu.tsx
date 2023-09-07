@@ -1,7 +1,7 @@
 import { useState, useContext } from "react"
 import { CustomPeriodMenu, PanelButton } from "."
 import { displayPeriodsOptions } from "../constants"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const DisplayPeriodsMenu = () => {
   const [isCustomMenu, setIsCustomMenu] = useState(false)

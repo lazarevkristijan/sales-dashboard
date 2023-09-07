@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { ProgressLine, Pillar } from "."
 import { progressLineNumbers, pillarValues, chartStyles } from "../constants"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const BarChart = () => {
   const isDarkMode = useContext(DarkMode)

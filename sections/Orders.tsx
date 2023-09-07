@@ -12,7 +12,7 @@ import {
   TableDataBlock,
 } from "../components"
 import { useState, useContext } from "react"
-import { DarkMode } from "../components/ContDarkMode"
+import { DarkMode } from "../components/Contexts"
 
 const Orders = () => {
   const [isTableMenuOpen, setIsTableMenuOpen] = useState(false)

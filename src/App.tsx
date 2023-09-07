@@ -8,14 +8,14 @@ import {
   Countries,
   Social,
 } from "../sections"
+import { Contexts } from "../components"
 import { useContext } from "react"
-import { DarkMode } from "../components/ContDarkMode"
+import { DarkMode } from "../components/Contexts"
 
 function App() {
   const isDarkMode = useContext(DarkMode)
-
   return (
-    <DarkMode.Provider value={isDarkMode}>
+    <Contexts>
       <div
         className={`${
           isDarkMode ? "dark-blue4 text-white" : "light-blue2 text-black"
@@ -33,7 +33,7 @@ function App() {
           </div>
         </div>
       </div>
-    </DarkMode.Provider>
+    </Contexts>
   )
 }
 

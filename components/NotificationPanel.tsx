@@ -1,7 +1,7 @@
 import { Notification } from "."
 import { topDropDownStyles } from "../constants"
 import { useContext } from "react"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const NotificationPanel = () => {
   const isDarkMode = useContext(DarkMode)

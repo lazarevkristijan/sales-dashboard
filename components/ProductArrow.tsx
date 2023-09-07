@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "../components/ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const ProductArrow = ({
   direction,

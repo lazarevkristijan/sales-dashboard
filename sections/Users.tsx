@@ -1,7 +1,7 @@
 import { UsersRect } from "../components"
 import { smSectionStyles } from "../constants"
 import { useContext } from "react"
-import { DarkMode } from "../components/ContDarkMode"
+import { DarkMode } from "../components/Contexts"
 
 const Users = () => {
   const isDarkMode = useContext(DarkMode)

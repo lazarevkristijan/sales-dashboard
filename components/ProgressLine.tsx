@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const ProgressLine = ({ value }: { value: number }) => {
   const isDarkMode = useContext(DarkMode)

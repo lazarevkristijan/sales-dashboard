@@ -298,7 +298,7 @@ export const countryTableData = [
 export const products = [
   {
     name: "iPhone 12",
-    price: 700,
+    price: 500,
     storage: 128,
     ram: 4,
     battery: 3110,
@@ -308,7 +308,7 @@ export const products = [
   },
   {
     name: "iPhone 13",
-    price: 1150,
+    price: 500,
     storage: 256,
     ram: 4,
     battery: 3046,
@@ -318,7 +318,7 @@ export const products = [
   },
   {
     name: "iPhone 14",
-    price: 1250,
+    price: 500,
     storage: 256,
     ram: 4,
     battery: 3969,

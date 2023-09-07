@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const OrderPageNo = ({ page }: { page: number }) => {
   const [isHovered, setIsHovered] = useState(false)

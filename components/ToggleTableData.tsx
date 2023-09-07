@@ -2,7 +2,7 @@ import { useContext } from "react"
 
 import { OrdersToggleButton } from "."
 import { tableDataOptions } from "../constants"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 const ToggleTableData = () => {
   const isDarkMode = useContext(DarkMode)
 

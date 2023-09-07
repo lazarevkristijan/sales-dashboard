@@ -1,20 +1,16 @@
 import { useState, useContext } from "react"
 import { RectBtn } from "."
 import { targetMenuMonths } from "../constants"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode, TargetSales } from "./Contexts"
 
 const Target = () => {
   const [isInput, setIsInput] = useState(false)
-  const [target, setTarget] = useState("120")
   const handleIsInput = () => {
     setIsInput(!isInput)
   }
 
-  const handleTargetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTarget(e.target.value)
-  }
-
   const isDarkMode = useContext(DarkMode)
+  const targetSales = useContext(TargetSales)
 
   return (
     <div
@@ -31,7 +27,7 @@ const Target = () => {
         <div className="flex justify-center items-center mb-[30px]">
           {!isInput && (
             <RectBtn
-              text={target}
+              text={targetSales}
               onClick={() => handleIsInput}
             />
           )}
@@ -39,8 +35,8 @@ const Target = () => {
           {isInput && (
             <input
               type="text"
-              value={target}
-              onChange={(e) => handleTargetChange(e)}
+              value={targetSales}
+              onChange={() => {}}
               className="w-[80px] light-blue3 rou p-1 text-center"
             />
           )}
@@ -72,24 +68,24 @@ const Target = () => {
                 text={`${period.month} ${period.sales}`}
                 color={`
                 ${
-                  isDarkMode && period.sales >= Number(target)
+                  isDarkMode && period.sales >= Number(targetSales)
                     ? "dark-success"
                     : `${
-                        isDarkMode && period.sales <= Number(target)
+                        isDarkMode && period.sales <= Number(targetSales)
                           ? "dark-danger"
                           : `${
-                              !isDarkMode && period.sales >= Number(target)
+                              !isDarkMode && period.sales >= Number(targetSales)
                                 ? "light-success"
                                 : `${
                                     !isDarkMode &&
-                                    period.sales <= Number(target) &&
+                                    period.sales <= Number(targetSales) &&
                                     "light-danger"
                                   }`
                             }`
                       }`
                 }
                 ${
-                  period.sales >= Number(target)
+                  period.sales >= Number(targetSales)
                     ? "light-success"
                     : "light-danger"
                 }`}

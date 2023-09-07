@@ -1,7 +1,7 @@
 import { PanelButton } from "."
 import { displayChartsOptions } from "../constants"
 import { useContext } from "react"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const ChartDisplayMenu = () => {
   const isDarkMode = useContext(DarkMode)

@@ -1,4 +1,4 @@
-// Axios / Fetch / AJAX
+Set the same state for target, gross / net & total
 
 Light mode
         |

@@ -1,6 +1,6 @@
 import { tableBorderStyle } from "../constants"
 import { useContext } from "react"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const TableDataBlock = ({
   index,

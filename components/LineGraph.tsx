@@ -1,7 +1,7 @@
 import { pillarValues, progressLineNumbers, chartStyles } from "../constants"
 import { LineDot, Pillar, ProgressLine } from "."
 import { useContext } from "react"
-import { DarkMode } from "./ContDarkMode"
+import { DarkMode } from "./Contexts"
 
 const LineGraph = ({
   dataPoints,

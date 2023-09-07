@@ -1,7 +1,7 @@
 import { smSectionStyles } from "../constants"
 import { SocialStat, SocialLabel } from "../components"
 import { useContext } from "react"
-import { DarkMode } from "../components/ContDarkMode"
+import { DarkMode } from "../components/Contexts"
 
 const Social = () => {
   const isDarkMode = useContext(DarkMode)

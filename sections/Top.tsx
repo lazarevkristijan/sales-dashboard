@@ -1,13 +1,7 @@
 import { useState, useContext } from "react"
 import { sectionStyles } from "../constants"
-import {
-  NotificationPanel,
-  Profile,
-  TopIcon,
-  SidePanel,
-  ContDarkMode,
-} from "../components"
-import { DarkMode } from "../components/ContDarkMode"
+import { NotificationPanel, Profile, TopIcon, SidePanel } from "../components"
+import { DarkMode } from "../components/Contexts"
 
 const Top = () => {
   const [notificationMenu, setNotificationMenu] = useState(false)
