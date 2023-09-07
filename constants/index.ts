@@ -290,7 +290,7 @@ export const countryTableData = [
     purchases: 77,
   },
   {
-    country: "USA",
+    country: "Germany",
     purchases: 42,
   },
 ]

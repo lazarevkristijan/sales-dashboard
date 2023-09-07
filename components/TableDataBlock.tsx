@@ -18,7 +18,7 @@ const TableDataBlock = ({
       className={`${tableBorderStyle} ${!border && "border-none"}  ${
         isDarkMode
           ? `${index % 2 === 0 ? "bg-[#000]" : "bg-[#444]"}`
-          : `${index % 2 === 0 ? "bg-[#fff]" : "bg-[#eee]"}`
+          : `${index % 2 === 0 ? "bg-[#fff]" : "bg-[#ddd]"}`
       }  ${isDarkMode ? "text-white" : "text-black"} ${index - index === 0}`}
     >
       {children}

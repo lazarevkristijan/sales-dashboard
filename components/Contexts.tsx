@@ -11,7 +11,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   const [returnedSales, setReturnedSales] = useState("2")
   const [inCart, setInCart] = useState("79")
   const [targetSales, setTargetSales] = useState("120")
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
 
   function removeSetErrors() {
     setReturnedSales
