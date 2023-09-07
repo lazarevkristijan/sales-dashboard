@@ -6,12 +6,9 @@ import {
   PieChart,
   LineGraph,
   SalesResultRect,
+  PieChartDark,
 } from "../components/"
-import {
-  lineDotLocations,
-  salesResultStyles,
-  sectionStyles,
-} from "../constants"
+import { salesResultStyles, sectionStyles } from "../constants"
 import {
   DarkMode,
   DeliveredSales,
@@ -42,14 +39,30 @@ const Sales = () => {
         isDarkMode ? "dark-blue3" : "light-blue1"
       }`}
     >
-      <div>
-        {activeChart === "bar" ? (
-          <BarChart />
-        ) : activeChart === "pie" ? (
-          <PieChart />
-        ) : (
-          <LineGraph dataPoints={lineDotLocations} />
-        )}
+      <div
+        className={`mb-[30px] ${activeChart !== "pie" && "mx-[100px]"}  ${
+          activeChart === "pie" && "w-[500px] mx-auto"
+        } `}
+      >
+        {activeChart === "pie" ? (
+          isDarkMode ? (
+            <PieChartDark />
+          ) : (
+            <PieChart />
+          )
+        ) : activeChart === "bar" ? (
+          isDarkMode ? (
+            <BarChart />
+          ) : (
+            <BarChart />
+          )
+        ) : activeChart === "line" ? (
+          isDarkMode ? (
+            <LineGraph />
+          ) : (
+            <LineGraph />
+          )
+        ) : null}
       </div>
 
       <div className="flex flex-wrap justify-center">

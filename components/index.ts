@@ -38,6 +38,9 @@ import CustomPeriodMenu from "./CustomPeriodMenu"
 import OrderPageNo from "./OrderPageNo"
 import TableDataBlock from "./TableDataBlock"
 import Contexts from "./Contexts"
+import PieChartDark from "./PieChartDark"
+import LineGraphDark from "./LineGraphDark"
+import BarChartDark from "./BarChartDark"
 
 export {
   BarChart,
@@ -79,4 +82,7 @@ export {
   OrderPageNo,
   TableDataBlock,
   Contexts,
+  PieChartDark,
+  LineGraphDark,
+  BarChartDark,
 }

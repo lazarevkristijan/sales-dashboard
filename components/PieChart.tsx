@@ -1,30 +1,58 @@
-import { chartStyles } from "../constants"
-import { PieColorBox } from "."
-import { DarkMode } from "./Contexts"
-import { useContext } from "react"
-
+import "chart.js/auto"
+import { Chart } from "react-chartjs-2"
 const PieChart = () => {
-  const { isDarkMode } = useContext(DarkMode)
+  const data = {
+    labels: ["Aug", "Jul", "Jun", "May", "Apr", "Mar"],
+    datasets: [
+      {
+        label: "Delivered",
+        data: [100, 120, 90, 80, 100, 95],
+      },
+    ],
+  }
 
+  const options = {
+    plugins: {
+      legend: {
+        labels: {
+          color: "#000",
+          font: {
+            size: 15,
+            weight: "500",
+            family: "Montserrat",
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: "#000",
+          font: {
+            size: 15,
+            weight: "500",
+            family: "Montserrat",
+          },
+        },
+      },
+      y: {
+        ticks: {
+          color: "#000",
+          font: {
+            size: 15,
+            weight: "500",
+            family: "Montserrat",
+          },
+        },
+      },
+    },
+  }
   return (
-    <div className={`${chartStyles} ${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}`}>
-      <p className="text-center">Delivered</p>
-      <div className="max-w-[1000px] mx-[20px] flex">
-        <div className="w-1/2">
-          <PieColorBox
-            sliceFrom={0}
-            sliceTo={5}
-          />
-        </div>
-        <div className="w-1/2 flex flex-col items-end">
-          <PieColorBox
-            sliceFrom={5}
-            sliceTo={9}
-          />
-        </div>
-      </div>
-      <div className="w-[200px] h-[200px] rounded-full bg-[#00FF00]"></div>
-    </div>
+    <Chart
+      type="pie"
+      options={options}
+      data={data}
+    />
   )
 }
 

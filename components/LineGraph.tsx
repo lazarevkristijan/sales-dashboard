@@ -1,66 +1,71 @@
-import { pillarValues, progressLineNumbers, chartStyles } from "../constants"
-import { LineDot, Pillar, ProgressLine } from "."
-import { useContext } from "react"
-import { DarkMode } from "./Contexts"
+import "chart.js/auto"
+import { Chart } from "react-chartjs-2"
 
-const LineGraph = ({
-  dataPoints,
-}: {
-  dataPoints: { left: number; height: number }[]
-}) => {
-  const { isDarkMode } = useContext(DarkMode)
+const LineGraph = () => {
+  const data = {
+    labels: ["Aug", "Jul", "Jun", "May", "Apr", "Mar"],
+    datasets: [
+      {
+        label: "Delivered",
+        data: [100, 100, 90, 80, 100, 95],
+        backgroundColor: ["rgba(150,242,255,0.5)"],
+        pointBackgroundColor: "darkblue",
+        pointRadius: 5,
+        fill: true,
+        tension: 0.3,
+      },
+    ],
+  }
+
+  const maxDataValue = Math.max(...data.datasets[0].data)
+  const buffer = 20
+  const dynamicMax = maxDataValue + buffer
+
+  const options = {
+    plugins: {
+      legend: {
+        labels: {
+          color: "#000",
+          font: {
+            size: 15,
+            weight: "500",
+            family: "Montserrat",
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: "#000",
+          font: {
+            size: 15,
+            weight: "500",
+            family: "Montserrat",
+          },
+        },
+      },
+      y: {
+        suggestedMin: 0,
+        suggestedMax: dynamicMax,
+        ticks: {
+          color: "#000",
+          font: {
+            size: 15,
+            weight: "500",
+            family: "Montserrat",
+          },
+        },
+      },
+    },
+  }
 
   return (
-    <div className={`${chartStyles} ${isDarkMode ? "bg-[#000]" : "bg-[#fff]"}`}>
-      <p className="text-center">Delivered Line</p>
-      <div
-        className={`${
-          isDarkMode ? "text-white" : "text-black"
-        } relative ml-[20px] w-[960px]`}
-      >
-        {progressLineNumbers.map((line, index) => (
-          <ProgressLine
-            value={line.value}
-            key={index}
-          />
-        ))}
-        {pillarValues.map((pillar, index) => (
-          <Pillar
-            left={pillar.value}
-            week={pillar.week}
-            height={pillar.height}
-            key={index}
-          />
-        ))}
-        {dataPoints.map((dot, index) => (
-          <LineDot
-            key={index}
-            left={dot.left}
-            height={dot.height}
-          />
-        ))}
-
-        {dataPoints.map((dot, index) => {
-          if (index === 0) return null
-          const prevDot = dataPoints[index - 1]
-          return (
-            <svg
-              className="absolute left-[25px] inset-0 w-full h-full"
-              key={index}
-            >
-              <line
-                x1={prevDot.left}
-                y1={prevDot.height}
-                x2={dot.left}
-                y2={dot.height}
-                stroke={`${isDarkMode ? "#fff" : "#000"}`}
-                strokeWidth={2}
-              />
-            </svg>
-          )
-        })}
-      </div>
-    </div>
+    <Chart
+      type="line"
+      options={options}
+      data={data}
+    />
   )
 }
 

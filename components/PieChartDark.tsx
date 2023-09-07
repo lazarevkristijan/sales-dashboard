@@ -1,14 +1,12 @@
 import "chart.js/auto"
 import { Chart } from "react-chartjs-2"
-
-const BarChart = () => {
+const PieChartDark = () => {
   const data = {
     labels: ["Aug", "Jul", "Jun", "May", "Apr", "Mar"],
     datasets: [
       {
         label: "Delivered",
         data: [100, 120, 90, 80, 100, 95],
-        backgroundColor: ["#48CAE4"],
       },
     ],
   }
@@ -17,7 +15,7 @@ const BarChart = () => {
     plugins: {
       legend: {
         labels: {
-          color: "#000",
+          color: "#fff",
           font: {
             size: 15,
             weight: "500",
@@ -29,9 +27,9 @@ const BarChart = () => {
     scales: {
       x: {
         ticks: {
-          color: "#000",
+          color: "#fff",
           font: {
-            size: 18,
+            size: 15,
             weight: "500",
             family: "Montserrat",
           },
@@ -39,9 +37,9 @@ const BarChart = () => {
       },
       y: {
         ticks: {
-          color: "#000",
+          color: "#fff",
           font: {
-            size: 18,
+            size: 15,
             weight: "500",
             family: "Montserrat",
           },
@@ -51,11 +49,11 @@ const BarChart = () => {
   }
   return (
     <Chart
-      type="bar"
+      type="pie"
       options={options}
       data={data}
     />
   )
 }
 
-export default BarChart
+export default PieChartDark

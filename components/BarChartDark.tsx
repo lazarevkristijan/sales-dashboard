@@ -1,7 +1,7 @@
 import "chart.js/auto"
 import { Chart } from "react-chartjs-2"
 
-const BarChart = () => {
+const BarChartDark = () => {
   const data = {
     labels: ["Aug", "Jul", "Jun", "May", "Apr", "Mar"],
     datasets: [
@@ -17,7 +17,7 @@ const BarChart = () => {
     plugins: {
       legend: {
         labels: {
-          color: "#000",
+          color: "#fff",
           font: {
             size: 15,
             weight: "500",
@@ -29,7 +29,7 @@ const BarChart = () => {
     scales: {
       x: {
         ticks: {
-          color: "#000",
+          color: "#fff",
           font: {
             size: 18,
             weight: "500",
@@ -39,7 +39,7 @@ const BarChart = () => {
       },
       y: {
         ticks: {
-          color: "#000",
+          color: "#fff",
           font: {
             size: 18,
             weight: "500",
@@ -58,4 +58,4 @@ const BarChart = () => {
   )
 }
 
-export default BarChart
+export default BarChartDark

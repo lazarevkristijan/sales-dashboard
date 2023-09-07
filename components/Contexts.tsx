@@ -4,7 +4,7 @@ export const ReturnedSales = createContext("2")
 export const TargetSales = createContext("120")
 export const DeliveredSales = createContext("102")
 export const DarkMode = createContext({
-  isDarkMode: true,
+  isDarkMode: false,
   toggleDarkMode: () => {},
 })
 export const InCart = createContext("79")
@@ -15,7 +15,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   const [returnedSales, setReturnedSales] = useState("2")
   const [inCart, setInCart] = useState("79")
   const [targetSales, setTargetSales] = useState("120")
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isDarkMode, setIsDarkMode] = useState(false)
   const [activeChart, setActiveChart] = useState("bar")
 
   function toggleDarkMode() {
