@@ -20,8 +20,7 @@ const SalesInfoBox = ({
     >
       <div className="h-[30px] text-center rou-t">{heading}</div>
       <div
-        className={`h-[200px] flex flex-col text-center text-black rou-b`}
-        style={{ backgroundColor: bg }}
+        className={`${bg} h-[200px] flex flex-col text-center text-black rou-b`}
       >
         <span className="sctOneNumbers mt-[30px]">{qty}</span>
         <span>Valued</span>

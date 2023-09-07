@@ -8,23 +8,28 @@ import {
   SalesResultRect,
 } from "../components/"
 import {
-  salesInfoBoxes,
   lineDotLocations,
   salesResultStyles,
   sectionStyles,
 } from "../constants"
-import * as Contexts from "../components/Contexts"
+import {
+  DarkMode,
+  DeliveredSales,
+  ReturnedSales,
+  InCart,
+  TargetSales,
+} from "../components/Contexts"
 
 const Sales = () => {
   const [infoPopUp, setInfoPopUp] = useState(false)
   const [chart, setChart] = useState("bar")
 
-  const deliveredSales = useContext(Contexts.DeliveredSales)
-  const notDeliveredSales = useContext(Contexts.NotDeliveredSales)
-  const returnedSales = useContext(Contexts.ReturnedSales)
-  const inCart = useContext(Contexts.InCart)
-  const targetSales = useContext(Contexts.TargetSales)
-  const isDarkMode = useContext(Contexts.DarkMode)
+  const deliveredSales = useContext(DeliveredSales)
+  const returnedSales = useContext(ReturnedSales)
+  const inCart = useContext(InCart)
+  const targetSales = useContext(TargetSales)
+  const isDarkMode = useContext(DarkMode)
+  const notDeliveredSales = String(Math.round(Number(deliveredSales) / 20))
 
   function handleInfoHover(value: boolean) {
     setInfoPopUp(value)
@@ -60,26 +65,18 @@ const Sales = () => {
         <SalesInfoBox
           heading="Not delivered"
           qty={Number(notDeliveredSales)}
-          bg={isDarkMode ? "bgDark" : "bgLight"}
+          bg={isDarkMode ? "dark-neutral" : "light-neutral"}
         />
         <SalesInfoBox
           heading="In Cart"
           qty={Number(inCart)}
-          bg={isDarkMode ? "bgDark" : "bgLight"}
+          bg={isDarkMode ? "dark-neutral" : "light-neutral"}
         />
         <SalesInfoBox
           heading="Returned"
           qty={Number(returnedSales)}
-          bg={isDarkMode ? "bgDark" : "bgLight"}
+          bg={isDarkMode ? "dark-danger" : "light-danger"}
         />
-        {salesInfoBoxes.map((box, index) => (
-          <SalesInfoBox
-            heading={box.heading}
-            qty={box.qty}
-            bg={isDarkMode ? box.bgDark : box.bgLight}
-            key={index}
-          />
-        ))}
       </div>
       <div className="flex flex-wrap justify-center items-center">
         <div
@@ -90,17 +87,16 @@ const Sales = () => {
           <SalesResultRect
             title="Gross profits"
             rectText={`$${(
-              Number(deliveredSales) +
-              Number(notDeliveredSales) * 500
+              (Number(deliveredSales) + Number(notDeliveredSales)) *
+              500
             ).toLocaleString("en-US")}`}
             extraStyles="mb-[10px]"
           />
-          w
+
           <SalesResultRect
             title="Net profits"
-            rectText={`$${(
-              ((Number(deliveredSales) + Number(notDeliveredSales)) * 500) /
-              3
+            rectText={`$${Math.round(
+              ((Number(deliveredSales) + Number(notDeliveredSales)) * 500) / 3
             ).toLocaleString("en-US")}`}
           />
         </div>
@@ -111,20 +107,21 @@ const Sales = () => {
         >
           <SalesResultRect
             title="Target progress"
-            rectText={`${
-              (Number(deliveredSales) + Number(notDeliveredSales)) /
-              Number(targetSales)
-            }%`}
+            rectText={`${Math.round(
+              ((Number(deliveredSales) + Number(notDeliveredSales)) /
+                Number(targetSales)) *
+                100
+            )}%`}
             extraStyles="mb-[10px]"
           />
           <SalesResultRect
             title="Total calculated"
-            rectText={`$${
+            rectText={`$${(
               (Number(deliveredSales) +
                 Number(notDeliveredSales) -
                 Number(returnedSales)) *
               500
-            }}`}
+            ).toLocaleString("en-US")}`}
           />
           <img
             src={`${isDarkMode ? "dark" : "light"}-info.svg`}
