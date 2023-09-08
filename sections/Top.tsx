@@ -15,7 +15,7 @@ const Top = () => {
       setProfileMenu(false)
       setSidePanelMenu(false)
     }
-    setNotificationMenu(!notificationMenu)
+    setNotificationMenu((prev) => !prev)
   }
 
   const handleProfileClick = () => {
@@ -23,7 +23,7 @@ const Top = () => {
       setNotificationMenu(false)
       setSidePanelMenu(false)
     }
-    setProfileMenu(!profileMenu)
+    setProfileMenu((prev) => !prev)
   }
 
   const handlePanelClick = () => {
@@ -31,7 +31,7 @@ const Top = () => {
       setNotificationMenu(false)
       setProfileMenu(false)
     }
-    setSidePanelMenu(!sidePanelMenu)
+    setSidePanelMenu((prev) => !prev)
   }
 
   return (

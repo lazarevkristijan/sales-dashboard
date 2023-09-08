@@ -9,7 +9,7 @@ const Products = () => {
     if (productNumber == 2) {
       setProductNumber(0)
     } else {
-      setProductNumber(productNumber + 1)
+      setProductNumber((prev) => prev + 1)
     }
   }
 
@@ -17,12 +17,12 @@ const Products = () => {
     if (productNumber == 0) {
       setProductNumber(2)
     } else {
-      setProductNumber(productNumber - 1)
+      setProductNumber((prev) => prev - 1)
     }
   }
 
   const { isDarkMode } = useContext(DarkMode)
-  const { screenWidth, handleScreenSize } = useContext(ScreenContext)
+  const { screenWidth } = useContext(ScreenContext)
 
   return (
     <div

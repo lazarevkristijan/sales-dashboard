@@ -18,7 +18,7 @@ const PanelButton = ({
   const [isHovered, setIsHovered] = useState(false)
 
   const handleHover = () => {
-    setIsHovered(!isHovered)
+    setIsHovered((prev) => !prev)
   }
 
   const { isDarkMode } = useContext(DarkMode)

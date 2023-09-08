@@ -5,7 +5,7 @@ const OrdersToggleButton = ({ name }: { name: string }) => {
   const [isOn, setIsOn] = useState(true)
 
   const handleToggle = () => {
-    setIsOn(!isOn)
+    setIsOn((prev) => !prev)
   }
 
   const { isDarkMode } = useContext(DarkMode)

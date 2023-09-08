@@ -139,14 +139,13 @@ img::selection {
 /* Scrollbar */
 
 ::-webkit-scrollbar {
-  background-color: #fff;
+  background-color: rgb(142, 227, 255);
   width: 12.5px;
   height: 12.5px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #48cae4;
-  border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #00b4d8;

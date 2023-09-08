@@ -32,16 +32,16 @@ const Orders = () => {
 
   const handleTableMenu = () => {
     if (isPerPageOpen) {
-      setIsPerPageOpen(!isPerPageOpen)
+      setIsPerPageOpen((prev) => !prev)
     }
-    setIsTableMenuOpen(!isTableMenuOpen)
+    setIsTableMenuOpen((prev) => !prev)
   }
 
   const handlePerPageMenu = () => {
     if (isTableMenuOpen) {
-      setIsTableMenuOpen(!isTableMenuOpen)
+      setIsTableMenuOpen((prev) => !prev)
     }
-    setIsPerPageOpen(!isPerPageOpen)
+    setIsPerPageOpen((prev) => !prev)
   }
 
   return (

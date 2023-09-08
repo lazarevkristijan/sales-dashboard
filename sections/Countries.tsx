@@ -14,12 +14,12 @@ const Countries = () => {
     <div
       className={`${smSectionStyles} ${
         isDarkMode ? "dark-blue3" : "light-blue1"
-      }`}
+      } `}
     >
       <p className={`${isDarkMode ? "text-white" : "text-black"} text-center`}>
         Countries
       </p>
-      <div className="mx-[20px] overflow-y-scroll h-[210px]">
+      <div className="mx-[20px] overflow-y-scroll h-[210px] rou">
         <table className="w-full text-center">
           <thead>
             <tr className="h-[45px] ">

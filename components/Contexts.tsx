@@ -43,7 +43,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   const [activeChart, setActiveChart] = useState("bar")
 
   function toggleDarkMode() {
-    setIsDarkMode((prevTheme) => !prevTheme)
+    setIsDarkMode((prev) => !prev)
   }
 
   function removeSetErrors() {

@@ -6,7 +6,7 @@ import { DarkMode, TargetSales } from "./Contexts"
 const Target = () => {
   const [isInput, setIsInput] = useState(false)
   const handleIsInput = () => {
-    setIsInput(!isInput)
+    setIsInput((prev) => !prev)
   }
 
   const { isDarkMode } = useContext(DarkMode)

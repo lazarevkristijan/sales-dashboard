@@ -11,7 +11,7 @@ const PerPageOption = ({
   const [isHovered, setIsHovered] = useState(false)
 
   const handleIsHovered = () => {
-    setIsHovered(!isHovered)
+    setIsHovered((prev) => !prev)
   }
 
   const { isDarkMode } = useContext(DarkMode)

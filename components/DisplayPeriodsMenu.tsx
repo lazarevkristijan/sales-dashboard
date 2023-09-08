@@ -7,7 +7,7 @@ const DisplayPeriodsMenu = () => {
   const [isCustomMenu, setIsCustomMenu] = useState(false)
 
   const handleCustomMenu = () => {
-    setIsCustomMenu(!isCustomMenu)
+    setIsCustomMenu((prev) => !prev)
   }
 
   const { isDarkMode } = useContext(DarkMode)
