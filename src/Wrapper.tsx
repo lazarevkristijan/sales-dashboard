@@ -24,7 +24,7 @@ const Wrapper = () => {
         <Top />
         <Sales />
         <Orders />
-        <div className="max-w-[1040px] flex flex-wrap mx-[10px] lg:mx-auto xs:justify-center lg:justify-between justify-between">
+        <div className="max-w-[1040px] flex flex-wrap mx-[10px] lg:mx-auto justify-between xs:justify-center lg:justify-between">
           <Products />
           <Users />
           <Countries />

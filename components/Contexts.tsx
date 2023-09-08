@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
 export const ReturnedSales = createContext("2")
 export const TargetSales = createContext("120")
@@ -27,6 +27,11 @@ export const OrdersContext = createContext({
   togglePerPage: ({ value }: { value: number }) => {
     return value
   },
+})
+
+export const ScreenContext = createContext({
+  screenWidth: window.innerWidth,
+  handleScreenSize: () => {},
 })
 
 const Contexts = ({ children }: { children: React.ReactNode }) => {
@@ -87,6 +92,20 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     setPerPage(value)
     return value
   }
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+  const handleScreenSize = () => {
+    setScreenWidth(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleScreenSize)
+
+    return () => {
+      window.removeEventListener("resize", handleScreenSize)
+    }
+  }, [])
+
   return (
     <ReturnedSales.Provider value={returnedSales}>
       <TargetSales.Provider value={targetSales}>
@@ -112,7 +131,11 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
                     togglePerPage,
                   }}
                 >
-                  {children}
+                  <ScreenContext.Provider
+                    value={{ screenWidth, handleScreenSize }}
+                  >
+                    {children}
+                  </ScreenContext.Provider>
                 </OrdersContext.Provider>
               </ActiveChart.Provider>
             </InCart.Provider>
