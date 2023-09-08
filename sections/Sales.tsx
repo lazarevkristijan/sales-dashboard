@@ -7,7 +7,7 @@ import {
   LineGraph,
   SalesResultRect,
   PieChartDark,
-  RectBtn,
+  InActiveButton,
   BarChartDark,
   LineGraphDark,
 } from "../components/"
@@ -70,7 +70,7 @@ const Sales = () => {
 
       <div className="flex flex-wrap justify-center">
         <div className="w-full flex justify-center mb-[20px]">
-          <RectBtn
+          <InActiveButton
             text="Current month"
             color={isDarkMode ? "dark-blue4" : "light-blue3"}
             extraStyles="w-[200px]"

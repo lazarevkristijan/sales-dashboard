@@ -1,6 +1,6 @@
 import { useContext } from "react"
 
-import { ProfileMenuButton, RectBtn } from "."
+import { ProfileMenuButton, InActiveButton } from "."
 import { topDropDownStyles } from "../constants"
 import { DarkMode } from "./Contexts"
 
@@ -36,7 +36,7 @@ const Profile = () => {
           </span>
         </div>
         <div className="min-w-fit ml-[40px] text-right">
-          <RectBtn
+          <InActiveButton
             text="John Doe"
             color={`${isDarkMode ? "bg-black" : "bg-white"}`}
           />

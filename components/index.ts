@@ -15,7 +15,7 @@ import ToggleTableData from "./ToggleTableData"
 import TotalInfo from "./TotalInfo"
 import Pillar from "./Pillar"
 import SalesInfoBox from "./SalesInfoBox"
-import RectBtn from "./RectBtn"
+import InActiveButton from "./InActiveButton"
 import PillarHoverBox from "./PillarHoverBox"
 import LineDot from "./LineDot"
 import ActiveButton from "./ActiveButton"
@@ -58,7 +58,7 @@ export {
   ProgressLine,
   Pillar,
   SalesInfoBox,
-  RectBtn,
+  InActiveButton,
   PillarHoverBox,
   LineDot,
   ActiveButton,

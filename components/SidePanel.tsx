@@ -8,6 +8,12 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
 
   const { isDarkMode, toggleDarkMode } = useContext(DarkMode)
 
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleHover = () => {
+    setIsHovered((prev) => !prev)
+  }
+
   const handleChartMenu = () => {
     if (isMenuOpen === "chartDisplay") {
       setIsMenuOpen("")
@@ -48,10 +54,12 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
         }}
       ></div>
       <img
-        src="x-square.svg"
+        src={`${isHovered ? "x-square-fill" : "x-square"}.svg`}
         alt="close menu button"
         className="w-[35px] ml-auto mr-0 mb-[10px] hover:cursor-pointer"
         onClick={handlePanelClick}
+        onMouseEnter={handleHover}
+        onMouseLeave={handleHover}
       />
 
       {isDarkMode ? (

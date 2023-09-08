@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { RectBtn } from "."
+import { InActiveButton } from "."
 import { monthlySales } from "../constants"
 import { DarkMode, TargetSales } from "./Contexts"
 
@@ -25,18 +25,13 @@ const Target = () => {
       >
         <p>Monthly target sales</p>
         <div className="flex justify-center items-center mb-[30px]">
-          {!isInput && (
-            <RectBtn
-              text={targetSales}
-              onClick={() => handleIsInput}
-            />
-          )}
+          {!isInput && <InActiveButton text={targetSales} />}
 
           {isInput && (
             <input
               type="text"
               value={targetSales}
-              onChange={() => {}}
+              onClick={() => handleIsInput}
               className="w-[80px] light-blue3 rou p-1 text-center"
             />
           )}
@@ -60,10 +55,10 @@ const Target = () => {
           </div>
         </div>
         <div className="flex flex-col mx-[10px]">
-          <RectBtn text="All months" />
+          <InActiveButton text="All months" />
           <div className="flex flex-wrap justify-between pt-[10px]">
             {monthlySales.map((month, index) => (
-              <RectBtn
+              <InActiveButton
                 key={index}
                 text={`${month.month} ${month.sales}`}
                 color={`

@@ -1,4 +1,4 @@
-import { RectBtn } from "."
+import { InActiveButton } from "."
 
 const SalesResultRect = ({
   title,
@@ -14,7 +14,7 @@ const SalesResultRect = ({
       className={`mx-[20px] flex items-center justify-between ${extraStyles}`}
     >
       <span>{title}</span>
-      <RectBtn text={rectText} />
+      <InActiveButton text={rectText} />
     </div>
   )
 }

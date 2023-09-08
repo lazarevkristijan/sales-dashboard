@@ -21,9 +21,9 @@ const OrderPageNo = ({
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       className={`
-      ${isDarkMode && isHovered && "dark-blue1 text-white"}
+      ${isDarkMode && isHovered && "dark-blue2 text-white"}
       ${isDarkMode && !isHovered && "bg-black text-white"}
-      ${!isDarkMode && isHovered && "light-blue3 text-black"}
+      ${!isDarkMode && isHovered && "light-blue2 text-black"}
       ${!isDarkMode && !isHovered && "bg-white text-black"}
       
       ${isDarkMode && active && "dark-blue1 text-white"}

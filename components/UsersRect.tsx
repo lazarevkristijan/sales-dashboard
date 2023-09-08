@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
-import { RectBtn } from "."
+import { InActiveButton } from "."
 
 const UsersRect = ({
   title,
@@ -20,7 +20,7 @@ const UsersRect = ({
       } text-center py-[20px] rou ${extraStyles}`}
     >
       <p className="mb-[15px]">{title}</p>
-      <RectBtn
+      <InActiveButton
         text={rectText}
         extraStyles="w-[80px] mx-auto"
       />
