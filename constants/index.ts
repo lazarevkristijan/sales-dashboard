@@ -314,7 +314,7 @@ export const products = [
     productNo: 1,
   },
   {
-    name: "iPhone 12",
+    name: "iPhone 13",
     price: 500,
     storage: 256,
     ram: 4,
@@ -324,7 +324,7 @@ export const products = [
     productNo: 2,
   },
   {
-    name: "iPhone 12",
+    name: "iPhone 14",
     price: 500,
     storage: 256,
     ram: 4,
@@ -404,18 +404,23 @@ export const displayChartsOptions = [
 export const orderPageNumbers = [
   {
     page: 1,
+    active: true,
   },
   {
     page: 2,
+    active: false,
   },
   {
     page: 3,
+    active: false,
   },
   {
     page: 4,
+    active: false,
   },
   {
     page: 67,
+    active: false,
   },
 ]
 

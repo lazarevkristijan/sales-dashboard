@@ -178,6 +178,7 @@ const Orders = () => {
             <OrderPageNo
               key={index}
               page={number.page}
+              active={number.active}
             />
           ))}
         </div>

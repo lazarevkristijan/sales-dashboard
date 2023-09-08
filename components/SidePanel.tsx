@@ -67,7 +67,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
         <PanelButton
           title="Dark Mode"
           iconWidth="80"
-          color="light-blue1"
+          color="light-blue2"
           onClick={toggleDarkMode}
         >
           <div className="rounded-full bg-[#000] w-[32.5px] h-[32.5px]"></div>
@@ -76,7 +76,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
 
       <PanelButton
         title="Chart Display"
-        color={isDarkMode ? "dark-blue4" : "light-blue1"}
+        color={isDarkMode ? "dark-blue4" : "light-blue2"}
         onClick={handleChartMenu}
       >
         <img
@@ -89,7 +89,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
 
       <PanelButton
         title="Display Periods"
-        color={isDarkMode ? "dark-blue4" : "light-blue1"}
+        color={isDarkMode ? "dark-blue4" : "light-blue2"}
         onClick={handlePeriodsMenu}
       >
         <span className="mx-auto">1m</span>
@@ -99,7 +99,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       <PanelButton
         title="Target"
         iconWidth="100"
-        color={isDarkMode ? "dark-blue4" : "light-blue1"}
+        color={isDarkMode ? "dark-blue4" : "light-blue2"}
         onClick={handleTargetMenu}
       >
         <span className="mx-auto">Change</span>

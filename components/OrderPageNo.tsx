@@ -1,7 +1,13 @@
 import { useState, useContext } from "react"
 import { DarkMode } from "./Contexts"
 
-const OrderPageNo = ({ page }: { page: number }) => {
+const OrderPageNo = ({
+  page,
+  active = false,
+}: {
+  page: number
+  active?: boolean
+}) => {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleHover = () => {
@@ -19,6 +25,12 @@ const OrderPageNo = ({ page }: { page: number }) => {
       ${isDarkMode && !isHovered && "bg-black text-white"}
       ${!isDarkMode && isHovered && "light-blue3 text-black"}
       ${!isDarkMode && !isHovered && "bg-white text-black"}
+      
+      ${isDarkMode && active && "dark-blue1 text-white"}
+      ${isDarkMode && !active && "bg-black text-white"}
+      ${!isDarkMode && active && "light-blue3 text-black"}
+      ${!isDarkMode && !active && "bg-white text-black"}
+
 w-[30px] mx-1 rou hover:cursor-pointer`}
     >
       {page}

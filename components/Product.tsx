@@ -30,7 +30,7 @@ const Product = ({
         } mx-auto sm:mx-0 mb-[20px] sm:mb-0 w-[140px] text-center rou`}
       >
         <img
-          src="phone.svg"
+          src={`${name}.svg`}
           alt="phone"
           className="h-[220px] mx-auto pt-[5px]"
         />
