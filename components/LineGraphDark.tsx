@@ -1,13 +1,22 @@
 import "chart.js/auto"
 import { Chart } from "react-chartjs-2"
+import { monthlySales } from "../constants"
 
 const LineGraphDark = () => {
+  const sales: number[] = []
+  const months: string[] = []
+  {
+    monthlySales.map((month) => {
+      sales.push(month.sales)
+      months.push(month.month)
+    })
+  }
   const data = {
-    labels: ["Aug", "Jul", "Jun", "May", "Apr", "Mar"],
+    labels: [months[0], months[1], months[2], months[3], months[4], months[5]],
     datasets: [
       {
         label: "Delivered",
-        data: [100, 100, 90, 80, 100, 95],
+        data: [sales[0], sales[1], sales[2], sales[3], sales[4], sales[5]],
         backgroundColor: ["rgba(150,242,255,0.5)"],
         pointBackgroundColor: "darkblue",
         pointRadius: 5,
@@ -25,9 +34,9 @@ const LineGraphDark = () => {
     plugins: {
       legend: {
         labels: {
-          color: "#000",
+          color: "#fff",
           font: {
-            size: 15,
+            size: 20,
             weight: "500",
             family: "Montserrat",
           },
@@ -37,9 +46,9 @@ const LineGraphDark = () => {
     scales: {
       x: {
         ticks: {
-          color: "#000",
+          color: "#fff",
           font: {
-            size: 15,
+            size: 18,
             weight: "500",
             family: "Montserrat",
           },
@@ -49,9 +58,9 @@ const LineGraphDark = () => {
         suggestedMin: 0,
         suggestedMax: dynamicMax,
         ticks: {
-          color: "#000",
+          color: "#fff",
           font: {
-            size: 15,
+            size: 18,
             weight: "500",
             family: "Montserrat",
           },

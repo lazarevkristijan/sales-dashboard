@@ -1,12 +1,21 @@
 import "chart.js/auto"
 import { Chart } from "react-chartjs-2"
+import { monthlySales } from "../constants"
 const PieChart = () => {
+  const sales: number[] = []
+  const months: string[] = []
+  {
+    monthlySales.map((month) => {
+      sales.push(month.sales)
+      months.push(month.month)
+    })
+  }
   const data = {
-    labels: ["Aug", "Jul", "Jun", "May", "Apr", "Mar"],
+    labels: [months[0], months[1], months[2], months[3], months[4], months[5]],
     datasets: [
       {
         label: "Delivered",
-        data: [100, 120, 90, 80, 100, 95],
+        data: [sales[0], sales[1], sales[2], sales[3], sales[4], sales[5]],
       },
     ],
   }
@@ -17,7 +26,7 @@ const PieChart = () => {
         labels: {
           color: "#000",
           font: {
-            size: 15,
+            size: 20,
             weight: "500",
             family: "Montserrat",
           },
@@ -29,7 +38,7 @@ const PieChart = () => {
         ticks: {
           color: "#000",
           font: {
-            size: 15,
+            size: 18,
             weight: "500",
             family: "Montserrat",
           },
@@ -39,7 +48,7 @@ const PieChart = () => {
         ticks: {
           color: "#000",
           font: {
-            size: 15,
+            size: 18,
             weight: "500",
             family: "Montserrat",
           },

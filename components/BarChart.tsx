@@ -23,7 +23,7 @@ const BarChart = () => {
   }
 
   const maxDataValue = Math.max(...data.datasets[0].data)
-  const buffer = 20
+  const buffer = 10
   const dynamicMax = maxDataValue + buffer
 
   const options = {
@@ -41,6 +41,9 @@ const BarChart = () => {
     },
     scales: {
       x: {
+        grid: {
+          color: "rgba(0,0,0,0.2)",
+        },
         ticks: {
           color: "#000",
           font: {
@@ -51,6 +54,9 @@ const BarChart = () => {
         },
       },
       y: {
+        grid: {
+          color: "rgba(0,0,0,0.2)",
+        },
         suggestedMin: 0,
         suggestedMax: dynamicMax,
         ticks: {
