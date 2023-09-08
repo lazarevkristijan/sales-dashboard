@@ -269,20 +269,36 @@ export const countryordersHeadings = [
 
 export const countryTableData = [
   {
+    country: "Macedonia",
+    purchases: 26,
+  },
+  {
     country: "Germany",
-    purchases: 80,
+    purchases: 25,
   },
   {
     country: "Italy",
-    purchases: 9,
+    purchases: 10,
   },
   {
     country: "Switzerland",
-    purchases: 7,
+    purchases: 9,
   },
   {
-    country: "Luxembourg",
-    purchases: 6,
+    country: "Greece",
+    purchases: 8,
+  },
+  {
+    country: "USA",
+    purchases: 8,
+  },
+  {
+    country: "Austria",
+    purchases: 8,
+  },
+  {
+    country: "China",
+    purchases: 8,
   },
 ]
 

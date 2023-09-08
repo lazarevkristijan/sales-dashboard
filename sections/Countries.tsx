@@ -19,7 +19,7 @@ const Countries = () => {
       <p className={`${isDarkMode ? "text-white" : "text-black"} text-center`}>
         Countries
       </p>
-      <div className="mx-[20px] ">
+      <div className="mx-[20px] overflow-y-scroll h-[210px]">
         <table className="w-full text-center">
           <thead>
             <tr className="h-[45px] ">
