@@ -1,169 +1,31 @@
-export const progressLineNumbers = [
+export const monthlySales = [
   {
-    value: 200,
+    month: "Aug",
+    sales: 102,
   },
   {
-    value: 150,
+    month: "Jul",
+    sales: 122,
   },
   {
-    value: 100,
+    month: "Jun",
+    sales: 118,
   },
   {
-    value: 50,
+    month: "May",
+    sales: 90,
   },
   {
-    value: 0,
-  },
-]
-
-export const pillarValues = [
-  {
-    value: 95,
-    week: "w35",
-    height: 143,
+    month: "Apr",
+    sales: 99,
   },
   {
-    value: 190,
-    week: "w34",
-    height: 110,
-  },
-  {
-    value: 285,
-    week: "w33",
-    height: 190,
-  },
-  {
-    value: 380,
-    week: "w32",
-    height: 157,
-  },
-  {
-    value: 475,
-    week: "w31",
-    height: 137,
-  },
-  {
-    value: 570,
-    week: "w30",
-    height: 120,
-  },
-  {
-    value: 665,
-    week: "w29",
-    height: 150,
-  },
-  {
-    value: 760,
-    week: "w28",
-    height: 170,
-  },
-  {
-    value: 855,
-    week: "w27",
-    height: 140,
+    month: "Mar",
+    sales: 130,
   },
 ]
 
-export const salesInfoBoxes = [
-  {
-    heading: "Not delivered",
-    qty: 7,
-    bgLight: "#F0FF96",
-    bgDark: "#E3E300",
-  },
-  {
-    heading: "In cart",
-    qty: 170,
-    bgLight: "#F0FF96",
-    bgDark: "#E3E300",
-  },
-  {
-    heading: "Returned",
-    qty: 1,
-    bgLight: "#FF9696",
-    bgDark: "#DB0000",
-  },
-]
-
-export const pieColors = [
-  {
-    text: "Week 27",
-    color: "#FF0000",
-  },
-  {
-    text: "Week 28",
-    color: "#008000",
-  },
-  {
-    text: "Week 29",
-    color: "#FFFF00",
-  },
-  {
-    text: "Week 30",
-    color: "#800080",
-  },
-  {
-    text: "Week 31",
-    color: "#0000FF",
-  },
-  {
-    text: "Week 32",
-    color: "#90EE90",
-  },
-  {
-    text: "Week 33",
-    color: "#FFA500",
-  },
-  {
-    text: "Week 34",
-    color: "#808080",
-  },
-  {
-    text: "Week 35",
-    color: "#ADD8E6",
-  },
-]
-
-export const lineDotLocations = [
-  {
-    left: 95,
-    height: 143,
-  },
-  {
-    left: 190,
-    height: 110,
-  },
-  {
-    left: 285,
-    height: 190,
-  },
-  {
-    left: 380,
-    height: 157,
-  },
-  {
-    left: 475,
-    height: 137,
-  },
-  {
-    left: 570,
-    height: 120,
-  },
-  {
-    left: 665,
-    height: 150,
-  },
-  {
-    left: 760,
-    height: 170,
-  },
-  {
-    left: 855,
-    height: 140,
-  },
-]
-
-export const tableHeadings = [
+export const ordersHeadings = [
   {
     text: "Order #",
   },
@@ -184,7 +46,7 @@ export const tableHeadings = [
   },
 ]
 
-export const tableData = [
+export const ordersTableData = [
   {
     orderNo: "37",
     name: "John Doe",
@@ -267,7 +129,7 @@ export const tableData = [
   },
 ]
 
-export const countryTableHeadings = [
+export const countryordersHeadings = [
   {
     text: "Country",
   },
@@ -391,33 +253,6 @@ export const displayChartsOptions = [
     title: "Pie Chart",
     iconLight: "light-pie-chart",
     iconDark: "dark-pie-chart",
-  },
-]
-
-export const targetMenuMonths = [
-  {
-    month: "Aug",
-    sales: 111,
-  },
-  {
-    month: "Jul",
-    sales: 120,
-  },
-  {
-    month: "June",
-    sales: 70,
-  },
-  {
-    month: "May",
-    sales: 136,
-  },
-  {
-    month: "Apr",
-    sales: 83,
-  },
-  {
-    month: "Mar",
-    sales: 140,
   },
 ]
 

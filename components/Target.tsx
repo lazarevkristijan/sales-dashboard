@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 import { RectBtn } from "."
-import { targetMenuMonths } from "../constants"
+import { monthlySales } from "../constants"
 import { DarkMode, TargetSales } from "./Contexts"
 
 const Target = () => {
@@ -60,32 +60,32 @@ const Target = () => {
           </div>
         </div>
         <div className="flex flex-col mx-[10px]">
-          <RectBtn text="Previous months" />
+          <RectBtn text="All months" />
           <div className="flex flex-wrap justify-between pt-[10px]">
-            {targetMenuMonths.map((period, index) => (
+            {monthlySales.map((month, index) => (
               <RectBtn
                 key={index}
-                text={`${period.month} ${period.sales}`}
+                text={`${month.month} ${month.sales}`}
                 color={`
                 ${
-                  isDarkMode && period.sales >= Number(targetSales)
+                  isDarkMode && month.sales >= Number(targetSales)
                     ? "dark-success"
                     : `${
-                        isDarkMode && period.sales <= Number(targetSales)
+                        isDarkMode && month.sales <= Number(targetSales)
                           ? "dark-danger"
                           : `${
-                              !isDarkMode && period.sales >= Number(targetSales)
+                              !isDarkMode && month.sales >= Number(targetSales)
                                 ? "light-success"
                                 : `${
                                     !isDarkMode &&
-                                    period.sales <= Number(targetSales) &&
+                                    month.sales <= Number(targetSales) &&
                                     "light-danger"
                                   }`
                             }`
                       }`
                 }
                 ${
-                  period.sales >= Number(targetSales)
+                  month.sales >= Number(targetSales)
                     ? "light-success"
                     : "light-danger"
                 }`}

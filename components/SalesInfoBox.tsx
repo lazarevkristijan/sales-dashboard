@@ -29,7 +29,7 @@ const SalesInfoBox = ({
             isDarkMode ? "bg-black text-white" : "bg-white text-black"
           } py-1 px-2 rou w-fit mx-auto`}
         >
-          ${qty * 500}
+          €{qty * 500}
         </span>
       </div>
     </div>

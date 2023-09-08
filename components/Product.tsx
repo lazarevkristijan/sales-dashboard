@@ -44,7 +44,7 @@ const Product = ({
             isDarkMode ? "bg-black text-white" : "bg-white text-black"
           } h-fit w-[240px] rou sm:ml-[10px] p-[10px] smText`}
         >
-          <p>Price: ${price} </p>
+          <p>Price: €{price} </p>
           <p>Storage: {storage}GB</p>
           <p> RAM: {ram}GB</p>
           <p> Battery: {battery}mAh</p>
@@ -55,7 +55,7 @@ const Product = ({
           } h-fit w-[240px] rou sm:ml-[10px] mb-[20px] sm:mb-0 p-[10px] mt-[10px]`}
         >
           <p> Available: {available}</p>
-          <p> Rating: {rating}/5</p>
+          <p> Rating: {rating}/5⭐</p>
         </div>
         <p className={`${isDarkMode ? "text-white" : "text-black"} text-right`}>
           Product {productNo}/3

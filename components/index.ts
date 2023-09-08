@@ -24,7 +24,6 @@ import Notification from "./Notification"
 import ProfileMenuButton from "./ProfileMenuButton"
 import TopIcon from "./TopIcon"
 import SalesResultRect from "./SalesResultRect"
-import PieColorBox from "./PieColorBox"
 import Product from "./Product"
 import ProductArrow from "./ProductArrow"
 import UsersRect from "./UsersRect"
@@ -68,7 +67,6 @@ export {
   ProfileMenuButton,
   TopIcon,
   SalesResultRect,
-  PieColorBox,
   Product,
   ProductArrow,
   UsersRect,

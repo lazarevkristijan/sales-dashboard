@@ -1,6 +1,6 @@
 import {
-  tableData,
-  tableHeadings,
+  ordersTableData,
+  ordersHeadings,
   sectionStyles,
   orderPageNumbers,
 } from "../constants"
@@ -44,7 +44,7 @@ const Orders = () => {
         <table className="w-[1000px] text-center">
           <thead>
             <tr className="h-[50px]">
-              {tableHeadings.map((heading, index) => (
+              {ordersHeadings.map((heading, index) => (
                 <th
                   key={index}
                   className={`${
@@ -59,7 +59,7 @@ const Orders = () => {
             </tr>
           </thead>
           <tbody>
-            {tableData.map((order, index) => (
+            {ordersTableData.map((order, index) => (
               <tr
                 key={index}
                 className="h-[50px]"
@@ -67,7 +67,7 @@ const Orders = () => {
                 <TableDataBlock index={index}>#{order.orderNo}</TableDataBlock>
                 <TableDataBlock index={index}>{order.name}</TableDataBlock>
                 <TableDataBlock index={index}>{order.date}</TableDataBlock>
-                <TableDataBlock index={index}>{order.amount}</TableDataBlock>
+                <TableDataBlock index={index}>€{order.amount}</TableDataBlock>
                 <TableDataBlock index={index}>{order.item}</TableDataBlock>
                 <TableDataBlock
                   index={index}

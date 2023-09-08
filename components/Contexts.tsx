@@ -2,7 +2,7 @@ import { createContext, useState } from "react"
 
 export const ReturnedSales = createContext("2")
 export const TargetSales = createContext("120")
-export const DeliveredSales = createContext("102")
+export const DeliveredSales = createContext("97")
 export const DarkMode = createContext({
   isDarkMode: false,
   toggleDarkMode: () => {},

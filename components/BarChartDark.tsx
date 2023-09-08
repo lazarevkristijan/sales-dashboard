@@ -8,7 +8,7 @@ const BarChartDark = () => {
       {
         label: "Delivered",
         data: [100, 120, 90, 80, 100, 95],
-        backgroundColor: ["#48CAE4"],
+        backgroundColor: ["#00C0FF"],
       },
     ],
   }

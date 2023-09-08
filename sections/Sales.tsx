@@ -7,6 +7,9 @@ import {
   LineGraph,
   SalesResultRect,
   PieChartDark,
+  RectBtn,
+  BarChartDark,
+  LineGraphDark,
 } from "../components/"
 import { salesResultStyles, sectionStyles } from "../constants"
 import {
@@ -40,7 +43,7 @@ const Sales = () => {
       }`}
     >
       <div
-        className={`mb-[30px] ${activeChart !== "pie" && "mx-[100px]"}  ${
+        className={`mb-[30px] ${activeChart !== "pie" && "sm:mx-[100px]"}  ${
           activeChart === "pie" && "w-[500px] mx-auto"
         } `}
       >
@@ -52,13 +55,13 @@ const Sales = () => {
           )
         ) : activeChart === "bar" ? (
           isDarkMode ? (
-            <BarChart />
+            <BarChartDark />
           ) : (
             <BarChart />
           )
         ) : activeChart === "line" ? (
           isDarkMode ? (
-            <LineGraph />
+            <LineGraphDark />
           ) : (
             <LineGraph />
           )
@@ -66,6 +69,13 @@ const Sales = () => {
       </div>
 
       <div className="flex flex-wrap justify-center">
+        <div className="w-full flex justify-center mb-[20px]">
+          <RectBtn
+            text="Current month"
+            color={isDarkMode ? "dark-blue1" : "light-blue3"}
+            extraStyles="w-[200px]"
+          />
+        </div>
         <SalesInfoBox
           heading="Not delivered"
           qty={Number(notDeliveredSales)}
@@ -90,17 +100,16 @@ const Sales = () => {
         >
           <SalesResultRect
             title="Gross profits"
-            rectText={`$${(
-              (Number(deliveredSales) + Number(notDeliveredSales)) *
-              500
-            ).toLocaleString("en-US")}`}
+            rectText={`€${(Number(deliveredSales) * 500).toLocaleString(
+              "en-US"
+            )}`}
             extraStyles="mb-[10px]"
           />
 
           <SalesResultRect
             title="Net profits"
-            rectText={`$${Math.round(
-              ((Number(deliveredSales) + Number(notDeliveredSales)) * 500) / 3
+            rectText={`€${Math.round(
+              (Number(deliveredSales) * 500) / 3
             ).toLocaleString("en-US")}`}
           />
         </div>
@@ -112,15 +121,13 @@ const Sales = () => {
           <SalesResultRect
             title="Target progress"
             rectText={`${Math.round(
-              ((Number(deliveredSales) + Number(notDeliveredSales)) /
-                Number(targetSales)) *
-                100
+              (Number(deliveredSales) / Number(targetSales)) * 100
             )}%`}
             extraStyles="mb-[10px]"
           />
           <SalesResultRect
             title="Total calculated"
-            rectText={`$${(
+            rectText={`€${(
               (Number(deliveredSales) +
                 Number(notDeliveredSales) -
                 Number(returnedSales)) *
