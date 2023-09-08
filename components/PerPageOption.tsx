@@ -1,7 +1,13 @@
 import { useState, useContext } from "react"
 import { DarkMode } from "./Contexts"
 
-const PerPageOption = ({ number }: { number: number }) => {
+const PerPageOption = ({
+  number,
+  onClick,
+}: {
+  number: number
+  onClick: React.MouseEventHandler
+}) => {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleIsHovered = () => {
@@ -21,6 +27,7 @@ const PerPageOption = ({ number }: { number: number }) => {
  text-center py-[5px] rou hover:cursor-pointer`}
       onMouseEnter={handleIsHovered}
       onMouseLeave={handleIsHovered}
+      onClick={onClick}
     >
       {number}
     </div>

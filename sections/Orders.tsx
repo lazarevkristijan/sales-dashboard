@@ -1,9 +1,4 @@
-import {
-  ordersTableData,
-  ordersHeadings,
-  sectionStyles,
-  orderPageNumbers,
-} from "../constants"
+import { ordersTableData, sectionStyles, orderPageNumbers } from "../constants"
 import {
   ActiveButton,
   ToggleTableData,
@@ -12,13 +7,28 @@ import {
   TableDataBlock,
 } from "../components"
 import { useState, useContext } from "react"
-import { DarkMode } from "../components/Contexts"
+import { DarkMode, OrdersContext } from "../components/Contexts"
 
 const Orders = () => {
   const [isTableMenuOpen, setIsTableMenuOpen] = useState(false)
   const [isPerPageOpen, setIsPerPageOpen] = useState(false)
 
   const { isDarkMode } = useContext(DarkMode)
+  const {
+    isOrderOn,
+    toggleOrder,
+    isNameOn,
+    toggleName,
+    isDateOn,
+    toggleDate,
+    isAmountOn,
+    toggleAmount,
+    isItemOn,
+    toggleItem,
+    isStatusOn,
+    toggleStatus,
+    perPage,
+  } = useContext(OrdersContext)
 
   const handleTableMenu = () => {
     if (isPerPageOpen) {
@@ -44,37 +54,111 @@ const Orders = () => {
         <table className="w-[1000px] text-center">
           <thead>
             <tr className="h-[50px]">
-              {ordersHeadings.map((heading, index) => (
+              {isOrderOn && (
                 <th
-                  key={index}
                   className={`${
                     isDarkMode
                       ? "dark-blue4 text-white"
                       : "light-blue2 text-black"
                   } font-normal`}
+                  onClick={toggleOrder}
                 >
-                  {heading.text}
+                  Order #
                 </th>
-              ))}
+              )}
+              {isNameOn && (
+                <th
+                  className={`${
+                    isDarkMode
+                      ? "dark-blue4 text-white"
+                      : "light-blue2 text-black"
+                  } font-normal`}
+                  onClick={toggleName}
+                >
+                  Name
+                </th>
+              )}
+              {isDateOn && (
+                <th
+                  className={`${
+                    isDarkMode
+                      ? "dark-blue4 text-white"
+                      : "light-blue2 text-black"
+                  } font-normal`}
+                  onClick={toggleDate}
+                >
+                  Date
+                </th>
+              )}
+              {isAmountOn && (
+                <th
+                  className={`${
+                    isDarkMode
+                      ? "dark-blue4 text-white"
+                      : "light-blue2 text-black"
+                  } font-normal`}
+                  onClick={toggleAmount}
+                >
+                  Amount
+                </th>
+              )}
+              {isItemOn && (
+                <th
+                  className={`${
+                    isDarkMode
+                      ? "dark-blue4 text-white"
+                      : "light-blue2 text-black"
+                  } font-normal`}
+                  onClick={toggleItem}
+                >
+                  Item
+                </th>
+              )}
+              {isStatusOn && (
+                <th
+                  className={`${
+                    isDarkMode
+                      ? "dark-blue4 text-white"
+                      : "light-blue2 text-black"
+                  } font-normal`}
+                  onClick={toggleStatus}
+                >
+                  Status
+                </th>
+              )}
             </tr>
           </thead>
           <tbody>
-            {ordersTableData.map((order, index) => (
+            {ordersTableData.slice(0, perPage).map((order, index) => (
               <tr
                 key={index}
                 className="h-[50px]"
               >
-                <TableDataBlock index={index}>#{order.orderNo}</TableDataBlock>
-                <TableDataBlock index={index}>{order.name}</TableDataBlock>
-                <TableDataBlock index={index}>{order.date}</TableDataBlock>
-                <TableDataBlock index={index}>€{order.amount}</TableDataBlock>
-                <TableDataBlock index={index}>{order.item}</TableDataBlock>
-                <TableDataBlock
-                  index={index}
-                  border={false}
-                >
-                  {order.status}
-                </TableDataBlock>
+                {isOrderOn && (
+                  <TableDataBlock index={index}>
+                    #{order.orderNo}
+                  </TableDataBlock>
+                )}
+                {isNameOn && (
+                  <TableDataBlock index={index}>{order.name}</TableDataBlock>
+                )}
+                {isDateOn && (
+                  <TableDataBlock index={index}>{order.date}</TableDataBlock>
+                )}
+                {isAmountOn && (
+                  <TableDataBlock index={index}>€{order.amount}</TableDataBlock>
+                )}
+                {isItemOn && (
+                  <TableDataBlock index={index}>{order.item}</TableDataBlock>
+                )}
+                {isStatusOn && (
+                  <TableDataBlock
+                    index={index}
+                    border={false}
+                  >
+                    {order.status}
+                  </TableDataBlock>
+                )}
               </tr>
             ))}
           </tbody>
