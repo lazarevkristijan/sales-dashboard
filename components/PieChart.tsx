@@ -45,6 +45,9 @@ const PieChart = () => {
         },
       },
       y: {
+        grid: {
+          color: "rgba(0,0,0,0.2)",
+        },
         ticks: {
           color: "#000",
           font: {

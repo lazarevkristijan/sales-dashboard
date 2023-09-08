@@ -140,20 +140,20 @@ export const countryordersHeadings = [
 
 export const countryTableData = [
   {
-    country: "USA",
-    purchases: 430,
+    country: "Germany",
+    purchases: 80,
   },
   {
     country: "Italy",
-    purchases: 103,
+    purchases: 9,
   },
   {
-    country: "Greece",
-    purchases: 77,
+    country: "Switzerland",
+    purchases: 7,
   },
   {
-    country: "Germany",
-    purchases: 42,
+    country: "Luxembourg",
+    purchases: 6,
   },
 ]
 
@@ -283,7 +283,5 @@ export const smSectionStyles = "py-[20px] rou mb-[30px] w-[500px]"
 
 export const chartStyles =
   " mx-[20px] py-[30px] rou mb-[30px] max-w-[1000px] overflow-x-scroll lg:overflow-hidden"
-
-export const tableBorderStyle = "border-r-[1px] border-black"
 
 export const topDropDownStyles = "p-[20px] rou absolute z-[1] top-[80px]"

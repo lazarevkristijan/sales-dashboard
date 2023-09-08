@@ -15,7 +15,7 @@ const RectBtn = ({
   const { isDarkMode } = useContext(DarkMode)
 
   return (
-    <span
+    <p
       className={` ${isDarkMode && color && color} ${
         isDarkMode && !color && "dark-blue3"
       } ${!isDarkMode && color && color} ${
@@ -24,7 +24,7 @@ const RectBtn = ({
       onClick={onClick}
     >
       {text}
-    </span>
+    </p>
   )
 }
 

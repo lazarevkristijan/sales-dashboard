@@ -55,6 +55,9 @@ const LineGraph = () => {
         },
       },
       y: {
+        grid: {
+          color: "rgba(0,0,0,0.2)",
+        },
         suggestedMin: 0,
         suggestedMax: dynamicMax,
         ticks: {

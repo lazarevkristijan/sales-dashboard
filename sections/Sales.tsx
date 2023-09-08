@@ -72,7 +72,7 @@ const Sales = () => {
         <div className="w-full flex justify-center mb-[20px]">
           <RectBtn
             text="Current month"
-            color={isDarkMode ? "dark-blue1" : "light-blue3"}
+            color={isDarkMode ? "dark-blue4" : "light-blue3"}
             extraStyles="w-[200px]"
           />
         </div>

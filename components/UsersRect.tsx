@@ -19,8 +19,11 @@ const UsersRect = ({
         isDarkMode ? "bg-black text-white" : "bg-white text-black"
       } text-center py-[20px] rou ${extraStyles}`}
     >
-      <span className="block mb-[15px]">{title}</span>
-      <RectBtn text={rectText} />
+      <p className="mb-[15px]">{title}</p>
+      <RectBtn
+        text={rectText}
+        extraStyles="w-[80px] mx-auto"
+      />
     </div>
   )
 }
