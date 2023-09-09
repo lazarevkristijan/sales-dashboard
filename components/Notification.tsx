@@ -21,7 +21,7 @@ const Notification = ({ evaluation }: { evaluation: boolean }) => {
         } p-[10px] rou mr-[10px] w-1/3 my-auto`}
       >
         <img
-          src="phone.svg"
+          src="iPhone 12.svg"
           alt="phone"
         />
       </div>
