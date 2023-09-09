@@ -1,7 +1,12 @@
 import { createContext, useEffect, useState } from "react"
 
 export const ReturnedSales = createContext("2")
-export const TargetSales = createContext("120")
+export const TargetSales = createContext({
+  targetSales: "120",
+  toggleTarget: ({ value }: { value: string }) => {
+    return value
+  },
+})
 export const DeliveredSales = createContext("97")
 export const DarkMode = createContext({
   isDarkMode: false,
@@ -53,6 +58,11 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
 
   const toggleChart = ({ value }: { value: string }) => {
     setActiveChart(value)
+    return value
+  }
+
+  const toggleTarget = ({ value }: { value: string }) => {
+    setTargetSales(value)
     return value
   }
 
@@ -118,7 +128,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ReturnedSales.Provider value={returnedSales}>
-      <TargetSales.Provider value={targetSales}>
+      <TargetSales.Provider value={{ targetSales, toggleTarget }}>
         <DeliveredSales.Provider value={deliveredSales}>
           <DarkMode.Provider value={{ isDarkMode, toggleDarkMode }}>
             <InCart.Provider value={inCart}>

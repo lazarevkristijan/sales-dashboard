@@ -16,7 +16,7 @@ const Target = () => {
   }
 
   const { isDarkMode } = useContext(DarkMode)
-  const targetSales = useContext(TargetSales)
+  const { targetSales, toggleTarget } = useContext(TargetSales)
 
   return (
     <div
@@ -37,7 +37,7 @@ const Target = () => {
             <input
               type="text"
               value={targetSales}
-              onClick={() => handleIsInput}
+              onChange={(e) => toggleTarget({ value: e.target.value })}
               className={`w-[80px] ${
                 isDarkMode ? "dark-blue2" : "light-blue2"
               } rou p-1 text-center`}

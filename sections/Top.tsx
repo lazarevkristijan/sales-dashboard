@@ -35,31 +35,24 @@ const Top = () => {
   }
 
   return (
-    <div className={``}>
-      <div className={`${sectionStyles} flex relative`}>
-        <TopIcon
-          name={`${isDarkMode ? "dark" : "light"}-menu`}
-          onClick={handlePanelClick}
-        />
-        <TopIcon
-          name={`${isDarkMode ? "dark" : "light"}-notification-bell`}
-          extraStyles="ml-auto mr-0"
-          onClick={handleBellClick}
-        />
-        <TopIcon
-          name="profile"
-          extraStyles="ml-[5px]"
-          onClick={handleProfileClick}
-        />
-        {notificationMenu && <NotificationPanel />}
-        {profileMenu && <Profile />}
-        {sidePanelMenu && <SidePanel handlePanelClick={handlePanelClick} />}
-      </div>
-      <div className="flex justify-center bg-red-600 text-white font-bold">
-        <p className="mx-auto text-center">
-          THIS IS A DEMO PREVIEW AND MAY HAVE FUNCTIONALITY ISSUES
-        </p>
-      </div>
+    <div className={`${sectionStyles} flex relative`}>
+      <TopIcon
+        name={`${isDarkMode ? "dark" : "light"}-menu`}
+        onClick={handlePanelClick}
+      />
+      <TopIcon
+        name={`${isDarkMode ? "dark" : "light"}-notification-bell`}
+        extraStyles="ml-auto mr-0"
+        onClick={handleBellClick}
+      />
+      <TopIcon
+        name="profile"
+        extraStyles="ml-[5px]"
+        onClick={handleProfileClick}
+      />
+      {notificationMenu && <NotificationPanel />}
+      {profileMenu && <Profile />}
+      {sidePanelMenu && <SidePanel handlePanelClick={handlePanelClick} />}
     </div>
   )
 }

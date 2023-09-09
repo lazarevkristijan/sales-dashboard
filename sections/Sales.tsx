@@ -27,7 +27,7 @@ const Sales = () => {
   const deliveredSales = useContext(DeliveredSales)
   const returnedSales = useContext(ReturnedSales)
   const inCart = useContext(InCart)
-  const targetSales = useContext(TargetSales)
+  const { targetSales } = useContext(TargetSales)
   const { isDarkMode } = useContext(DarkMode)
   const notDeliveredSales = String(Math.round(Number(deliveredSales) / 20))
   const { activeChart } = useContext(ActiveChart)
