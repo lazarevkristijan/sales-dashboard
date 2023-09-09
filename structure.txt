@@ -65,17 +65,21 @@ color - white
 
 
 hover colors LIGHT:
-Bar Chart: light-blue3 #48CAE4 / dark-blue3 #0077B6
+bar chart: light-blue3 #48CAE4 / dark-blue3 #0077B6
 
 active button: light-blue3 #48CAE4 / dark-blue2 #00B4D8
 
 panel button: white #fff / light-blue2 #96F2FF
 
-target edit btton: light-blue3 #48CAE4 / dark-blue2 #00B4D8
-
-order page nubmer: white #fff / light-blue3 #48CAE4
+orders page nubmer: white #fff / light-blue3 #48CAE4
 
 
 
 hover colors DARK:
+bar chart: dark-blue1 #00C0FF / dark-blue4 #03045E
 
+active button: dark-blue1 #00C0FF / dark-blue2 #00B4D8
+
+panel button: black #000 / dark-blue4 #03045E
+
+orders page nubmer: black #000 / dark-blue2 #00B4D8

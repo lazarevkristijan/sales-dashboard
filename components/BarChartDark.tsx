@@ -19,6 +19,7 @@ const BarChartDark = () => {
         label: "Delivered",
         data: [sales[0], sales[1], sales[2], sales[3], sales[4], sales[5]],
         backgroundColor: ["#00C0FF"],
+        hoverBackgroundColor: ["#03045E"],
       },
     ],
   }

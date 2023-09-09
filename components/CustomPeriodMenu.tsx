@@ -30,7 +30,7 @@ const CustomPeriodMenu = () => {
         <PanelButton
           title="From Date"
           iconWidth="150"
-          color={`${isDarkMode ? "dark-blue1" : "light-blue2"}`}
+          color={`${isDarkMode ? "dark-blue4" : "light-blue2"}`}
         >
           <input
             type="date"
@@ -43,7 +43,7 @@ const CustomPeriodMenu = () => {
         <PanelButton
           title="To Date"
           iconWidth="150"
-          color={`${isDarkMode ? "dark-blue1" : "light-blue2"}`}
+          color={`${isDarkMode ? "dark-blue4" : "light-blue2"}`}
         >
           <input
             type="date"
@@ -55,11 +55,11 @@ const CustomPeriodMenu = () => {
 
         <div
           className={`
-          ${isDarkMode && isHovered && ""}
+          ${isDarkMode && isHovered && "dark-blue2"}
           ${isDarkMode && !isHovered && "dark-blue1"}
           ${!isDarkMode && isHovered && "dark-blue2"}
           ${!isDarkMode && !isHovered && "light-blue3"}
-           p-[20px] flex justify-center items-center rou mb-[10px] hover:cursor-pointer`}
+           text-black p-[20px] flex justify-center items-center rou mb-[10px] hover:cursor-pointer`}
           onMouseEnter={handleHover}
           onMouseLeave={handleHover}
         >
