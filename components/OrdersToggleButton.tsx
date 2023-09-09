@@ -21,10 +21,15 @@ const OrdersToggleButton = ({ name }: { name: string }) => {
       </div>
       <div
         className={`w-[40px] h-[40px] 
-        ${isDarkMode && isOn && "dark-success"}
-        ${isDarkMode && !isOn && "dark-danger"}
-        ${!isDarkMode && isOn && "light-success"}
-        ${!isDarkMode && !isOn && "light-danger"}
+        ${
+          isDarkMode
+            ? isOn
+              ? "dark-success"
+              : "dark-danger"
+            : isOn
+            ? "light-success"
+            : "light-danger"
+        }
 
         
         ${

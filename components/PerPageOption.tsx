@@ -17,12 +17,15 @@ const PerPageOption = ({
   const { isDarkMode } = useContext(DarkMode)
   return (
     <div
-      className={`
-      ${isDarkMode && isHovered && "dark-blue1"}
-      ${isDarkMode && !isHovered && "bg-[#000]"}
-      
-      ${!isDarkMode && isHovered && "light-blue3"}
-      ${!isDarkMode && !isHovered && "bg-[#fff]"}
+      className={`${
+        isDarkMode
+          ? isHovered
+            ? "dark-blue1"
+            : "bg-black"
+          : isHovered
+          ? "light-blue3"
+          : "bg-white"
+      }
       
  text-center py-[5px] rou hover:cursor-pointer`}
       onMouseEnter={handleIsHovered}

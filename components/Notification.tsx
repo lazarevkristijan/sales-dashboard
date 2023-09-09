@@ -5,13 +5,15 @@ const Notification = ({ evaluation }: { evaluation: boolean }) => {
   const { isDarkMode } = useContext(DarkMode)
   return (
     <div
-      className={`
-      ${isDarkMode && evaluation && "dark-success"}
-      ${isDarkMode && !evaluation && "dark-danger"}
-      ${!isDarkMode && evaluation && "light-success"}
-      ${!isDarkMode && !evaluation && "light-danger"}
-
-     rou flex justify-between mb-[20px] p-[20px] smText`}
+      className={`${
+        isDarkMode
+          ? evaluation
+            ? "dark-success"
+            : "dark-danger"
+          : evaluation
+          ? "light-success"
+          : "light-danger"
+      } rou flex justify-between mb-[20px] p-[20px] smText`}
     >
       <div
         className={`${
