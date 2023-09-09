@@ -29,7 +29,7 @@ const Sales = () => {
   const inCart = useContext(InCart)
   const { targetSales } = useContext(TargetSales)
   const { isDarkMode } = useContext(DarkMode)
-  const notDeliveredSales = String(Math.round(Number(deliveredSales) / 20))
+  const notDeliveredSales = Math.round(deliveredSales / 20)
   const { activeChart } = useContext(ActiveChart)
 
   function handleInfoHover(value: boolean) {
@@ -78,17 +78,17 @@ const Sales = () => {
         </div>
         <SalesInfoBox
           heading="Not delivered"
-          qty={Number(notDeliveredSales)}
+          qty={notDeliveredSales}
           bg={isDarkMode ? "dark-neutral" : "light-neutral"}
         />
         <SalesInfoBox
           heading="In Cart"
-          qty={Number(inCart)}
+          qty={inCart}
           bg={isDarkMode ? "dark-neutral" : "light-neutral"}
         />
         <SalesInfoBox
           heading="Returned"
-          qty={Number(returnedSales)}
+          qty={returnedSales}
           bg={isDarkMode ? "dark-danger" : "light-danger"}
         />
       </div>
@@ -100,17 +100,15 @@ const Sales = () => {
         >
           <SalesResultRect
             title="Gross profits"
-            rectText={`€${(Number(deliveredSales) * 500).toLocaleString(
-              "en-US"
-            )}`}
+            rectText={`€${(deliveredSales * 500).toLocaleString("en-US")}`}
             extraStyles="mb-[10px]"
           />
 
           <SalesResultRect
             title="Net profits"
-            rectText={`€${Math.round(
-              (Number(deliveredSales) * 500) / 3
-            ).toLocaleString("en-US")}`}
+            rectText={`€${Math.round((deliveredSales * 500) / 3).toLocaleString(
+              "en-US"
+            )}`}
           />
         </div>
         <div
@@ -120,17 +118,13 @@ const Sales = () => {
         >
           <SalesResultRect
             title="Target progress"
-            rectText={`${Math.round(
-              (Number(deliveredSales) / Number(targetSales)) * 100
-            )}%`}
+            rectText={`${Math.round((deliveredSales / targetSales) * 100)}%`}
             extraStyles="mb-[10px]"
           />
           <SalesResultRect
             title="Total calculated"
             rectText={`€${(
-              (Number(deliveredSales) +
-                Number(notDeliveredSales) -
-                Number(returnedSales)) *
+              (deliveredSales + notDeliveredSales - returnedSales) *
               500
             ).toLocaleString("en-US")}`}
           />

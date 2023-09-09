@@ -1,18 +1,18 @@
 import { createContext, useEffect, useState } from "react"
 
-export const ReturnedSales = createContext("2")
+export const ReturnedSales = createContext(2)
 export const TargetSales = createContext({
-  targetSales: "120",
-  toggleTarget: ({ value }: { value: string }) => {
+  targetSales: 120,
+  toggleTarget: ({ value }: { value: number }) => {
     return value
   },
 })
-export const DeliveredSales = createContext("97")
+export const DeliveredSales = createContext(97)
 export const DarkMode = createContext({
   isDarkMode: false,
   toggleDarkMode: () => {},
 })
-export const InCart = createContext("79")
+export const InCart = createContext(79)
 export const ActiveChart = createContext({
   activeChart: "bar",
   toggleChart: ({ value }: { value: string }) => {
@@ -45,10 +45,10 @@ export const ScreenContext = createContext({
 })
 
 const Contexts = ({ children }: { children: React.ReactNode }) => {
-  const [deliveredSales, setDeliveredSales] = useState("102")
-  const [returnedSales, setReturnedSales] = useState("2")
-  const [inCart, setInCart] = useState("79")
-  const [targetSales, setTargetSales] = useState("120")
+  const [deliveredSales, setDeliveredSales] = useState(97)
+  const [returnedSales, setReturnedSales] = useState(2)
+  const [inCart, setInCart] = useState(79)
+  const [targetSales, setTargetSales] = useState(120)
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [activeChart, setActiveChart] = useState("bar")
 
@@ -61,7 +61,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     return value
   }
 
-  const toggleTarget = ({ value }: { value: string }) => {
+  const toggleTarget = ({ value }: { value: number }) => {
     setTargetSales(value)
     return value
   }
