@@ -2,7 +2,7 @@ import { TableDataBlock } from "../components"
 import { DarkMode } from "../components/Contexts"
 import {
   countryTableData,
-  countryordersHeadings,
+  countriesHeadings,
   smSectionStyles,
 } from "../constants"
 import { useContext } from "react"
@@ -23,7 +23,7 @@ const Countries = () => {
         <table className="w-full text-center">
           <thead>
             <tr className="h-[45px] ">
-              {countryordersHeadings.map((heading, index) => (
+              {countriesHeadings.map((heading, index) => (
                 <th
                   key={index}
                   className={`${

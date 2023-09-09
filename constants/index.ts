@@ -127,7 +127,6 @@ export const ordersTableData = [
     item: "iPhone 13",
     status: "Delivered",
   },
-  // Continue from 651 to 636
   {
     orderNo: "651",
     name: "Ella Johnson",
@@ -258,7 +257,7 @@ export const ordersTableData = [
   },
 ]
 
-export const countryordersHeadings = [
+export const countriesHeadings = [
   {
     text: "Country",
   },
@@ -335,27 +334,6 @@ export const products = [
   },
 ]
 
-export const tableDataOptions = [
-  {
-    name: "Order #",
-  },
-  {
-    name: "Name",
-  },
-  {
-    name: "Date",
-  },
-  {
-    name: "Amount",
-  },
-  {
-    name: "Item",
-  },
-  {
-    name: "Status",
-  },
-]
-
 export const displayPeriodsOptions = [
   {
     title: "Day",
@@ -406,8 +384,6 @@ export const orderPageNumbers = [
   },
 ]
 
-export const topIconStyles = "w-[35px] h-[35px]"
-
 export const salesResultStyles =
   "w-[300px] flex flex-col mx-[20px] rou py-[20px]"
 
@@ -415,8 +391,5 @@ export const sectionStyles =
   "mx-[10px] py-[20px] lg:mx-auto mb-[30px] max-w-[1040px] rou"
 
 export const smSectionStyles = "py-[20px] rou mb-[30px] w-[500px]"
-
-export const chartStyles =
-  " mx-[20px] py-[30px] rou mb-[30px] max-w-[1000px] overflow-x-scroll lg:overflow-hidden"
 
 export const topDropDownStyles = "p-[20px] rou absolute z-[1] top-[80px]"

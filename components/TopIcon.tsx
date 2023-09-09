@@ -1,5 +1,3 @@
-import { topIconStyles } from "../constants"
-
 const TopIcon = ({
   name,
   onClick,
@@ -14,7 +12,7 @@ const TopIcon = ({
       <img
         src={`${name}.svg`}
         alt={`${name} icon`}
-        className={`${topIconStyles} hover:cursor-pointer ${extraStyles}`}
+        className={`w-[35px] h-[35px] hover:cursor-pointer ${extraStyles}`}
         onClick={onClick}
       />
     </>
