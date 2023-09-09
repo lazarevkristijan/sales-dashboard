@@ -11,7 +11,7 @@ import {
   BarChartDark,
   LineGraphDark,
 } from "../components/"
-import { salesResultStyles, sectionStyles } from "../constants"
+import { salesRevenueStyles, sectionStyles } from "../constants"
 import {
   DarkMode,
   DeliveredSales,
@@ -94,31 +94,36 @@ const Sales = () => {
       </div>
       <div className="flex flex-wrap justify-center items-center">
         <div
-          className={`${salesResultStyles} ${
+          className={`${salesRevenueStyles} ${
             isDarkMode ? "bg-black text-white" : "bg-white text-black"
           } mb-[20px]`}
         >
           <SalesResultRect
             title="Gross profits"
-            rectText={`€${(deliveredSales * 500).toLocaleString("en-US")}`}
+            rectText={`€${(
+              (deliveredSales + notDeliveredSales) *
+              500
+            ).toLocaleString("en-US")}`}
             extraStyles="mb-[10px]"
           />
 
           <SalesResultRect
             title="Net profits"
-            rectText={`€${Math.round((deliveredSales * 500) / 3).toLocaleString(
-              "en-US"
-            )}`}
+            rectText={`€${Math.round(
+              ((deliveredSales + notDeliveredSales) * 500) / 3
+            ).toLocaleString("en-US")}`}
           />
         </div>
         <div
-          className={`${salesResultStyles} ${
+          className={`${salesRevenueStyles} ${
             isDarkMode ? "bg-black text-white" : "bg-white text-black"
           } mb-[20px] relative`}
         >
           <SalesResultRect
             title="Target progress"
-            rectText={`${Math.round((deliveredSales / targetSales) * 100)}%`}
+            rectText={`${Math.round(
+              ((deliveredSales + notDeliveredSales) / targetSales) * 100
+            )}%`}
             extraStyles="mb-[10px]"
           />
           <SalesResultRect

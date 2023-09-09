@@ -1,7 +1,7 @@
 export const monthlySales = [
   {
     month: "Aug",
-    sales: 102,
+    sales: 97,
   },
   {
     month: "Jul",
@@ -384,7 +384,7 @@ export const orderPageNumbers = [
   },
 ]
 
-export const salesResultStyles =
+export const salesRevenueStyles =
   "w-[300px] flex flex-col mx-[20px] rou py-[20px]"
 
 export const sectionStyles =

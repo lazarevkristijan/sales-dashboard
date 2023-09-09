@@ -3,7 +3,7 @@ import { InActiveButton } from "."
 import { monthlySales } from "../constants"
 import { DarkMode, TargetSales } from "./Contexts"
 
-const Target = () => {
+const TargetMenu = () => {
   const [isInput, setIsInput] = useState(false)
   const handleIsInput = () => {
     setIsInput((prev) => !prev)
@@ -101,4 +101,4 @@ const Target = () => {
   )
 }
 
-export default Target
+export default TargetMenu

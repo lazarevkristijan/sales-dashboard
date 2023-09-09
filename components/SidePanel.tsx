@@ -1,5 +1,10 @@
 import { useState, useContext } from "react"
-import { PanelButton, DisplayPeriodsMenu, ChartDisplayMenu, Target } from "."
+import {
+  PanelButton,
+  DisplayPeriodsMenu,
+  ChartDisplayMenu,
+  TargetMenu,
+} from "."
 
 import { DarkMode } from "./Contexts"
 
@@ -112,7 +117,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       >
         <span className="mx-auto">Change</span>
       </PanelButton>
-      {isMenuOpen === "target" && <Target />}
+      {isMenuOpen === "target" && <TargetMenu />}
     </div>
   )
 }

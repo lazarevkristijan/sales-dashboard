@@ -1,7 +1,7 @@
 import { ordersTableData, sectionStyles, orderPageNumbers } from "../constants"
 import {
   ActiveButton,
-  ToggleTableData,
+  TableToggleMenu,
   ResultsPerPage,
   OrderPageNo,
   TableDataBlock,
@@ -171,7 +171,7 @@ const Orders = () => {
           onClick={handleTableMenu}
         />
 
-        {isTableMenuOpen && <ToggleTableData />}
+        {isTableMenuOpen && <TableToggleMenu />}
 
         <div className="hidden my-auto sm:flex text-center">
           {orderPageNumbers.map((number, index) => (

@@ -2,7 +2,7 @@ import SidePanel from "./SidePanel"
 import ChartDisplayMenu from "./ChartDisplayMenu"
 import NotificationPanel from "./NotificationPanel"
 import Profile from "./Profile"
-import Target from "./Target"
+import TargetMenu from "./TargetMenu"
 import Notification from "./Notification"
 import ProfileMenuButton from "./ProfileMenuButton"
 import TopIcon from "./TopIcon"
@@ -20,11 +20,11 @@ import SalesInfoBox from "./SalesInfoBox"
 import TotalInfo from "./TotalInfo"
 import SalesResultRect from "./SalesResultRect"
 
-import ToggleTableData from "./ToggleTableData"
+import TableToggleMenu from "./TableToggleMenu"
 import TableDataBlock from "./TableDataBlock"
 import ResultsPerPage from "./ResultsPerPage"
 import OrderPageNo from "./OrderPageNo"
-import OrdersToggleButton from "./OrdersToggleButton"
+import TableToggleButton from "./TableToggleButton"
 import PerPageOption from "./PerPageOption"
 
 import Product from "./Product"
@@ -49,8 +49,8 @@ export {
   Profile,
   ResultsPerPage,
   SidePanel,
-  Target,
-  ToggleTableData,
+  TargetMenu,
+  TableToggleMenu,
   TotalInfo,
   SalesInfoBox,
   InActiveButton,
@@ -65,7 +65,7 @@ export {
   UsersRect,
   SocialStat,
   SocialLabel,
-  OrdersToggleButton,
+  TableToggleButton,
   PerPageOption,
   PanelButton,
   DisplayPeriodsMenu,

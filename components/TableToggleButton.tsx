@@ -1,7 +1,7 @@
 import { useState, useContext } from "react"
 import { DarkMode } from "./Contexts"
 
-const OrdersToggleButton = ({ name }: { name: string }) => {
+const TableToggleButton = ({ name }: { name: string }) => {
   const [isOn, setIsOn] = useState(true)
 
   const handleToggle = () => {
@@ -47,4 +47,4 @@ const OrdersToggleButton = ({ name }: { name: string }) => {
   )
 }
 
-export default OrdersToggleButton
+export default TableToggleButton
