@@ -31,13 +31,13 @@ const Target = () => {
       >
         <p>Monthly target sales</p>
         <div className="flex justify-center items-center mb-[30px]">
-          {!isInput && <InActiveButton text={targetSales} />}
+          {!isInput && <InActiveButton text={String(targetSales)} />}
 
           {isInput && (
             <input
               type="text"
               value={targetSales}
-              onChange={(e) => toggleTarget({ value: e.target.value })}
+              onChange={(e) => toggleTarget({ value: Number(e.target.value) })}
               className={`w-[80px] ${
                 isDarkMode ? "dark-blue2" : "light-blue2"
               } rou p-1 text-center`}
