@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./App.css"
 
 function App() {
@@ -15,6 +16,16 @@ function App() {
         </h3>
       </div>
     </>
+=======
+import { Contexts } from "../components"
+import Wrapper from "./Wrapper"
+
+function App() {
+  return (
+    <Contexts>
+      <Wrapper />
+    </Contexts>
+>>>>>>> main
   )
 }
 
