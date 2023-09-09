@@ -44,15 +44,12 @@ const Target = () => {
             />
           )}
           <div
-            className={`ml-2 w-[30px] h-[30px]${
-              isDarkMode
-                ? isHovered
-                  ? "dark-blue2"
-                  : "dark-blue1"
-                : isHovered
-                ? "dark-blue2"
-                : "light-blue3"
-            }rou hover:cursor-pointer`}
+            className={`ml-2 w-[30px] h-[30px]
+            ${isDarkMode && isHovered && "dark-blue2"}
+             ${isDarkMode && !isHovered && "dark-blue1"}
+             ${!isDarkMode && isHovered && "dark-blue2"}
+             ${!isDarkMode && !isHovered && "light-blue3"}
+             rou hover:cursor-pointer`}
             onClick={handleIsInput}
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
@@ -80,16 +77,29 @@ const Target = () => {
                 key={index}
                 text={`${month.month} ${month.sales}`}
                 color={`
-             ${
-               isDarkMode
-                 ? month.sales >= Number(targetSales)
-                   ? "dark-success"
-                   : "dark-danger"
-                 : month.sales >= Number(targetSales)
-                 ? "light-success"
-                 : "light-danger"
-             }
-             mb-[10px]`}
+                ${
+                  isDarkMode && month.sales >= Number(targetSales)
+                    ? "dark-success"
+                    : `${
+                        isDarkMode && month.sales <= Number(targetSales)
+                          ? "dark-danger"
+                          : `${
+                              !isDarkMode && month.sales >= Number(targetSales)
+                                ? "light-success"
+                                : `${
+                                    !isDarkMode &&
+                                    month.sales <= Number(targetSales) &&
+                                    "light-danger"
+                                  }`
+                            }`
+                      }`
+                }
+                ${
+                  month.sales >= Number(targetSales)
+                    ? "light-success"
+                    : "light-danger"
+                }`}
+                extraStyles="mb-[10px]"
               />
             ))}
           </div>

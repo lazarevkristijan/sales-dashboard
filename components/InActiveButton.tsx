@@ -14,13 +14,11 @@ const InActiveButton = ({
 
   return (
     <p
-      className={`${
-        (isDarkMode && color) ||
-        (isDarkMode && "dark-blue3") ||
-        (!isDarkMode && color) ||
-        (!isDarkMode && "light-blue1")
-      }
-      py-1 px-2 rou min-w-[80px] text-center ${extraStyles}`}
+      className={` ${isDarkMode && color && color} ${
+        isDarkMode && !color && "dark-blue3"
+      } ${!isDarkMode && color && color} ${
+        !isDarkMode && !color && "light-blue1"
+      } py-1 px-2 rou min-w-[80px] text-center ${extraStyles}`}
     >
       {text}
     </p>
