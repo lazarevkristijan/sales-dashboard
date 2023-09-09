@@ -8,7 +8,12 @@ export const DarkMode = createContext({
   toggleDarkMode: () => {},
 })
 export const InCart = createContext("79")
-export const ActiveChart = createContext("bar")
+export const ActiveChart = createContext({
+  activeChart: "bar",
+  toggleChart: ({ value }: { value: string }) => {
+    return value
+  },
+})
 
 export const OrdersContext = createContext({
   isOrderOn: true,
@@ -44,6 +49,11 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
 
   function toggleDarkMode() {
     setIsDarkMode((prev) => !prev)
+  }
+
+  const toggleChart = ({ value }: { value: string }) => {
+    setActiveChart(value)
+    return value
   }
 
   function removeSetErrors() {
@@ -112,7 +122,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
         <DeliveredSales.Provider value={deliveredSales}>
           <DarkMode.Provider value={{ isDarkMode, toggleDarkMode }}>
             <InCart.Provider value={inCart}>
-              <ActiveChart.Provider value={activeChart}>
+              <ActiveChart.Provider value={{ activeChart, toggleChart }}>
                 <OrdersContext.Provider
                   value={{
                     isOrderOn,

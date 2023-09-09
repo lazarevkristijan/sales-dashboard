@@ -30,7 +30,7 @@ const Sales = () => {
   const targetSales = useContext(TargetSales)
   const { isDarkMode } = useContext(DarkMode)
   const notDeliveredSales = String(Math.round(Number(deliveredSales) / 20))
-  const activeChart = useContext(ActiveChart)
+  const { activeChart } = useContext(ActiveChart)
 
   function handleInfoHover(value: boolean) {
     setInfoPopUp(value)

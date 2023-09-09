@@ -45,6 +45,9 @@ const LineGraphDark = () => {
     },
     scales: {
       x: {
+        grid: {
+          color: "rgba(255,255,255,0.3)",
+        },
         ticks: {
           color: "#fff",
           font: {
@@ -56,7 +59,7 @@ const LineGraphDark = () => {
       },
       y: {
         grid: {
-          color: "rgba(255,255,255,0.5)",
+          color: "rgba(255,255,255,0.3)",
         },
         suggestedMin: 0,
         suggestedMax: dynamicMax,

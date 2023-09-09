@@ -5,7 +5,11 @@ import { DarkMode } from "./Contexts"
 const CustomPeriodMenu = () => {
   const [fromDate, setFromDate] = useState("2023-09-05")
   const [toDate, setToDate] = useState("2024-09-05")
+  const [isHovered, setIsHovered] = useState(false)
 
+  const handleHover = () => {
+    setIsHovered((prev) => !prev)
+  }
   const handleFromChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFromDate(e.target.value)
   }
@@ -26,7 +30,7 @@ const CustomPeriodMenu = () => {
         <PanelButton
           title="From Date"
           iconWidth="150"
-          color={`${isDarkMode ? "dark-blue1" : "light-blue3"}`}
+          color={`${isDarkMode ? "dark-blue1" : "light-blue2"}`}
         >
           <input
             type="date"
@@ -39,7 +43,7 @@ const CustomPeriodMenu = () => {
         <PanelButton
           title="To Date"
           iconWidth="150"
-          color={`${isDarkMode ? "dark-blue1" : "light-blue3"}`}
+          color={`${isDarkMode ? "dark-blue1" : "light-blue2"}`}
         >
           <input
             type="date"
@@ -50,9 +54,14 @@ const CustomPeriodMenu = () => {
         </PanelButton>
 
         <div
-          className={`${
-            isDarkMode ? "dark-blue1" : "light-blue3"
-          } p-[20px] flex justify-center items-center rou mb-[10px] hover:cursor-pointer`}
+          className={`
+          ${isDarkMode && isHovered && ""}
+          ${isDarkMode && !isHovered && "dark-blue1"}
+          ${!isDarkMode && isHovered && "dark-blue2"}
+          ${!isDarkMode && !isHovered && "light-blue3"}
+           p-[20px] flex justify-center items-center rou mb-[10px] hover:cursor-pointer`}
+          onMouseEnter={handleHover}
+          onMouseLeave={handleHover}
         >
           <p className="">Set Custom Period</p>
         </div>

@@ -139,7 +139,7 @@ img::selection {
 /* Scrollbar */
 
 ::-webkit-scrollbar {
-  background-color: rgb(142, 227, 255);
+  background-color: #fff;
   width: 12.5px;
   height: 12.5px;
 }

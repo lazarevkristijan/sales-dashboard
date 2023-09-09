@@ -62,3 +62,20 @@ TEXT
 regular text - Montserrat 20px 
 Section one order qty numbers - 64px / weight: 200
 color - white
+
+
+hover colors LIGHT:
+Bar Chart: light-blue3 #48CAE4 / dark-blue3 #0077B6
+
+active button: light-blue3 #48CAE4 / dark-blue2 #00B4D8
+
+panel button: white #fff / light-blue2 #96F2FF
+
+target edit btton: light-blue3 #48CAE4 / dark-blue2 #00B4D8
+
+order page nubmer: white #fff / light-blue3 #48CAE4
+
+
+
+hover colors DARK:
+

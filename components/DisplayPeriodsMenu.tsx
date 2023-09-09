@@ -24,7 +24,7 @@ const DisplayPeriodsMenu = () => {
         >
           <PanelButton
             title={`${option.title}`}
-            color={`${isDarkMode ? "dark-blue4" : "light-blue3"}`}
+            color={`${isDarkMode ? "dark-blue4" : "light-blue2"}`}
           >
             <span className="mx-auto">{`${option.label}`}</span>
           </PanelButton>

@@ -383,24 +383,6 @@ export const displayPeriodsOptions = [
   },
 ]
 
-export const displayChartsOptions = [
-  {
-    title: "Bar Chart",
-    iconLight: "light-bar-chart",
-    iconDark: "dark-bar-chart",
-  },
-  {
-    title: "Line Graph",
-    iconLight: "light-line-graph",
-    iconDark: "dark-line-graph",
-  },
-  {
-    title: "Pie Chart",
-    iconLight: "light-pie-chart",
-    iconDark: "dark-pie-chart",
-  },
-]
-
 export const orderPageNumbers = [
   {
     page: 1,

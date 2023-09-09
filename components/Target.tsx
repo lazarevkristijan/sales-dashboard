@@ -9,6 +9,12 @@ const Target = () => {
     setIsInput((prev) => !prev)
   }
 
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleHover = () => {
+    setIsHovered((prev) => !prev)
+  }
+
   const { isDarkMode } = useContext(DarkMode)
   const targetSales = useContext(TargetSales)
 
@@ -32,12 +38,21 @@ const Target = () => {
               type="text"
               value={targetSales}
               onClick={() => handleIsInput}
-              className="w-[80px] light-blue3 rou p-1 text-center"
+              className={`w-[80px] ${
+                isDarkMode ? "dark-blue2" : "light-blue2"
+              } rou p-1 text-center`}
             />
           )}
           <div
-            className="ml-2 w-[30px] h-[30px] light-blue3 rou hover:cursor-pointer"
+            className={`ml-2 w-[30px] h-[30px]
+            ${isDarkMode && isHovered && "dark-blue2"}
+             ${isDarkMode && !isHovered && "dark-blue1"}
+             ${!isDarkMode && isHovered && "dark-blue2"}
+             ${!isDarkMode && !isHovered && "light-blue3"}
+             rou hover:cursor-pointer`}
             onClick={handleIsInput}
+            onMouseEnter={handleHover}
+            onMouseLeave={handleHover}
           >
             {isInput ? (
               <img
