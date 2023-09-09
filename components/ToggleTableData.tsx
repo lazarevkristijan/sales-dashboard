@@ -41,16 +41,15 @@ const ToggleTableData = () => {
                 Order #
               </div>
               <div
-                className={`w-[40px] h-[40px] 
-        ${isDarkMode && isOrderOn && "dark-success"}
-        ${isDarkMode && !isOrderOn && "dark-danger"}
-        ${!isDarkMode && isOrderOn && "light-success"}
-        ${!isDarkMode && !isOrderOn && "light-danger"}
-
-        
-        ${
-          isOrderOn ? "light-success" : "light-danger"
-        } hover:cursor-pointer flex rou-r`}
+                className={`w-[40px] h-[40px] ${
+                  isDarkMode
+                    ? isOrderOn
+                      ? "dark-success"
+                      : "dark-danger"
+                    : isOrderOn
+                    ? "light-success"
+                    : "light-danger"
+                }hover:cursor-pointer flex rou-r`}
                 onClick={toggleOrder}
               >
                 <img
