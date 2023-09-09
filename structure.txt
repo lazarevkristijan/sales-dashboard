@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-Project - in progress
-
-SALES DASHBOARD
-=======
 Set the same state for target, gross / net & total
->>>>>>> main
 
 Light mode
         |
