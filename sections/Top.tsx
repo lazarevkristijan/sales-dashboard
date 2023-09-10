@@ -80,7 +80,7 @@ const Top = () => {
           )}
         </OpenMenu.Provider>
       </div>
-      <p className="bg-red-600 text-center font-bold opacity-20">
+      <p className="bg-red-600 text-center font-bold opacity-30">
         PROJECT UNDER DEVELEOPMENT <br className="sm:hidden" /> & MAY HAVE BUGS
       </p>
     </div>
