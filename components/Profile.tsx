@@ -1,17 +1,48 @@
-import { useContext } from "react"
+import { useContext, useRef, useEffect } from "react"
 
 import { ProfileMenuButton, InActiveButton } from "."
 import { topDropDownStyles } from "../constants"
 import { DarkMode } from "./Contexts"
+import { OpenMenu } from "../sections/Top"
 
 const Profile = () => {
   const { isDarkMode } = useContext(DarkMode)
+  const { profileMenu, toggleProfileMenu } = useContext(OpenMenu)
+
+  const profileRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const isMenuIconClicked =
+        e.target instanceof HTMLElement &&
+        e.target.classList.contains("menuButtonProfile")
+
+      if (
+        profileRef.current &&
+        !profileRef.current.contains(e.target as Node) &&
+        !isMenuIconClicked
+      ) {
+        toggleProfileMenu()
+      }
+    }
+
+    if (profileMenu) {
+      document.addEventListener("mousedown", handleClickOutside)
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [profileMenu, toggleProfileMenu])
 
   return (
     <div
       className={`${topDropDownStyles} ${
         isDarkMode ? "dark-blue1" : "light-blue3"
       } smText max-w-[350px] right-0`}
+      ref={profileRef}
     >
       <div
         className="w-0 h-0 absolute -top-[20px] right-0"

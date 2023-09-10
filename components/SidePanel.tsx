@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useRef, useEffect } from "react"
 import {
   PanelButton,
   DisplayPeriodsMenu,
@@ -7,8 +7,38 @@ import {
 } from "."
 
 import { DarkMode } from "./Contexts"
+import { OpenMenu } from "../sections/Top"
 
 const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
+  const { sidePanelMenu, toggleSidePanel } = useContext(OpenMenu)
+  const menuRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const isMenuIconClicked =
+        e.target instanceof HTMLElement &&
+        e.target.classList.contains("menuButtonSide")
+
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target as Node) &&
+        !isMenuIconClicked
+      ) {
+        toggleSidePanel()
+      }
+    }
+
+    if (sidePanelMenu) {
+      document.addEventListener("mousedown", handleClickOutside)
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [sidePanelMenu, toggleSidePanel])
+
   const [isMenuOpen, setIsMenuOpen] = useState("")
 
   const { isDarkMode, toggleDarkMode } = useContext(DarkMode)
@@ -48,6 +78,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       className={`${
         isDarkMode ? "dark-blue1" : "light-blue3"
       } p-[20px] pb-[10px] rou absolute z-[1] top-[80px] w-[300px]`}
+      ref={menuRef}
     >
       <div
         className="w-0 h-0 absolute -top-[20px] left-0"

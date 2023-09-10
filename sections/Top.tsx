@@ -1,12 +1,35 @@
-import { useState, useContext } from "react"
+import { useState, useContext, createContext } from "react"
 import { sectionStyles } from "../constants"
 import { NotificationPanel, Profile, TopIcon, SidePanel } from "../components"
 import { DarkMode } from "../components/Contexts"
+
+export const OpenMenu = createContext({
+  sidePanelMenu: false,
+  toggleSidePanel: () => {},
+
+  notificationMenu: false,
+  toggleNotificationMenu: () => {},
+
+  profileMenu: false,
+  toggleProfileMenu: () => {},
+})
 
 const Top = () => {
   const [notificationMenu, setNotificationMenu] = useState(false)
   const [profileMenu, setProfileMenu] = useState(false)
   const [sidePanelMenu, setSidePanelMenu] = useState(false)
+
+  const toggleSidePanel = () => {
+    setSidePanelMenu((prev) => !prev)
+  }
+
+  const toggleNotificationMenu = () => {
+    setNotificationMenu((prev) => !prev)
+  }
+
+  const toggleProfileMenu = () => {
+    setProfileMenu((prev) => !prev)
+  }
 
   const { isDarkMode } = useContext(DarkMode)
 
@@ -38,21 +61,33 @@ const Top = () => {
     <div className={`${sectionStyles} flex relative`}>
       <TopIcon
         name={`${isDarkMode ? "dark" : "light"}-menu`}
+        extraStyles="menuButtonSide"
         onClick={handlePanelClick}
       />
       <TopIcon
         name={`${isDarkMode ? "dark" : "light"}-notification-bell`}
-        extraStyles="ml-auto mr-0"
+        extraStyles="ml-auto mr-0 menuButtonNotification"
         onClick={handleBellClick}
       />
       <TopIcon
         name="profile"
-        extraStyles="ml-[5px]"
+        extraStyles="ml-[5px] menuButtonProfile"
         onClick={handleProfileClick}
       />
-      {notificationMenu && <NotificationPanel />}
-      {profileMenu && <Profile />}
-      {sidePanelMenu && <SidePanel handlePanelClick={handlePanelClick} />}
+      <OpenMenu.Provider
+        value={{
+          profileMenu,
+          toggleProfileMenu,
+          notificationMenu,
+          toggleNotificationMenu,
+          sidePanelMenu,
+          toggleSidePanel,
+        }}
+      >
+        {profileMenu && <Profile />}
+        {notificationMenu && <NotificationPanel />}
+        {sidePanelMenu && <SidePanel handlePanelClick={handlePanelClick} />}
+      </OpenMenu.Provider>
     </div>
   )
 }
