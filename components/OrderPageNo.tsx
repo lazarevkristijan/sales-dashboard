@@ -3,10 +3,10 @@ import { DarkMode } from "./Contexts"
 
 const OrderPageNo = ({
   page,
-  active = false,
+  onClick,
 }: {
   page: number
-  active?: boolean
+  onClick: React.MouseEventHandler
 }) => {
   const [isHovered, setIsHovered] = useState(false)
 
@@ -23,14 +23,10 @@ const OrderPageNo = ({
     ${isDarkMode && !isHovered ? "bg-black text-white" : ""}
     ${!isDarkMode && isHovered ? "light-blue3 text-black" : ""}
     ${!isDarkMode && !isHovered ? "bg-white text-black" : ""}
-    
-    ${isDarkMode && active ? "dark-blue2 text-white" : ""}
-    ${isDarkMode && !active ? "bg-black text-white" : ""}
-    ${!isDarkMode && active ? "light-blue3 text-black" : ""}
-    ${!isDarkMode && !active ? "bg-white text-black" : ""}
     w-[30px] mx-1 rou hover:cursor-pointer selection:bg-transparent hover:scale-105 transition-all`}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
+      onClick={onClick}
     >
       {page}
     </div>

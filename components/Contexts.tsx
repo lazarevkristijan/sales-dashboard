@@ -34,8 +34,12 @@ export const OrdersContext = createContext({
   isStatusOn: true,
   toggleStatus: () => {},
   perPage: 10,
-  setPerpage: ({ value }: { value: number }) => {
+  perPageSetter: ({ value }: { value: number }) => {
     return value
+  },
+  pageNumber: 0,
+  pageNumberSetter: ({ page }: { page: number }) => {
+    return page
   },
 })
 
@@ -97,6 +101,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   const [isItemOn, setIsItemOn] = useState(true)
   const [isStatusOn, setIsStatusOn] = useState(true)
   const [perPage, setPerPage] = useState(10)
+  const [pageNumber, setPageNumber] = useState(1)
 
   const toggleOrder = () => {
     setIsOrderOn((prev) => !prev)
@@ -122,11 +127,15 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     setIsStatusOn((prev) => !prev)
   }
 
-  const setPerpage = ({ value }: { value: number }) => {
+  const perPageSetter = ({ value }: { value: number }) => {
     setPerPage(value)
     return value
   }
 
+  const pageNumberSetter = ({ page }: { page: number }) => {
+    setPageNumber(page)
+    return page
+  }
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
   const handleScreenSize = () => {
@@ -167,7 +176,9 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
               isStatusOn,
               toggleStatus,
               perPage,
-              setPerpage,
+              perPageSetter,
+              pageNumber,
+              pageNumberSetter,
             }}
           >
             <ScreenContext.Provider value={{ screenWidth, handleScreenSize }}>
