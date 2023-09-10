@@ -18,7 +18,7 @@ const Wrapper = () => {
     <div
       className={` ${
         isDarkMode ? "dark-blue4 text-white" : "light-blue2 text-black"
-      } text mont`}
+      } text mont min-w-[300px]`}
     >
       <div className="pt-[30px]">
         <Top />

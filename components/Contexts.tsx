@@ -1,18 +1,18 @@
 import { createContext, useEffect, useState } from "react"
 
-export const ReturnedSales = createContext(2)
-export const TargetSales = createContext({
+export const SalesContext = createContext({
+  returnedSales: 2,
   targetSales: 120,
   toggleTarget: ({ value }: { value: number }) => {
     return value
   },
+  deliveredSales: 97,
+  inCart: 79,
 })
-export const DeliveredSales = createContext(97)
 export const DarkMode = createContext({
   isDarkMode: false,
   toggleDarkMode: () => {},
 })
-export const InCart = createContext(79)
 export const ActiveChart = createContext({
   activeChart: "bar",
   toggleChart: ({ value }: { value: string }) => {
@@ -127,42 +127,42 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   }, [])
 
   return (
-    <ReturnedSales.Provider value={returnedSales}>
-      <TargetSales.Provider value={{ targetSales, toggleTarget }}>
-        <DeliveredSales.Provider value={deliveredSales}>
-          <DarkMode.Provider value={{ isDarkMode, toggleDarkMode }}>
-            <InCart.Provider value={inCart}>
-              <ActiveChart.Provider value={{ activeChart, toggleChart }}>
-                <OrdersContext.Provider
-                  value={{
-                    isOrderOn,
-                    toggleOrder,
-                    isNameOn,
-                    toggleName,
-                    isDateOn,
-                    toggleDate,
-                    isAmountOn,
-                    toggleAmount,
-                    isItemOn,
-                    toggleItem,
-                    isStatusOn,
-                    toggleStatus,
-                    perPage,
-                    togglePerPage,
-                  }}
-                >
-                  <ScreenContext.Provider
-                    value={{ screenWidth, handleScreenSize }}
-                  >
-                    {children}
-                  </ScreenContext.Provider>
-                </OrdersContext.Provider>
-              </ActiveChart.Provider>
-            </InCart.Provider>
-          </DarkMode.Provider>
-        </DeliveredSales.Provider>
-      </TargetSales.Provider>
-    </ReturnedSales.Provider>
+    <SalesContext.Provider
+      value={{
+        returnedSales,
+        targetSales,
+        toggleTarget,
+        deliveredSales,
+        inCart,
+      }}
+    >
+      <DarkMode.Provider value={{ isDarkMode, toggleDarkMode }}>
+        <ActiveChart.Provider value={{ activeChart, toggleChart }}>
+          <OrdersContext.Provider
+            value={{
+              isOrderOn,
+              toggleOrder,
+              isNameOn,
+              toggleName,
+              isDateOn,
+              toggleDate,
+              isAmountOn,
+              toggleAmount,
+              isItemOn,
+              toggleItem,
+              isStatusOn,
+              toggleStatus,
+              perPage,
+              togglePerPage,
+            }}
+          >
+            <ScreenContext.Provider value={{ screenWidth, handleScreenSize }}>
+              {children}
+            </ScreenContext.Provider>
+          </OrdersContext.Provider>
+        </ActiveChart.Provider>
+      </DarkMode.Provider>
+    </SalesContext.Provider>
   )
 }
 

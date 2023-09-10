@@ -12,24 +12,17 @@ import {
   LineGraphDark,
 } from "../components/"
 import { salesRevenueStyles, sectionStyles } from "../constants"
-import {
-  DarkMode,
-  DeliveredSales,
-  ReturnedSales,
-  InCart,
-  TargetSales,
-  ActiveChart,
-} from "../components/Contexts"
+import { DarkMode, ActiveChart, SalesContext } from "../components/Contexts"
 
 const Sales = () => {
   const [infoPopUp, setInfoPopUp] = useState(false)
 
-  const deliveredSales = useContext(DeliveredSales)
-  const returnedSales = useContext(ReturnedSales)
-  const inCart = useContext(InCart)
-  const { targetSales } = useContext(TargetSales)
-  const { isDarkMode } = useContext(DarkMode)
+  const { deliveredSales } = useContext(SalesContext)
+  const { returnedSales } = useContext(SalesContext)
+  const { inCart } = useContext(SalesContext)
+  const { targetSales } = useContext(SalesContext)
   const notDeliveredSales = Math.round(deliveredSales / 20)
+  const { isDarkMode } = useContext(DarkMode)
   const { activeChart } = useContext(ActiveChart)
 
   function handleInfoHover(value: boolean) {
