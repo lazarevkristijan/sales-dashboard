@@ -36,8 +36,8 @@ const Sales = () => {
       }`}
     >
       <div
-        className={`mb-[30px] ${activeChart !== "pie" && "sm:mx-[100px]"}  ${
-          activeChart === "pie" && "w-[500px] mx-auto"
+        className={`mb-[30px] ${
+          activeChart !== "pie" ? "sm:mx-[100px]" : "max-w-[500px] mx-auto"
         } `}
       >
         {activeChart === "pie" ? (

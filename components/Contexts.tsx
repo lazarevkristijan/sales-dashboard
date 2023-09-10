@@ -53,7 +53,10 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     const storedDarkMode = localStorage.getItem("isDarkMode")
     return storedDarkMode ? JSON.parse(storedDarkMode) : false
   })
-  const [activeChart, setActiveChart] = useState("bar")
+  const [activeChart, setActiveChart] = useState(() => {
+    const storedChart = localStorage.getItem("activeChart")
+    return storedChart ? JSON.parse(storedChart) : "bar"
+  })
 
   function toggleDarkMode() {
     setIsDarkMode((prev: boolean) => {
@@ -65,7 +68,10 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   }
 
   const setChart = ({ value }: { value: string }) => {
+    const newChart = value
     setActiveChart(value)
+    localStorage.setItem("activeChart", JSON.stringify(newChart))
+
     return value
   }
 
