@@ -17,7 +17,7 @@ const UsersRect = ({
     <div
       className={`${
         isDarkMode ? "bg-black text-white" : "bg-white text-black"
-      } text-center py-[20px] rou ${extraStyles}`}
+      } text-center py-[15px] rou ${extraStyles}`}
     >
       <p className="mb-[15px]">{title}</p>
       <InActiveButton

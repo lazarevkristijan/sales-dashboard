@@ -147,6 +147,7 @@ img::selection {
 ::-webkit-scrollbar-thumb {
   background-color: #48cae4;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: #00b4d8;
 }

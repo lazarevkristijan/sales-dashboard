@@ -33,7 +33,7 @@ const ActiveButton = ({
           : "light-blue3"
       }
 
- py-1 px-2 w-fit text-black rou min-w-[80px] text-center flex mx-auto mb-[20px] xs:mb-0 xs:mx-0 items-center hover:cursor-pointer selection:bg-transparent`}
+ py-1 px-2 w-fit text-black rou min-w-[80px] text-center flex mx-auto mb-[20px] xs:mb-0 xs:mx-0 items-center hover:cursor-pointer selection:bg-transparent hover:scale-105 transition-all`}
       onClick={onClick}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}

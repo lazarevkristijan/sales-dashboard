@@ -4,17 +4,17 @@ import { displayPeriodsOptions } from "../constants"
 import { DarkMode } from "./Contexts"
 
 const DisplayPeriodsMenu = () => {
-  const [isCustomMenu, setIsCustomMenu] = useState(false)
+  const [isCustomMenuOpen, setIsCustomMenuOpen] = useState(false)
 
-  const handleCustomMenu = () => {
-    setIsCustomMenu((prev) => !prev)
+  const toggleCustomMenu = () => {
+    setIsCustomMenuOpen((prev) => !prev)
   }
 
   const { isDarkMode } = useContext(DarkMode)
   return (
     <div
       className={`absolute ${
-        isDarkMode ? "dark-blue3" : "light-blue1"
+        isDarkMode ? "dark-blue1" : "light-blue4"
       } left-0 sm:left-[300px] top-[355px] sm:top-0 rou smText border-black border-[1px]`}
     >
       {displayPeriodsOptions.slice(0, 5).map((option, index) => (
@@ -38,14 +38,14 @@ const DisplayPeriodsMenu = () => {
         >
           <PanelButton
             title={`${option.title}`}
-            onClick={handleCustomMenu}
+            onClick={toggleCustomMenu}
             color={`${isDarkMode ? "dark-blue4" : "light-blue3"}`}
           >
             <span className="mx-auto">{`${option.label}`}</span>
           </PanelButton>
         </div>
       ))}
-      {isCustomMenu && <CustomPeriodMenu />}
+      {isCustomMenuOpen && <CustomPeriodMenu />}
     </div>
   )
 }

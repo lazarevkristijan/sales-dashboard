@@ -1,7 +1,7 @@
 import { Contexts } from "../components"
 import Wrapper from "./Wrapper"
 
-function App() {
+const App = () => {
   return (
     <Contexts>
       <Wrapper />

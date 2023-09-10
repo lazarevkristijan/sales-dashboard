@@ -1,7 +1,9 @@
-import { ordersTableData, sectionStyles, orderPageNumbers } from "../constants"
+import { sectionStyles, orderPageNumbers } from "../constants"
+import { ordersTableData } from "../constants/Orders"
+
 import {
   ActiveButton,
-  ToggleTableData,
+  TableToggleMenu,
   ResultsPerPage,
   OrderPageNo,
   TableDataBlock,
@@ -28,9 +30,11 @@ const Orders = () => {
     isStatusOn,
     toggleStatus,
     perPage,
+    pageNumber,
+    pageNumberSetter,
   } = useContext(OrdersContext)
 
-  const handleTableMenu = () => {
+  const toggleTableMenu = () => {
     if (isPerPageOpen) {
       setIsPerPageOpen((prev) => !prev)
     }
@@ -129,38 +133,45 @@ const Orders = () => {
             </tr>
           </thead>
           <tbody>
-            {ordersTableData.slice(0, perPage).map((order, index) => (
-              <tr
-                key={index}
-                className="h-[50px]"
-              >
-                {isOrderOn && (
-                  <TableDataBlock index={index}>
-                    #{order.orderNo}
-                  </TableDataBlock>
-                )}
-                {isNameOn && (
-                  <TableDataBlock index={index}>{order.name}</TableDataBlock>
-                )}
-                {isDateOn && (
-                  <TableDataBlock index={index}>{order.date}</TableDataBlock>
-                )}
-                {isAmountOn && (
-                  <TableDataBlock index={index}>€{order.amount}</TableDataBlock>
-                )}
-                {isItemOn && (
-                  <TableDataBlock index={index}>{order.item}</TableDataBlock>
-                )}
-                {isStatusOn && (
-                  <TableDataBlock
-                    index={index}
-                    border={false}
-                  >
-                    {order.status}
-                  </TableDataBlock>
-                )}
-              </tr>
-            ))}
+            {ordersTableData
+              .slice(
+                pageNumber === 1 ? 0 : perPage * (pageNumber - 1),
+                pageNumber === 1 ? perPage : perPage * pageNumber
+              )
+              .map((order, index) => (
+                <tr
+                  key={index}
+                  className="h-[50px]"
+                >
+                  {isOrderOn && (
+                    <TableDataBlock index={index}>
+                      #{order.orderNo}
+                    </TableDataBlock>
+                  )}
+                  {isNameOn && (
+                    <TableDataBlock index={index}>{order.name}</TableDataBlock>
+                  )}
+                  {isDateOn && (
+                    <TableDataBlock index={index}>{order.date}</TableDataBlock>
+                  )}
+                  {isAmountOn && (
+                    <TableDataBlock index={index}>
+                      €{order.amount}
+                    </TableDataBlock>
+                  )}
+                  {isItemOn && (
+                    <TableDataBlock index={index}>{order.item}</TableDataBlock>
+                  )}
+                  {isStatusOn && (
+                    <TableDataBlock
+                      index={index}
+                      border={false}
+                    >
+                      {order.status}
+                    </TableDataBlock>
+                  )}
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
@@ -168,19 +179,28 @@ const Orders = () => {
         <ActiveButton
           text="Table data"
           dropDown={true}
-          onClick={handleTableMenu}
+          onClick={toggleTableMenu}
         />
 
-        {isTableMenuOpen && <ToggleTableData />}
+        {isTableMenuOpen && <TableToggleMenu />}
 
         <div className="hidden my-auto sm:flex text-center">
-          {orderPageNumbers.map((number, index) => (
-            <OrderPageNo
-              key={index}
-              page={number.page}
-              active={number.active}
-            />
-          ))}
+          <OrderPageNo
+            page={1}
+            onClick={() => pageNumberSetter({ page: 1 })}
+          />
+          <OrderPageNo
+            page={2}
+            onClick={() => pageNumberSetter({ page: 2 })}
+          />
+          <OrderPageNo
+            page={3}
+            onClick={() => pageNumberSetter({ page: 3 })}
+          />
+          <OrderPageNo
+            page={67}
+            onClick={() => {}}
+          />
         </div>
 
         <ActiveButton
@@ -196,6 +216,7 @@ const Orders = () => {
           <OrderPageNo
             key={index}
             page={number.page}
+            onClick={() => {}}
           />
         ))}
       </div>

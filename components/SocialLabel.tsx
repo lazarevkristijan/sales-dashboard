@@ -8,7 +8,7 @@ const SocialLabel = ({ label, top }: { label: string; top: string }) => {
     <p
       className={`${
         isDarkMode ? "text-white" : "text-black"
-      } absolute -translate-x-[50%] ${top}`}
+      } absolute -translate-x-[50%] text-[15px] xs:text-[17.5px] sm:text-[20px] ${top}`}
     >
       {label}
     </p>

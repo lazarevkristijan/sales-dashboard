@@ -11,29 +11,22 @@ import {
   BarChartDark,
   LineGraphDark,
 } from "../components/"
-import { salesResultStyles, sectionStyles } from "../constants"
-import {
-  DarkMode,
-  DeliveredSales,
-  ReturnedSales,
-  InCart,
-  TargetSales,
-  ActiveChart,
-} from "../components/Contexts"
+import { salesRevenueStyles, sectionStyles } from "../constants"
+import { DarkMode, ActiveChart, SalesContext } from "../components/Contexts"
 
 const Sales = () => {
-  const [infoPopUp, setInfoPopUp] = useState(false)
+  const [isToolTipOn, setIsToolTipOn] = useState(false)
 
-  const deliveredSales = useContext(DeliveredSales)
-  const returnedSales = useContext(ReturnedSales)
-  const inCart = useContext(InCart)
-  const targetSales = useContext(TargetSales)
+  const { deliveredSales } = useContext(SalesContext)
+  const { returnedSales } = useContext(SalesContext)
+  const { inCart } = useContext(SalesContext)
+  const { targetSales } = useContext(SalesContext)
+  const notDeliveredSales = Math.round(deliveredSales / 20)
   const { isDarkMode } = useContext(DarkMode)
-  const notDeliveredSales = String(Math.round(Number(deliveredSales) / 20))
   const { activeChart } = useContext(ActiveChart)
 
-  function handleInfoHover(value: boolean) {
-    setInfoPopUp(value)
+  const handleInfoHover = () => {
+    setIsToolTipOn((prev) => !prev)
   }
 
   return (
@@ -43,8 +36,8 @@ const Sales = () => {
       }`}
     >
       <div
-        className={`mb-[30px] ${activeChart !== "pie" && "sm:mx-[100px]"}  ${
-          activeChart === "pie" && "w-[500px] mx-auto"
+        className={`mb-[30px] ${
+          activeChart !== "pie" ? "sm:mx-[100px]" : "max-w-[500px] mx-auto"
         } `}
       >
         {activeChart === "pie" ? (
@@ -78,70 +71,69 @@ const Sales = () => {
         </div>
         <SalesInfoBox
           heading="Not delivered"
-          qty={Number(notDeliveredSales)}
+          qty={notDeliveredSales}
           bg={isDarkMode ? "dark-neutral" : "light-neutral"}
         />
         <SalesInfoBox
           heading="In Cart"
-          qty={Number(inCart)}
+          qty={inCart}
           bg={isDarkMode ? "dark-neutral" : "light-neutral"}
         />
         <SalesInfoBox
           heading="Returned"
-          qty={Number(returnedSales)}
+          qty={returnedSales}
           bg={isDarkMode ? "dark-danger" : "light-danger"}
         />
       </div>
       <div className="flex flex-wrap justify-center items-center">
         <div
-          className={`${salesResultStyles} ${
+          className={`${salesRevenueStyles} ${
             isDarkMode ? "bg-black text-white" : "bg-white text-black"
           } mb-[20px]`}
         >
           <SalesResultRect
             title="Gross profits"
-            rectText={`€${(Number(deliveredSales) * 500).toLocaleString(
-              "en-US"
-            )}`}
+            rectText={`€${(
+              (deliveredSales + notDeliveredSales) *
+              500
+            ).toLocaleString("en-US")}`}
             extraStyles="mb-[10px]"
           />
 
           <SalesResultRect
             title="Net profits"
             rectText={`€${Math.round(
-              (Number(deliveredSales) * 500) / 3
+              ((deliveredSales + notDeliveredSales) * 500) / 3
             ).toLocaleString("en-US")}`}
           />
         </div>
         <div
-          className={`${salesResultStyles} ${
+          className={`${salesRevenueStyles} ${
             isDarkMode ? "bg-black text-white" : "bg-white text-black"
           } mb-[20px] relative`}
         >
           <SalesResultRect
             title="Target progress"
             rectText={`${Math.round(
-              (Number(deliveredSales) / Number(targetSales)) * 100
+              ((deliveredSales + notDeliveredSales) / targetSales) * 100
             )}%`}
             extraStyles="mb-[10px]"
           />
           <SalesResultRect
             title="Total calculated"
             rectText={`€${(
-              (Number(deliveredSales) +
-                Number(notDeliveredSales) -
-                Number(returnedSales)) *
+              (deliveredSales + notDeliveredSales - returnedSales) *
               500
             ).toLocaleString("en-US")}`}
           />
           <img
             src={`${isDarkMode ? "dark" : "light"}-info.svg`}
             alt="info button"
-            className={`w-[20px] absolute top-1 right-1 hover:cursor-pointer `}
-            onMouseEnter={() => handleInfoHover(true)}
-            onMouseLeave={() => handleInfoHover(false)}
+            className={`w-[20px] absolute top-1 right-1 hover:cursor-pointer hover:scale-105 transition-all `}
+            onMouseEnter={handleInfoHover}
+            onMouseLeave={handleInfoHover}
           />
-          {infoPopUp && <TotalInfo />}
+          {isToolTipOn && <TotalInfo />}
         </div>
       </div>
     </div>

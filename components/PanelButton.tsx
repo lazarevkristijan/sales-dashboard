@@ -29,7 +29,7 @@ const PanelButton = ({
       ${isDarkMode ? "bg-black" : "bg-white"}
  ${
    isHovered && `${color}`
- } p-[10px] flex justify-between items-center rou mb-[10px] hover:cursor-pointer`}
+ } p-[10px] flex justify-between items-center rou mb-[10px] hover:cursor-pointer selection:bg-transparent`}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       onClick={onClick}

@@ -1,11 +1,11 @@
 import { useState, useContext } from "react"
 import { InActiveButton } from "."
 import { monthlySales } from "../constants"
-import { DarkMode, TargetSales } from "./Contexts"
+import { DarkMode, SalesContext } from "./Contexts"
 
-const Target = () => {
+const TargetMenu = () => {
   const [isInput, setIsInput] = useState(false)
-  const handleIsInput = () => {
+  const toggleIsInput = () => {
     setIsInput((prev) => !prev)
   }
 
@@ -16,12 +16,12 @@ const Target = () => {
   }
 
   const { isDarkMode } = useContext(DarkMode)
-  const targetSales = useContext(TargetSales)
+  const { targetSales, setTarget } = useContext(SalesContext)
 
   return (
     <div
       className={`absolute w-[350px] ${
-        isDarkMode ? "dark-blue3" : "light-blue1"
+        isDarkMode ? "dark-blue1" : "light-blue4"
       } left-0 sm:left-[300px] top-[355px] sm:top-0 rou smText border-black border-[1px]`}
     >
       <div
@@ -31,13 +31,13 @@ const Target = () => {
       >
         <p>Monthly target sales</p>
         <div className="flex justify-center items-center mb-[30px]">
-          {!isInput && <InActiveButton text={targetSales} />}
+          {!isInput && <InActiveButton text={String(targetSales)} />}
 
           {isInput && (
             <input
               type="text"
               value={targetSales}
-              onClick={() => handleIsInput}
+              onChange={(e) => setTarget({ value: Number(e.target.value) })}
               className={`w-[80px] ${
                 isDarkMode ? "dark-blue2" : "light-blue2"
               } rou p-1 text-center`}
@@ -54,8 +54,8 @@ const Target = () => {
                  ? "dark-blue2"
                  : "light-blue3"
              }
-             rou hover:cursor-pointer`}
-            onClick={handleIsInput}
+             rou hover:cursor-pointer hover:scale-105 transition-all`}
+            onClick={toggleIsInput}
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
           >
@@ -101,4 +101,4 @@ const Target = () => {
   )
 }
 
-export default Target
+export default TargetMenu

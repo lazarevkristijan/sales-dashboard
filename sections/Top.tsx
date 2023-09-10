@@ -1,7 +1,18 @@
-import { useState, useContext } from "react"
+import { useState, useContext, createContext } from "react"
 import { sectionStyles } from "../constants"
 import { NotificationPanel, Profile, TopIcon, SidePanel } from "../components"
 import { DarkMode } from "../components/Contexts"
+
+export const OpenMenu = createContext({
+  sidePanelMenu: false,
+  toggleSidePanelMenu: () => {},
+
+  notificationMenu: false,
+  toggleNotificationMenu: () => {},
+
+  profileMenu: false,
+  toggleProfileMenu: () => {},
+})
 
 const Top = () => {
   const [notificationMenu, setNotificationMenu] = useState(false)
@@ -10,7 +21,7 @@ const Top = () => {
 
   const { isDarkMode } = useContext(DarkMode)
 
-  const handleBellClick = () => {
+  const toggleNotificationMenu = () => {
     if (profileMenu || sidePanelMenu) {
       setProfileMenu(false)
       setSidePanelMenu(false)
@@ -18,7 +29,7 @@ const Top = () => {
     setNotificationMenu((prev) => !prev)
   }
 
-  const handleProfileClick = () => {
+  const toggleProfileMenu = () => {
     if (notificationMenu || sidePanelMenu) {
       setNotificationMenu(false)
       setSidePanelMenu(false)
@@ -26,7 +37,7 @@ const Top = () => {
     setProfileMenu((prev) => !prev)
   }
 
-  const handlePanelClick = () => {
+  const toggleSidePanelMenu = () => {
     if (notificationMenu || profileMenu) {
       setNotificationMenu(false)
       setProfileMenu(false)
@@ -35,31 +46,36 @@ const Top = () => {
   }
 
   return (
-    <div className={``}>
-      <div className={`${sectionStyles} flex relative`}>
-        <TopIcon
-          name={`${isDarkMode ? "dark" : "light"}-menu`}
-          onClick={handlePanelClick}
-        />
-        <TopIcon
-          name={`${isDarkMode ? "dark" : "light"}-notification-bell`}
-          extraStyles="ml-auto mr-0"
-          onClick={handleBellClick}
-        />
-        <TopIcon
-          name="profile"
-          extraStyles="ml-[5px]"
-          onClick={handleProfileClick}
-        />
-        {notificationMenu && <NotificationPanel />}
+    <div className={`${sectionStyles} flex relative`}>
+      <TopIcon
+        name={`${isDarkMode ? "dark" : "light"}-menu`}
+        extraStyles="menuButtonSide"
+        onClick={toggleSidePanelMenu}
+      />
+      <TopIcon
+        name={`${isDarkMode ? "dark" : "light"}-notification-bell`}
+        extraStyles="ml-auto mr-0 menuButtonNotification"
+        onClick={toggleNotificationMenu}
+      />
+      <TopIcon
+        name="profile"
+        extraStyles="ml-[5px] menuButtonProfile"
+        onClick={toggleProfileMenu}
+      />
+      <OpenMenu.Provider
+        value={{
+          profileMenu,
+          toggleProfileMenu,
+          notificationMenu,
+          toggleNotificationMenu,
+          sidePanelMenu,
+          toggleSidePanelMenu,
+        }}
+      >
         {profileMenu && <Profile />}
-        {sidePanelMenu && <SidePanel handlePanelClick={handlePanelClick} />}
-      </div>
-      <div className="flex justify-center bg-red-600 text-white font-bold">
-        <p className="mx-auto text-center">
-          THIS IS A DEMO PREVIEW AND MAY HAVE FUNCTIONALITY ISSUES
-        </p>
-      </div>
+        {notificationMenu && <NotificationPanel />}
+        {sidePanelMenu && <SidePanel handlePanelClick={toggleSidePanelMenu} />}
+      </OpenMenu.Provider>
     </div>
   )
 }

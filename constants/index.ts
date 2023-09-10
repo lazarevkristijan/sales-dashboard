@@ -1,7 +1,7 @@
 export const monthlySales = [
   {
     month: "Aug",
-    sales: 102,
+    sales: 97,
   },
   {
     month: "Jul",
@@ -43,217 +43,6 @@ export const ordersHeadings = [
   },
   {
     text: "Status",
-  },
-]
-
-export const ordersTableData = [
-  {
-    orderNo: "661",
-    name: "Liam Taylor",
-    date: "01/09/2023",
-    amount: "500",
-    item: "iPhone 13",
-    status: "Shipped",
-  },
-  {
-    orderNo: "660",
-    name: "Olivia Johnson",
-    date: "01/09/2023",
-    amount: "500",
-    item: "iPhone 14",
-    status: "Shipped",
-  },
-  {
-    orderNo: "659",
-    name: "Noah Smith",
-    date: "31/08/2023",
-    amount: "500",
-    item: "iPhone 14",
-    status: "Shipped",
-  },
-  {
-    orderNo: "658",
-    name: "Emma Wilson",
-    date: "31/08/2023",
-    amount: "500",
-    item: "iPhone 12",
-    status: "Shipped",
-  },
-  {
-    orderNo: "657",
-    name: "Sophia Davis",
-    date: "30/08/2023",
-    amount: "500",
-    item: "iPhone 12",
-    status: "Shipped",
-  },
-  {
-    orderNo: "656",
-    name: "Lucas Martin",
-    date: "30/08/2023",
-    amount: "500",
-    item: "iPhone 13",
-    status: "Delivered",
-  },
-  {
-    orderNo: "655",
-    name: "Mia Martinez",
-    date: "29/08/2023",
-    amount: "500",
-    item: "iPhone 14",
-    status: "Delivered",
-  },
-  {
-    orderNo: "654",
-    name: "Jackson Anderson",
-    date: "29/08/2023",
-    amount: "500",
-    item: "iPhone 12",
-    status: "Delivered",
-  },
-  {
-    orderNo: "653",
-    name: "Ava White",
-    date: "28/08/2023",
-    amount: "500",
-    item: "iPhone 12",
-    status: "Delivered",
-  },
-  {
-    orderNo: "652",
-    name: "William Garcia",
-    date: "28/08/2023",
-    amount: "500",
-    item: "iPhone 13",
-    status: "Delivered",
-  },
-  {
-    orderNo: "651",
-    name: "Ella Johnson",
-    date: "27/08/2023",
-    amount: "500",
-    item: "iPhone 13",
-    status: "Delivered",
-  },
-  {
-    orderNo: "650",
-    name: "Benjamin Taylor",
-    date: "27/08/2023",
-    amount: "500",
-    item: "iPhone 14",
-    status: "Delivered",
-  },
-  {
-    orderNo: "649",
-    name: "Isabella Smith",
-    date: "26/08/2023",
-    amount: "500",
-    item: "iPhone 14",
-    status: "Delivered",
-  },
-  {
-    orderNo: "648",
-    name: "Henry Wilson",
-    date: "26/08/2023",
-    amount: "500",
-    item: "iPhone 12",
-    status: "Delivered",
-  },
-  {
-    orderNo: "647",
-    name: "Sophia Davis",
-    date: "25/08/2023",
-    amount: "500",
-    item: "iPhone 12",
-    status: "Delivered",
-  },
-  {
-    orderNo: "646",
-    name: "Lucas Martin",
-    date: "25/08/2023",
-    amount: "500",
-    item: "iPhone 13",
-    status: "Delivered",
-  },
-  {
-    orderNo: "645",
-    name: "Mia Martinez",
-    date: "24/08/2023",
-    amount: "500",
-    item: "iPhone 14",
-    status: "Delivered",
-  },
-  {
-    orderNo: "644",
-    name: "Jackson Anderson",
-    date: "24/08/2023",
-    amount: "500",
-    item: "iPhone 12",
-    status: "Delivered",
-  },
-  {
-    orderNo: "643",
-    name: "Ava White",
-    date: "23/08/2023",
-    amount: "500",
-    item: "iPhone 12",
-    status: "Delivered",
-  },
-  {
-    orderNo: "642",
-    name: "William Garcia",
-    date: "23/08/2023",
-    amount: "500",
-    item: "iPhone 13",
-    status: "Delivered",
-  },
-  {
-    orderNo: "641",
-    name: "Ella Johnson",
-    date: "22/08/2023",
-    amount: "500",
-    item: "iPhone 13",
-    status: "Delivered",
-  },
-  {
-    orderNo: "640",
-    name: "Benjamin Taylor",
-    date: "22/08/2023",
-    amount: "500",
-    item: "iPhone 14",
-    status: "Delivered",
-  },
-  {
-    orderNo: "639",
-    name: "Isabella Smith",
-    date: "21/08/2023",
-    amount: "500",
-    item: "iPhone 14",
-    status: "Delivered",
-  },
-  {
-    orderNo: "638",
-    name: "Henry Wilson",
-    date: "21/08/2023",
-    amount: "500",
-    item: "iPhone 12",
-    status: "Delivered",
-  },
-  {
-    orderNo: "637",
-    name: "Sophia Davis",
-    date: "20/08/2023",
-    amount: "500",
-    item: "iPhone 12",
-    status: "Delivered",
-  },
-  {
-    orderNo: "636",
-    name: "Lucas Martin",
-    date: "20/08/2023",
-    amount: "500",
-    item: "iPhone 13",
-    status: "Delivered",
   },
 ]
 
@@ -364,27 +153,53 @@ export const displayPeriodsOptions = [
 export const orderPageNumbers = [
   {
     page: 1,
-    active: true,
   },
   {
     page: 2,
-    active: false,
   },
   {
     page: 3,
-    active: false,
   },
   {
     page: 4,
-    active: false,
   },
   {
     page: 67,
-    active: false,
   },
 ]
 
-export const salesResultStyles =
+export const notifications = [
+  {
+    evaluation: true,
+    userName: "Grant Cardone",
+    itemName: "iPhone 12",
+    qty: 1,
+    ago: 27,
+  },
+  {
+    evaluation: true,
+    userName: "Elena Cardone",
+    itemName: "iPhone 14",
+    qty: 2,
+    ago: 44,
+  },
+  {
+    evaluation: false,
+    userName: "Simon Sinek",
+    itemName: "iPhone 13",
+    qty: 1,
+    ago: 65,
+  },
+  {
+    evaluation: true,
+    userName: "Napoleon Hill",
+    itemName: "iPhone 12",
+    qty: 2,
+    ago: 80,
+  },
+]
+
+export const salesRevenueStyles =
   "w-[300px] flex flex-col mx-[20px] rou py-[20px]"
 
 export const sectionStyles =

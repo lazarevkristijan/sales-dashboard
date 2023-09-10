@@ -13,9 +13,9 @@ const TotalInfo = () => {
       <div
         className={`m-[20px] p-[20px] text-center ${
           isDarkMode ? "bg-black" : "bg-white"
-        } rou`}
+        } rou smText`}
       >
-        Total calculated from Del + Not del - Ret
+        Total calculated from Delivered + Not delivered - Reteturned
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import { useContext } from "react"
 
 import { DarkMode, OrdersContext } from "./Contexts"
-const ToggleTableData = () => {
+const TableToggleMenu = () => {
   const { isDarkMode } = useContext(DarkMode)
 
   const {
@@ -212,4 +212,4 @@ const ToggleTableData = () => {
   )
 }
 
-export default ToggleTableData
+export default TableToggleMenu

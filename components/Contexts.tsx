@@ -1,16 +1,21 @@
 import { createContext, useEffect, useState } from "react"
 
-export const ReturnedSales = createContext("2")
-export const TargetSales = createContext("120")
-export const DeliveredSales = createContext("97")
+export const SalesContext = createContext({
+  returnedSales: 2,
+  targetSales: 120,
+  setTarget: ({ value }: { value: number }) => {
+    return value
+  },
+  deliveredSales: 97,
+  inCart: 79,
+})
 export const DarkMode = createContext({
   isDarkMode: false,
   toggleDarkMode: () => {},
 })
-export const InCart = createContext("79")
 export const ActiveChart = createContext({
   activeChart: "bar",
-  toggleChart: ({ value }: { value: string }) => {
+  setChart: ({ value }: { value: string }) => {
     return value
   },
 })
@@ -29,8 +34,12 @@ export const OrdersContext = createContext({
   isStatusOn: true,
   toggleStatus: () => {},
   perPage: 10,
-  togglePerPage: ({ value }: { value: number }) => {
+  perPageSetter: ({ value }: { value: number }) => {
     return value
+  },
+  pageNumber: 0,
+  pageNumberSetter: ({ page }: { page: number }) => {
+    return page
   },
 })
 
@@ -40,23 +49,42 @@ export const ScreenContext = createContext({
 })
 
 const Contexts = ({ children }: { children: React.ReactNode }) => {
-  const [deliveredSales, setDeliveredSales] = useState("102")
-  const [returnedSales, setReturnedSales] = useState("2")
-  const [inCart, setInCart] = useState("79")
-  const [targetSales, setTargetSales] = useState("120")
-  const [isDarkMode, setIsDarkMode] = useState(false)
-  const [activeChart, setActiveChart] = useState("bar")
+  const [deliveredSales, setDeliveredSales] = useState(97)
+  const [returnedSales, setReturnedSales] = useState(2)
+  const [inCart, setInCart] = useState(79)
+  const [targetSales, setTargetSales] = useState(120)
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const storedDarkMode = localStorage.getItem("isDarkMode")
+    return storedDarkMode ? JSON.parse(storedDarkMode) : false
+  })
+  const [activeChart, setActiveChart] = useState(() => {
+    const storedChart = localStorage.getItem("activeChart")
+    return storedChart ? JSON.parse(storedChart) : "bar"
+  })
 
-  function toggleDarkMode() {
-    setIsDarkMode((prev) => !prev)
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev: boolean) => {
+      const newDarkMode = !prev
+
+      localStorage.setItem("isDarkMode", JSON.stringify(newDarkMode))
+      return newDarkMode
+    })
   }
 
-  const toggleChart = ({ value }: { value: string }) => {
+  const setChart = ({ value }: { value: string }) => {
+    const newChart = value
     setActiveChart(value)
+    localStorage.setItem("activeChart", JSON.stringify(newChart))
+
     return value
   }
 
-  function removeSetErrors() {
+  const setTarget = ({ value }: { value: number }) => {
+    setTargetSales(value)
+    return value
+  }
+
+  const removeSetErrors = () => {
     setReturnedSales
     setTargetSales
     setDeliveredSales
@@ -73,6 +101,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   const [isItemOn, setIsItemOn] = useState(true)
   const [isStatusOn, setIsStatusOn] = useState(true)
   const [perPage, setPerPage] = useState(10)
+  const [pageNumber, setPageNumber] = useState(1)
 
   const toggleOrder = () => {
     setIsOrderOn((prev) => !prev)
@@ -98,11 +127,15 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     setIsStatusOn((prev) => !prev)
   }
 
-  const togglePerPage = ({ value }: { value: number }) => {
+  const perPageSetter = ({ value }: { value: number }) => {
     setPerPage(value)
     return value
   }
 
+  const pageNumberSetter = ({ page }: { page: number }) => {
+    setPageNumber(page)
+    return page
+  }
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
   const handleScreenSize = () => {
@@ -117,42 +150,44 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   }, [])
 
   return (
-    <ReturnedSales.Provider value={returnedSales}>
-      <TargetSales.Provider value={targetSales}>
-        <DeliveredSales.Provider value={deliveredSales}>
-          <DarkMode.Provider value={{ isDarkMode, toggleDarkMode }}>
-            <InCart.Provider value={inCart}>
-              <ActiveChart.Provider value={{ activeChart, toggleChart }}>
-                <OrdersContext.Provider
-                  value={{
-                    isOrderOn,
-                    toggleOrder,
-                    isNameOn,
-                    toggleName,
-                    isDateOn,
-                    toggleDate,
-                    isAmountOn,
-                    toggleAmount,
-                    isItemOn,
-                    toggleItem,
-                    isStatusOn,
-                    toggleStatus,
-                    perPage,
-                    togglePerPage,
-                  }}
-                >
-                  <ScreenContext.Provider
-                    value={{ screenWidth, handleScreenSize }}
-                  >
-                    {children}
-                  </ScreenContext.Provider>
-                </OrdersContext.Provider>
-              </ActiveChart.Provider>
-            </InCart.Provider>
-          </DarkMode.Provider>
-        </DeliveredSales.Provider>
-      </TargetSales.Provider>
-    </ReturnedSales.Provider>
+    <SalesContext.Provider
+      value={{
+        returnedSales,
+        targetSales,
+        setTarget,
+        deliveredSales,
+        inCart,
+      }}
+    >
+      <DarkMode.Provider value={{ isDarkMode, toggleDarkMode }}>
+        <ActiveChart.Provider value={{ activeChart, setChart }}>
+          <OrdersContext.Provider
+            value={{
+              isOrderOn,
+              toggleOrder,
+              isNameOn,
+              toggleName,
+              isDateOn,
+              toggleDate,
+              isAmountOn,
+              toggleAmount,
+              isItemOn,
+              toggleItem,
+              isStatusOn,
+              toggleStatus,
+              perPage,
+              perPageSetter,
+              pageNumber,
+              pageNumberSetter,
+            }}
+          >
+            <ScreenContext.Provider value={{ screenWidth, handleScreenSize }}>
+              {children}
+            </ScreenContext.Provider>
+          </OrdersContext.Provider>
+        </ActiveChart.Provider>
+      </DarkMode.Provider>
+    </SalesContext.Provider>
   )
 }
 
