@@ -58,7 +58,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     return storedChart ? JSON.parse(storedChart) : "bar"
   })
 
-  function toggleDarkMode() {
+  const toggleDarkMode = () => {
     setIsDarkMode((prev: boolean) => {
       const newDarkMode = !prev
 
@@ -80,7 +80,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     return value
   }
 
-  function removeSetErrors() {
+  const removeSetErrors = () => {
     setReturnedSales
     setTargetSales
     setDeliveredSales
