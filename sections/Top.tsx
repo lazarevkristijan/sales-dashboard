@@ -46,36 +46,43 @@ const Top = () => {
   }
 
   return (
-    <div className={`${sectionStyles} flex relative`}>
-      <TopIcon
-        name={`${isDarkMode ? "dark" : "light"}-menu`}
-        extraStyles="menuButtonSide"
-        onClick={toggleSidePanelMenu}
-      />
-      <TopIcon
-        name={`${isDarkMode ? "dark" : "light"}-notification-bell`}
-        extraStyles="ml-auto mr-0 menuButtonNotification"
-        onClick={toggleNotificationMenu}
-      />
-      <TopIcon
-        name="profile"
-        extraStyles="ml-[5px] menuButtonProfile"
-        onClick={toggleProfileMenu}
-      />
-      <OpenMenu.Provider
-        value={{
-          profileMenu,
-          toggleProfileMenu,
-          notificationMenu,
-          toggleNotificationMenu,
-          sidePanelMenu,
-          toggleSidePanelMenu,
-        }}
-      >
-        {profileMenu && <Profile />}
-        {notificationMenu && <NotificationPanel />}
-        {sidePanelMenu && <SidePanel handlePanelClick={toggleSidePanelMenu} />}
-      </OpenMenu.Provider>
+    <div>
+      <div className={`${sectionStyles} flex relative`}>
+        <TopIcon
+          name={`${isDarkMode ? "dark" : "light"}-menu`}
+          extraStyles="menuButtonSide"
+          onClick={toggleSidePanelMenu}
+        />
+        <TopIcon
+          name={`${isDarkMode ? "dark" : "light"}-notification-bell`}
+          extraStyles="ml-auto mr-0 menuButtonNotification"
+          onClick={toggleNotificationMenu}
+        />
+        <TopIcon
+          name="profile"
+          extraStyles="ml-[5px] menuButtonProfile"
+          onClick={toggleProfileMenu}
+        />
+        <OpenMenu.Provider
+          value={{
+            profileMenu,
+            toggleProfileMenu,
+            notificationMenu,
+            toggleNotificationMenu,
+            sidePanelMenu,
+            toggleSidePanelMenu,
+          }}
+        >
+          {profileMenu && <Profile />}
+          {notificationMenu && <NotificationPanel />}
+          {sidePanelMenu && (
+            <SidePanel handlePanelClick={toggleSidePanelMenu} />
+          )}
+        </OpenMenu.Provider>
+      </div>
+      <p className="bg-red-600 text-center font-bold opacity-20">
+        PROJECT UNDER DEVELEOPMENT <br className="sm:hidden" /> & MAY HAVE BUGS
+      </p>
     </div>
   )
 }
