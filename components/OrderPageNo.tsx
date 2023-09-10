@@ -28,7 +28,7 @@ const OrderPageNo = ({
     ${isDarkMode && !active ? "bg-black text-white" : ""}
     ${!isDarkMode && active ? "light-blue3 text-black" : ""}
     ${!isDarkMode && !active ? "bg-white text-black" : ""}
-    w-[30px] mx-1 rou hover:cursor-pointer`}
+    w-[30px] mx-1 rou hover:cursor-pointer selection:bg-transparent`}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
     >

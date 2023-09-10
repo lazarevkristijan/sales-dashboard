@@ -24,7 +24,7 @@ const CustomPeriodMenu = () => {
     <div
       className={`absolute ${
         isDarkMode ? "dark-blue3" : "light-blue1"
-      } left-0 sm:left-[220px] top-[430px] sm:top-0 rou smText border-black border-[1px]`}
+      } left-0 sm:left-[220px] top-[430px] sm:top-0 rou smText border-black border-[1px] selection:bg-transparent`}
     >
       <div className="m-[10px] w-[300px]">
         <PanelButton
