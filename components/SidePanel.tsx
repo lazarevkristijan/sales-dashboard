@@ -10,7 +10,7 @@ import { DarkMode } from "./Contexts"
 import { OpenMenu } from "../sections/Top"
 
 const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
-  const { sidePanelMenu, toggleSidePanel } = useContext(OpenMenu)
+  const { sidePanelMenu, toggleSidePanelMenu } = useContext(OpenMenu)
   const menuRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
         !menuRef.current.contains(e.target as Node) &&
         !isMenuIconClicked
       ) {
-        toggleSidePanel()
+        toggleSidePanelMenu()
       }
     }
 
@@ -37,7 +37,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
     }
-  }, [sidePanelMenu, toggleSidePanel])
+  }, [sidePanelMenu, toggleSidePanelMenu])
 
   const [isMenuOpen, setIsMenuOpen] = useState("")
 
@@ -49,7 +49,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
     setIsHovered((prev) => !prev)
   }
 
-  const handleChartMenu = () => {
+  const toggleChartMenu = () => {
     if (isMenuOpen === "chartDisplay") {
       setIsMenuOpen("")
     } else {
@@ -57,7 +57,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
     }
   }
 
-  const handlePeriodsMenu = () => {
+  const togglePeriodsMenu = () => {
     if (isMenuOpen === "displayPeriods") {
       setIsMenuOpen("")
     } else {
@@ -65,7 +65,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
     }
   }
 
-  const handleTargetMenu = () => {
+  const toggleTargetMenu = () => {
     if (isMenuOpen === "target") {
       setIsMenuOpen("")
     } else {
@@ -121,7 +121,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       <PanelButton
         title="Chart Display"
         color={isDarkMode ? "dark-blue4" : "light-blue2"}
-        onClick={handleChartMenu}
+        onClick={toggleChartMenu}
       >
         <img
           src={`${isDarkMode ? "dark" : "light"}-drop-down-icon.svg`}
@@ -134,7 +134,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       <PanelButton
         title="Display Periods"
         color={isDarkMode ? "dark-blue4" : "light-blue2"}
-        onClick={handlePeriodsMenu}
+        onClick={togglePeriodsMenu}
       >
         <span className="mx-auto">1m</span>
       </PanelButton>
@@ -144,7 +144,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
         title="Target"
         iconWidth="100"
         color={isDarkMode ? "dark-blue4" : "light-blue2"}
-        onClick={handleTargetMenu}
+        onClick={toggleTargetMenu}
       >
         <span className="mx-auto">Change</span>
       </PanelButton>

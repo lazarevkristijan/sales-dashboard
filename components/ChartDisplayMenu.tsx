@@ -4,7 +4,7 @@ import { DarkMode, ActiveChart } from "./Contexts"
 
 const ChartDisplayMenu = () => {
   const { isDarkMode } = useContext(DarkMode)
-  const { toggleChart } = useContext(ActiveChart)
+  const { setChart } = useContext(ActiveChart)
   return (
     <div
       className={`absolute ${
@@ -15,7 +15,7 @@ const ChartDisplayMenu = () => {
         <PanelButton
           title="Bar Chart"
           color={isDarkMode ? "dark-blue4" : "light-blue2"}
-          onClick={() => toggleChart({ value: "bar" })}
+          onClick={() => setChart({ value: "bar" })}
         >
           <img
             src={`${isDarkMode ? "dark-bar-chart" : "light-bar-chart"}.svg`}
@@ -25,7 +25,7 @@ const ChartDisplayMenu = () => {
         <PanelButton
           title="Line Graph"
           color={isDarkMode ? "dark-blue4" : "light-blue2"}
-          onClick={() => toggleChart({ value: "line" })}
+          onClick={() => setChart({ value: "line" })}
         >
           <img
             src={`${isDarkMode ? "dark-line-graph" : "light-line-graph"}.svg`}
@@ -35,7 +35,7 @@ const ChartDisplayMenu = () => {
         <PanelButton
           title="Pie Chart"
           color={isDarkMode ? "dark-blue4" : "light-blue2"}
-          onClick={() => toggleChart({ value: "pie" })}
+          onClick={() => setChart({ value: "pie" })}
         >
           <img
             src={`${isDarkMode ? "dark-pie-chart" : " light-pie-chart"}.svg`}

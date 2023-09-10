@@ -10,7 +10,7 @@ const PerPageOption = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false)
 
-  const handleIsHovered = () => {
+  const handleHover = () => {
     setIsHovered((prev) => !prev)
   }
 
@@ -28,8 +28,8 @@ const PerPageOption = ({
       }
       
  text-center py-[5px] rou hover:cursor-pointer`}
-      onMouseEnter={handleIsHovered}
-      onMouseLeave={handleIsHovered}
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
       onClick={onClick}
     >
       {number}

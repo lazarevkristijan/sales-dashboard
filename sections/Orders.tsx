@@ -30,14 +30,14 @@ const Orders = () => {
     perPage,
   } = useContext(OrdersContext)
 
-  const handleTableMenu = () => {
+  const toggleTableMenu = () => {
     if (isPerPageOpen) {
       setIsPerPageOpen((prev) => !prev)
     }
     setIsTableMenuOpen((prev) => !prev)
   }
 
-  const handlePerPageMenu = () => {
+  const togglePerPageMenu = () => {
     if (isTableMenuOpen) {
       setIsTableMenuOpen((prev) => !prev)
     }
@@ -168,7 +168,7 @@ const Orders = () => {
         <ActiveButton
           text="Table data"
           dropDown={true}
-          onClick={handleTableMenu}
+          onClick={toggleTableMenu}
         />
 
         {isTableMenuOpen && <TableToggleMenu />}
@@ -186,7 +186,7 @@ const Orders = () => {
         <ActiveButton
           text="Per page"
           dropDown={true}
-          onClick={handlePerPageMenu}
+          onClick={togglePerPageMenu}
         />
 
         {isPerPageOpen && <ResultsPerPage />}

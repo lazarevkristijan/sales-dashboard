@@ -5,7 +5,7 @@ import { DarkMode } from "../components/Contexts"
 
 export const OpenMenu = createContext({
   sidePanelMenu: false,
-  toggleSidePanel: () => {},
+  toggleSidePanelMenu: () => {},
 
   notificationMenu: false,
   toggleNotificationMenu: () => {},
@@ -19,21 +19,9 @@ const Top = () => {
   const [profileMenu, setProfileMenu] = useState(false)
   const [sidePanelMenu, setSidePanelMenu] = useState(false)
 
-  const toggleSidePanel = () => {
-    setSidePanelMenu((prev) => !prev)
-  }
-
-  const toggleNotificationMenu = () => {
-    setNotificationMenu((prev) => !prev)
-  }
-
-  const toggleProfileMenu = () => {
-    setProfileMenu((prev) => !prev)
-  }
-
   const { isDarkMode } = useContext(DarkMode)
 
-  const handleBellClick = () => {
+  const toggleNotificationMenu = () => {
     if (profileMenu || sidePanelMenu) {
       setProfileMenu(false)
       setSidePanelMenu(false)
@@ -41,7 +29,7 @@ const Top = () => {
     setNotificationMenu((prev) => !prev)
   }
 
-  const handleProfileClick = () => {
+  const toggleProfileMenu = () => {
     if (notificationMenu || sidePanelMenu) {
       setNotificationMenu(false)
       setSidePanelMenu(false)
@@ -49,7 +37,7 @@ const Top = () => {
     setProfileMenu((prev) => !prev)
   }
 
-  const handlePanelClick = () => {
+  const toggleSidePanelMenu = () => {
     if (notificationMenu || profileMenu) {
       setNotificationMenu(false)
       setProfileMenu(false)
@@ -62,17 +50,17 @@ const Top = () => {
       <TopIcon
         name={`${isDarkMode ? "dark" : "light"}-menu`}
         extraStyles="menuButtonSide"
-        onClick={handlePanelClick}
+        onClick={toggleSidePanelMenu}
       />
       <TopIcon
         name={`${isDarkMode ? "dark" : "light"}-notification-bell`}
         extraStyles="ml-auto mr-0 menuButtonNotification"
-        onClick={handleBellClick}
+        onClick={toggleNotificationMenu}
       />
       <TopIcon
         name="profile"
         extraStyles="ml-[5px] menuButtonProfile"
-        onClick={handleProfileClick}
+        onClick={toggleProfileMenu}
       />
       <OpenMenu.Provider
         value={{
@@ -81,12 +69,12 @@ const Top = () => {
           notificationMenu,
           toggleNotificationMenu,
           sidePanelMenu,
-          toggleSidePanel,
+          toggleSidePanelMenu,
         }}
       >
         {profileMenu && <Profile />}
         {notificationMenu && <NotificationPanel />}
-        {sidePanelMenu && <SidePanel handlePanelClick={handlePanelClick} />}
+        {sidePanelMenu && <SidePanel handlePanelClick={toggleSidePanelMenu} />}
       </OpenMenu.Provider>
     </div>
   )

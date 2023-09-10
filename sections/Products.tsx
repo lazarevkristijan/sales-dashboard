@@ -5,7 +5,7 @@ import { DarkMode, ScreenContext } from "../components/Contexts"
 
 const Products = () => {
   const [productNumber, setProductNumber] = useState(0)
-  const handleNextProduct = () => {
+  const toggleNextProduct = () => {
     if (productNumber == 2) {
       setProductNumber(0)
     } else {
@@ -13,7 +13,7 @@ const Products = () => {
     }
   }
 
-  const handlePrevProduct = () => {
+  const togglePrevProduct = () => {
     if (productNumber == 0) {
       setProductNumber(2)
     } else {
@@ -34,7 +34,7 @@ const Products = () => {
         {screenWidth >= 350 && (
           <ProductArrow
             direction="left"
-            onClick={handlePrevProduct}
+            onClick={togglePrevProduct}
           />
         )}
         <div className="flex flex-col sm:flex-row">
@@ -57,7 +57,7 @@ const Products = () => {
         {screenWidth >= 350 && (
           <ProductArrow
             direction="right"
-            onClick={handleNextProduct}
+            onClick={toggleNextProduct}
           />
         )}
       </div>
@@ -65,12 +65,12 @@ const Products = () => {
         <div className="flex justify-between">
           <ProductArrow
             direction="left"
-            onClick={handlePrevProduct}
+            onClick={togglePrevProduct}
           />
 
           <ProductArrow
             direction="right"
-            onClick={handleNextProduct}
+            onClick={toggleNextProduct}
           />
         </div>
       )}

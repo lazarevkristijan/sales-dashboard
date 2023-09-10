@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react"
 export const SalesContext = createContext({
   returnedSales: 2,
   targetSales: 120,
-  toggleTarget: ({ value }: { value: number }) => {
+  setTarget: ({ value }: { value: number }) => {
     return value
   },
   deliveredSales: 97,
@@ -15,7 +15,7 @@ export const DarkMode = createContext({
 })
 export const ActiveChart = createContext({
   activeChart: "bar",
-  toggleChart: ({ value }: { value: string }) => {
+  setChart: ({ value }: { value: string }) => {
     return value
   },
 })
@@ -34,7 +34,7 @@ export const OrdersContext = createContext({
   isStatusOn: true,
   toggleStatus: () => {},
   perPage: 10,
-  togglePerPage: ({ value }: { value: number }) => {
+  setPerpage: ({ value }: { value: number }) => {
     return value
   },
 })
@@ -56,12 +56,12 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     setIsDarkMode((prev) => !prev)
   }
 
-  const toggleChart = ({ value }: { value: string }) => {
+  const setChart = ({ value }: { value: string }) => {
     setActiveChart(value)
     return value
   }
 
-  const toggleTarget = ({ value }: { value: number }) => {
+  const setTarget = ({ value }: { value: number }) => {
     setTargetSales(value)
     return value
   }
@@ -108,7 +108,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     setIsStatusOn((prev) => !prev)
   }
 
-  const togglePerPage = ({ value }: { value: number }) => {
+  const setPerpage = ({ value }: { value: number }) => {
     setPerPage(value)
     return value
   }
@@ -131,13 +131,13 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
       value={{
         returnedSales,
         targetSales,
-        toggleTarget,
+        setTarget,
         deliveredSales,
         inCart,
       }}
     >
       <DarkMode.Provider value={{ isDarkMode, toggleDarkMode }}>
-        <ActiveChart.Provider value={{ activeChart, toggleChart }}>
+        <ActiveChart.Provider value={{ activeChart, setChart }}>
           <OrdersContext.Provider
             value={{
               isOrderOn,
@@ -153,7 +153,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
               isStatusOn,
               toggleStatus,
               perPage,
-              togglePerPage,
+              setPerpage,
             }}
           >
             <ScreenContext.Provider value={{ screenWidth, handleScreenSize }}>

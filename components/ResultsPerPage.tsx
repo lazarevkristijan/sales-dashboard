@@ -5,7 +5,7 @@ import { DarkMode, OrdersContext } from "./Contexts"
 
 const ResultsPerPage = () => {
   const { isDarkMode } = useContext(DarkMode)
-  const { togglePerPage } = useContext(OrdersContext)
+  const { setPerpage } = useContext(OrdersContext)
   return (
     <div
       className={`${
@@ -15,19 +15,19 @@ const ResultsPerPage = () => {
       <div className={`m-[20px] ${isDarkMode ? "bg-black" : "bg-white"} rou`}>
         <PerPageOption
           number={10}
-          onClick={() => togglePerPage({ value: 10 })}
+          onClick={() => setPerpage({ value: 10 })}
         />
         <PerPageOption
           number={15}
-          onClick={() => togglePerPage({ value: 15 })}
+          onClick={() => setPerpage({ value: 15 })}
         />
         <PerPageOption
           number={20}
-          onClick={() => togglePerPage({ value: 20 })}
+          onClick={() => setPerpage({ value: 20 })}
         />
         <PerPageOption
           number={25}
-          onClick={() => togglePerPage({ value: 25 })}
+          onClick={() => setPerpage({ value: 25 })}
         />
       </div>
     </div>

@@ -15,7 +15,7 @@ import { salesRevenueStyles, sectionStyles } from "../constants"
 import { DarkMode, ActiveChart, SalesContext } from "../components/Contexts"
 
 const Sales = () => {
-  const [infoPopUp, setInfoPopUp] = useState(false)
+  const [isToolTipOn, setIsToolTipOn] = useState(false)
 
   const { deliveredSales } = useContext(SalesContext)
   const { returnedSales } = useContext(SalesContext)
@@ -25,8 +25,8 @@ const Sales = () => {
   const { isDarkMode } = useContext(DarkMode)
   const { activeChart } = useContext(ActiveChart)
 
-  function handleInfoHover(value: boolean) {
-    setInfoPopUp(value)
+  const handleInfoHover = () => {
+    setIsToolTipOn((prev) => !prev)
   }
 
   return (
@@ -129,11 +129,11 @@ const Sales = () => {
           <img
             src={`${isDarkMode ? "dark" : "light"}-info.svg`}
             alt="info button"
-            className={`w-[20px] absolute top-1 right-1 hover:cursor-pointer `}
-            onMouseEnter={() => handleInfoHover(true)}
-            onMouseLeave={() => handleInfoHover(false)}
+            className={`w-[20px] absolute top-1 right-1 hover:cursor-pointer hover:scale-105 transition-all `}
+            onMouseEnter={handleInfoHover}
+            onMouseLeave={handleInfoHover}
           />
-          {infoPopUp && <TotalInfo />}
+          {isToolTipOn && <TotalInfo />}
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import { DarkMode, SalesContext } from "./Contexts"
 
 const TargetMenu = () => {
   const [isInput, setIsInput] = useState(false)
-  const handleIsInput = () => {
+  const toggleIsInput = () => {
     setIsInput((prev) => !prev)
   }
 
@@ -16,7 +16,7 @@ const TargetMenu = () => {
   }
 
   const { isDarkMode } = useContext(DarkMode)
-  const { targetSales, toggleTarget } = useContext(SalesContext)
+  const { targetSales, setTarget } = useContext(SalesContext)
 
   return (
     <div
@@ -37,7 +37,7 @@ const TargetMenu = () => {
             <input
               type="text"
               value={targetSales}
-              onChange={(e) => toggleTarget({ value: Number(e.target.value) })}
+              onChange={(e) => setTarget({ value: Number(e.target.value) })}
               className={`w-[80px] ${
                 isDarkMode ? "dark-blue2" : "light-blue2"
               } rou p-1 text-center`}
@@ -54,8 +54,8 @@ const TargetMenu = () => {
                  ? "dark-blue2"
                  : "light-blue3"
              }
-             rou hover:cursor-pointer`}
-            onClick={handleIsInput}
+             rou hover:cursor-pointer hover:scale-105 transition-all`}
+            onClick={toggleIsInput}
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
           >

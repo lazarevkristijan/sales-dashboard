@@ -4,10 +4,10 @@ import { displayPeriodsOptions } from "../constants"
 import { DarkMode } from "./Contexts"
 
 const DisplayPeriodsMenu = () => {
-  const [isCustomMenu, setIsCustomMenu] = useState(false)
+  const [isCustomMenuOpen, setIsCustomMenuOpen] = useState(false)
 
-  const handleCustomMenu = () => {
-    setIsCustomMenu((prev) => !prev)
+  const toggleCustomMenu = () => {
+    setIsCustomMenuOpen((prev) => !prev)
   }
 
   const { isDarkMode } = useContext(DarkMode)
@@ -38,14 +38,14 @@ const DisplayPeriodsMenu = () => {
         >
           <PanelButton
             title={`${option.title}`}
-            onClick={handleCustomMenu}
+            onClick={toggleCustomMenu}
             color={`${isDarkMode ? "dark-blue4" : "light-blue3"}`}
           >
             <span className="mx-auto">{`${option.label}`}</span>
           </PanelButton>
         </div>
       ))}
-      {isCustomMenu && <CustomPeriodMenu />}
+      {isCustomMenuOpen && <CustomPeriodMenu />}
     </div>
   )
 }
