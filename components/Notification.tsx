@@ -1,7 +1,19 @@
 import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
-const Notification = ({ evaluation }: { evaluation: boolean }) => {
+const Notification = ({
+  evaluation,
+  userName,
+  itemName,
+  qty,
+  ago,
+}: {
+  evaluation: boolean
+  userName: string
+  itemName: string
+  qty: number
+  ago: number
+}) => {
   const { isDarkMode } = useContext(DarkMode)
   return (
     <div
@@ -27,9 +39,23 @@ const Notification = ({ evaluation }: { evaluation: boolean }) => {
       </div>
       <div className="w-2/3 my-auto">
         <p>
-          {evaluation ? "New order" : "Cancelled order"} by User Name, item
-          name, quantity, price
+          {userName} {evaluation ? "ordered" : "returned"} {qty}{" "}
+          {qty > 1 ? `${itemName}'s` : `${itemName}`} valued ${qty * 500}
         </p>
+        {ago <= 60
+          ? ago
+          : ago > 60
+          ? `${Math.floor(ago / 60)}`
+          : ago > 1440
+          ? `${Math.floor(ago / 1440)}`
+          : ago > 43800 && `${Math.floor(ago / 43800)}`}
+        {ago <= 60
+          ? `m`
+          : ago > 60
+          ? "h"
+          : ago > 1440
+          ? "d"
+          : ago > 43800 && "m"}{" "}
       </div>
     </div>
   )

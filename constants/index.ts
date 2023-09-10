@@ -384,6 +384,37 @@ export const orderPageNumbers = [
   },
 ]
 
+export const notifications = [
+  {
+    evaluation: true,
+    userName: "Grant Cardone",
+    itemName: "iPhone 12",
+    qty: 1,
+    ago: 27,
+  },
+  {
+    evaluation: true,
+    userName: "Elena Cardone",
+    itemName: "iPhone 14",
+    qty: 2,
+    ago: 44,
+  },
+  {
+    evaluation: false,
+    userName: "Simon Sinek",
+    itemName: "iPhone 13",
+    qty: 1,
+    ago: 65,
+  },
+  {
+    evaluation: true,
+    userName: "Napoleon Hill",
+    itemName: "iPhone 12",
+    qty: 2,
+    ago: 80,
+  },
+]
+
 export const salesRevenueStyles =
   "w-[300px] flex flex-col mx-[20px] rou py-[20px]"
 

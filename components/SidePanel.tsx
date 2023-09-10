@@ -76,8 +76,8 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
   return (
     <div
       className={`${
-        isDarkMode ? "dark-blue1" : "light-blue3"
-      } p-[20px] pb-[10px] rou absolute z-[1] top-[80px] w-[300px]`}
+        isDarkMode ? "dark-blue1" : "light-blue4"
+      } p-[20px] pb-[10px] rou absolute z-[1] top-[80px] w-[300px] drop-shadow-2xl`}
       ref={menuRef}
     >
       <div
@@ -85,7 +85,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
         style={{
           borderLeft: "30px solid transparent",
           borderRight: "30px solid transparent",
-          borderBottom: `30px solid ${isDarkMode ? "#00C0FF" : "#48CAE4"}`,
+          borderBottom: `30px solid ${isDarkMode ? "#00C0FF" : "#00b4d8"}`,
           rotate: "-15deg",
         }}
       ></div>

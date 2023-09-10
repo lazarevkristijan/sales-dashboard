@@ -23,7 +23,7 @@ const CustomPeriodMenu = () => {
   return (
     <div
       className={`absolute ${
-        isDarkMode ? "dark-blue3" : "light-blue1"
+        isDarkMode ? "dark-blue1" : "light-blue4"
       } left-0 sm:left-[220px] top-[430px] sm:top-0 rou smText border-black border-[1px] selection:bg-transparent`}
     >
       <div className="m-[10px] w-[300px]">
@@ -55,11 +55,11 @@ const CustomPeriodMenu = () => {
 
         <div
           className={`
-          ${isDarkMode && isHovered && "dark-blue2"}
-          ${isDarkMode && !isHovered && "dark-blue1"}
-          ${!isDarkMode && isHovered && "dark-blue2"}
-          ${!isDarkMode && !isHovered && "light-blue3"}
-        text-black p-[20px] flex justify-center items-center rou mb-[10px] hover:cursor-pointer`}
+          ${isDarkMode && isHovered && "dark-blue4"}
+          ${isDarkMode && !isHovered && "dark-blue3"}
+          ${!isDarkMode && isHovered && "light-blue3"}
+          ${!isDarkMode && !isHovered && "light-blue2"}
+        p-[20px] flex justify-center items-center rou mb-[10px] hover:cursor-pointer`}
           onMouseEnter={handleHover}
           onMouseLeave={handleHover}
         >

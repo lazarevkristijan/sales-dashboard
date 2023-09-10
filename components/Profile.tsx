@@ -40,8 +40,8 @@ const Profile = () => {
   return (
     <div
       className={`${topDropDownStyles} ${
-        isDarkMode ? "dark-blue1" : "light-blue3"
-      } smText max-w-[350px] right-0`}
+        isDarkMode ? "dark-blue1" : "light-blue4"
+      } smText max-w-[350px] right-0 drop-shadow-2xl`}
       ref={profileRef}
     >
       <div
@@ -49,7 +49,7 @@ const Profile = () => {
         style={{
           borderLeft: "30px solid transparent",
           borderRight: "30px solid transparent",
-          borderBottom: `30px solid ${isDarkMode ? "#00C0FF" : "#48CAE4"}`,
+          borderBottom: `30px solid ${isDarkMode ? "#00C0FF" : "#00b4d8"}`,
           rotate: "15deg",
         }}
       ></div>

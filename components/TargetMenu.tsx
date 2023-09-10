@@ -21,7 +21,7 @@ const TargetMenu = () => {
   return (
     <div
       className={`absolute w-[350px] ${
-        isDarkMode ? "dark-blue3" : "light-blue1"
+        isDarkMode ? "dark-blue1" : "light-blue4"
       } left-0 sm:left-[300px] top-[355px] sm:top-0 rou smText border-black border-[1px]`}
     >
       <div

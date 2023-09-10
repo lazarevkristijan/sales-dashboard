@@ -49,11 +49,19 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   const [returnedSales, setReturnedSales] = useState(2)
   const [inCart, setInCart] = useState(79)
   const [targetSales, setTargetSales] = useState(120)
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const storedDarkMode = localStorage.getItem("isDarkMode")
+    return storedDarkMode ? JSON.parse(storedDarkMode) : false
+  })
   const [activeChart, setActiveChart] = useState("bar")
 
   function toggleDarkMode() {
-    setIsDarkMode((prev) => !prev)
+    setIsDarkMode((prev: boolean) => {
+      const newDarkMode = !prev
+
+      localStorage.setItem("isDarkMode", JSON.stringify(newDarkMode))
+      return newDarkMode
+    })
   }
 
   const setChart = ({ value }: { value: string }) => {
