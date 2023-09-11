@@ -59,9 +59,12 @@ const TableToggleMenu = () => {
         } rou py-[10px]`}
       >
         <p className="text-center">Show/hide elements</p>
-        <div className="md:flex pt-[10px]">
+        <div className="md:flex pt-[10px] selection:bg-transparent">
           <div className="md:w-1/2">
-            <div className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px]">
+            <div
+              className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px] hover:cursor-pointer"
+              onClick={toggleOrder}
+            >
               <div
                 className={`w-[110px] h-full ${
                   isDarkMode ? "dark-blue3" : "light-blue1"
@@ -75,12 +78,8 @@ const TableToggleMenu = () => {
         ${isDarkMode && !isOrderOn && "dark-danger"}
         ${!isDarkMode && isOrderOn && "light-success"}
         ${!isDarkMode && !isOrderOn && "light-danger"}
-
         
-        ${
-          isOrderOn ? "light-success" : "light-danger"
-        } hover:cursor-pointer flex rou-r`}
-                onClick={toggleOrder}
+        flex rou-r`}
               >
                 <img
                   src={`${isOrderOn ? "tick" : "cross"}.svg`}
@@ -90,7 +89,10 @@ const TableToggleMenu = () => {
               </div>
             </div>
 
-            <div className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px]">
+            <div
+              className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px] hover:cursor-pointer"
+              onClick={toggleName}
+            >
               <div
                 className={`w-[110px] h-full ${
                   isDarkMode ? "dark-blue3" : "light-blue1"
@@ -103,13 +105,7 @@ const TableToggleMenu = () => {
         ${isDarkMode && isNameOn && "dark-success"}
         ${isDarkMode && !isNameOn && "dark-danger"}
         ${!isDarkMode && isNameOn && "light-success"}
-        ${!isDarkMode && !isNameOn && "light-danger"}
-
-        
-        ${
-          isNameOn ? "light-success" : "light-danger"
-        } hover:cursor-pointer flex rou-r`}
-                onClick={toggleName}
+        ${!isDarkMode && !isNameOn && "light-danger"} flex rou-r`}
               >
                 <img
                   src={`${isNameOn ? "tick" : "cross"}.svg`}
@@ -119,11 +115,14 @@ const TableToggleMenu = () => {
               </div>
             </div>
 
-            <div className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px]">
+            <div
+              className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px] hover:cursor-pointer"
+              onClick={toggleDate}
+            >
               <div
                 className={`w-[110px] h-full ${
                   isDarkMode ? "dark-blue3" : "light-blue1"
-                } flex justify-center items-center rou-l`}
+                } flex justify-center items-center rou-l hover:cursor-pointer`}
               >
                 Date
               </div>
@@ -132,13 +131,7 @@ const TableToggleMenu = () => {
         ${isDarkMode && isDateOn && "dark-success"}
         ${isDarkMode && !isDateOn && "dark-danger"}
         ${!isDarkMode && isDateOn && "light-success"}
-        ${!isDarkMode && !isDateOn && "light-danger"}
-
-        
-        ${
-          isDateOn ? "light-success" : "light-danger"
-        } hover:cursor-pointer flex rou-r`}
-                onClick={toggleDate}
+        ${!isDarkMode && !isDateOn && "light-danger"} flex rou-r`}
               >
                 <img
                   src={`${isDateOn ? "tick" : "cross"}.svg`}
@@ -150,7 +143,10 @@ const TableToggleMenu = () => {
           </div>
 
           <div className="md:w-1/2">
-            <div className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px]">
+            <div
+              className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px] hover:cursor-pointer"
+              onClick={toggleAmount}
+            >
               <div
                 className={`w-[110px] h-full ${
                   isDarkMode ? "dark-blue3" : "light-blue1"
@@ -163,13 +159,7 @@ const TableToggleMenu = () => {
         ${isDarkMode && isAmountOn && "dark-success"}
         ${isDarkMode && !isAmountOn && "dark-danger"}
         ${!isDarkMode && isAmountOn && "light-success"}
-        ${!isDarkMode && !isAmountOn && "light-danger"}
-
-        
-        ${
-          isAmountOn ? "light-success" : "light-danger"
-        } hover:cursor-pointer flex rou-r`}
-                onClick={toggleAmount}
+        ${!isDarkMode && !isAmountOn && "light-danger"} flex rou-r`}
               >
                 <img
                   src={`${isAmountOn ? "tick" : "cross"}.svg`}
@@ -178,11 +168,14 @@ const TableToggleMenu = () => {
                 />
               </div>
             </div>{" "}
-            <div className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px]">
+            <div
+              className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px] hover:cursor-pointer"
+              onClick={toggleItem}
+            >
               <div
                 className={`w-[110px] h-full ${
                   isDarkMode ? "dark-blue3" : "light-blue1"
-                } flex justify-center items-center rou-l`}
+                } flex justify-center items-center rou-l hover:cursor-pointer`}
               >
                 Item{" "}
               </div>
@@ -191,13 +184,7 @@ const TableToggleMenu = () => {
         ${isDarkMode && isItemOn && "dark-success"}
         ${isDarkMode && !isItemOn && "dark-danger"}
         ${!isDarkMode && isItemOn && "light-success"}
-        ${!isDarkMode && !isItemOn && "light-danger"}
-
-        
-        ${
-          isItemOn ? "light-success" : "light-danger"
-        } hover:cursor-pointer flex rou-r`}
-                onClick={toggleItem}
+        ${!isDarkMode && !isItemOn && "light-danger"} flex rou-r`}
               >
                 <img
                   src={`${isItemOn ? "tick" : "cross"}.svg`}
@@ -206,7 +193,10 @@ const TableToggleMenu = () => {
                 />
               </div>
             </div>{" "}
-            <div className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px]">
+            <div
+              className="w-[150px] h-[40px] flex smText  mx-auto mb-[10px] hover:cursor-pointer"
+              onClick={toggleStatus}
+            >
               <div
                 className={`w-[110px] h-full ${
                   isDarkMode ? "dark-blue3" : "light-blue1"
@@ -219,13 +209,7 @@ const TableToggleMenu = () => {
         ${isDarkMode && isStatusOn && "dark-success"}
         ${isDarkMode && !isStatusOn && "dark-danger"}
         ${!isDarkMode && isStatusOn && "light-success"}
-        ${!isDarkMode && !isStatusOn && "light-danger"}
-
-        
-        ${
-          isStatusOn ? "light-success" : "light-danger"
-        } hover:cursor-pointer flex rou-r`}
-                onClick={toggleStatus}
+        ${!isDarkMode && !isStatusOn && "light-danger"} flex rou-r`}
               >
                 <img
                   src={`${isStatusOn ? "tick" : "cross"}.svg`}

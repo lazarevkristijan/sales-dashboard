@@ -39,6 +39,15 @@ const Orders = () => {
     useContext(OrdersOpenMenu)
   const { screenWidth } = useContext(ScreenContext)
 
+  const turnedOnOptions = [
+    isOrderOn,
+    isNameOn,
+    isDateOn,
+    isAmountOn,
+    isItemOn,
+    isStatusOn,
+  ].filter((column) => column).length
+
   return (
     <div
       className={`${sectionStyles} ${
@@ -46,7 +55,15 @@ const Orders = () => {
       }`}
     >
       <div className="mx-[20px] mb-[25px] overflow-x-scroll lg:overflow-hidden rou">
-        <table className="w-[1000px] text-center">
+        <table
+          className={`
+          ${
+            turnedOnOptions <= 3 && screenWidth <= 500
+              ? "w-[500px]"
+              : "w-[1000px]"
+          }
+          } text-center`}
+        >
           <thead>
             <tr className="h-[50px]">
               {isOrderOn && (
