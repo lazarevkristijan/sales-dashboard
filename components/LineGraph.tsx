@@ -12,11 +12,11 @@ const LineGraph = () => {
     })
   }
   const data = {
-    labels: [months[0], months[1], months[2], months[3], months[4], months[5]],
+    labels: months.slice(0, months.length),
     datasets: [
       {
         label: "Delivered",
-        data: [sales[0], sales[1], sales[2], sales[3], sales[4], sales[5]],
+        data: sales.slice(0, sales.length),
         backgroundColor: ["rgba(150,242,255,0.5)"],
         pointBackgroundColor: "darkblue",
         pointRadius: 5,
