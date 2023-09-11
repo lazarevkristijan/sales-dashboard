@@ -8,12 +8,20 @@ import {
   OrderPageNo,
   TableDataBlock,
 } from "../components"
-import { useState, useContext } from "react"
+import { useState, useContext, createContext } from "react"
 import { DarkMode, OrdersContext } from "../components/Contexts"
 
+export const OrdersOpenMenu = createContext({
+  tableMenu: false,
+  toggleTableMenu: () => {},
+
+  perPageMenu: false,
+  togglePerPageMenu: () => {},
+})
+
 const Orders = () => {
-  const [isTableMenuOpen, setIsTableMenuOpen] = useState(false)
-  const [isPerPageOpen, setIsPerPageOpen] = useState(false)
+  const [tableMenu, setTableMenu] = useState(false)
+  const [perPageMenu, setPerPageMenu] = useState(false)
 
   const { isDarkMode } = useContext(DarkMode)
   const {
@@ -35,17 +43,17 @@ const Orders = () => {
   } = useContext(OrdersContext)
 
   const toggleTableMenu = () => {
-    if (isPerPageOpen) {
-      setIsPerPageOpen((prev) => !prev)
+    if (perPageMenu) {
+      setPerPageMenu(false)
     }
-    setIsTableMenuOpen((prev) => !prev)
+    setTableMenu((prev) => !prev)
   }
 
-  const handlePerPageMenu = () => {
-    if (isTableMenuOpen) {
-      setIsTableMenuOpen((prev) => !prev)
+  const togglePerPageMenu = () => {
+    if (tableMenu) {
+      setTableMenu(false)
     }
-    setIsPerPageOpen((prev) => !prev)
+    setPerPageMenu((prev) => !prev)
   }
 
   return (
@@ -180,9 +188,8 @@ const Orders = () => {
           text="Table data"
           dropDown={true}
           onClick={toggleTableMenu}
+          extraStyles="menuButtonTable"
         />
-
-        {isTableMenuOpen && <TableToggleMenu />}
 
         <div className="hidden my-auto sm:flex text-center">
           <OrderPageNo
@@ -206,10 +213,16 @@ const Orders = () => {
         <ActiveButton
           text="Per page"
           dropDown={true}
-          onClick={handlePerPageMenu}
+          onClick={togglePerPageMenu}
+          extraStyles="menuButtonPerPage"
         />
 
-        {isPerPageOpen && <ResultsPerPage />}
+        <OrdersOpenMenu.Provider
+          value={{ tableMenu, toggleTableMenu, perPageMenu, togglePerPageMenu }}
+        >
+          {tableMenu && <TableToggleMenu />}
+          {perPageMenu && <ResultsPerPage />}
+        </OrdersOpenMenu.Provider>
       </div>
       <div className="sm:hidden text-center mt-[10px] flex justify-center">
         {orderPageNumbers.map((number, index) => (

@@ -1,8 +1,37 @@
-import { useContext } from "react"
+import { useContext, useEffect, useRef } from "react"
 
 import { DarkMode, OrdersContext } from "./Contexts"
+import { OrdersOpenMenu } from "../sections/Orders"
+
 const TableToggleMenu = () => {
   const { isDarkMode } = useContext(DarkMode)
+  const { tableMenu, toggleTableMenu } = useContext(OrdersOpenMenu)
+  const tableMenuRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const isMenuIconClicked =
+        e.target instanceof HTMLElement &&
+        e.target.classList.contains("menuButtonTable")
+
+      if (
+        tableMenuRef.current &&
+        !tableMenuRef.current.contains(e.target as Node) &&
+        !isMenuIconClicked
+      ) {
+        toggleTableMenu()
+      }
+    }
+    if (tableMenu) {
+      document.addEventListener("mousedown", handleClickOutside)
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [tableMenu, toggleTableMenu])
 
   const {
     isOrderOn,
@@ -23,6 +52,7 @@ const TableToggleMenu = () => {
       className={`w-[250px] sm:w-[300px] md:w-[400px] ${
         isDarkMode ? "dark-blue3 text-white" : "light-blue1 text-black"
       } absolute top-[50px] border-black border-[1px] rou`}
+      ref={tableMenuRef}
     >
       <div
         className={`m-[20px] ${

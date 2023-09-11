@@ -6,10 +6,12 @@ const ActiveButton = ({
   text,
   dropDown,
   onClick,
+  extraStyles,
 }: {
   text: string
   dropDown?: boolean
   onClick?: React.MouseEventHandler
+  extraStyles?: string
 }) => {
   const { isDarkMode } = useContext(DarkMode)
 
@@ -22,7 +24,7 @@ const ActiveButton = ({
   return (
     <span
       className={`
-
+${extraStyles}
       ${
         isDarkMode
           ? isHovered
