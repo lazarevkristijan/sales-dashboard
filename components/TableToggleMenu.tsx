@@ -1,7 +1,6 @@
 import { useContext, useEffect, useRef } from "react"
 
-import { DarkMode, OrdersContext } from "./Contexts"
-import { OrdersOpenMenu } from "../sections/Orders"
+import { DarkMode, OrdersTableContext, OrdersOpenMenu } from "./Contexts"
 
 const TableToggleMenu = () => {
   const { isDarkMode } = useContext(DarkMode)
@@ -46,7 +45,7 @@ const TableToggleMenu = () => {
     toggleItem,
     isStatusOn,
     toggleStatus,
-  } = useContext(OrdersContext)
+  } = useContext(OrdersTableContext)
   return (
     <div
       className={`w-[250px] sm:w-[300px] md:w-[400px] ${

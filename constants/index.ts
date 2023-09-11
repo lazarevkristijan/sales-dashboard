@@ -150,24 +150,6 @@ export const displayPeriodsOptions = [
   },
 ]
 
-export const orderPageNumbers = [
-  {
-    page: 1,
-  },
-  {
-    page: 2,
-  },
-  {
-    page: 3,
-  },
-  {
-    page: 4,
-  },
-  {
-    page: 67,
-  },
-]
-
 export const notifications = [
   {
     evaluation: true,

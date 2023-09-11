@@ -2,12 +2,11 @@ import { useContext, useRef, useEffect } from "react"
 
 import { ProfileMenuButton, InActiveButton } from "."
 import { topDropDownStyles } from "../constants"
-import { DarkMode } from "./Contexts"
-import { OpenMenu } from "../sections/Top"
+import { DarkMode, TopOpenMenu } from "./Contexts"
 
 const Profile = () => {
   const { isDarkMode } = useContext(DarkMode)
-  const { profileMenu, toggleProfileMenu } = useContext(OpenMenu)
+  const { profileMenu, toggleProfileMenu } = useContext(TopOpenMenu)
 
   const profileRef = useRef<HTMLDivElement | null>(null)
 

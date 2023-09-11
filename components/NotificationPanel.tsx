@@ -1,12 +1,11 @@
 import { Notification } from "."
 import { notifications, topDropDownStyles } from "../constants"
 import { useContext, useEffect, useRef } from "react"
-import { DarkMode } from "./Contexts"
-import { OpenMenu } from "../sections/Top"
+import { DarkMode, TopOpenMenu } from "./Contexts"
 
 const NotificationPanel = () => {
   const { isDarkMode } = useContext(DarkMode)
-  const { notificationMenu, toggleNotificationMenu } = useContext(OpenMenu)
+  const { notificationMenu, toggleNotificationMenu } = useContext(TopOpenMenu)
   const notificationRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {

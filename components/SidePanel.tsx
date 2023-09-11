@@ -6,11 +6,10 @@ import {
   TargetMenu,
 } from "."
 
-import { DarkMode } from "./Contexts"
-import { OpenMenu } from "../sections/Top"
+import { DarkMode, TopOpenMenu } from "./Contexts"
 
 const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
-  const { sidePanelMenu, toggleSidePanelMenu } = useContext(OpenMenu)
+  const { sidePanelMenu, toggleSidePanelMenu } = useContext(TopOpenMenu)
   const menuRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {

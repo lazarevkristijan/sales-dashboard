@@ -1,4 +1,4 @@
-import { sectionStyles, orderPageNumbers } from "../constants"
+import { sectionStyles } from "../constants"
 import { ordersTableData } from "../constants/Orders"
 
 import {
@@ -8,21 +8,15 @@ import {
   OrderPageNo,
   TableDataBlock,
 } from "../components"
-import { useState, useContext, createContext } from "react"
-import { DarkMode, OrdersContext } from "../components/Contexts"
-
-export const OrdersOpenMenu = createContext({
-  tableMenu: false,
-  toggleTableMenu: () => {},
-
-  perPageMenu: false,
-  togglePerPageMenu: () => {},
-})
+import { useContext } from "react"
+import {
+  DarkMode,
+  OrdersTableContext,
+  OrdersOpenMenu,
+  ScreenContext,
+} from "../components/Contexts"
 
 const Orders = () => {
-  const [tableMenu, setTableMenu] = useState(false)
-  const [perPageMenu, setPerPageMenu] = useState(false)
-
   const { isDarkMode } = useContext(DarkMode)
   const {
     isOrderOn,
@@ -40,21 +34,10 @@ const Orders = () => {
     perPage,
     pageNumber,
     pageNumberSetter,
-  } = useContext(OrdersContext)
-
-  const toggleTableMenu = () => {
-    if (perPageMenu) {
-      setPerPageMenu(false)
-    }
-    setTableMenu((prev) => !prev)
-  }
-
-  const togglePerPageMenu = () => {
-    if (tableMenu) {
-      setTableMenu(false)
-    }
-    setPerPageMenu((prev) => !prev)
-  }
+  } = useContext(OrdersTableContext)
+  const { tableMenu, toggleTableMenu, perPageMenu, togglePerPageMenu } =
+    useContext(OrdersOpenMenu)
+  const { screenWidth } = useContext(ScreenContext)
 
   return (
     <div
@@ -190,8 +173,39 @@ const Orders = () => {
           onClick={toggleTableMenu}
           extraStyles="menuButtonTable"
         />
+        {tableMenu && <TableToggleMenu />}
 
-        <div className="hidden my-auto sm:flex text-center">
+        {screenWidth >= 640 && (
+          <div className="hidden my-auto sm:flex text-center">
+            <OrderPageNo
+              page={1}
+              onClick={() => pageNumberSetter({ page: 1 })}
+            />
+            <OrderPageNo
+              page={2}
+              onClick={() => pageNumberSetter({ page: 2 })}
+            />
+            <OrderPageNo
+              page={3}
+              onClick={() => pageNumberSetter({ page: 3 })}
+            />
+            <OrderPageNo
+              page={67}
+              onClick={() => {}}
+            />
+          </div>
+        )}
+        <ActiveButton
+          text="Per page"
+          dropDown={true}
+          onClick={togglePerPageMenu}
+          extraStyles="menuButtonPerPage"
+        />
+
+        {perPageMenu && <ResultsPerPage />}
+      </div>
+      {screenWidth < 640 && (
+        <div className="sm:hidden text-center mt-[10px] flex justify-center">
           <OrderPageNo
             page={1}
             onClick={() => pageNumberSetter({ page: 1 })}
@@ -209,30 +223,7 @@ const Orders = () => {
             onClick={() => {}}
           />
         </div>
-
-        <ActiveButton
-          text="Per page"
-          dropDown={true}
-          onClick={togglePerPageMenu}
-          extraStyles="menuButtonPerPage"
-        />
-
-        <OrdersOpenMenu.Provider
-          value={{ tableMenu, toggleTableMenu, perPageMenu, togglePerPageMenu }}
-        >
-          {tableMenu && <TableToggleMenu />}
-          {perPageMenu && <ResultsPerPage />}
-        </OrdersOpenMenu.Provider>
-      </div>
-      <div className="sm:hidden text-center mt-[10px] flex justify-center">
-        {orderPageNumbers.map((number, index) => (
-          <OrderPageNo
-            key={index}
-            page={number.page}
-            onClick={() => {}}
-          />
-        ))}
-      </div>
+      )}
     </div>
   )
 }
