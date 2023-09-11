@@ -21,6 +21,7 @@ const TableToggleMenu = () => {
         toggleTableMenu()
       }
     }
+
     if (tableMenu) {
       document.addEventListener("mousedown", handleClickOutside)
     } else {

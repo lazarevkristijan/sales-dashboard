@@ -31,7 +31,7 @@ const ResultsPerPage = () => {
     }
 
     return () => {
-      document.addEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("mousedown", handleClickOutside)
     }
   }, [perPageMenu, togglePerPageMenu])
 

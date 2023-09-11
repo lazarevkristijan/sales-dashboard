@@ -13,18 +13,18 @@ const ActiveButton = ({
   onClick?: React.MouseEventHandler
   extraStyles?: string
 }) => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
-
+  // States
   const [isHovered, setIsHovered] = useState(false)
-
+  // Functions
   const handleHover = () => {
     setIsHovered((prev) => !prev)
   }
 
   return (
     <span
-      className={`
-${extraStyles}
+      className={`${extraStyles}
       ${
         isDarkMode
           ? isHovered
@@ -33,14 +33,14 @@ ${extraStyles}
           : isHovered
           ? "dark-blue2"
           : "light-blue3"
-      }
-
- py-1 px-2 w-fit text-black rou min-w-[80px] text-center flex mx-auto mb-[20px] xs:mb-0 xs:mx-0 items-center hover:cursor-pointer selection:bg-transparent hover:scale-105 transition-all`}
+      } w-fit min-w-[80px] mx-auto mb-[20px] xs:mb-0 xs:mx-0 py-1 px-2 text-black text-center flex items-center rou hover:cursor-pointer selection:bg-transparent hover:scale-105 transition-all`}
       onClick={onClick}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
     >
+      {/* Button text  */}
       {text}
+      {/* Optional dropdown icon if button is a menu toggler */}
       {dropDown && <DropDownButton />}
     </span>
   )
