@@ -3,17 +3,18 @@ import { createContext, useEffect, useState } from "react"
 export const SalesContext = createContext({
   returnedSales: 2,
   targetSales: 120,
+  deliveredSales: 97,
+  inCart: 79,
   setTarget: ({ value }: { value: number }) => {
     return value
   },
-  deliveredSales: 97,
-  inCart: 79,
 })
 
 export const DarkMode = createContext({
   isDarkMode: false,
   toggleDarkMode: () => {},
 })
+
 export const ActiveChart = createContext({
   activeChart: "bar",
   setChart: ({ value }: { value: string }) => {
@@ -58,8 +59,8 @@ export const OrdersTableContext = createContext({
     return value
   },
   pageNumber: 0,
-  pageNumberSetter: ({ page }: { page: number }) => {
-    return page
+  pageNumberSetter: ({ value }: { value: number }) => {
+    return value
   },
 })
 
@@ -68,6 +69,7 @@ export const ScreenContext = createContext({
 })
 
 const Contexts = ({ children }: { children: React.ReactNode }) => {
+  // Sales Context data
   const deliveredSales = 97
   const returnedSales = 2
   const inCart = 79
@@ -80,7 +82,12 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     const storedChart = localStorage.getItem("activeChart")
     return storedChart ? JSON.parse(storedChart) : "bar"
   })
+  const setTarget = ({ value }: { value: number }) => {
+    setTargetSales(value)
+    return value
+  }
 
+  // Dark Mode data
   const toggleDarkMode = () => {
     setIsDarkMode((prev: boolean) => {
       const newDarkMode = !prev
@@ -90,6 +97,7 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     })
   }
 
+  // Active Chart data
   const setChart = ({ value }: { value: string }) => {
     const newChart = value
     setActiveChart(value)
@@ -98,11 +106,53 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     return value
   }
 
-  const setTarget = ({ value }: { value: number }) => {
-    setTargetSales(value)
-    return value
+  // Top Open Menu data
+  const [notificationMenu, setNotificationMenu] = useState(false)
+  const [profileMenu, setProfileMenu] = useState(false)
+  const [sidePanelMenu, setSidePanelMenu] = useState(false)
+
+  const toggleNotificationMenu = () => {
+    if (profileMenu || sidePanelMenu) {
+      setProfileMenu(false)
+      setSidePanelMenu(false)
+    }
+    setNotificationMenu((prev) => !prev)
   }
 
+  const toggleProfileMenu = () => {
+    if (notificationMenu || sidePanelMenu) {
+      setNotificationMenu(false)
+      setSidePanelMenu(false)
+    }
+    setProfileMenu((prev) => !prev)
+  }
+
+  const toggleSidePanelMenu = () => {
+    if (notificationMenu || profileMenu) {
+      setNotificationMenu(false)
+      setProfileMenu(false)
+    }
+    setSidePanelMenu((prev) => !prev)
+  }
+
+  // Orders Open Menu data
+  const [tableMenu, setTableMenu] = useState(false)
+  const [perPageMenu, setPerPageMenu] = useState(false)
+  const toggleTableMenu = () => {
+    if (perPageMenu) {
+      setPerPageMenu(false)
+    }
+    setTableMenu((prev) => !prev)
+  }
+
+  const togglePerPageMenu = () => {
+    if (tableMenu) {
+      setTableMenu(false)
+    }
+    setPerPageMenu((prev) => !prev)
+  }
+
+  // Orders Table Context data
   const [isOrderOn, setIsOrderOn] = useState(true)
   const [isNameOn, setIsNameOn] = useState(true)
   const [isDateOn, setIsDateOn] = useState(true)
@@ -141,10 +191,12 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     return value
   }
 
-  const pageNumberSetter = ({ page }: { page: number }) => {
-    setPageNumber(page)
-    return page
+  const pageNumberSetter = ({ value }: { value: number }) => {
+    setPageNumber(value)
+    return value
   }
+
+  // Screen Context data
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -158,50 +210,6 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     }
   }, [screenWidth])
 
-  const [notificationMenu, setNotificationMenu] = useState(false)
-  const [profileMenu, setProfileMenu] = useState(false)
-  const [sidePanelMenu, setSidePanelMenu] = useState(false)
-
-  const toggleNotificationMenu = () => {
-    if (profileMenu || sidePanelMenu) {
-      setProfileMenu(false)
-      setSidePanelMenu(false)
-    }
-    setNotificationMenu((prev) => !prev)
-  }
-
-  const toggleProfileMenu = () => {
-    if (notificationMenu || sidePanelMenu) {
-      setNotificationMenu(false)
-      setSidePanelMenu(false)
-    }
-    setProfileMenu((prev) => !prev)
-  }
-
-  const toggleSidePanelMenu = () => {
-    if (notificationMenu || profileMenu) {
-      setNotificationMenu(false)
-      setProfileMenu(false)
-    }
-    setSidePanelMenu((prev) => !prev)
-  }
-
-  const [tableMenu, setTableMenu] = useState(false)
-  const [perPageMenu, setPerPageMenu] = useState(false)
-  const toggleTableMenu = () => {
-    if (perPageMenu) {
-      setPerPageMenu(false)
-    }
-    setTableMenu((prev) => !prev)
-  }
-
-  const togglePerPageMenu = () => {
-    if (tableMenu) {
-      setTableMenu(false)
-    }
-    setPerPageMenu((prev) => !prev)
-  }
-
   return (
     <SalesContext.Provider
       value={{
@@ -214,50 +222,50 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
     >
       <DarkMode.Provider value={{ isDarkMode, toggleDarkMode }}>
         <ActiveChart.Provider value={{ activeChart, setChart }}>
-          <OrdersTableContext.Provider
+          <TopOpenMenu.Provider
             value={{
-              isOrderOn,
-              toggleOrder,
-              isNameOn,
-              toggleName,
-              isDateOn,
-              toggleDate,
-              isAmountOn,
-              toggleAmount,
-              isItemOn,
-              toggleItem,
-              isStatusOn,
-              toggleStatus,
-              perPage,
-              perPageSetter,
-              pageNumber,
-              pageNumberSetter,
+              sidePanelMenu,
+              toggleSidePanelMenu,
+              notificationMenu,
+              toggleNotificationMenu,
+              profileMenu,
+              toggleProfileMenu,
             }}
           >
-            <ScreenContext.Provider value={{ screenWidth }}>
-              <TopOpenMenu.Provider
+            <OrdersOpenMenu.Provider
+              value={{
+                perPageMenu,
+                togglePerPageMenu,
+                tableMenu,
+                toggleTableMenu,
+              }}
+            >
+              <OrdersTableContext.Provider
                 value={{
-                  sidePanelMenu,
-                  toggleSidePanelMenu,
-                  notificationMenu,
-                  toggleNotificationMenu,
-                  profileMenu,
-                  toggleProfileMenu,
+                  isOrderOn,
+                  toggleOrder,
+                  isNameOn,
+                  toggleName,
+                  isDateOn,
+                  toggleDate,
+                  isAmountOn,
+                  toggleAmount,
+                  isItemOn,
+                  toggleItem,
+                  isStatusOn,
+                  toggleStatus,
+                  perPage,
+                  perPageSetter,
+                  pageNumber,
+                  pageNumberSetter,
                 }}
               >
-                <OrdersOpenMenu.Provider
-                  value={{
-                    perPageMenu,
-                    togglePerPageMenu,
-                    tableMenu,
-                    toggleTableMenu,
-                  }}
-                >
+                <ScreenContext.Provider value={{ screenWidth }}>
                   {children}
-                </OrdersOpenMenu.Provider>
-              </TopOpenMenu.Provider>
-            </ScreenContext.Provider>
-          </OrdersTableContext.Provider>
+                </ScreenContext.Provider>
+              </OrdersTableContext.Provider>
+            </OrdersOpenMenu.Provider>
+          </TopOpenMenu.Provider>
         </ActiveChart.Provider>
       </DarkMode.Provider>
     </SalesContext.Provider>

@@ -196,15 +196,15 @@ const Orders = () => {
           <div className="hidden my-auto sm:flex text-center">
             <OrderPageNo
               page={1}
-              onClick={() => pageNumberSetter({ page: 1 })}
+              onClick={() => pageNumberSetter({ value: 1 })}
             />
             <OrderPageNo
               page={2}
-              onClick={() => pageNumberSetter({ page: 2 })}
+              onClick={() => pageNumberSetter({ value: 2 })}
             />
             <OrderPageNo
               page={3}
-              onClick={() => pageNumberSetter({ page: 3 })}
+              onClick={() => pageNumberSetter({ value: 3 })}
             />
             <OrderPageNo
               page={67}
@@ -225,15 +225,15 @@ const Orders = () => {
         <div className="sm:hidden text-center mt-[10px] flex justify-center">
           <OrderPageNo
             page={1}
-            onClick={() => pageNumberSetter({ page: 1 })}
+            onClick={() => pageNumberSetter({ value: 1 })}
           />
           <OrderPageNo
             page={2}
-            onClick={() => pageNumberSetter({ page: 2 })}
+            onClick={() => pageNumberSetter({ value: 2 })}
           />
           <OrderPageNo
             page={3}
-            onClick={() => pageNumberSetter({ page: 3 })}
+            onClick={() => pageNumberSetter({ value: 3 })}
           />
           <OrderPageNo
             page={67}
