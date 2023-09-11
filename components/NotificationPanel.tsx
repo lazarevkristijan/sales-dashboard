@@ -1,13 +1,16 @@
-import { Notification } from "."
-import { notifications, topDropDownStyles } from "../constants"
 import { useContext, useEffect, useRef } from "react"
 import { DarkMode, TopOpenMenu } from "./Contexts"
+import { Notification } from "."
+import { notifications, topDropDownStyles } from "../constants"
 
 const NotificationPanel = () => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
-  const { notificationMenu, toggleNotificationMenu } = useContext(TopOpenMenu)
-  const notificationRef = useRef<HTMLDivElement | null>(null)
 
+  // States
+  const { notificationMenu, toggleNotificationMenu } = useContext(TopOpenMenu)
+
+  // Functions
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const isMenuIconClicked =
@@ -34,15 +37,18 @@ const NotificationPanel = () => {
     }
   }, [notificationMenu, toggleNotificationMenu])
 
+  // Refs
+  const notificationRef = useRef<HTMLDivElement | null>(null)
+
   return (
     <div
       className={`${topDropDownStyles} ${
         isDarkMode ? "dark-blue1" : "light-blue4"
-      } pb-0 max-w-[300px] right-[20px] drop-shadow-2xl`}
+      } max-w-[300px] pb-0 right-[20px] drop-shadow-2xl`}
       ref={notificationRef}
     >
       <div
-        className=" w-0 h-0 absolute -top-[20px] right-[7.5px]"
+        className="w-0 h-0 absolute -top-[20px] right-[7.5px]"
         style={{
           borderLeft: "30px solid transparent",
           borderRight: "30px solid transparent",

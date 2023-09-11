@@ -14,7 +14,9 @@ const Notification = ({
   qty: number
   ago: number
 }) => {
+  // Constants
   const { isDarkMode } = useContext(DarkMode)
+
   return (
     <div
       className={`${
@@ -25,12 +27,12 @@ const Notification = ({
           : evaluation
           ? "light-success"
           : "light-danger"
-      } rou flex justify-between mb-[20px] p-[20px] smText`}
+      } mb-[20px] p-[20px] smText flex justify-between rou`}
     >
       <div
         className={`${
           isDarkMode ? "bg-black" : "bg-white"
-        } p-[10px] rou mr-[10px] w-1/3 my-auto`}
+        } w-1/3 mr-[10px] my-auto p-[10px] rou`}
       >
         <img
           src="iPhone 12.svg"
@@ -55,7 +57,7 @@ const Notification = ({
           ? "h"
           : ago > 1440
           ? "d"
-          : ago > 43800 && "m"}{" "}
+          : ago > 43800 && "m"}
       </div>
     </div>
   )
