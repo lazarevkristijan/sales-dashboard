@@ -22,7 +22,7 @@ const InActiveButton = ({
           : color
           ? color
           : "light-blue1"
-      } py-1 px-2 rou min-w-[80px] text-center ${extraStyles}`}
+      } ${extraStyles} min-w-[80px] py-1 px-2 text-center rou`}
     >
       {text}
     </p>
