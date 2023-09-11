@@ -3,10 +3,15 @@ import { PanelButton } from "."
 import { DarkMode } from "./Contexts"
 
 const CustomPeriodMenu = () => {
+  // Contexts
+  const { isDarkMode } = useContext(DarkMode)
+
+  // States
   const [fromDate, setFromDate] = useState("2023-09-05")
   const [toDate, setToDate] = useState("2024-09-05")
   const [isHovered, setIsHovered] = useState(false)
 
+  // Functions
   const handleHover = () => {
     setIsHovered((prev) => !prev)
   }
@@ -18,15 +23,13 @@ const CustomPeriodMenu = () => {
     setToDate(e.target.value)
   }
 
-  const { isDarkMode } = useContext(DarkMode)
-
   return (
     <div
-      className={`absolute ${
+      className={`${
         isDarkMode ? "dark-blue1" : "light-blue4"
-      } left-0 sm:left-[220px] top-[430px] sm:top-0 rou smText border-black border-[1px] selection:bg-transparent`}
+      } smText absolute left-0 sm:left-[220px] top-[430px] sm:top-0 rou border-black border-[1px] selection:bg-transparent`}
     >
-      <div className="m-[10px] w-[300px]">
+      <div className="w-[300px] m-[10px]">
         <PanelButton
           title="From Date"
           iconWidth="150"
@@ -54,16 +57,20 @@ const CustomPeriodMenu = () => {
         </PanelButton>
 
         <div
-          className={`
-          ${isDarkMode && isHovered && "dark-blue4"}
-          ${isDarkMode && !isHovered && "dark-blue3"}
-          ${!isDarkMode && isHovered && "light-blue3"}
-          ${!isDarkMode && !isHovered && "light-blue2"}
-        p-[20px] flex justify-center items-center rou mb-[10px] hover:cursor-pointer`}
+          className={`${
+            isDarkMode
+              ? isHovered
+                ? "dark-blue4"
+                : "dark-blue3"
+              : isHovered
+              ? "light-blue3"
+              : "light-blue2"
+          }
+          mb-[10px] p-[20px] flex justify-center items-center rou hover:cursor-pointer`}
           onMouseEnter={handleHover}
           onMouseLeave={handleHover}
         >
-          <p className="">Set Custom Period</p>
+          <p>Set Custom Period</p>
         </div>
       </div>
     </div>
