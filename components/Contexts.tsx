@@ -150,7 +150,6 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const handleScreenSize = () => {
       setScreenWidth(window.innerWidth)
-      console.log(screenWidth)
     }
     window.addEventListener("resize", handleScreenSize)
 

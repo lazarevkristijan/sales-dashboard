@@ -5,18 +5,20 @@ import { monthlySales } from "../constants"
 const BarChart = () => {
   const sales: number[] = []
   const months: string[] = []
+
   {
     monthlySales.map((month) => {
       sales.push(month.sales)
       months.push(month.month)
     })
   }
+
   const data = {
-    labels: [months[0], months[1], months[2], months[3], months[4], months[5]],
+    labels: months.slice(0, months.length),
     datasets: [
       {
         label: "Delivered",
-        data: [sales[0], sales[1], sales[2], sales[3], sales[4], sales[5]],
+        data: sales.slice(0, sales.length),
         backgroundColor: ["#48CAE4"],
         hoverBackgroundColor: ["#0077B6"],
       },
