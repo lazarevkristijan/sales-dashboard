@@ -8,13 +8,17 @@ const PerPageOption = ({
   number: number
   onClick: React.MouseEventHandler
 }) => {
+  // Contexts
+  const { isDarkMode } = useContext(DarkMode)
+
+  // States
   const [isHovered, setIsHovered] = useState(false)
 
+  // Functions
   const handleHover = () => {
     setIsHovered((prev) => !prev)
   }
 
-  const { isDarkMode } = useContext(DarkMode)
   return (
     <div
       className={`${
@@ -25,9 +29,7 @@ const PerPageOption = ({
           : isHovered
           ? "light-blue3"
           : "bg-white"
-      }
-      
- text-center py-[5px] rou hover:cursor-pointer`}
+      } py-[5px] text-center rou hover:cursor-pointer`}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       onClick={onClick}

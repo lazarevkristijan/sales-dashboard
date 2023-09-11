@@ -15,13 +15,16 @@ const PanelButton = ({
   color?: string
   onClick?: React.MouseEventHandler
 }) => {
+  // Contexts
+  const { isDarkMode } = useContext(DarkMode)
+
+  // States
   const [isHovered, setIsHovered] = useState(false)
 
+  // Functions
   const handleHover = () => {
     setIsHovered((prev) => !prev)
   }
-
-  const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div
@@ -29,7 +32,7 @@ const PanelButton = ({
       ${isDarkMode ? "bg-black" : "bg-white"}
  ${
    isHovered && `${color}`
- } p-[10px] flex justify-between items-center rou mb-[10px] hover:cursor-pointer selection:bg-transparent`}
+ } mb-[10px] p-[10px] flex justify-between items-center rou hover:cursor-pointer selection:bg-transparent`}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       onClick={onClick}
@@ -38,7 +41,7 @@ const PanelButton = ({
       <div
         className={`${
           isDarkMode ? "dark-blue3" : "light-blue1"
-        } w-[${iconWidth}px] h-[40px] rou flex items-center p-1`}
+        } w-[${iconWidth}px] h-[40px] p-1 flex items-center rou`}
       >
         {children}
       </div>
