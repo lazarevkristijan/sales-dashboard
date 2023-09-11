@@ -1,3 +1,18 @@
+export const chartSetterComponents = [
+  {
+    title: "Bar Chart",
+    chartValue: "bar",
+  },
+  {
+    title: "Line Chart",
+    chartValue: "line",
+  },
+  {
+    title: "Pie Chart",
+    chartValue: "pie",
+  },
+]
+
 export const monthlySales = [
   {
     month: "Aug",

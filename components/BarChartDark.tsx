@@ -3,8 +3,10 @@ import { Chart } from "react-chartjs-2"
 import { monthlySales } from "../constants"
 
 const BarChartDark = () => {
+  // Constants
   const sales: number[] = []
   const months: string[] = []
+
   {
     monthlySales.map((month) => {
       sales.push(month.sales)
@@ -72,6 +74,7 @@ const BarChartDark = () => {
       },
     },
   }
+
   return (
     <Chart
       type="bar"

@@ -12,8 +12,8 @@ import CustomPeriodMenu from "./CustomPeriodMenu"
 
 import BarChart from "./BarChart"
 import BarChartDark from "./BarChartDark"
-import LineGraph from "./LineGraph"
-import LineGraphDark from "./LineGraphDark"
+import LineChart from "./LineChart"
+import LineChartDark from "./LineChartDark"
 import PieChart from "./PieChart"
 import PieChartDark from "./PieChartDark"
 import SalesInfoBox from "./SalesInfoBox"
@@ -43,7 +43,7 @@ import DropDownButton from "./DropDownButton"
 export {
   BarChart,
   ChartDisplayMenu,
-  LineGraph,
+  LineChart,
   NotificationPanel,
   PieChart,
   Profile,
@@ -74,6 +74,6 @@ export {
   TableDataBlock,
   Contexts,
   PieChartDark,
-  LineGraphDark,
+  LineChartDark,
   BarChartDark,
 }

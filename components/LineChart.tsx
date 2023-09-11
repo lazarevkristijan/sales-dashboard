@@ -2,7 +2,7 @@ import "chart.js/auto"
 import { Chart } from "react-chartjs-2"
 import { monthlySales } from "../constants"
 
-const LineGraph = () => {
+const LineChart = () => {
   const sales: number[] = []
   const months: string[] = []
   {
@@ -84,4 +84,4 @@ const LineGraph = () => {
   )
 }
 
-export default LineGraph
+export default LineChart

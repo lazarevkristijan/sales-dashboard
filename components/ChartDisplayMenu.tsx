@@ -1,47 +1,37 @@
 import { PanelButton } from "."
 import { useContext } from "react"
 import { DarkMode, ActiveChart } from "./Contexts"
+import { chartSetterComponents } from "../constants"
 
 const ChartDisplayMenu = () => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
   const { setChart } = useContext(ActiveChart)
+
   return (
     <div
-      className={`absolute ${
+      className={`${
         isDarkMode ? "dark-blue1" : "light-blue4"
-      } left-0 sm:left-[300px] top-[355px] sm:top-0 rou smText border-black border-[1px]`}
+      } smText absolute left-0 sm:left-[300px] top-[355px] sm:top-0 rou border-black border-[1px]`}
     >
-      <div className="m-[10px] w-[200px]">
-        <PanelButton
-          title="Bar Chart"
-          color={isDarkMode ? "dark-blue4" : "light-blue2"}
-          onClick={() => setChart({ value: "bar" })}
-        >
-          <img
-            src={`${isDarkMode ? "dark-bar-chart" : "light-bar-chart"}.svg`}
-            alt={`bar chart icon`}
-          />
-        </PanelButton>
-        <PanelButton
-          title="Line Graph"
-          color={isDarkMode ? "dark-blue4" : "light-blue2"}
-          onClick={() => setChart({ value: "line" })}
-        >
-          <img
-            src={`${isDarkMode ? "dark-line-graph" : "light-line-graph"}.svg`}
-            alt={`line chart icon`}
-          />
-        </PanelButton>
-        <PanelButton
-          title="Pie Chart"
-          color={isDarkMode ? "dark-blue4" : "light-blue2"}
-          onClick={() => setChart({ value: "pie" })}
-        >
-          <img
-            src={`${isDarkMode ? "dark-pie-chart" : " light-pie-chart"}.svg`}
-            alt={`pie chart icon`}
-          />
-        </PanelButton>
+      <div className="w-[200px] m-[10px]">
+        {chartSetterComponents.map((chart, index) => (
+          <PanelButton
+            key={index}
+            title={chart.title}
+            color={isDarkMode ? "dark-blue4" : "light-blue2"}
+            onClick={() => setChart({ value: `${chart.chartValue}` })}
+          >
+            <img
+              src={`${
+                isDarkMode
+                  ? `dark-${chart.chartValue}-chart`
+                  : `light-${chart.chartValue}-chart`
+              }.svg`}
+              alt={`${chart.title} icon`}
+            />
+          </PanelButton>
+        ))}
       </div>
     </div>
   )

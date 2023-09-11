@@ -3,6 +3,7 @@ import { Chart } from "react-chartjs-2"
 import { monthlySales } from "../constants"
 
 const BarChart = () => {
+  // Constants
   const sales: number[] = []
   const months: string[] = []
 
@@ -73,6 +74,7 @@ const BarChart = () => {
       },
     },
   }
+
   return (
     <Chart
       type="bar"

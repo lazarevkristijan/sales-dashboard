@@ -4,12 +4,12 @@ import {
   TotalInfo,
   BarChart,
   PieChart,
-  LineGraph,
+  LineChart,
   SalesResultRect,
   PieChartDark,
   InActiveButton,
   BarChartDark,
-  LineGraphDark,
+  LineChartDark,
 } from "../components/"
 import { salesRevenueStyles, sectionStyles } from "../constants"
 import { DarkMode, ActiveChart, SalesContext } from "../components/Contexts"
@@ -54,9 +54,9 @@ const Sales = () => {
           )
         ) : activeChart === "line" ? (
           isDarkMode ? (
-            <LineGraphDark />
+            <LineChartDark />
           ) : (
-            <LineGraph />
+            <LineChart />
           )
         ) : null}
       </div>
