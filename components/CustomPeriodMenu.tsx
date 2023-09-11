@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
-import { PanelButton } from "."
 import { DarkMode } from "./Contexts"
+import { PanelButton } from "."
 
 const CustomPeriodMenu = () => {
   // Contexts

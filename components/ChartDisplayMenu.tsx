@@ -1,6 +1,6 @@
-import { PanelButton } from "."
 import { useContext } from "react"
 import { DarkMode, ActiveChart } from "./Contexts"
+import { PanelButton } from "."
 import { chartSetterComponents } from "../constants"
 
 const ChartDisplayMenu = () => {

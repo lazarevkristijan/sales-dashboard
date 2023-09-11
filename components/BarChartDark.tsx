@@ -1,6 +1,6 @@
-import "chart.js/auto"
-import { Chart } from "react-chartjs-2"
 import { monthlySales } from "../constants"
+import { Chart } from "react-chartjs-2"
+import "chart.js/auto"
 
 const BarChartDark = () => {
   // Constants
