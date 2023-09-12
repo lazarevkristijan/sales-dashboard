@@ -1,6 +1,5 @@
 import { useContext } from "react"
 import { DarkMode } from "./Contexts"
-
 import { InActiveButton } from "."
 
 const UsersRect = ({
@@ -12,12 +11,14 @@ const UsersRect = ({
   rectText: string
   extraStyles?: string
 }) => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
+
   return (
     <div
       className={`${
         isDarkMode ? "bg-black text-white" : "bg-white text-black"
-      } text-center py-[15px] rou ${extraStyles}`}
+      } ${extraStyles} py-[15px] text-center rou `}
     >
       <p className="mb-[15px]">{title}</p>
       <InActiveButton

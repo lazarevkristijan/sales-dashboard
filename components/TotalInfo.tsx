@@ -2,18 +2,19 @@ import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
 const TotalInfo = () => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div
-      className={`w-[300px] ${
+      className={`${
         isDarkMode ? "dark-blue3" : "light-blue3"
-      } absolute top-[100%] left-0 border-black border-[1px] rou`}
+      } w-[300px] absolute top-[100%] left-0 border-black border-[1px] rou`}
     >
       <div
-        className={`m-[20px] p-[20px] text-center ${
+        className={`${
           isDarkMode ? "bg-black" : "bg-white"
-        } rou smText`}
+        } m-[20px] p-[20px] text-center smText rou`}
       >
         Total calculated from Delivered + Not delivered - Reteturned
       </div>
