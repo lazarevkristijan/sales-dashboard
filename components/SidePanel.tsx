@@ -1,4 +1,5 @@
 import { useState, useContext, useRef, useEffect } from "react"
+import { DarkMode, TopOpenMenu } from "./Contexts"
 import {
   PanelButton,
   DisplayPeriodsMenu,
@@ -6,12 +7,15 @@ import {
   TargetMenu,
 } from "."
 
-import { DarkMode, TopOpenMenu } from "./Contexts"
-
 const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
+  // Contexts
   const { sidePanelMenu, toggleSidePanelMenu } = useContext(TopOpenMenu)
-  const menuRef = useRef<HTMLDivElement | null>(null)
 
+  // States
+  const [isMenuOpen, setIsMenuOpen] = useState("")
+  const [isHovered, setIsHovered] = useState(false)
+
+  // Functions
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const isMenuIconClicked =
@@ -38,45 +42,36 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
     }
   }, [sidePanelMenu, toggleSidePanelMenu])
 
-  const [isMenuOpen, setIsMenuOpen] = useState("")
-
   const { isDarkMode, toggleDarkMode } = useContext(DarkMode)
-
-  const [isHovered, setIsHovered] = useState(false)
 
   const handleHover = () => {
     setIsHovered((prev) => !prev)
   }
 
   const toggleChartMenu = () => {
-    if (isMenuOpen === "chartDisplay") {
-      setIsMenuOpen("")
-    } else {
-      setIsMenuOpen("chartDisplay")
-    }
+    isMenuOpen === "chartDisplay"
+      ? setIsMenuOpen("")
+      : setIsMenuOpen("chartDisplay")
   }
 
   const togglePeriodsMenu = () => {
-    if (isMenuOpen === "displayPeriods") {
-      setIsMenuOpen("")
-    } else {
-      setIsMenuOpen("displayPeriods")
-    }
+    isMenuOpen === "displayPeriods"
+      ? setIsMenuOpen("")
+      : setIsMenuOpen("displayPeriods")
   }
 
   const toggleTargetMenu = () => {
-    if (isMenuOpen === "target") {
-      setIsMenuOpen("")
-    } else {
-      setIsMenuOpen("target")
-    }
+    isMenuOpen === "target" ? setIsMenuOpen("") : setIsMenuOpen("target")
   }
+
+  // Refs
+  const menuRef = useRef<HTMLDivElement | null>(null)
 
   return (
     <div
       className={`${
         isDarkMode ? "dark-blue1" : "light-blue4"
-      } p-[20px] pb-[10px] rou absolute z-[1] top-[80px] w-[300px] drop-shadow-2xl`}
+      } w-[300px] p-[20px] pb-[10px] absolute z-[1] top-[80px] rou drop-shadow-2xl`}
       ref={menuRef}
     >
       {/* Arrow that points to icon */}
@@ -98,26 +93,27 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
         onMouseLeave={handleHover}
       />
 
-      {isDarkMode ? (
-        <PanelButton
-          title="Dark Mode"
-          iconWidth="80"
-          color="dark-blue4"
-          onClick={toggleDarkMode}
+      {/* Theme button */}
+      <PanelButton
+        title="Theme"
+        iconWidth="80"
+        color={isDarkMode ? "dark-blue4" : "light-blue2"}
+        onClick={toggleDarkMode}
+      >
+        <div
+          className={`${
+            isDarkMode ? "bg-white ml-auto mr-0" : "bg-black"
+          } rounded-full w-[32.5px] h-[32.5px]`}
         >
-          <div className="rounded-full bg-[#fff] w-[32.5px] h-[32.5px] ml-auto mr-0"></div>
-        </PanelButton>
-      ) : (
-        <PanelButton
-          title="Dark Mode"
-          iconWidth="80"
-          color="light-blue2"
-          onClick={toggleDarkMode}
-        >
-          <div className="rounded-full bg-[#000] w-[32.5px] h-[32.5px]"></div>
-        </PanelButton>
-      )}
+          <img
+            src={`${isDarkMode ? "moon" : "sun"}.svg`}
+            alt={`${isDarkMode ? "moon" : "sun"} icon`}
+            className="p-1"
+          />
+        </div>
+      </PanelButton>
 
+      {/* Chart Display button */}
       <PanelButton
         title="Chart Display"
         color={isDarkMode ? "dark-blue4" : "light-blue2"}
@@ -131,6 +127,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       </PanelButton>
       {isMenuOpen === "chartDisplay" && <ChartDisplayMenu />}
 
+      {/* Display Periods button */}
       <PanelButton
         title="Display Periods"
         color={isDarkMode ? "dark-blue4" : "light-blue2"}
@@ -140,6 +137,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       </PanelButton>
       {isMenuOpen === "displayPeriods" && <DisplayPeriodsMenu />}
 
+      {/* Target button */}
       <PanelButton
         title="Target"
         iconWidth="100"
