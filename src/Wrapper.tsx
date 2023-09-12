@@ -1,4 +1,5 @@
-import "./index.css"
+import { useContext } from "react"
+import { DarkMode } from "../components/Contexts"
 import {
   Top,
   Sales,
@@ -8,8 +9,7 @@ import {
   Countries,
   Social,
 } from "../sections"
-import { useContext } from "react"
-import { DarkMode } from "../components/Contexts"
+import "./index.css"
 
 const Wrapper = () => {
   const { isDarkMode } = useContext(DarkMode)
@@ -18,13 +18,13 @@ const Wrapper = () => {
     <div
       className={` ${
         isDarkMode ? "dark-blue4 dark-text" : "light-blue2 light-text"
-      } text mont min-w-[300px]`}
+      } min-w-[300px] text mont`}
     >
       <div className="pt-[30px]">
         <Top />
         <Sales />
         <Orders />
-        <div className="max-w-[1040px] flex flex-wrap mx-[10px] lg:mx-auto justify-between xs:justify-center lg:justify-between">
+        <div className="max-w-[1040px] mx-[10px] flex flex-wrap lg:mx-auto justify-between xs:justify-center lg:justify-between">
           <Products />
           <Users />
           <Countries />

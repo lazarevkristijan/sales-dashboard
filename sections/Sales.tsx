@@ -15,30 +15,29 @@ import {
 import { salesRevenueStyles, sectionStyles } from "../constants"
 
 const Sales = () => {
-  // States
-  const [isToolTipOn, setIsToolTipOn] = useState(false)
-
   // Contexts
-  const { deliveredSales } = useContext(SalesContext)
-  const { returnedSales } = useContext(SalesContext)
-  const { inCart } = useContext(SalesContext)
   const { targetSales } = useContext(SalesContext)
-  const notDeliveredSales = Math.round(deliveredSales / 20)
-
   const { isDarkMode } = useContext(DarkMode)
-
   const { activeChart } = useContext(ActiveChart)
 
   // Functions
   const handleInfoHover = () => {
     setIsToolTipOn((prev) => !prev)
   }
+  // States
+  const [isToolTipOn, setIsToolTipOn] = useState(false)
+
+  // Constants
+  const deliveredSales = 97
+  const returnedSales = 2
+  const inCart = 79
+  const notDeliveredSales = Math.round(deliveredSales / 20)
 
   return (
     <div
-      className={`${sectionStyles} pt-[20px] pb-0 sm:py-[20px] ${
+      className={`${sectionStyles} ${
         isDarkMode ? "dark-blue3" : "light-blue1"
-      }`}
+      } pt-[20px] pb-0 sm:py-[20px]`}
     >
       <div
         className={`${

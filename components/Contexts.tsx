@@ -1,10 +1,7 @@
 import { createContext, useEffect, useState } from "react"
 
 export const SalesContext = createContext({
-  returnedSales: 2,
   targetSales: 120,
-  deliveredSales: 97,
-  inCart: 79,
   setTarget: ({ value }: { value: number }) => {
     return value
   },
@@ -70,9 +67,6 @@ export const ScreenContext = createContext({
 
 const Contexts = ({ children }: { children: React.ReactNode }) => {
   // Sales Context data
-  const deliveredSales = 97
-  const returnedSales = 2
-  const inCart = 79
   const [targetSales, setTargetSales] = useState(120)
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const storedDarkMode = localStorage.getItem("isDarkMode")
@@ -213,9 +207,6 @@ const Contexts = ({ children }: { children: React.ReactNode }) => {
   return (
     <SalesContext.Provider
       value={{
-        deliveredSales,
-        returnedSales,
-        inCart,
         targetSales,
         setTarget,
       }}
