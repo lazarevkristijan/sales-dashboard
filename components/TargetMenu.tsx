@@ -1,88 +1,81 @@
 import { useState, useContext } from "react"
+import { DarkMode, SalesContext } from "./Contexts"
 import { InActiveButton } from "."
 import { monthlySales } from "../constants"
-import { DarkMode, SalesContext } from "./Contexts"
 
 const TargetMenu = () => {
+  // Contexts
+  const { isDarkMode } = useContext(DarkMode)
+  const { targetSales, setTarget } = useContext(SalesContext)
+
+  // States
   const [isInput, setIsInput] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
+
+  // Functions
   const toggleIsInput = () => {
     setIsInput((prev) => !prev)
   }
-
-  const [isHovered, setIsHovered] = useState(false)
 
   const handleHover = () => {
     setIsHovered((prev) => !prev)
   }
 
-  const { isDarkMode } = useContext(DarkMode)
-  const { targetSales, setTarget } = useContext(SalesContext)
-
   return (
     <div
-      className={`absolute w-[350px] ${
+      className={`${
         isDarkMode ? "dark-blue1" : "light-blue4"
-      } left-0 sm:left-[300px] top-[355px] sm:top-0 rou smText border-black border-[1px]`}
+      } w-[350px] smText absolute left-0 sm:left-[300px] top-[355px] sm:top-0 rou border-black border-[1px]`}
     >
       <div
-        className={`m-[20px] ${
+        className={`${
           isDarkMode ? "bg-black" : "bg-white"
-        } text-center`}
+        } m-[20px] text-center`}
       >
-        <p>Monthly target sales</p>
-        <div className="flex justify-center items-center mb-[30px]">
-          {!isInput && <InActiveButton text={String(targetSales)} />}
-
-          {isInput && (
+        <p className="py-[10px]">Monthly target sales</p>
+        <div className="mb-[30px] flex justify-center items-center">
+          {isInput ? (
             <input
               type="text"
               value={targetSales}
               onChange={(e) => setTarget({ value: Number(e.target.value) })}
-              className={`w-[80px] ${
+              className={`${
                 isDarkMode ? "dark-blue2" : "light-blue2"
-              } rou p-1 text-center`}
+              } w-[80px] p-1 text-center rou`}
             />
+          ) : (
+            <InActiveButton text={String(targetSales)} />
           )}
           <div
-            className={`ml-2 w-[30px] h-[30px]
-             ${
-               isDarkMode
-                 ? isHovered
-                   ? "dark-blue2"
-                   : "dark-blue1"
-                 : isHovered
-                 ? "dark-blue2"
-                 : "light-blue3"
-             }
-             rou hover:cursor-pointer hover:scale-105 transition-all`}
+            className={`${
+              isDarkMode
+                ? isHovered
+                  ? "dark-blue2"
+                  : "dark-blue1"
+                : isHovered
+                ? "dark-blue2"
+                : "light-blue3"
+            } w-[30px] h-[30px] ml-2 rou hover:cursor-pointer hover:scale-105 transition-all`}
             onClick={toggleIsInput}
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
           >
-            {isInput ? (
-              <img
-                src="tick.svg"
-                alt="tick"
-                className="p-[5px]"
-              />
-            ) : (
-              <img
-                src="edit.svg"
-                alt="edit"
-                className="p-[5px]"
-              />
-            )}
+            <img
+              src={`${isInput ? "tick" : "edit"}.svg`}
+              alt="tick"
+              className="p-[5px]"
+            />
           </div>
         </div>
-        <div className="flex flex-col mx-[10px]">
+        <div className="mx-[10px] flex flex-col">
           <InActiveButton text="All months" />
-          <div className="flex flex-wrap justify-between pt-[10px]">
+
+          <div className="pt-[10px] flex flex-wrap justify-between">
             {monthlySales.map((month, index) => (
               <InActiveButton
                 key={index}
                 text={`${month.month} ${month.sales}`}
-                color={`
-                ${
+                color={`${
                   isDarkMode
                     ? month.sales >= Number(targetSales)
                       ? "dark-success"

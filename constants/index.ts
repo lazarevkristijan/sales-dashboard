@@ -1,38 +1,3 @@
-export const tableToggleOptions = [
-  {
-    onclick: () => {
-      console.log("Toggle order")
-    },
-    title: "Order #",
-    stateName: "isOrderOn",
-  },
-  {
-    onclick: () => {},
-    title: "Name",
-    stateName: "isNameOn",
-  },
-  {
-    onclick: () => {},
-    title: "Date",
-    stateName: "isDateOn",
-  },
-  {
-    onclick: () => {},
-    title: "Amount",
-    stateName: "isAmountOn",
-  },
-  {
-    onclick: () => {},
-    title: "Item",
-    stateName: "isItemOn",
-  },
-  {
-    onclick: () => {},
-    title: "Status",
-    stateName: "isStatusOn",
-  },
-]
-
 export const perPageOptions = [
   {
     number: 10,
