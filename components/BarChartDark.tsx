@@ -7,6 +7,7 @@ const BarChartDark = () => {
   const sales: number[] = []
   const months: string[] = []
 
+  // Functions
   {
     monthlySales.map((month) => {
       sales.push(month.sales)
@@ -26,6 +27,7 @@ const BarChartDark = () => {
     ],
   }
 
+  // Chart buffer functionality
   const maxDataValue = Math.max(...data.datasets[0].data)
   const buffer = 10
   const dynamicMax = maxDataValue + buffer

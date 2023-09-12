@@ -38,7 +38,6 @@ const ActiveButton = ({
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
     >
-      {/* Button text  */}
       {text}
       {/* Optional dropdown icon if button is a menu toggler */}
       {dropDown && <DropDownButton />}

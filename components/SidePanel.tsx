@@ -79,6 +79,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
       } p-[20px] pb-[10px] rou absolute z-[1] top-[80px] w-[300px] drop-shadow-2xl`}
       ref={menuRef}
     >
+      {/* Arrow that points to icon */}
       <div
         className="w-0 h-0 absolute -top-[20px] left-0"
         style={{

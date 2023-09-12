@@ -8,13 +8,14 @@ const ProductArrow = ({
   direction: string
   onClick: React.MouseEventHandler
 }) => {
+  // Constants
   const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div
-      className={`w-[30px] ${
+      className={`${
         direction === "left" ? "ml-2" : direction === "right" && "mr-2"
-      }  hover:cursor-pointer hover:scale-110 transition-all`}
+      } w-[30px] hover:cursor-pointer hover:scale-110 transition-all`}
       onClick={onClick}
     >
       <img

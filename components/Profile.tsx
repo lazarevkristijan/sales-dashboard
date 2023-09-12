@@ -1,15 +1,14 @@
 import { useContext, useRef, useEffect } from "react"
-
+import { DarkMode, TopOpenMenu } from "./Contexts"
 import { ProfileMenuButton, InActiveButton } from "."
 import { topDropDownStyles } from "../constants"
-import { DarkMode, TopOpenMenu } from "./Contexts"
 
 const Profile = () => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
   const { profileMenu, toggleProfileMenu } = useContext(TopOpenMenu)
 
-  const profileRef = useRef<HTMLDivElement | null>(null)
-
+  // Functions
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const isMenuIconClicked =
@@ -36,13 +35,17 @@ const Profile = () => {
     }
   }, [profileMenu, toggleProfileMenu])
 
+  // Refs
+  const profileRef = useRef<HTMLDivElement | null>(null)
+
   return (
     <div
       className={`${topDropDownStyles} ${
         isDarkMode ? "dark-blue1" : "light-blue4"
-      } smText max-w-[350px] right-0 drop-shadow-2xl`}
+      } max-w-[350px] smText right-0 drop-shadow-2xl`}
       ref={profileRef}
     >
+      {/* Arrow that points to icon */}
       <div
         className="w-0 h-0 absolute -top-[20px] right-0"
         style={{
@@ -54,11 +57,14 @@ const Profile = () => {
       ></div>
       <div className="flex justify-between">
         <div className="w-1/2 flex flex-col justify-between">
+          {/* Profile image */}
           <img
             src="profile.svg"
             alt="profile icon"
             className="w-[55px] h-[55px] mb-[65px]"
           />
+
+          {/* Logout icon */}
           <span className="hover:cursor-pointer">
             <ProfileMenuButton
               src={`${isDarkMode ? "dark" : "light"}-logout.svg`}
@@ -66,17 +72,22 @@ const Profile = () => {
           </span>
         </div>
         <div className="min-w-fit ml-[40px] text-right">
+          {/* Name tag */}
           <InActiveButton
-            text="John Doe"
+            text="Bill Gates"
             color={`${isDarkMode ? "bg-black" : "bg-white"}`}
           />
-          <div className="flex justify-between mt-[5px] items-center hover:cursor-pointer">
+
+          {/* Profile icon */}
+          <div className="mt-[5px] flex justify-between items-center hover:cursor-pointer">
             <span className=" text-black">Profile</span>
             <ProfileMenuButton
               src={`${isDarkMode ? "dark" : "light"}-user.svg`}
             />
           </div>
-          <div className="flex justify-between mt-[5px] items-center hover:cursor-pointer">
+
+          {/* Settings icon */}
+          <div className="mt-[5px] flex justify-between items-center hover:cursor-pointer">
             <span className="mr-[10px] text-black">Settings</span>
             <ProfileMenuButton
               src={`${isDarkMode ? "dark" : "light"}-gear.svg`}

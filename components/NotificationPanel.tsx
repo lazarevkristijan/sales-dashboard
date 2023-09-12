@@ -47,6 +47,7 @@ const NotificationPanel = () => {
       } max-w-[300px] pb-0 right-[20px] drop-shadow-2xl`}
       ref={notificationRef}
     >
+      {/* Arrow that points to icon */}
       <div
         className="w-0 h-0 absolute -top-[20px] right-[7.5px]"
         style={{

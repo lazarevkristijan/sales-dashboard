@@ -26,6 +26,7 @@ const LineChart = () => {
     ],
   }
 
+  // Chart buffer functionality
   const maxDataValue = Math.max(...data.datasets[0].data)
   const buffer = 20
   const dynamicMax = maxDataValue + buffer
