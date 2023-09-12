@@ -1,6 +1,11 @@
 import { useContext } from "react"
 import { sectionStyles } from "../constants"
-import { NotificationPanel, Profile, TopIcon, SidePanel } from "../components"
+import {
+  NotificationPanel,
+  ProfilePanel,
+  TopIcon,
+  SidePanel,
+} from "../components"
 import { DarkMode, TopOpenMenu } from "../components/Contexts"
 
 const Top = () => {
@@ -31,7 +36,7 @@ const Top = () => {
         extraStyles="ml-[5px] menuButtonProfile"
         onClick={toggleProfileMenu}
       />
-      {profileMenu && <Profile />}
+      {profileMenu && <ProfilePanel />}
       {notificationMenu && <NotificationPanel />}
       {sidePanelMenu && <SidePanel handlePanelClick={toggleSidePanelMenu} />}
     </div>

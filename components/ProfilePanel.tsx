@@ -3,7 +3,7 @@ import { DarkMode, TopOpenMenu } from "./Contexts"
 import { ProfileMenuButton, InActiveButton } from "."
 import { topDropDownStyles } from "../constants"
 
-const Profile = () => {
+const ProfilePanel = () => {
   // Contexts
   const { isDarkMode } = useContext(DarkMode)
   const { profileMenu, toggleProfileMenu } = useContext(TopOpenMenu)
@@ -99,4 +99,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default ProfilePanel

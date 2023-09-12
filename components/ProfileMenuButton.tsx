@@ -2,13 +2,14 @@ import { useContext } from "react"
 import { DarkMode } from "./Contexts"
 
 const ProfileMenuButton = ({ src }: { src: string }) => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
 
   return (
     <div
-      className={`w-[40px] h-[40px] rou ${
+      className={`${
         isDarkMode ? "bg-black" : "bg-white"
-      } hover:scale-105 transition-all`}
+      } w-[40px] h-[40px] rou hover:scale-105 transition-all`}
     >
       <img
         src={src}

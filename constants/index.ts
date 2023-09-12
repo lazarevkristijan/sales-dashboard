@@ -1,3 +1,18 @@
+export const perPageOptions = [
+  {
+    number: 10,
+  },
+  {
+    number: 15,
+  },
+  {
+    number: 20,
+  },
+  {
+    number: 25,
+  },
+]
+
 export const chartSetterComponents = [
   {
     title: "Bar Chart",

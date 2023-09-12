@@ -1,14 +1,15 @@
 import { useContext, useEffect, useRef } from "react"
-
-import { PerPageOption } from "."
 import { DarkMode, OrdersTableContext, OrdersOpenMenu } from "./Contexts"
+import { PerPageOption } from "."
+import { perPageOptions } from "../constants"
 
 const ResultsPerPage = () => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
   const { perPageSetter } = useContext(OrdersTableContext)
   const { perPageMenu, togglePerPageMenu } = useContext(OrdersOpenMenu)
-  const perPageRef = useRef<HTMLDivElement | null>(null)
 
+  // Functions
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const isMenuIconClicked =
@@ -35,6 +36,9 @@ const ResultsPerPage = () => {
     }
   }, [perPageMenu, togglePerPageMenu])
 
+  // Refs
+  const perPageRef = useRef<HTMLDivElement | null>(null)
+
   return (
     <div
       className={`${
@@ -42,23 +46,14 @@ const ResultsPerPage = () => {
       } w-[150px] absolute top-[50px] right-0 border-black border-[1px] rou`}
       ref={perPageRef}
     >
-      <div className={`m-[20px] ${isDarkMode ? "bg-black" : "bg-white"} rou`}>
-        <PerPageOption
-          number={10}
-          onClick={() => perPageSetter({ value: 10 })}
-        />
-        <PerPageOption
-          number={15}
-          onClick={() => perPageSetter({ value: 15 })}
-        />
-        <PerPageOption
-          number={20}
-          onClick={() => perPageSetter({ value: 20 })}
-        />
-        <PerPageOption
-          number={25}
-          onClick={() => perPageSetter({ value: 25 })}
-        />
+      <div className={`${isDarkMode ? "bg-black" : "bg-white"} m-[20px] rou`}>
+        {perPageOptions.map((option, index) => (
+          <PerPageOption
+            key={index}
+            number={option.number}
+            onClick={() => perPageSetter({ value: option.number })}
+          />
+        ))}
       </div>
     </div>
   )

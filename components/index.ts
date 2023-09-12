@@ -1,7 +1,7 @@
 import SidePanel from "./SidePanel"
 import ChartDisplayMenu from "./ChartDisplayMenu"
 import NotificationPanel from "./NotificationPanel"
-import Profile from "./Profile"
+import ProfilePanel from "./ProfilePanel"
 import TargetMenu from "./TargetMenu"
 import Notification from "./Notification"
 import ProfileMenuButton from "./ProfileMenuButton"
@@ -46,7 +46,7 @@ export {
   LineChart,
   NotificationPanel,
   PieChart,
-  Profile,
+  ProfilePanel,
   ResultsPerPage,
   SidePanel,
   TargetMenu,
