@@ -87,7 +87,7 @@ export const countriesHeadings = [
 
 export const countryTableData = [
   {
-    country: "Macedonia",
+    country: "USA",
     purchases: 26,
   },
   {
@@ -99,15 +99,15 @@ export const countryTableData = [
     purchases: 10,
   },
   {
-    country: "Switzerland",
+    country: "Macedonia",
     purchases: 9,
   },
   {
-    country: "Greece",
+    country: "Switzerland",
     purchases: 8,
   },
   {
-    country: "USA",
+    country: "Greece",
     purchases: 8,
   },
   {
