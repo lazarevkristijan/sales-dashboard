@@ -26,8 +26,8 @@ const TableDataBlock = ({
       }
   ${
     isDarkMode
-      ? `${index % 2 === 0 ? "bg-[#000]" : "bg-[#333]"} text-white`
-      : `${index % 2 === 0 ? "bg-[#fff]" : "bg-[#ddd]"} text-black`
+      ? `${index % 2 === 0 ? "bg-[#000]" : "bg-[#333]"} dark-text`
+      : `${index % 2 === 0 ? "bg-[#fff]" : "bg-[#ddd]"} light-text`
   } border-r-[1px]`}
     >
       {children}

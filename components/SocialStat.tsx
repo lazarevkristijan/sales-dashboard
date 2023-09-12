@@ -16,7 +16,7 @@ const SocialStat = ({
   return (
     <div
       className={`${
-        isDarkMode ? "bg-black text-white" : "bg-white text-black"
+        isDarkMode ? "bg-black dark-text" : "bg-white light-text"
       } w-1/3 pb-[20px] smText rou`}
     >
       <img

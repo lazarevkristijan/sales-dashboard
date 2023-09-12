@@ -54,7 +54,7 @@ const TableToggleMenu = () => {
   return (
     <div
       className={`${
-        isDarkMode ? "dark-blue3 text-white" : "light-blue1 text-black"
+        isDarkMode ? "dark-blue3 dark-text" : "light-blue1 light-text"
       } w-[250px] sm:w-[300px] md:w-[400px] absolute top-[50px] border-black border-[1px] rou`}
       ref={tableMenuRef}
     >

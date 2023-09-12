@@ -127,10 +127,6 @@ img::selection {
   color: #fff;
 }
 
-.dark-pillarHover {
-  background-color: #54acfd;
-}
-
 /* Scrollbar */
 
 ::-webkit-scrollbar {

@@ -1,9 +1,10 @@
-import { smSectionStyles } from "../constants"
-import { SocialStat, SocialLabel } from "../components"
 import { useContext } from "react"
 import { DarkMode } from "../components/Contexts"
+import { SocialStat, SocialLabel } from "../components"
+import { smSectionStyles } from "../constants"
 
 const Social = () => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
 
   return (
@@ -12,7 +13,7 @@ const Social = () => {
         isDarkMode ? "dark-blue3" : "light-blue1"
       } text-center`}
     >
-      <p className={`${isDarkMode ? "text-white" : "text-black"} text-center`}>
+      <p className={`${isDarkMode ? "dark-text" : "light-text"} text-center`}>
         Social stats
       </p>
       <div className="mx-[20px] flex justify-between">

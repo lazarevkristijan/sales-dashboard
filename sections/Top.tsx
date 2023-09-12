@@ -1,15 +1,17 @@
 import { useContext } from "react"
-import { sectionStyles } from "../constants"
+import { DarkMode, TopOpenMenu } from "../components/Contexts"
 import {
   NotificationPanel,
   ProfilePanel,
   TopIcon,
   SidePanel,
 } from "../components"
-import { DarkMode, TopOpenMenu } from "../components/Contexts"
+import { sectionStyles } from "../constants"
 
 const Top = () => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
+
   const {
     notificationMenu,
     toggleNotificationMenu,

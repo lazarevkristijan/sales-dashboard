@@ -7,7 +7,7 @@ const OrdersHeading = ({ title }: { title: string }) => {
   return (
     <th
       className={`${
-        isDarkMode ? "dark-blue4 text-white" : "light-blue2 text-black"
+        isDarkMode ? "dark-blue4 dark-text" : "light-blue2 light-text"
       } font-normal`}
     >
       {title}

@@ -92,7 +92,7 @@ const Sales = () => {
       <div className="flex flex-wrap justify-center items-center">
         <div
           className={`${salesRevenueStyles} ${
-            isDarkMode ? "bg-black text-white" : "bg-white text-black"
+            isDarkMode ? "bg-black dark-text" : "bg-white light-text"
           } mb-[20px]`}
         >
           <SalesRevenueRect
@@ -113,7 +113,7 @@ const Sales = () => {
         </div>
         <div
           className={`${salesRevenueStyles} ${
-            isDarkMode ? "bg-black text-white" : "bg-white text-black"
+            isDarkMode ? "bg-black dark-text" : "bg-white light-text"
           } mb-[20px] relative`}
         >
           <SalesRevenueRect

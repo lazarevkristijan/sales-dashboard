@@ -80,7 +80,7 @@ const ProfilePanel = () => {
 
           {/* Profile icon */}
           <div className="mt-[5px] flex justify-between items-center hover:cursor-pointer">
-            <span className=" text-black">Profile</span>
+            <span className=" light-text">Profile</span>
             <ProfileMenuButton
               src={`${isDarkMode ? "dark" : "light"}-user.svg`}
             />
@@ -88,7 +88,7 @@ const ProfilePanel = () => {
 
           {/* Settings icon */}
           <div className="mt-[5px] flex justify-between items-center hover:cursor-pointer">
-            <span className="mr-[10px] text-black">Settings</span>
+            <span className="mr-[10px] light-text">Settings</span>
             <ProfileMenuButton
               src={`${isDarkMode ? "dark" : "light"}-gear.svg`}
             />

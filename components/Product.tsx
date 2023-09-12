@@ -35,7 +35,7 @@ const Product = ({
           alt="phone"
           className="h-[220px] mx-auto pt-[5px]"
         />
-        <span className={`${isDarkMode ? "text-white" : "text-black"}`}>
+        <span className={`${isDarkMode ? "dark-text" : "light-text"}`}>
           {name}
         </span>
       </div>
@@ -43,7 +43,7 @@ const Product = ({
       <div>
         <div
           className={`${
-            isDarkMode ? "bg-black text-white" : "bg-white text-black"
+            isDarkMode ? "bg-black dark-text" : "bg-white light-text"
           } w-[240px] h-fit sm:ml-[10px] p-[10px] smText rou`}
         >
           <p>Price: €{price} </p>
@@ -53,13 +53,13 @@ const Product = ({
         </div>
         <div
           className={`${
-            isDarkMode ? "bg-black text-white" : "bg-white text-black"
+            isDarkMode ? "bg-black dark-text" : "bg-white light-text"
           } w-[240px] h-fit sm:ml-[10px] mb-[20px] sm:mb-0 mt-[10px] p-[10px] rou`}
         >
           <p> Available: {available}</p>
           <p> Rating: {rating}/5⭐</p>
         </div>
-        <p className={`${isDarkMode ? "text-white" : "text-black"} text-right`}>
+        <p className={`${isDarkMode ? "dark-text" : "light-text"} text-right`}>
           Product {productNo}/3
         </p>
       </div>

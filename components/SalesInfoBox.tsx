@@ -16,18 +16,18 @@ const SalesInfoBox = ({
   return (
     <div
       className={`${
-        isDarkMode ? "bg-black text-white" : "bg-white text-black"
+        isDarkMode ? "bg-black dark-text" : "bg-white light-text"
       } w-[200px] mx-[20px] mb-[30px] rou`}
     >
       <div className="h-[30px] text-center rou-t">{heading}</div>
       <div
-        className={`${bg} h-[200px] text-center flex flex-col text-black rou-b`}
+        className={`${bg} h-[200px] text-center flex flex-col light-text rou-b`}
       >
         <span className="mt-[30px] text-[50px] font-light">{qty}</span>
         <span>Valued</span>
         <span
           className={`${
-            isDarkMode ? "bg-black text-white" : "bg-white text-black"
+            isDarkMode ? "bg-black dark-text" : "bg-white light-text"
           } w-fit mx-auto py-1 px-2 rou`}
         >
           €{qty * 500}

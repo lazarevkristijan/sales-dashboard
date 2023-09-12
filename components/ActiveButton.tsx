@@ -33,7 +33,7 @@ const ActiveButton = ({
           : isHovered
           ? "dark-blue2"
           : "light-blue3"
-      } w-fit min-w-[80px] mx-auto mb-[20px] xs:mb-0 xs:mx-0 py-1 px-2 text-black text-center flex items-center rou hover:cursor-pointer selection:bg-transparent hover:scale-105 transition-all`}
+      } w-fit min-w-[80px] mx-auto mb-[20px] xs:mb-0 xs:mx-0 py-1 px-2 light-text text-center flex items-center rou hover:cursor-pointer selection:bg-transparent hover:scale-105 transition-all`}
       onClick={onClick}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}

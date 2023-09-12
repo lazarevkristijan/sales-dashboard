@@ -17,7 +17,7 @@ const Countries = () => {
         isDarkMode ? "dark-blue3" : "light-blue1"
       } `}
     >
-      <p className={`${isDarkMode ? "text-white" : "text-black"} text-center`}>
+      <p className={`${isDarkMode ? "dark-text" : "light-text"} text-center`}>
         Countries
       </p>
       <div className="h-[210px] mx-[20px] rou overflow-y-scroll">
@@ -29,8 +29,8 @@ const Countries = () => {
                   key={index}
                   className={`${
                     isDarkMode
-                      ? "dark-blue4 text-white"
-                      : "light-blue2 text-black"
+                      ? "dark-blue4 dark-text"
+                      : "light-blue2 light-text"
                   } w-[50%] font-normal`}
                 >
                   {heading.text}

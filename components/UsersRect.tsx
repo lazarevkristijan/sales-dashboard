@@ -17,7 +17,7 @@ const UsersRect = ({
   return (
     <div
       className={`${
-        isDarkMode ? "bg-black text-white" : "bg-white text-black"
+        isDarkMode ? "bg-black dark-text" : "bg-white light-text"
       } ${extraStyles} py-[15px] text-center rou `}
     >
       <p className="mb-[15px]">{title}</p>

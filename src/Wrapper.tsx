@@ -17,7 +17,7 @@ const Wrapper = () => {
   return (
     <div
       className={` ${
-        isDarkMode ? "dark-blue4 text-white" : "light-blue2 text-black"
+        isDarkMode ? "dark-blue4 dark-text" : "light-blue2 light-text"
       } text mont min-w-[300px]`}
     >
       <div className="pt-[30px]">

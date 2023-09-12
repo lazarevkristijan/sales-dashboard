@@ -1,3 +1,3 @@
-# Phone sales dashboard
+# iPhone sales dashboard
 
-Work in progress 65%
+Work in progress 95%

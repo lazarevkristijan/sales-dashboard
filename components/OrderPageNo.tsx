@@ -25,11 +25,11 @@ const OrderPageNo = ({
     ${
       isDarkMode
         ? isHovered
-          ? "dark-blue2 text-white"
-          : "bg-black text-white"
+          ? "dark-blue2 dark-text"
+          : "bg-black dark-text"
         : isHovered
-        ? "light-blue3 text-black"
-        : "bg-white text-black"
+        ? "light-blue3 light-text"
+        : "bg-white light-text"
     }
     w-[30px] mx-1 rou hover:cursor-pointer selection:bg-transparent hover:scale-105 transition-all`}
       onMouseEnter={handleHover}
