@@ -1,13 +1,3 @@
-import { sectionStyles } from "../constants"
-import { ordersTableData } from "../constants/Orders"
-
-import {
-  ActiveButton,
-  TableToggleMenu,
-  ResultsPerPage,
-  OrderPageNo,
-  TableDataBlock,
-} from "../components"
 import { useContext } from "react"
 import {
   DarkMode,
@@ -15,29 +5,33 @@ import {
   OrdersOpenMenu,
   ScreenContext,
 } from "../components/Contexts"
+import {
+  ActiveButton,
+  TableToggleMenu,
+  ResultsPerPage,
+  TableDataBlock,
+  OrdersHeading,
+  OrdersPageNumbers,
+} from "../components"
+import { sectionStyles } from "../constants"
+import { ordersTableData } from "../constants/Orders"
 
 const Orders = () => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
   const {
     isOrderOn,
-    toggleOrder,
     isNameOn,
-    toggleName,
     isDateOn,
-    toggleDate,
     isAmountOn,
-    toggleAmount,
     isItemOn,
-    toggleItem,
     isStatusOn,
-    toggleStatus,
     perPage,
     pageNumber,
-    pageNumberSetter,
   } = useContext(OrdersTableContext)
+  const { screenWidth } = useContext(ScreenContext)
   const { tableMenu, toggleTableMenu, perPageMenu, togglePerPageMenu } =
     useContext(OrdersOpenMenu)
-  const { screenWidth } = useContext(ScreenContext)
 
   const turnedOnOptions = [
     isOrderOn,
@@ -54,7 +48,7 @@ const Orders = () => {
         isDarkMode ? "dark-blue3" : "light-blue1"
       }`}
     >
-      <div className="mx-[20px] mb-[25px] overflow-x-scroll lg:overflow-hidden rou">
+      <div className="mx-[20px] mb-[25px] rou overflow-x-scroll lg:overflow-hidden">
         <table
           className={`
           ${
@@ -66,81 +60,16 @@ const Orders = () => {
         >
           <thead>
             <tr className="h-[50px]">
-              {isOrderOn && (
-                <th
-                  className={`${
-                    isDarkMode
-                      ? "dark-blue4 text-white"
-                      : "light-blue2 text-black"
-                  } font-normal`}
-                  onClick={toggleOrder}
-                >
-                  Order #
-                </th>
-              )}
-              {isNameOn && (
-                <th
-                  className={`${
-                    isDarkMode
-                      ? "dark-blue4 text-white"
-                      : "light-blue2 text-black"
-                  } font-normal`}
-                  onClick={toggleName}
-                >
-                  Name
-                </th>
-              )}
-              {isDateOn && (
-                <th
-                  className={`${
-                    isDarkMode
-                      ? "dark-blue4 text-white"
-                      : "light-blue2 text-black"
-                  } font-normal`}
-                  onClick={toggleDate}
-                >
-                  Date
-                </th>
-              )}
-              {isAmountOn && (
-                <th
-                  className={`${
-                    isDarkMode
-                      ? "dark-blue4 text-white"
-                      : "light-blue2 text-black"
-                  } font-normal`}
-                  onClick={toggleAmount}
-                >
-                  Amount
-                </th>
-              )}
-              {isItemOn && (
-                <th
-                  className={`${
-                    isDarkMode
-                      ? "dark-blue4 text-white"
-                      : "light-blue2 text-black"
-                  } font-normal`}
-                  onClick={toggleItem}
-                >
-                  Item
-                </th>
-              )}
-              {isStatusOn && (
-                <th
-                  className={`${
-                    isDarkMode
-                      ? "dark-blue4 text-white"
-                      : "light-blue2 text-black"
-                  } font-normal`}
-                  onClick={toggleStatus}
-                >
-                  Status
-                </th>
-              )}
+              {isOrderOn && <OrdersHeading title="Order #" />}
+              {isNameOn && <OrdersHeading title="Name" />}
+              {isDateOn && <OrdersHeading title="Date" />}
+              {isAmountOn && <OrdersHeading title="Amount" />}
+              {isItemOn && <OrdersHeading title="Item" />}
+              {isStatusOn && <OrdersHeading title="Status" />}
             </tr>
           </thead>
           <tbody>
+            {/* Calculations depending on results per page */}
             {ordersTableData
               .slice(
                 pageNumber === 1 ? 0 : perPage * (pageNumber - 1),
@@ -151,6 +80,7 @@ const Orders = () => {
                   key={index}
                   className="h-[50px]"
                 >
+                  {/* Render table data if option is turned on */}
                   {isOrderOn && (
                     <TableDataBlock index={index}>
                       #{order.orderNo}
@@ -183,7 +113,7 @@ const Orders = () => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[20px] flex justify-between flex-col xs:flex-row relative">
+      <div className="mx-[20px] relative flex justify-between flex-col xs:flex-row">
         <ActiveButton
           text="Table data"
           dropDown={true}
@@ -193,23 +123,8 @@ const Orders = () => {
         {tableMenu && <TableToggleMenu />}
 
         {screenWidth >= 640 && (
-          <div className="hidden my-auto sm:flex text-center">
-            <OrderPageNo
-              page={1}
-              onClick={() => pageNumberSetter({ value: 1 })}
-            />
-            <OrderPageNo
-              page={2}
-              onClick={() => pageNumberSetter({ value: 2 })}
-            />
-            <OrderPageNo
-              page={3}
-              onClick={() => pageNumberSetter({ value: 3 })}
-            />
-            <OrderPageNo
-              page={67}
-              onClick={() => {}}
-            />
+          <div className="my-auto text-center flex">
+            <OrdersPageNumbers />
           </div>
         )}
         <ActiveButton
@@ -222,23 +137,8 @@ const Orders = () => {
         {perPageMenu && <ResultsPerPage />}
       </div>
       {screenWidth < 640 && (
-        <div className="sm:hidden text-center mt-[10px] flex justify-center">
-          <OrderPageNo
-            page={1}
-            onClick={() => pageNumberSetter({ value: 1 })}
-          />
-          <OrderPageNo
-            page={2}
-            onClick={() => pageNumberSetter({ value: 2 })}
-          />
-          <OrderPageNo
-            page={3}
-            onClick={() => pageNumberSetter({ value: 3 })}
-          />
-          <OrderPageNo
-            page={67}
-            onClick={() => {}}
-          />
+        <div className="mt-[10px] text-center flex justify-center">
+          <OrdersPageNumbers />
         </div>
       )}
     </div>

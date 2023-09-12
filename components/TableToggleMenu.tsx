@@ -85,14 +85,14 @@ const TableToggleMenu = () => {
 
           <div className="md:w-1/2">
             <TableToggleOption
-              title="Item"
-              toggleFunction={toggleItem}
-              state={isItemOn}
-            />
-            <TableToggleOption
               title="Amount"
               toggleFunction={toggleAmount}
               state={isAmountOn}
+            />
+            <TableToggleOption
+              title="Item"
+              toggleFunction={toggleItem}
+              state={isItemOn}
             />
             <TableToggleOption
               title="Status"

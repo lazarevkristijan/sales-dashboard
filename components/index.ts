@@ -27,6 +27,8 @@ import ResultsPerPage from "./ResultsPerPage"
 import OrderPageNo from "./OrderPageNo"
 import TableToggleButton from "./TableToggleButton"
 import PerPageOption from "./PerPageOption"
+import OrdersHeading from "./OrdersHeading"
+import OrdersPageNumbers from "./OrdersPageNumbers"
 
 import Product from "./Product"
 import ProductArrow from "./ProductArrow"
@@ -78,4 +80,6 @@ export {
   LineChartDark,
   BarChartDark,
   TableToggleOption,
+  OrdersHeading,
+  OrdersPageNumbers,
 }

@@ -1,13 +1,14 @@
-import { TableDataBlock } from "../components"
+import { useContext } from "react"
 import { DarkMode } from "../components/Contexts"
+import { TableDataBlock } from "../components"
 import {
   countryTableData,
   countriesHeadings,
   smSectionStyles,
 } from "../constants"
-import { useContext } from "react"
 
 const Countries = () => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
 
   return (
@@ -19,10 +20,10 @@ const Countries = () => {
       <p className={`${isDarkMode ? "text-white" : "text-black"} text-center`}>
         Countries
       </p>
-      <div className="mx-[20px] overflow-y-scroll h-[210px] rou">
+      <div className="h-[210px] mx-[20px] rou overflow-y-scroll">
         <table className="w-full text-center">
           <thead>
-            <tr className="h-[45px] ">
+            <tr className="h-[45px]">
               {countriesHeadings.map((heading, index) => (
                 <th
                   key={index}
@@ -30,7 +31,7 @@ const Countries = () => {
                     isDarkMode
                       ? "dark-blue4 text-white"
                       : "light-blue2 text-black"
-                  } font-normal w-[50%]`}
+                  } w-[50%] font-normal`}
                 >
                   {heading.text}
                 </th>
