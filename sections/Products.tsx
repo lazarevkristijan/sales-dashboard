@@ -1,10 +1,17 @@
-import { smSectionStyles, products } from "../constants"
-import { Product, ProductArrow } from "../components"
 import { useState, useContext } from "react"
 import { DarkMode, ScreenContext } from "../components/Contexts"
+import { Product, ProductArrow } from "../components"
+import { smSectionStyles, products } from "../constants"
 
 const Products = () => {
+  // Contexts
+  const { isDarkMode } = useContext(DarkMode)
+  const { screenWidth } = useContext(ScreenContext)
+
+  // states
   const [productNumber, setProductNumber] = useState(0)
+
+  // Functions
   const toggleNextProduct = () => {
     if (productNumber == 2) {
       setProductNumber(0)
@@ -21,22 +28,21 @@ const Products = () => {
     }
   }
 
-  const { isDarkMode } = useContext(DarkMode)
-  const { screenWidth } = useContext(ScreenContext)
-
   return (
     <div
       className={`${smSectionStyles} ${
         isDarkMode ? "dark-blue3" : "light-blue1"
-      } items-center`}
+      }`}
     >
       <div className="flex justify-center xs:justify-between items-center">
+        {/* Render arrows below if screen widrh >= 350px */}
         {screenWidth >= 350 && (
           <ProductArrow
             direction="left"
             onClick={togglePrevProduct}
           />
         )}
+
         <div className="flex flex-col sm:flex-row">
           {products
             .slice(productNumber, productNumber + 1)
@@ -61,6 +67,7 @@ const Products = () => {
           />
         )}
       </div>
+      {/* Render arrows below if screen widrh < 350px */}
       {screenWidth < 350 && (
         <div className="flex justify-between">
           <ProductArrow

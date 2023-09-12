@@ -1,30 +1,35 @@
 import { useContext, useState } from "react"
+import { DarkMode, ActiveChart, SalesContext } from "../components/Contexts"
 import {
   SalesInfoBox,
   TotalInfo,
   BarChart,
   PieChart,
   LineChart,
-  SalesResultRect,
+  SalesRevenueRect,
   PieChartDark,
   InActiveButton,
   BarChartDark,
   LineChartDark,
 } from "../components/"
 import { salesRevenueStyles, sectionStyles } from "../constants"
-import { DarkMode, ActiveChart, SalesContext } from "../components/Contexts"
 
 const Sales = () => {
+  // States
   const [isToolTipOn, setIsToolTipOn] = useState(false)
 
+  // Contexts
   const { deliveredSales } = useContext(SalesContext)
   const { returnedSales } = useContext(SalesContext)
   const { inCart } = useContext(SalesContext)
   const { targetSales } = useContext(SalesContext)
   const notDeliveredSales = Math.round(deliveredSales / 20)
+
   const { isDarkMode } = useContext(DarkMode)
+
   const { activeChart } = useContext(ActiveChart)
 
+  // Functions
   const handleInfoHover = () => {
     setIsToolTipOn((prev) => !prev)
   }
@@ -36,9 +41,9 @@ const Sales = () => {
       }`}
     >
       <div
-        className={`mb-[30px] ${
+        className={`${
           activeChart !== "pie" ? "sm:mx-[100px]" : "max-w-[500px] mx-auto"
-        } `}
+        } mb-[30px]`}
       >
         {activeChart === "pie" ? (
           isDarkMode ? (
@@ -52,17 +57,15 @@ const Sales = () => {
           ) : (
             <BarChart />
           )
-        ) : activeChart === "line" ? (
-          isDarkMode ? (
-            <LineChartDark />
-          ) : (
-            <LineChart />
-          )
-        ) : null}
+        ) : (
+          activeChart === "line" &&
+          (isDarkMode ? <LineChartDark /> : <LineChart />)
+        )}
       </div>
 
+      {/* Additional sales info - Not Delivered / In Cart / Returned */}
       <div className="flex flex-wrap justify-center">
-        <div className="w-full flex justify-center mb-[20px]">
+        <div className="w-full mb-[20px] flex justify-center">
           <InActiveButton
             text="Current month"
             color={isDarkMode ? "dark-blue4" : "light-blue3"}
@@ -85,13 +88,14 @@ const Sales = () => {
           bg={isDarkMode ? "dark-danger" : "light-danger"}
         />
       </div>
+      {/* Total revenue calculations */}
       <div className="flex flex-wrap justify-center items-center">
         <div
           className={`${salesRevenueStyles} ${
             isDarkMode ? "bg-black text-white" : "bg-white text-black"
           } mb-[20px]`}
         >
-          <SalesResultRect
+          <SalesRevenueRect
             title="Gross profits"
             rectText={`€${(
               (deliveredSales + notDeliveredSales) *
@@ -100,7 +104,7 @@ const Sales = () => {
             extraStyles="mb-[10px]"
           />
 
-          <SalesResultRect
+          <SalesRevenueRect
             title="Net profits"
             rectText={`€${Math.round(
               ((deliveredSales + notDeliveredSales) * 500) / 3
@@ -112,14 +116,14 @@ const Sales = () => {
             isDarkMode ? "bg-black text-white" : "bg-white text-black"
           } mb-[20px] relative`}
         >
-          <SalesResultRect
+          <SalesRevenueRect
             title="Target progress"
             rectText={`${Math.round(
               ((deliveredSales + notDeliveredSales) / targetSales) * 100
             )}%`}
             extraStyles="mb-[10px]"
           />
-          <SalesResultRect
+          <SalesRevenueRect
             title="Total calculated"
             rectText={`€${(
               (deliveredSales + notDeliveredSales - returnedSales) *

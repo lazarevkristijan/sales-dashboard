@@ -18,7 +18,7 @@ import PieChart from "./PieChart"
 import PieChartDark from "./PieChartDark"
 import SalesInfoBox from "./SalesInfoBox"
 import TotalInfo from "./TotalInfo"
-import SalesResultRect from "./SalesResultRect"
+import SalesRevenueRect from "./SalesRevenueRect"
 
 import TableToggleMenu from "./TableToggleMenu"
 import TableToggleOption from "./TableToggleOption"
@@ -62,7 +62,7 @@ export {
   Notification,
   ProfileMenuButton,
   TopIcon,
-  SalesResultRect,
+  SalesRevenueRect,
   Product,
   ProductArrow,
   UsersRect,

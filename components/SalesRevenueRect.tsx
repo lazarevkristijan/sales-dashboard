@@ -1,6 +1,6 @@
 import { InActiveButton } from "."
 
-const SalesResultRect = ({
+const SalesRevenueRect = ({
   title,
   rectText,
   extraStyles,
@@ -19,4 +19,4 @@ const SalesResultRect = ({
   )
 }
 
-export default SalesResultRect
+export default SalesRevenueRect

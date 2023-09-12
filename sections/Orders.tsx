@@ -33,6 +33,7 @@ const Orders = () => {
   const { tableMenu, toggleTableMenu, perPageMenu, togglePerPageMenu } =
     useContext(OrdersOpenMenu)
 
+  // Constants
   const turnedOnOptions = [
     isOrderOn,
     isNameOn,
