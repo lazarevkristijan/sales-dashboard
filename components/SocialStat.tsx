@@ -10,22 +10,24 @@ const SocialStat = ({
   followers: number
   growth: number
 }) => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
+
   return (
     <div
       className={`${
         isDarkMode ? "bg-black text-white" : "bg-white text-black"
-      } rou w-1/3 pb-[20px] smText`}
+      } w-1/3 pb-[20px] smText rou`}
     >
       <img
         src={`${media}.svg`}
         alt={`${media} logo`}
-        className="w-[60px] py-[20px] mx-auto"
+        className="w-[60px] mx-auto py-[20px]"
       />
       <hr
-        className={`border-[1px] ${
+        className={`${
           isDarkMode ? "border-white" : "border-black"
-        } mb-[10px]`}
+        } mb-[10px] border-[1px]`}
       />
       <span className="mb-[10px]">{followers}</span>
       <p>

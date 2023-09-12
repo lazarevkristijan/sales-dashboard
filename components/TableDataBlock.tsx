@@ -10,11 +10,12 @@ const TableDataBlock = ({
   children: React.ReactNode
   border?: boolean
 }) => {
+  // Constants
   const { isDarkMode } = useContext(DarkMode)
 
   return (
     <td
-      className={`border-r-[1px] ${
+      className={`${
         isDarkMode
           ? border
             ? "border-white"
@@ -25,10 +26,9 @@ const TableDataBlock = ({
       }
   ${
     isDarkMode
-      ? `${index % 2 === 0 ? "bg-[#000]" : "bg-[#333]"}`
-      : `${index % 2 === 0 ? "bg-[#fff]" : "bg-[#ddd]"}`
-  } 
-   ${isDarkMode ? "text-white" : "text-black"}`}
+      ? `${index % 2 === 0 ? "bg-[#000]" : "bg-[#333]"} text-white`
+      : `${index % 2 === 0 ? "bg-[#fff]" : "bg-[#ddd]"} text-black`
+  } border-r-[1px]`}
     >
       {children}
     </td>
