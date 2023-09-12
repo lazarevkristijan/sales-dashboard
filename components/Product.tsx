@@ -20,6 +20,7 @@ const Product = ({
   rating: number
   productNo: number
 }) => {
+  // Contexts
   const { isDarkMode } = useContext(DarkMode)
 
   return (
@@ -27,7 +28,7 @@ const Product = ({
       <div
         className={`${
           isDarkMode ? "bg-black" : "bg-white"
-        } mx-auto sm:mx-0 mb-[20px] sm:mb-0 w-[140px] text-center rou`}
+        } w-[140px] mx-auto sm:mx-0 mb-[20px] sm:mb-0 text-center rou`}
       >
         <img
           src={`${name}.svg`}
@@ -38,21 +39,22 @@ const Product = ({
           {name}
         </span>
       </div>
+
       <div>
         <div
           className={`${
             isDarkMode ? "bg-black text-white" : "bg-white text-black"
-          } h-fit w-[240px] rou sm:ml-[10px] p-[10px] smText`}
+          } w-[240px] h-fit sm:ml-[10px] p-[10px] smText rou`}
         >
           <p>Price: €{price} </p>
           <p>Storage: {storage}GB</p>
-          <p> RAM: {ram}GB</p>
-          <p> Battery: {battery}mAh</p>
+          <p>RAM: {ram}GB</p>
+          <p>Battery: {battery}mAh</p>
         </div>
         <div
           className={`${
             isDarkMode ? "bg-black text-white" : "bg-white text-black"
-          } h-fit w-[240px] rou sm:ml-[10px] mb-[20px] sm:mb-0 p-[10px] mt-[10px]`}
+          } w-[240px] h-fit sm:ml-[10px] mb-[20px] sm:mb-0 mt-[10px] p-[10px] rou`}
         >
           <p> Available: {available}</p>
           <p> Rating: {rating}/5⭐</p>
