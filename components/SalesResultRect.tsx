@@ -11,7 +11,7 @@ const SalesResultRect = ({
 }) => {
   return (
     <div
-      className={`mx-[20px] flex items-center justify-between ${extraStyles}`}
+      className={`${extraStyles} mx-[20px] flex items-center justify-between`}
     >
       <span>{title}</span>
       <InActiveButton text={rectText} />
