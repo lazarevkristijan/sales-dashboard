@@ -21,6 +21,7 @@ import TotalInfo from "./TotalInfo"
 import SalesResultRect from "./SalesResultRect"
 
 import TableToggleMenu from "./TableToggleMenu"
+import TableToggleOption from "./TableToggleOption"
 import TableDataBlock from "./TableDataBlock"
 import ResultsPerPage from "./ResultsPerPage"
 import OrderPageNo from "./OrderPageNo"
@@ -76,4 +77,5 @@ export {
   PieChartDark,
   LineChartDark,
   BarChartDark,
+  TableToggleOption,
 }

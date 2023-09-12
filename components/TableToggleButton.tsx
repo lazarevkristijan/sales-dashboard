@@ -2,26 +2,28 @@ import { useState, useContext } from "react"
 import { DarkMode } from "./Contexts"
 
 const TableToggleButton = ({ name }: { name: string }) => {
+  // Contexts
+  const { isDarkMode } = useContext(DarkMode)
+
+  // States
   const [isOptionOn, setIsOptionOn] = useState(true)
 
+  // Functions
   const toggleOption = () => {
     setIsOptionOn((prev) => !prev)
   }
 
-  const { isDarkMode } = useContext(DarkMode)
-
   return (
-    <div className="w-[150px] h-[40px] flex smText mx-auto mb-[10px]">
+    <div className="w-[150px] h-[40px] mx-auto mb-[10px] smText flex">
       <div
-        className={`w-[110px] h-full ${
+        className={`${
           isDarkMode ? "dark-blue3" : "light-blue1"
-        } flex justify-center items-center rou-l`}
+        } w-[110px] h-full flex justify-center items-center rou-l`}
       >
         {name}
       </div>
       <div
-        className={`w-[40px] h-[40px] 
-        ${
+        className={`${
           isDarkMode
             ? isOptionOn
               ? "dark-success"
@@ -29,12 +31,9 @@ const TableToggleButton = ({ name }: { name: string }) => {
             : isOptionOn
             ? "light-success"
             : "light-danger"
-        }
-
-        
-        ${
+        } ${
           isOptionOn ? "light-success" : "light-danger"
-        } hover:cursor-pointer flex rou-r`}
+        } w-[40px] h-[40px] flex rou-r`}
         onClick={toggleOption}
       >
         <img
