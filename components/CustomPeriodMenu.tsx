@@ -15,6 +15,7 @@ const CustomPeriodMenu = () => {
   const handleHover = () => {
     setIsHovered((prev) => !prev)
   }
+
   const handleFromChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFromDate(e.target.value)
   }

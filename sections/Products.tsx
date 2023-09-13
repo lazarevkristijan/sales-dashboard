@@ -8,7 +8,7 @@ const Products = () => {
   const { isDarkMode } = useContext(DarkModeContext)
   const { screenWidth } = useContext(ScreenContext)
 
-  // states
+  // States
   const [productNumber, setProductNumber] = useState(0)
 
   // Functions

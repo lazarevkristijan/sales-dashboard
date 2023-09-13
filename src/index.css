@@ -61,14 +61,6 @@ img::selection {
   background-color: #00b4d8;
 }
 
-.light-table1 {
-  background-color: #fff;
-}
-
-.light-table2 {
-  background-color: #eee;
-}
-
 .light-success {
   background-color: #96ff96;
 }
@@ -101,14 +93,6 @@ img::selection {
 
 .dark-blue4 {
   background-color: #03045e;
-}
-
-.dark-table1 {
-  background-color: #000;
-}
-
-.dark-table2 {
-  background-color: #444;
 }
 
 .dark-success {

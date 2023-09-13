@@ -20,12 +20,13 @@ const Sales = () => {
   const { isDarkMode } = useContext(DarkModeContext)
   const { activeChart } = useContext(ActiveChartContext)
 
+  // States
+  const [isToolTipOn, setIsToolTipOn] = useState(false)
+
   // Functions
   const handleInfoHover = () => {
     setIsToolTipOn((prev) => !prev)
   }
-  // States
-  const [isToolTipOn, setIsToolTipOn] = useState(false)
 
   // Constants
   const deliveredSales = 97

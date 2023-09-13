@@ -5,12 +5,14 @@ import "chart.js/auto"
 const LineChartDark = () => {
   const sales: number[] = []
   const months: string[] = []
+
   {
     monthlySales.map((month) => {
       sales.push(month.sales)
       months.push(month.month)
     })
   }
+
   const data = {
     labels: months.slice(0, months.length),
     datasets: [

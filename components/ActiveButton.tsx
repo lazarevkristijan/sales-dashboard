@@ -15,8 +15,10 @@ const ActiveButton = ({
 }) => {
   // Contexts
   const { isDarkMode } = useContext(DarkModeContext)
+
   // States
   const [isHovered, setIsHovered] = useState(false)
+
   // Functions
   const handleHover = () => {
     setIsHovered((prev) => !prev)

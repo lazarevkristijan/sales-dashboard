@@ -63,6 +63,7 @@ const Orders = () => {
     }
     setPerPageMenu((prev) => !prev)
   }
+
   // Orders Table Context data
   const [isOrderOn, setIsOrderOn] = useState(true)
   const [isNameOn, setIsNameOn] = useState(true)

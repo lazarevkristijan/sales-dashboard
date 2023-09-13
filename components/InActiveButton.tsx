@@ -10,6 +10,7 @@ const InActiveButton = ({
   color?: string
   extraStyles?: string
 }) => {
+  // Contexts
   const { isDarkMode } = useContext(DarkModeContext)
 
   return (

@@ -68,6 +68,7 @@ const App = () => {
 
     return value
   }
+
   // Screen Context data
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 

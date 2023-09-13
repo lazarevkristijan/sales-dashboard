@@ -10,6 +10,7 @@ const TableToggleOption = ({
   state: boolean
   toggleFunction: () => void
 }) => {
+  // Contexts
   const { isDarkMode } = useContext(DarkModeContext)
 
   return (
@@ -26,12 +27,15 @@ const TableToggleOption = ({
       </div>
       <div
         className={`w-[40px] h-[40px] 
-        ${isDarkMode && state && "dark-success"}
-        ${isDarkMode && !state && "dark-danger"}
-        ${!isDarkMode && state && "light-success"}
-        ${!isDarkMode && !state && "light-danger"}
-        
-        flex rou-r`}
+        ${
+          isDarkMode
+            ? state
+              ? "dark-success"
+              : "dark-danger"
+            : state
+            ? "light-success"
+            : "light-danger"
+        } flex rou-r`}
       >
         <img
           src={` ${state ? "tick" : "cross"}.svg`}

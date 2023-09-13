@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { DarkModeContext } from "../src/App"
 
 const OrdersHeading = ({ title }: { title: string }) => {
+  // Contexts
   const { isDarkMode } = useContext(DarkModeContext)
 
   return (
