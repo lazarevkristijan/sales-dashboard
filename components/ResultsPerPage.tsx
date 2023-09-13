@@ -1,13 +1,17 @@
 import { useContext, useEffect, useRef } from "react"
-import { DarkMode, OrdersTableContext, OrdersOpenMenu } from "./Contexts"
+import {
+  DarkModeContext,
+  OrdersTableContext,
+  OrdersOpenMenuContext,
+} from "../src/App"
 import { PerPageOption } from "."
 import { perPageOptions } from "../constants"
 
 const ResultsPerPage = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
   const { perPageSetter } = useContext(OrdersTableContext)
-  const { perPageMenu, togglePerPageMenu } = useContext(OrdersOpenMenu)
+  const { perPageMenu, togglePerPageMenu } = useContext(OrdersOpenMenuContext)
 
   // Functions
   useEffect(() => {

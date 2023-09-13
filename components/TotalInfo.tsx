@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 
 const TotalInfo = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   return (
     <div

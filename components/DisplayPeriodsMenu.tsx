@@ -1,11 +1,11 @@
 import { useState, useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 import { CustomPeriodMenu, PanelButton } from "."
 import { displayPeriodsOptions } from "../constants"
 
 const DisplayPeriodsMenu = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   // States
   const [isCustomMenuOpen, setIsCustomMenuOpen] = useState(false)

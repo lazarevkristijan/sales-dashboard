@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode, TopOpenMenu } from "../components/Contexts"
+import { DarkModeContext, TopOpenMenuContext } from "../src/App"
 import {
   NotificationPanel,
   ProfilePanel,
@@ -10,7 +10,7 @@ import { sectionStyles } from "../constants"
 
 const Top = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   const {
     notificationMenu,
@@ -19,7 +19,7 @@ const Top = () => {
     toggleProfileMenu,
     sidePanelMenu,
     toggleSidePanelMenu,
-  } = useContext(TopOpenMenu)
+  } = useContext(TopOpenMenuContext)
 
   return (
     <div className={`${sectionStyles} flex relative`}>

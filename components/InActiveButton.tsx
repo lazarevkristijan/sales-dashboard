@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 
 const InActiveButton = ({
   text,
@@ -10,7 +10,7 @@ const InActiveButton = ({
   color?: string
   extraStyles?: string
 }) => {
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   return (
     <p

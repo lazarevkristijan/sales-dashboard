@@ -1,9 +1,9 @@
 import { useState, useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 
 const TableToggleButton = ({ name }: { name: string }) => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   // States
   const [isOptionOn, setIsOptionOn] = useState(true)

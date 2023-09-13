@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { DarkMode, ActiveChart, SalesContext } from "../components/Contexts"
+import { DarkModeContext, ActiveChartContext, SalesContext } from "../src/App"
 import {
   SalesInfoBox,
   TotalInfo,
@@ -17,8 +17,8 @@ import { salesRevenueStyles, sectionStyles } from "../constants"
 const Sales = () => {
   // Contexts
   const { targetSales } = useContext(SalesContext)
-  const { isDarkMode } = useContext(DarkMode)
-  const { activeChart } = useContext(ActiveChart)
+  const { isDarkMode } = useContext(DarkModeContext)
+  const { activeChart } = useContext(ActiveChartContext)
 
   // Functions
   const handleInfoHover = () => {

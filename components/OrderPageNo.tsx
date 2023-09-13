@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 
 const OrderPageNo = ({
   page,
@@ -9,7 +9,7 @@ const OrderPageNo = ({
   onClick: React.MouseEventHandler
 }) => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   // States
   const [isHovered, setIsHovered] = useState(false)

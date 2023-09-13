@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 
 const TableDataBlock = ({
   index,
@@ -11,7 +11,7 @@ const TableDataBlock = ({
   border?: boolean
 }) => {
   // Constants
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   return (
     <td

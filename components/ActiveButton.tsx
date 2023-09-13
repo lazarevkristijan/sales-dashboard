@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 import { DropDownButton } from "."
 
 const ActiveButton = ({
@@ -14,7 +14,7 @@ const ActiveButton = ({
   extraStyles?: string
 }) => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
   // States
   const [isHovered, setIsHovered] = useState(false)
   // Functions

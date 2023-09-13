@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { OrderPageNo } from "."
-import { OrdersTableContext } from "./Contexts"
+import { OrdersTableContext } from "../src/App"
 
 const OrdersPageNumbers = () => {
   const { pageNumberSetter } = useContext(OrdersTableContext)

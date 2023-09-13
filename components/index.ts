@@ -38,7 +38,6 @@ import UsersRect from "./UsersRect"
 import SocialStat from "./SocialStat"
 import SocialLabel from "./SocialLabel"
 
-import Contexts from "./Contexts"
 import ActiveButton from "./ActiveButton"
 import InActiveButton from "./InActiveButton"
 import DropDownButton from "./DropDownButton"
@@ -75,7 +74,6 @@ export {
   CustomPeriodMenu,
   OrderPageNo,
   TableDataBlock,
-  Contexts,
   PieChartDark,
   LineChartDark,
   BarChartDark,

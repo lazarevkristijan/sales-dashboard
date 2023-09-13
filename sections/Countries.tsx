@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "../components/Contexts"
+import { DarkModeContext } from "../src/App"
 import { TableDataBlock } from "../components"
 import {
   countryTableData,
@@ -9,7 +9,7 @@ import {
 
 const Countries = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   return (
     <div

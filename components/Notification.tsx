@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 
 const Notification = ({
   evaluation,
@@ -15,7 +15,7 @@ const Notification = ({
   ago: number
 }) => {
   // Constants
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   return (
     <div

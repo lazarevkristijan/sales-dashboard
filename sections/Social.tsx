@@ -1,11 +1,11 @@
 import { useContext } from "react"
-import { DarkMode } from "../components/Contexts"
+import { DarkModeContext } from "../src/App"
 import { SocialStat, SocialLabel } from "../components"
 import { smSectionStyles } from "../constants"
 
 const Social = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   return (
     <div

@@ -1,14 +1,15 @@
 import { useContext, useEffect, useRef } from "react"
-import { DarkMode, TopOpenMenu } from "./Contexts"
+import { DarkModeContext, TopOpenMenuContext } from "../src/App"
+
 import { Notification } from "."
 import { notifications, topDropDownStyles } from "../constants"
 
 const NotificationPanel = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
-  // States
-  const { notificationMenu, toggleNotificationMenu } = useContext(TopOpenMenu)
+  const { notificationMenu, toggleNotificationMenu } =
+    useContext(TopOpenMenuContext)
 
   // Functions
   useEffect(() => {

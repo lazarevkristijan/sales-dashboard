@@ -1,12 +1,12 @@
 import { useContext } from "react"
-import { DarkMode, ActiveChart } from "./Contexts"
+import { DarkModeContext, ActiveChartContext } from "../src/App"
 import { PanelButton } from "."
 import { chartSetterComponents } from "../constants"
 
 const ChartDisplayMenu = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
-  const { setChart } = useContext(ActiveChart)
+  const { isDarkMode } = useContext(DarkModeContext)
+  const { setChart } = useContext(ActiveChartContext)
 
   return (
     <div

@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 
 const SalesInfoBox = ({
   heading,
@@ -11,7 +11,7 @@ const SalesInfoBox = ({
   bg: string
 }) => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   return (
     <div

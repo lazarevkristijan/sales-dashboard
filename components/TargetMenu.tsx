@@ -1,11 +1,11 @@
 import { useState, useContext } from "react"
-import { DarkMode, SalesContext } from "./Contexts"
+import { DarkModeContext, SalesContext } from "../src/App"
 import { InActiveButton } from "."
 import { monthlySales } from "../constants"
 
 const TargetMenu = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
   const { targetSales, setTarget } = useContext(SalesContext)
 
   // States

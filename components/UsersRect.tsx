@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 import { InActiveButton } from "."
 
 const UsersRect = ({
@@ -12,7 +12,7 @@ const UsersRect = ({
   extraStyles?: string
 }) => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   return (
     <div

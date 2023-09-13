@@ -1,11 +1,11 @@
 import { useState, useContext } from "react"
-import { DarkMode, ScreenContext } from "../components/Contexts"
+import { DarkModeContext, ScreenContext } from "../src/App"
 import { Product, ProductArrow } from "../components"
 import { smSectionStyles, products } from "../constants"
 
 const Products = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
   const { screenWidth } = useContext(ScreenContext)
 
   // states

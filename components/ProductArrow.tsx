@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 
 const ProductArrow = ({
   direction,
@@ -9,7 +9,7 @@ const ProductArrow = ({
   onClick: React.MouseEventHandler
 }) => {
   // Constants
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   return (
     <div

@@ -1,10 +1,10 @@
 import { useState, useContext } from "react"
-import { DarkMode } from "./Contexts"
+import { DarkModeContext } from "../src/App"
 import { PanelButton } from "."
 
 const CustomPeriodMenu = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
 
   // States
   const [fromDate, setFromDate] = useState("2023-09-05")

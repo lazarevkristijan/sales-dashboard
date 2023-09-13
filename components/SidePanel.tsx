@@ -1,5 +1,5 @@
 import { useState, useContext, useRef, useEffect } from "react"
-import { DarkMode, TopOpenMenu } from "./Contexts"
+import { DarkModeContext, TopOpenMenuContext } from "../src/App"
 import {
   PanelButton,
   DisplayPeriodsMenu,
@@ -9,7 +9,7 @@ import {
 
 const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
   // Contexts
-  const { sidePanelMenu, toggleSidePanelMenu } = useContext(TopOpenMenu)
+  const { sidePanelMenu, toggleSidePanelMenu } = useContext(TopOpenMenuContext)
 
   // States
   const [isMenuOpen, setIsMenuOpen] = useState("")
@@ -42,7 +42,7 @@ const SidePanel = ({ handlePanelClick }: { handlePanelClick: () => void }) => {
     }
   }, [sidePanelMenu, toggleSidePanelMenu])
 
-  const { isDarkMode, toggleDarkMode } = useContext(DarkMode)
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext)
 
   const handleHover = () => {
     setIsHovered((prev) => !prev)

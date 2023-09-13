@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import {
-  DarkMode,
+  DarkModeContext,
   OrdersTableContext,
-  OrdersOpenMenu,
+  OrdersOpenMenuContext,
   ScreenContext,
-} from "../components/Contexts"
+} from "../src/App"
 import {
   ActiveButton,
   TableToggleMenu,
@@ -18,7 +18,7 @@ import { ordersTableData } from "../constants/Orders"
 
 const Orders = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
+  const { isDarkMode } = useContext(DarkModeContext)
   const {
     isOrderOn,
     isNameOn,
@@ -31,7 +31,7 @@ const Orders = () => {
   } = useContext(OrdersTableContext)
   const { screenWidth } = useContext(ScreenContext)
   const { tableMenu, toggleTableMenu, perPageMenu, togglePerPageMenu } =
-    useContext(OrdersOpenMenu)
+    useContext(OrdersOpenMenuContext)
 
   // Constants
   const turnedOnOptions = [

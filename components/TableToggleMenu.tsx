@@ -1,11 +1,15 @@
 import { useContext, useEffect, useRef } from "react"
-import { DarkMode, OrdersTableContext, OrdersOpenMenu } from "./Contexts"
+import {
+  DarkModeContext,
+  OrdersTableContext,
+  OrdersOpenMenuContext,
+} from "../src/App"
 import { TableToggleOption } from "."
 
 const TableToggleMenu = () => {
   // Contexts
-  const { isDarkMode } = useContext(DarkMode)
-  const { tableMenu, toggleTableMenu } = useContext(OrdersOpenMenu)
+  const { isDarkMode } = useContext(DarkModeContext)
+  const { tableMenu, toggleTableMenu } = useContext(OrdersOpenMenuContext)
   const {
     isOrderOn,
     toggleOrder,
