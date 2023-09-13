@@ -1,5 +1,6 @@
 import { useState, useContext, useRef, useEffect } from "react"
-import { DarkModeContext, TopOpenMenuContext } from "../src/App"
+import { DarkModeContext } from "../src/App"
+import { TopOpenMenuContext } from "../sections/Top"
 import {
   PanelButton,
   DisplayPeriodsMenu,

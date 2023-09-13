@@ -1,5 +1,6 @@
 import { useContext, useEffect, useRef } from "react"
-import { DarkModeContext, TopOpenMenuContext } from "../src/App"
+import { DarkModeContext } from "../src/App"
+import { TopOpenMenuContext } from "../sections/Top"
 
 import { Notification } from "."
 import { notifications, topDropDownStyles } from "../constants"
