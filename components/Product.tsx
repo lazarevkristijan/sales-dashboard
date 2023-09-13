@@ -33,7 +33,7 @@ const Product = ({
         <img
           src={`${name}.svg`}
           alt="phone"
-          className="h-[220px] mx-auto pt-[5px]"
+          className="h-[220px] w-[100px] mx-auto py-[10px]"
         />
         <span className={`${isDarkMode ? "dark-text" : "light-text"}`}>
           {name}

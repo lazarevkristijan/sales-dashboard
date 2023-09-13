@@ -15,7 +15,7 @@ const ProductArrow = ({
     <div
       className={`${
         direction === "left" ? "ml-2" : direction === "right" && "mr-2"
-      } w-[30px] hover:cursor-pointer hover:scale-110 transition-all`}
+      } w-[30px] h-[30px] hover:cursor-pointer hover:scale-110 transition-all`}
       onClick={onClick}
     >
       <img
