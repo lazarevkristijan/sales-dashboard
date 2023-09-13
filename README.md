@@ -13,6 +13,8 @@ Functionality:
 - Working per page menu
 - Working page changing
 - 3 products to switch through
+- Menu closing on outside click
+  ... more
 
 - Code written in ~ 40 components + 6 sections
   so it is pretty resuable
