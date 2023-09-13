@@ -1,5 +1,6 @@
 import { useState, useContext } from "react"
 import { DarkModeContext } from "../src/App"
+import { OrdersTableContext } from "../sections/Orders"
 
 const OrderPageNo = ({
   page,
@@ -10,6 +11,7 @@ const OrderPageNo = ({
 }) => {
   // Contexts
   const { isDarkMode } = useContext(DarkModeContext)
+  const { pageNumber } = useContext(OrdersTableContext)
 
   // States
   const [isHovered, setIsHovered] = useState(false)
@@ -24,14 +26,13 @@ const OrderPageNo = ({
       className={`
     ${
       isDarkMode
-        ? isHovered
+        ? isHovered || pageNumber === page
           ? "dark-blue2 dark-text"
           : "bg-black dark-text"
-        : isHovered
+        : isHovered || pageNumber === page
         ? "light-blue3 light-text"
         : "bg-white light-text"
-    }
-    w-[30px] mx-1 rou hover:cursor-pointer selection:bg-transparent hover:scale-105 transition-all`}
+    } w-[30px] mx-1 rou hover:cursor-pointer selection:bg-transparent hover:scale-105 transition-all`}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       onClick={onClick}
