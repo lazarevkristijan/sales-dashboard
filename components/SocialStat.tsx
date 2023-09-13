@@ -31,7 +31,7 @@ const SocialStat = ({
       />
       <span className="mb-[10px]">{followers}</span>
       <p>
-        <span className="text-[#38da38] font-bold">+{growth}</span>
+        <span className="text-[#158415] font-bold">+{growth}</span>
         %/ <br className="hidden xs:visible" /> month <br />
         Avg.
       </p>

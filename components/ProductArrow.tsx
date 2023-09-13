@@ -21,6 +21,7 @@ const ProductArrow = ({
       <img
         src={`${isDarkMode ? "dark" : "light"}-arrow-${direction}.svg`}
         alt={`${direction} arrow`}
+        className="w-full h-full"
       />
     </div>
   )
