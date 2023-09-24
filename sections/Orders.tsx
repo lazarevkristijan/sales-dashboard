@@ -10,6 +10,7 @@ import {
 } from "../components"
 import { sectionStyles } from "../constants"
 import { ordersTableData } from "../constants/Orders"
+import React from "react"
 
 export const OrdersOpenMenuContext = createContext({
   tableMenu: false,
@@ -256,4 +257,5 @@ const Orders = () => {
   )
 }
 
-export default Orders
+const MemoizedOrders = React.memo(Orders)
+export default MemoizedOrders

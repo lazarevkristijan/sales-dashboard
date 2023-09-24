@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { DarkModeContext } from "../src/App"
 import { SocialStat, SocialLabel } from "../components"
 import { smSectionStyles } from "../constants"
+import React from "react"
 
 const Social = () => {
   // Contexts
@@ -42,4 +43,5 @@ const Social = () => {
   )
 }
 
-export default Social
+const MemoizedSocial = React.memo(Social)
+export default MemoizedSocial

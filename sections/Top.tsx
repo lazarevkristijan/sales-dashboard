@@ -7,6 +7,7 @@ import {
   SidePanel,
 } from "../components"
 import { sectionStyles } from "../constants"
+import React from "react"
 
 export const TopOpenMenuContext = createContext({
   sidePanelMenu: false,
@@ -87,4 +88,5 @@ const Top = () => {
   )
 }
 
-export default Top
+const MemoizedTop = React.memo(Top)
+export default MemoizedTop

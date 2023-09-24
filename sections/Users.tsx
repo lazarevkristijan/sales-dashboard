@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { DarkModeContext } from "../src/App"
 import { UsersRect } from "../components"
 import { smSectionStyles } from "../constants"
+import React from "react"
 
 const Users = () => {
   // Contexts
@@ -29,4 +30,5 @@ const Users = () => {
   )
 }
 
-export default Users
+const MemoizedUsers = React.memo(Users)
+export default MemoizedUsers

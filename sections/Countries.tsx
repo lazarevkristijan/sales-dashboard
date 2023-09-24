@@ -6,6 +6,7 @@ import {
   countriesHeadings,
   smSectionStyles,
 } from "../constants"
+import React from "react"
 
 const Countries = () => {
   // Contexts
@@ -59,4 +60,6 @@ const Countries = () => {
     </div>
   )
 }
-export default Countries
+
+const MemoizedCountries = React.memo(Countries)
+export default MemoizedCountries

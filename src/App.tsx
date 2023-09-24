@@ -1,14 +1,14 @@
 import { createContext, useEffect, useState } from "react"
-import {
-  Top,
-  Sales,
-  Orders,
-  Products,
-  Users,
-  Countries,
-  Social,
-} from "../sections"
 import "./index.css"
+import {
+  MemoizedSocial,
+  MemoizedTop,
+  MemoizedSales,
+  MemoizedCountries,
+  MemoizedUsers,
+  MemoizedProducts,
+  MemoizedOrders,
+} from "../sections/index"
 
 export const DarkModeContext = createContext({
   isDarkMode: false,
@@ -98,20 +98,20 @@ const App = () => {
                 setTarget,
               }}
             >
-              <Top />
-              <Sales />
+              <MemoizedTop />
+              <MemoizedSales />
             </SalesContext.Provider>
           </ActiveChartContext.Provider>
           <ScreenContext.Provider value={{ screenWidth }}>
-            <Orders />
+            <MemoizedOrders />
           </ScreenContext.Provider>
           <div className="max-w-[1040px] mx-[10px] flex flex-wrap lg:mx-auto justify-between xs:justify-center lg:justify-between">
             <ScreenContext.Provider value={{ screenWidth }}>
-              <Products />
+              <MemoizedProducts />
             </ScreenContext.Provider>
-            <Users />
-            <Countries />
-            <Social />
+            <MemoizedUsers />
+            <MemoizedCountries />
+            <MemoizedSocial />
           </div>
         </div>
       </div>

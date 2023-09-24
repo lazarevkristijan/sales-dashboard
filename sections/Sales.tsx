@@ -13,6 +13,7 @@ import {
   LineChartDark,
 } from "../components/"
 import { salesRevenueStyles, sectionStyles } from "../constants"
+import React from "react"
 
 const Sales = () => {
   // Contexts
@@ -144,4 +145,5 @@ const Sales = () => {
   )
 }
 
-export default Sales
+const MemoizedSales = React.memo(Sales)
+export default MemoizedSales

@@ -2,6 +2,7 @@ import { useState, useContext } from "react"
 import { DarkModeContext, ScreenContext } from "../src/App"
 import { Product, ProductArrow } from "../components"
 import { smSectionStyles, products } from "../constants"
+import React from "react"
 
 const Products = () => {
   // Contexts
@@ -85,4 +86,5 @@ const Products = () => {
   )
 }
 
-export default Products
+const MemoizedProducts = React.memo(Products)
+export default MemoizedProducts

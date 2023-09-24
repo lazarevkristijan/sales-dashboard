@@ -1,9 +1,17 @@
-import Top from "./Top"
-import Sales from "./Sales"
-import Orders from "./Orders"
-import Products from "./Products"
-import Users from "./Users"
-import Countries from "./Countries"
-import Social from "./Social"
+import MemoizedTop from "./Top"
+import MemoizedSales from "./Sales"
+import MemoizedOrders from "./Orders"
+import MemoizedProducts from "./Products"
+import MemoizedUsers from "./Users"
+import MemoizedCountries from "./Countries"
+import MemoizedSocial from "./Social"
 
-export { Top, Sales, Orders, Products, Users, Countries, Social }
+export {
+  MemoizedTop,
+  MemoizedSales,
+  MemoizedOrders,
+  MemoizedProducts,
+  MemoizedUsers,
+  MemoizedCountries,
+  MemoizedSocial,
+}
